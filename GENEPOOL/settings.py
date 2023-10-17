@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEV_DEBUG =os.environ.get('DUBUG_')
 
-DEBUG = False
+DEBUG = DEV_DEBUG
 
 localhost = os.environ.get('ALLOWED_LOCAL_HOST')
 publichost = os.environ.get('ALLOWED_PUBLIC_HOST')
