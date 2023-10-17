@@ -19,5 +19,5 @@ from app_genepool import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Index.as_view() , name ='home-page') # FIND INDEX CLASS AND CONVERT TO A GLORIFED VIEW FUNCTION USING .as_view , name is used for reverse URL lookup, in html doc for example
+    path('', views.Index.as_view() , name ='home-page'), # FIND INDEX CLASS AND CONVERT TO A GLORIFED VIEW FUNCTION USING .as_view , name is used for reverse URL lookup, in html doc for example
 ]
