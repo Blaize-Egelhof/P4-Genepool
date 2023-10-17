@@ -22,7 +22,7 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: auto;
 }
 
 
@@ -48,3 +48,24 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+.mb-auto {
+    margin-bottom: 3rem !important;
+}
+
+.px-3 {
+    text-align: center;
+}
+
+.lead1 {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+/* Media for landing Page */
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
