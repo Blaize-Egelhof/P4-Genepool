@@ -32,12 +32,16 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEV_DEBUG =os.environ.get('DUBUG_')
 
-DEBUG = DEV_DEBUG
+DEBUG = True
 
 localhost = os.environ.get('ALLOWED_LOCAL_HOST')
 publichost = os.environ.get('ALLOWED_PUBLIC_HOST')
 
 ALLOWED_HOSTS = [localhost, publichost]
+
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 
 # Application definition
@@ -148,6 +152,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+MEDIA_ROOT = BASE_DIR /'media'
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 

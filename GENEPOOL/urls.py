@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app_genepool import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Index.as_view() , name ='home-page'), # FIND INDEX CLASS AND CONVERT TO A GLORIFED VIEW FUNCTION USING .as_view , name is used for reverse URL lookup, in html doc for example
-]
+] 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
