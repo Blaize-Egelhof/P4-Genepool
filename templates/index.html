@@ -1,84 +1,76 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container-fluid p-3">
-    <div class="row">
-        <div class="col-4 center-my-text">
-        </div>        
-        <div class="col-4 center-my-text">
-            <h2>Fields We Cover</h2>
-        </div>        
-        <div class="col-4 center-my-text">
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid p-3">
-    <div class="row rows-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4">
-        <!-- Column 1 -->
-        <div class="col">
-            <div class="card h-100">
-                <img src="#" class="card-img-top rounded-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">NETWORKING</h5>
-                    <p class="card-text">Description here...</p>
-                    <a href="#" class="btn btn-primary">Find Out More</a>
-                </div>
+    <fieldsection>
+        <div class="container-fluid p-3">
+            <div class="row">
+                <div class="col-4 center-my-text"></div>        
+                <div class="col-4 center-my-text section-spacing">
+                    <h2 class="bold-text black-font-color">Fields We Cover</h2>
+                </div>        
+                <div class="col-4 center-my-text"></div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="#" class="card-img-top rounded-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">NETWORKING</h5>
-                    <p class="card-text">Description here...</p>
-                    <a href="#" class="btn btn-primary">Find Out More</a>
+        <div class="container-fluid p-3 fields-parent-container generic-bakground-color">
+            <div class="row rows-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 custom-card card">
+                        <div class="custom-card-image-overlay"></div>
+                        <div class="card-content-wrapper">
+                            <h5 class="card-title">SUPPORT</h5>
+                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 custom-card card">
+                        <div class="custom-card-image-overlay"></div>
+                        <div class="card-content-wrapper">
+                            <h5 class="card-title">HARDWARE</h5>
+                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 custom-card card">
+                        <div class="custom-card-image-overlay"></div>
+                        <div class="card-content-wrapper">
+                            <h5 class="card-title">SOFTWARE</h5>
+                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row rows-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 custom-card card">
+                        <div class="custom-card-image-overlay"></div>
+                        <div class="card-content-wrapper">
+                            <h5 class="card-title">NETWORKING</h5>
+                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 custom-card card">
+                        <div class="custom-card-image-overlay"></div>
+                        <div class="card-content-wrapper">
+                            <h5 class="card-title">MICROSOFT</h5>
+                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 custom-card card">
+                        <div class="custom-card-image-overlay"></div>
+                        <div class="card-content-wrapper">
+                            <h5 class="card-title">POWER SOLUTIONS</h5>
+                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="#" class="card-img-top rounded-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">NETWORKING</h5>
-                    <p class="card-text">Description here...</p>
-                    <a href="#" class="btn btn-primary">Find Out More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="#" class="card-img-top rounded-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">NETWORKING</h5>
-                    <p class="card-text">Description here...</p>
-                    <a href="#" class="btn btn-primary">Find Out More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="#" class="card-img-top rounded-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">NETWORKING</h5>
-                    <p class="card-text">Description here...</p>
-                    <a href="#" class="btn btn-primary">Find Out More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="#" class="card-img-top rounded-circle" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">NETWORKING</h5>
-                    <p class="card-text">Description here...</p>
-                    <a href="#" class="btn btn-primary">Find Out More</a>
-                </div>
-            </div>
-        </div>
-        <!-- Add more columns as needed -->
-    </div>
-</div>
-
+    </fieldsection>
 {% endblock content %}

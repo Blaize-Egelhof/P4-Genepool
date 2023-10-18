@@ -11,25 +11,44 @@
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
+.row>* {
+  margin-bottom: var(--bs-gutter-y);
+}
 
 /*
  * Base structure
  */
 
 body {
-  text-shadow: 0 .05rem .1rem rgba(36, 8, 127, 0.5);
+  text-shadow: 0 .05rem .2rem rgba(36, 8, 127, 0.5);
   color:white;
   font-family: 'Roboto' , 'sans-serif';
 }
 
-.landing-page{
-  background:#0081FF;
-  box-shadow: inset 0 0 5rem rgba(9, 18, 56, 0.5);
+.generic-bakground-color{
+  background:#f8f9fb;
+  box-shadow: inset 0 0 1rem rgba(163, 197, 244, 0.988);
 }
 
 
+.landing-page{
+  background:#0081FF;
+  box-shadow: inset 0 0 14rem rgba(9, 18, 56, 0.5);
+  height:100vh !important;
+}
+
+
+h2{
+  font-size:40px;
+  text-decoration:#0081FF
+}
+
 .cover-container {
   max-width: auto;
+}
+
+.section-spacing{
+  padding:2rem;
 }
 
 
@@ -88,16 +107,89 @@ body {
 }
 
 .bold-text { 
-  font-weight: 600;
-}
-
-.card-img-top.rounded-circle {
-  border-radius: 50%;
+  font-weight: 400;
 }
 
 .landing-btn { 
-  margin-right:30px;
+  border: 2px solid transparent !important;
+  transition: border 0.5s ease !important;
+  margin: 10px;
 }
+
+.landing-btn:hover { 
+  border-color: black !important;
+}
+
+.black-font-color{
+  color:black;
+}
+
+.custom-card::before {
+  content: "";
+  background: rgba(214, 220, 227, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 1rem;
+}
+
+.custom-card {
+  background-image: url('https://res.cloudinary.com/drdelhvyt/image/upload/v1697638409/sever-3100049_1280_vvfx3c.jpg'); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-card-image-overlay { 
+  background: rgba(214, 220, 227, 0.1); 
+  top: 0;
+  left: 0;
+  width: calc(100% + 1rem);
+  height: calc(100% + 1rem);
+  position: absolute;
+  z-index:1;
+  border-radius: 1rem;
+  border-width:10px;
+}
+
+
+.card-content-wrapper {
+  position: relative;
+  z-index: 2; 
+}
+
+
+.card { 
+  border-radius: 1rem;
+  border: 2px solid transparent !important;
+  transition: border 0.5s ease !important;
+}
+
+.card:hover {
+  border-color:blue !important; 
+}
+
+.card-title {
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.fields-btns {
+  margin-top: 1rem;
+  margin-bottom:2rem;
+  background-color: rgba(197, 212, 233, 0.4);
+  display: block;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  color:white;
+}
+
+
 /* Media for landing Page */
 
 @media (min-width: 768px) {
