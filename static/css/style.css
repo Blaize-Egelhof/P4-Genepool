@@ -25,10 +25,10 @@ body {
   font-family: 'Roboto' , 'sans-serif';
 }
 
-.generic-bakground-color{
+/* .generic-bakground-color{
   background:#f8f9fb;
   box-shadow: inset 0 0 1rem rgba(163, 197, 244, 0.988);
-}
+} */
 
 
 .landing-page{
@@ -56,6 +56,16 @@ h2{
   border:1px , black;
 }
 
+.create-some-space{
+  padding-top:2rem;
+  padding-bottom:2rem;
+}
+
+.genepool-custom-background{
+  background: url(https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1697635373/background_p0jlat.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /*
  * Header
@@ -182,6 +192,7 @@ h2{
   color: black;
   font-size: 2rem;
   text-align: center;
+  text-shadow:none;
 }
 
 .fields-btns {
@@ -195,6 +206,9 @@ h2{
   margin-right: auto;
 }
 
+
+
+/* Need help in a hurry section */
 
 /* Media for landing Page */
 
