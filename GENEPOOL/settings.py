@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url # the ability to represent their database settings via a string
+from django.contrib import messages
 
 if os.path.isfile('env.py'):
     import env 
@@ -43,6 +44,15 @@ ALLOWED_HOSTS = [localhost, publichost]
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 # Application definition
 

@@ -41,6 +41,11 @@ body {
 }
 
 
+.alert-text{
+  color:black;
+  text-align:center;
+}
+
 h2{
   font-size:40px;
   text-decoration:#0081FF; 
@@ -113,7 +118,8 @@ h2{
 }
 
 .test{
-  color:red;
+  color:black;
+  background:red;
 }
 
 .center-my-text{

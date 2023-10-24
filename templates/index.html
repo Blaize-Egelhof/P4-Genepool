@@ -2,6 +2,7 @@
 
 {% load static %}
 
+
 {% block content %}
 
 <!--CSS for quotes form-->
@@ -103,17 +104,30 @@
 
 </contact-us-section>
 
-<quote-form-section>
+<quote-form-section id="quote-form-section">
 
     <div class="container-contact100">
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                            {{ message | safe }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <form class="contact100-form validate-form" method="POST">
+                {% csrf_token %}
                 <span class="contact100-form-title">
                     Request A Quote
                 </span>
                 <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
                     <span class="label-input100">FULL NAME/COMPANY NAME *</span>
-                    <input class="input100" type="text" name="name" placeholder="Enter Your Name/Company Name">
+                    <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
                 </div>
                 <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
                     <span class="label-input100">Email *</span>
@@ -127,46 +141,12 @@
                     <span class="label-input100">Needed Services *</span>
                     <div>
                         <select class="js-select2" name="service">
-                            <option>Please chooses</option>
-                            <option>eCommerce Bussiness</option>
-                            <option>UI/UX Design</option>
-                            <option>Online Services</option>
+                            <option value="support">Support</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="software">Software</option>
+                            <option value="microsoft">Microsoft</option>
+                            <option value="power_solutions">Power Solutions</option>
                         </select>
-                        <div class="dropDownSelect2"></div>
-                    </div>
-                </div>
-                <div class="w-full dis-none js-show-service">
-                    <div class="wrap-contact100-form-radio">
-                        <span class="label-input100">What type of products do you sell?</span>
-                        <div class="contact100-form-radio m-t-15">
-                            <input class="input-radio100" id="radio1" type="radio" name="type-product" value="physical" checked="checked">
-                            <label class="label-radio100" for="radio1">
-                                Phycical Products
-                            </label>
-                        </div>
-                        <div class="contact100-form-radio">
-                            <input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
-                            <label class="label-radio100" for="radio2">
-                                Digital Products
-                            </label>
-                        </div>
-                        <div class="contact100-form-radio">
-                            <input class="input-radio100" id="radio3" type="radio" name="type-product" value="service">
-                            <label class="label-radio100" for="radio3">
-                                Services Consulting
-                            </label>
-                        </div>
-                    </div>
-                    <div class="wrap-contact100-form-range">
-                        <span class="label-input100">Budget *</span>
-                        <div class="contact100-form-range-value">
-                            $<span id="value-lower">610</span> - $<span id="value-upper">980</span>
-                            <input type="text" name="from-value">
-                            <input type="text" name="to-value">
-                        </div>
-                        <div class="contact100-form-range-bar">
-                            <div id="filter-bar"></div>
-                        </div>
                     </div>
                 </div>
                 <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
@@ -186,4 +166,28 @@
     </div>            
 
 </quote-form-section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var formSection = document.getElementById("quote-form-section");
+
+        if (formSection) {
+            window.location.href = "#quote-form-section";
+        }
+
+        function closeAlert() {
+            let messages = document.getElementById("msg");
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }
+
+        setTimeout(closeAlert, 3000);
+    });
+</script>
+
 {% endblock content %}
+
+
+
