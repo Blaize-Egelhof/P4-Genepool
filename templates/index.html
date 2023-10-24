@@ -168,14 +168,15 @@
 </quote-form-section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    function scrollToQuoteForm() {
         var formSection = document.getElementById("quote-form-section");
-
         if (formSection) {
             window.location.href = "#quote-form-section";
         }
+    }
 
         function closeAlert() {
+            scrollToQuoteForm();
             let messages = document.getElementById("msg");
             if (messages) {
                 let alert = new bootstrap.Alert(messages);
@@ -184,7 +185,7 @@
         }
 
         setTimeout(closeAlert, 3000);
-    });
+    ;
 </script>
 
 {% endblock content %}
