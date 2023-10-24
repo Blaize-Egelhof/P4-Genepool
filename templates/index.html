@@ -104,6 +104,8 @@
 
 </contact-us-section>
 
+<div class="create-some-space"></div>
+
 <quote-form-section id="quote-form-section">
 
     <div class="container-contact100">
@@ -176,9 +178,9 @@
     }
 
         function closeAlert() {
-            scrollToQuoteForm();
             let messages = document.getElementById("msg");
             if (messages) {
+                scrollToQuoteForm();
                 let alert = new bootstrap.Alert(messages);
                 alert.close();
             }
