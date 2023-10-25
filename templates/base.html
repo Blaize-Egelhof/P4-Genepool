@@ -20,8 +20,8 @@
             <div>
                 <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Image">
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link fw-bold py-1 px-0 active"aria-label ="" aria-current="page" href="#">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0" aria-label ="" href="#">Products/Services</a>
+                    <a class="nav-link fw-bold py-1 px-0 "aria-label ="" aria-current="page" href="{% url 'home-page' %}">Home</a>
+                    <a class="nav-link fw-bold py-1 px-0 " aria-label ="products and services" href="{% url 'products_and_services' %}">Products/Services</a>
                     <a class="nav-link fw-bold py-1 px-0" aria-label ="" href="#">Sign Up</a>
                     <a class="nav-link fw-bold py-1 px-0" aria-label ="" href="#">Sign In</a>
                 </nav>
@@ -29,13 +29,8 @@
         </header>
 
         <landingpage class="px-3">
-            <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool Logo">
-            </a>
-            <h1 class="lead">Genepool is a Johburg-based IT Company offering a variety of services from Networking,Hardware,Software all the way down to loadshedding solutions</h1>
-            <p class="lead lead1">
-                <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn">Request a Quote</a>
-                <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn">Get in Contact</a>
-            </p>
+            {% block index-page-exclusive%}
+            {% endblock %}
         </landingpage>
     </div>
     
@@ -48,5 +43,19 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var navLinks = document.querySelectorAll('.nav-link');
+            var currentUrl = window.location.href;
+
+            navLinks.forEach(function(link) {
+                var linkUrl = link.href;
+
+                if (currentUrl === linkUrl) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

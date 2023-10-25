@@ -20,3 +20,8 @@ class Index(View): # This line defines a new class named Index that inherits fro
             print(form.errors)  # This will print form errors to the console
             messages.error(request, 'Error submitting quote request. Please ensure the required fields indicated by * are correctly filled in')
             return redirect('home-page')
+
+
+class Products_And_Services(View):
+    def get(self,request):
+        return render(request, 'products-and-services.html')

@@ -2,6 +2,16 @@
 
 {% load static %}
 
+{% block index-page-exclusive%}
+
+<a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool Logo"></a>
+<h1 class="lead">Genepool is a Johburg-based IT Company offering a variety of services from Networking,Hardware,Software all the way down to loadshedding solutions</h1>
+<p class="lead lead1">
+    <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn">Request a Quote</a>
+    <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn">Get in Contact</a>
+</p>
+{% endblock %}
+
 
 {% block content %}
 
@@ -91,8 +101,7 @@
             <div class="col d-flex align-items-center justify-content-center">
                 <div class="text-center">
                     <h3 class="underline">Need help in a hurry?</h3>
-                    <a href="#" class="btn btn-primary fields-btns">+27 82 382 803</a>
-                    <p class="my-2">OR</p>
+                    <a href="#" class="btn btn-primary fields-btns">+27 082 382 803</a>
                     <a href="#" class="btn btn-primary fields-btns">support@genepool.co.za</a>
                 </div>
             </div>
@@ -153,7 +162,7 @@
                 </div>
                 <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
                     <span class="label-input100">Message</span>
-                    <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+                    <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
                 </div>
                 <div class="container-contact100-form-btn">
                     <button class="contact100-form-btn">

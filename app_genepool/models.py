@@ -12,4 +12,5 @@ class UnauthorisedQuoteRequests(models.Model):
         ('microsoft', 'Microsoft'),  
         ('power_solutions', 'Power Solutions')  
      ]
-     service = models.CharField(max_length=20, choices=SERVICE_CHOICES, blank=True) #
+     request_description = models.CharField(max_length=800 , blank=True)
+     service = models.CharField(max_length=20, choices=SERVICE_CHOICES, blank=True)
