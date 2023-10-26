@@ -145,7 +145,7 @@ h2{
 }
 
 .black-font-color{
-  color:black;
+  color:black !important;
 }
 
 .custom-card::before {
@@ -222,8 +222,8 @@ h2{
 /* Our partnership section */
 
 .partner-img{
-  width:auto;
-  height:5rem;
+  width:100%;
+  height:auto;
 }
 
 .partner-heading{
@@ -234,6 +234,17 @@ h2{
   text-underline-position: under;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
+}
+
+.partner-img-container {
+  border-radius: 50%;
+  width:100px !important;
+  height:100px;
+  object-fit: contain;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  background-color: black;
 }
 
 /* Media for landing Page */
