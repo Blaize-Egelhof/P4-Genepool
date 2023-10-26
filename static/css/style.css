@@ -218,6 +218,24 @@ h2{
 
 /* Need help in a hurry section */
 
+
+/* Our partnership section */
+
+.partner-img{
+  width:auto;
+  height:5rem;
+}
+
+.partner-heading{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40px;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
 /* Media for landing Page */
 
 @media (min-width: 768px) {
