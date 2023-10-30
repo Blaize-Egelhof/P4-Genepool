@@ -22,6 +22,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Index.as_view() , name ='home-page'), # FIND INDEX CLASS AND CONVERT TO A GLORIFED VIEW FUNCTION USING .as_view , name is used for reverse URL lookup, in html doc for example
-    path('products-and-services/', views.Products_And_Services.as_view(), name ='products_and_services')]   
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('products-and-services/', views.Products_And_Services.as_view(), name ='products_and_services') ,
+    path('admin-login/', include('allauth.urls')),]
+
