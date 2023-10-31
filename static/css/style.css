@@ -217,7 +217,30 @@ h2{
   margin-right: auto;
 }
 
+.modal-header{
+  color:black !important;
+}
 
+.modal-content {
+  color:black !important;
+}
+
+.modal-body {
+  color:black !important;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.model-heading-custom { 
+  padding-bottom:20px;
+  padding-top:10px;
+  text-decoration: underline;
+}
+
+.fix-padding{
+  padding-left: 0px;
+}
 
 /* Staff Page CSS */
 
