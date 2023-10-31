@@ -17,18 +17,12 @@
 <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column landing-page">
         <header class="mb-auto">
-            <div>
-                <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Image">
-                <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link fw-bold py-1 px-0 "aria-label ="" aria-current="page" href="{% url 'home-page' %}">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0 " aria-label ="products and services" href="{% url 'products_and_services' %}">Products/Services</a>
-                    <a class="nav-link fw-bold py-1 px-0" aria-label ="administration login" href="{% url 'account_login'%}">Admin Login</a>
-                </nav>
-            </div>
+            {% block header %}
+            {% endblock%}
         </header>
 
         <landingpage class="px-3">
-            {% block index-page-exclusive%}
+            {% block index-page-exclusive %}
             {% endblock %}
         </landingpage>
     </div>

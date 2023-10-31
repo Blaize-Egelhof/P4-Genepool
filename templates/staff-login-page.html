@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div>
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Log Out</a>
+    </nav>
+</div>
+{% endblock %}
+
+{% block index-page-exclusive %}
+
+{% if user.is_authenticated %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col test">
+      <p>Welcome Back {{ user.username }}</p>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% endblock%}
+
+{% block content %}
+
+{% endblock %}

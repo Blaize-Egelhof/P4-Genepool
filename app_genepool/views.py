@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse,redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View # Views is a base class needed to create view based classes 
 from .forms import QuoteRequestForm
 from django.contrib import messages
@@ -25,3 +26,9 @@ class Index(View): # This line defines a new class named Index that inherits fro
 class Products_And_Services(View):
     def get(self,request):
         return render(request, 'products-and-services.html')
+
+class Staff_Page(LoginRequiredMixin,View):
+    def get(self, request):
+        user = request.user 
+        return render(request, 'staff-login-page.html', {'user': user})
+
