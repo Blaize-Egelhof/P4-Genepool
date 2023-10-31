@@ -15,6 +15,10 @@
   margin-bottom: var(--bs-gutter-y);
 }
 
+.full-width{
+  width:100%;
+}
+
 /*
  * Base structure
  */
@@ -37,7 +41,6 @@ body {
 .landing-page{
   background:#0081FF;
   box-shadow: inset 0 0 14rem rgba(9, 18, 56, 0.5);
-  height:100vh !important;
 }
 
 
@@ -216,7 +219,12 @@ h2{
 
 
 
-/* Need help in a hurry section */
+/* Staff Page CSS */
+
+.dropdown{
+  display: flex;
+  justify-content: center
+}
 
 
 /* Our partnership section */

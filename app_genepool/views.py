@@ -3,7 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View # Views is a base class needed to create view based classes 
 from .forms import QuoteRequestForm
 from django.contrib import messages
-
+from django.contrib.auth.models import User
+from .models import UnauthorisedQuoteRequests
 # Create your views here.
 
 class Index(View): # This line defines a new class named Index that inherits from the View class. This means Index is a subclass of the View class, which provides the basic structure for handling HTTP requests
@@ -29,6 +30,8 @@ class Products_And_Services(View):
 
 class Staff_Page(LoginRequiredMixin,View):
     def get(self, request):
-        user = request.user 
-        return render(request, 'staff-login-page.html', {'user': user})
+        user = request.user  # This retrieves the currently logged-in user
+        messages.success(request, 'Succesfully logged in as ')
+        quoteRequests = UnauthorisedQuoteRequests.objects.all()
+        return render(request, 'staff-login-page.html', {'user': user, 'quoteRequests': quoteRequests})
 

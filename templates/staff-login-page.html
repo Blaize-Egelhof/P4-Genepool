@@ -12,11 +12,16 @@
 
 {% if user.is_authenticated %}
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col test">
-      <p>Welcome Back {{ user.username }}</p>
-    </div>
+      <div class="col-md-8 offset-md-2">
+          {% for message in messages %}
+              <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                  {{ message | safe }}{{user.username}}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+          {% endfor %}
+      </div>
   </div>
 </div>
 
@@ -26,4 +31,41 @@
 
 {% block content %}
 
-{% endblock %}
+<div class="create-some-space"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 text-center full-width">
+      <p class="d-inline-flex gap-1">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Quote Requests
+        </button>
+      </p>
+      <div class="collapse black-font-color" id="collapseExample">
+        <div class="container-fluid">
+          <div class="row">
+            {% for quote in quoteRequests %}
+              <div class="col-md-4 col-sm-6"> 
+                <div class="card card-body">
+                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+function closeAlert() {
+  let messages = document.getElementById("msg");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+  }
+  setTimeout(closeAlert, 3000);
+</script>
+
+{% endblock content %}
