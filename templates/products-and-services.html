@@ -2,17 +2,47 @@
 
 {% block header %}
 <div>
-    <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Image">
+    <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Image"></a>
     <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Home</a>
-        <a class="nav-link fw-bold py-1 px-0 " aria-label ="products and services" href="{% url 'products_and_services' %}">Products/Services</a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label ="administration login" href="{% url 'account_login' %}">Admin Login</a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label ="administration login" href="{% url 'account_signup' %}">Sign Up</a>
+        <a class="nav-link fw-bold py-1 px-0 " aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 " aria-label="products and services" href="{% url 'products_and_services' %}">Products/Services</a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="administration login" href="{% url 'account_login' %}">Admin Login</a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="administration login" href="{% url 'account_signup' %}">Sign Up</a>
     </nav>
 </div>
 {% endblock %}
 
 {% block content %}
+<div class="create-some-space"></div>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 test card-title">
+            <h2>Support</h2>
+        </div>
+    </div>
+
+    <div class="create-some-space"></div>
+
+    <div class="row">
+        <div class="col-6 product-text">
+            <div class="col-12 product-text">
+                <p class="test">Genepool is just the best !</p>
+                <p class="test collapse" id="collapseExample">dienfpuisdnvapiur ngpaerv argnrepaubndpb adpi nrpi niub nafdj dfbjs .jb biuea n b;a no;ivn wrapu9 gnerv ner;n vopurn vpurn aorn vpoura neprou nvdru bdri grdn o</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                View More!
+            </button>
+        </div>
+        <div class="col-6 product-img"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('collapseExample').classList.add('collapse');
+        console.log("Script Executed!");
+    });
+</script>
 
 {% endblock content %}

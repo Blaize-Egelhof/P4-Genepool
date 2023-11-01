@@ -278,6 +278,13 @@ h2{
   background-color: black;
 }
 
+/*CSS for products-services */
+
+.product-text{
+  text-align: center;
+  font-family: 'Roboto' , 'sans-serif';
+}
+
 /* Media for landing Page */
 
 @media (min-width: 768px) {
