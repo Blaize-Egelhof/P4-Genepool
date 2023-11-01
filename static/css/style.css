@@ -265,6 +265,7 @@ h2{
   text-underline-position: under;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
+  padding-bottom: 15px;
 }
 
 .partner-img-container {
@@ -283,8 +284,63 @@ h2{
 .product-text{
   text-align: center;
   font-family: 'Roboto' , 'sans-serif';
+  color:black;
+  font-size: 15px;
 }
 
+.product-img{
+  width: 80%;
+  height: auto;
+}
+
+.attention-text { 
+  color:blue;
+  text-shadow: #333;
+}
+
+.product-text-toggle{
+  font-weight: bold;
+  color:#00008B;
+}
+
+.products-background1{
+  background-color: lightgrey;
+  border-style: solid;
+  border-radius: 2.5625rem;
+}
+
+.center-img{
+  align-items: center;
+  display: flex;
+  padding: 0.9375rem;
+}
+
+.contain-img{
+  align-items: center;;
+}
+
+.center-text{
+  display:flow;
+}
+
+.contain-img {
+  max-width: 70%;
+  text-align: center; 
+}
+
+.product-heading{
+  font-size: 40px;
+  padding-top: 3rem;
+}
+
+.product-text-container{
+  width:50%;
+}
+
+.spacing-for-container{
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
 /* Media for landing Page */
 
 @media (min-width: 768px) {
