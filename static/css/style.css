@@ -19,6 +19,10 @@
   width:100%;
 }
 
+.white-text{
+  color:white !important;
+}
+
 /*
  * Base structure
  */
@@ -368,6 +372,17 @@ h2{
 }
 
 /* Media for landing Page */
+
+/* Footer */
+
+.justify-content-end {
+  justify-content: space-evenly !important;
+}
+
+.my-4 {
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
 
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
