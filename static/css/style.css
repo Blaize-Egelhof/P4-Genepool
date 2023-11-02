@@ -78,6 +78,11 @@ h2{
   background-size: cover;
 }
 
+.genepool-left-corner-img{
+  width: 23vh;
+  height: auto;
+}
+
 /*
  * Header
  */
@@ -141,6 +146,7 @@ h2{
   border: 2px solid transparent !important;
   transition: border 0.5s ease !important;
   margin: 10px;
+  border-color:black !important;
 }
 
 .landing-btn:hover { 
@@ -355,6 +361,10 @@ h2{
 
 .product-inner-text{
   align-content: right;
+}
+
+.sticky-nav-bar {
+  align-items: center;
 }
 
 /* Media for landing Page */
