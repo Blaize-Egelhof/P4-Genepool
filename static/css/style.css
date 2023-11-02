@@ -288,9 +288,10 @@ h2{
 /*CSS for products-services */
 
 .product-text{
-  text-align: center;
+  text-align: left;
   font-family: 'Roboto' , 'sans-serif';
   color:black;
+  text-wrap: balance;
   font-size: 15px;
 }
 
@@ -300,8 +301,8 @@ h2{
 }
 
 .attention-text { 
-  color:blue;
-  text-shadow: #333;
+  text-shadow: 0.1px 0.1px darkblue;
+  text-decoration: underline;
 }
 
 .product-text-toggle{
@@ -313,6 +314,7 @@ h2{
   background-color: lightgrey;
   border-style: solid;
   border-radius: 2.5625rem;
+  width: auto;
 }
 
 .center-img{
@@ -326,7 +328,8 @@ h2{
 }
 
 .center-text{
-  display:flow;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contain-img {
@@ -336,17 +339,24 @@ h2{
 
 .product-heading{
   font-size: 40px;
-  padding-top: 3rem;
+  padding-top: 2rem;
+  font-family: Montserrat , sans-serif;
+  font-weight: bolder;
 }
 
 .product-text-container{
-  width:50%;
+  width: 10em;
 }
 
 .spacing-for-container{
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
+
+.product-inner-text{
+  align-content: right;
+}
+
 /* Media for landing Page */
 
 @media (min-width: 768px) {
