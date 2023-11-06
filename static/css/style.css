@@ -126,6 +126,13 @@ h2{
   padding: 40px !important;
 }
 
+/* styling for need help in a hurry section*/
+
+.hurry-header-text{
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
 /* My custom styles for landing Page */
 .lead1 {
   justify-content: center;
@@ -376,6 +383,23 @@ h2{
 }
 
 /* Media for landing Page */
+
+/* CSS for form*/
+
+.image-overlay-form{
+  background: rgba(214, 220, 227, 0.1);
+  top: 0;
+  left: 0;
+  width: calc(100% + 1rem);
+  height: calc(100% + 1rem);
+  z-index: 1;
+  border-radius: 1rem;
+  border-width: 10px;
+}
+
+.important { 
+  color:red
+}
 
 /* Footer */
 

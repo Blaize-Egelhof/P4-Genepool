@@ -159,16 +159,19 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: #e6e6e6
+    background-size:cover;
 }
 
 .wrap-contact100 {
     width: 920px;
-    background: #fff;
+    background:rgb(188 192 199 / 40%);
     border-radius: 10px;
     overflow: hidden;
     padding: 62px 55px 90px;
     font-family: 'Roboto', sans-serif;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
 
 .contact100-form {
@@ -179,7 +182,7 @@ iframe {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .contact100-form-title {
@@ -189,7 +192,8 @@ iframe {
     color: #333;
     line-height: 1.2;
     text-align: center;
-    padding-bottom: 59px
+    padding-bottom: 59px;
+    font-weight: 300;
 }
 
 .wrap-input100 {
@@ -198,7 +202,9 @@ iframe {
     border: 1px solid #e6e6e6;
     border-radius: 13px;
     padding: 10px 30px 9px 22px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    background: white;
+    font-family: roboto,sans-serif;
 }
 
 .rs1-wrap-input100 {
