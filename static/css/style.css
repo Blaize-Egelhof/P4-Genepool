@@ -23,6 +23,10 @@
   color:white !important;
 }
 
+.black-text {
+  color: black !important;
+}
+
 /*
  * Base structure
  */
@@ -309,6 +313,20 @@ h2{
 
 /*CSS for products-services */
 
+.img-fluid {
+  max-width: 50% !important;
+}
+
+.container {
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 20px; 
+}
+
+.border-bottom-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 .product-text{
   text-align: left;
   font-family: 'Roboto' , 'sans-serif';
