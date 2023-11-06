@@ -115,7 +115,11 @@ h2{
 }
 
 .px-3 {
-    text-align: center;
+  text-align: center;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .lead{
