@@ -76,8 +76,8 @@ h2{
 }
 
 .create-some-space{
-  padding-top:2rem;
-  padding-bottom:2rem;
+  padding-top:3rem;
+  padding-bottom:3rem;
 }
 
 .genepool-custom-background{
@@ -312,14 +312,14 @@ h2{
 }
 
 /*CSS for products-services */
+.container-background {
+ background:rgba(175, 175, 175, 0.4);
+ padding: 35px;
+ border-radius: 20px;
+}
 
 .img-fluid {
   max-width: 50% !important;
-}
-
-.container {
-  border-bottom: 1px solid #ccc; 
-  margin-bottom: 20px; 
 }
 
 .border-bottom-center {
