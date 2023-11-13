@@ -44,12 +44,13 @@
         <div class="container-fluid">
           <div class="row">
             {% for quote in quoteRequests %}
-              <div class="col-md-4 col-sm-6"> 
-                <!-- Include card-heading etc to the body for better UI -->
-                <div class="card card-body">
-                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                </div>
+            <div class="col-md-4 col-sm-6"> 
+              <div class="card card-body">
+                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
               </div>
+              <a class="card-link" onclick="openEditModal('{{ quote.id }}')">Edit</a>
+              <a href="#" class="card-link">Delete</a>
+            </div>
             {% endfor %}
           </div>
         </div>
@@ -58,7 +59,29 @@
   </div>
 </div>
 
-
+<edit-quote-request-model>
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="editQuoteModel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+      
+          <div class="modal-header">
+          <h5 class="modal-title" id="editQuoteModel">Edit Clients Request Status</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="edit-form" method="POST" action="{% url 'staff-page' %}">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <input type="submit" class="btn btn-primary" value="Save Changes">
+            </form>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+      </div>
+  </div>
+</edit-quote-request-model>
 
 <script>
 function closeAlert() {
@@ -67,6 +90,25 @@ function closeAlert() {
       alert.close();
   }
   setTimeout(closeAlert, 3000);
+
+  function openEditModal(quoteId, quoteRequests) {
+
+    var selectedQuote = quoteRequests.find(function(quote){
+      return quote.id == quoteId;
+    })
+
+    if (selectedQuote){
+      $('#id_full_nameORcompany_name').val(selectedQuote.full_nameORcompany_name);
+      $('#id_email').val(selectedQuote.email);
+      $('#id_phone').val(selectedQuote.phone);
+      $('#id_service').val(selectedQuote.service);
+      $('#id_request_description').val(selectedQuote.request_description);
+      $('#id_status').val(selectedQuote.status);
+      $('#myModal').modal('show');
+    } else {
+      console.log("error pulling data from back-end")
+    }
+}
 </script>
 
 {% endblock content %}

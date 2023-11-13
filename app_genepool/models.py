@@ -14,3 +14,4 @@ class UnauthorisedQuoteRequests(models.Model):
      ]
      request_description = models.CharField(max_length=800 , blank=True)
      service = models.CharField(max_length=20, choices=SERVICE_CHOICES, blank=True)
+     status = models.CharField(max_length=20, default="Open", blank=True)
