@@ -45,13 +45,20 @@
           <div class="row">
             {% for quote in quoteRequests %}
             <div class="col-md-4 col-sm-6"> 
-              <div class="card card-body">
-                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              <div class="card">
+                <div class="card-header">
+                  <h3>{{ quote.full_nameORcompany_name }}</h3>
+                </div>
+                <div class="card-body">
+                  <p>{{ quote.request_description }}</p>
+                </div>
+                <div class="card-footer">
+                  <a href="{% url 'edit-quote-request' quote.id %}" class="card-link">Edit</a>
+                  <a href="#" class="card-link">Delete</a>
+                </div>
               </div>
-              <a class="card-link" onclick="openEditModal('{{ quote.id }}')">Edit</a>
-              <a href="#" class="card-link">Delete</a>
             </div>
-            {% endfor %}
+            {% endfor %}            
           </div>
         </div>
       </div>
@@ -84,31 +91,41 @@
 </edit-quote-request-model>
 
 <script>
-function closeAlert() {
-  let messages = document.getElementById("msg");
-      let alert = new bootstrap.Alert(messages);
-      alert.close();
+
+  function closeAlert() {
+    let messages = document.getElementById("msg");
+    let alert = new bootstrap.Alert(messages);
+    alert.close();
   }
   setTimeout(closeAlert, 3000);
 
-  function openEditModal(quoteId, quoteRequests) {
+  function openEditModal(quoteId, json_quoteRequests) {
+  var quoteRequests = JSON.parse(json_quoteRequests);
 
-    var selectedQuote = quoteRequests.find(function(quote){
-      return quote.id == quoteId;
-    })
+  // Check if quoteRequests is an array
+  if (!Array.isArray(quoteRequests)) {
+    console.log("quoteRequests is not an array");
+    return;
+  }
 
-    if (selectedQuote){
-      $('#id_full_nameORcompany_name').val(selectedQuote.full_nameORcompany_name);
-      $('#id_email').val(selectedQuote.email);
-      $('#id_phone').val(selectedQuote.phone);
-      $('#id_service').val(selectedQuote.service);
-      $('#id_request_description').val(selectedQuote.request_description);
-      $('#id_status').val(selectedQuote.status);
-      $('#myModal').modal('show');
-    } else {
-      console.log("error pulling data from back-end")
-    }
-}
+  var selectedQuote = quoteRequests.find(function (quote) {
+    return quote.id == quoteId;
+  });
+
+  if (selectedQuote) {
+    console.log("Selected Quote:", selectedQuote);
+
+    $('#id_full_nameORcompany_name').val(selectedQuote.full_nameORcompany_name);
+    $('#id_email').val(selectedQuote.email);
+    $('#id_phone').val(selectedQuote.phone);
+    $('#id_service').val(selectedQuote.service);
+    $('#id_request_description').val(selectedQuote.request_description);
+    $('#id_status').val(selectedQuote.status);
+    $('#myModal').modal('show');
+  } else {
+    console.log("error pulling data from back-end");
+  }
+  }
 </script>
 
 {% endblock content %}

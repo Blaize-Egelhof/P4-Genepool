@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 class UnauthorisedQuoteRequests(models.Model):
      full_nameORcompany_name = models.CharField(max_length=100 , blank=False)
@@ -12,6 +12,11 @@ class UnauthorisedQuoteRequests(models.Model):
         ('microsoft', 'Microsoft'),  
         ('power_solutions', 'Power Solutions')  
      ]
+     STATUS_CHOICES = [ 
+        ('Ongoing', 'Open'),
+        ('Completed', 'Closed'),
+     ]
      request_description = models.CharField(max_length=800 , blank=True)
      service = models.CharField(max_length=20, choices=SERVICE_CHOICES, blank=True)
-     status = models.CharField(max_length=20, default="Open", blank=True)
+     status = models.CharField(max_length=20, choices =STATUS_CHOICES , default="Ongoing", blank=True)
+     time_requested = models.DateTimeField(default=timezone.now)

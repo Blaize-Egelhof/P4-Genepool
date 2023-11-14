@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse,redirect
+from django.shortcuts import render, HttpResponse,redirect , get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views import View # Views is a base class needed to create view based classes 
 from .forms import QuoteRequestForm
 from django.contrib import messages
@@ -35,37 +36,40 @@ class Staff_Page(LoginRequiredMixin,View):
         quoteRequests = UnauthorisedQuoteRequests.objects.all()
         return render(request, 'staff-login-page.html', {'user': user, 'quoteRequests': quoteRequests})
 
-    def post(self, request):
-        # 1. Instantiate the QuoteRequestForm with the POST data
-        form = QuoteRequestForm(request.POST)
+@login_required(login_url='login')
+def edit_quote_request(request, quote_id):
+    quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+    form = QuoteRequestForm(instance=quote)
+    return render(request, 'edit_quote_request.html', {'quote_id': quote_id, 'form': form})
 
-        # 2. Check if the form is valid
-        if form.is_valid():
-            # 3. Retrieve the quote_id from the form data (replace 'quote_id' with your actual field name)
-            quote_id = request.POST.get('quote_id')
+    # def post(self, request):
+    #     # 1. Instantiate the QuoteRequestForm with the POST data
+    #     form = QuoteRequestForm(request.POST)
 
-            # 4. Get the existing UnauthorisedQuoteRequests instance based on the quote_id
-            quote = UnauthorisedQuoteRequests.objects.get(pk=quote_id)
+    #     # 2. Check if the form is valid
+    #     if form.is_valid():
+    #         # 3. Retrieve the quote_id from the form data (replace 'quote_id' with your actual field name)
+    #         quote_id = request.POST.get('quote_id')
 
-            # 5. Bind the form to the existing instance for updating
-            form = QuoteRequestForm(request.POST, instance=quote)
+    #         # 4. Get the existing UnauthorisedQuoteRequests instance based on the quote_id
+    #         quote = UnauthorisedQuoteRequests.objects.get(pk=quote_id)
 
-            # 6. Check if the updated form is valid
-            if form.is_valid():
-                # 7. Save the updated form data to the database
-                form.save()
+    #         # 5. Bind the form to the existing instance for updating
+    #         form = QuoteRequestForm(request.POST, instance=quote)
 
-                # 8. Display a success message
-                messages.success(request, 'Quote request updated successfully!')
-            else:
-                # 9. Display an error message if the form is not valid
-                messages.error(request, 'Error updating quote request. Please check the form data.')
-        else:
-            # 10. Display an error message if the initial form is not valid
-            messages.error(request, 'Error submitting quote request. Please ensure the required fields are correctly filled in.')
+    #         # 6. Check if the updated form is valid
+    #         if form.is_valid():
+    #             # 7. Save the updated form data to the database
+    #             form.save()
 
-        # 11. Redirect to the staff page after processing the form
-        quoteRequests = list(UnauthorisedQuoteRequests.objects.all())
-        return render(request, 'staff-login-page.html', {'user': user, 'quoteRequests': quoteRequests})
-        
+    #             # 8. Display a success message
+    #             messages.success(request, 'Quote request updated successfully!')
+    #         else:
+    #             # 9. Display an error message if the form is not valid
+    #             messages.error(request, 'Error updating quote request. Please check the form data.')
+    #     else:
+    #         # 10. Display an error message if the initial form is not valid
+    #         messages.error(request, 'Error submitting quote request. Please ensure the required fields are correctly filled in.')
 
+    #     # 11. Redirect to the staff page after processing the form
+    #     return render(request, 'staff-login-page.html', {'user': user, 'quoteRequests': quoteRequests})
