@@ -25,5 +25,5 @@ urlpatterns = [
     path('products-and-services/', views.ProductsAndServices.as_view(), name ='products_and_services') ,
     path('accounts/', include('allauth.urls')),
     path('staff-login-page/', views.StaffPage.as_view(), name='staff-page'),
-    path('edit-quote-request/<int:quote_id>/', views.EditQuoteRequest, name='edit-quote-request'),
+    path('edit-quote-request/<int:quote_id>/', views.EditQuoteRequest.as_view(), name='edit-quote-request'),
 ]

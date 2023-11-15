@@ -17,7 +17,6 @@ class Index(View):
             messages.success(request, 'Quote request submitted successfully!')
             return redirect('home-page')
         else:
-            print(form.errors)
             messages.error(request, 'Error submitting quote request. Please ensure the required fields indicated by * are correctly filled in')
             return redirect('home-page')
 
@@ -30,6 +29,7 @@ class StaffPage(LoginRequiredMixin, View):
         user = request.user
         messages.success(request, 'Succesfully logged in as ')
         quote_requests = UnauthorisedQuoteRequests.objects.all()
+        print(request.session.get('messages'))
         return render(request, 'staff-login-page.html', {'user': user, 'quote_requests': quote_requests})
 
 class EditQuoteRequest(LoginRequiredMixin, View):
@@ -40,6 +40,7 @@ class EditQuoteRequest(LoginRequiredMixin, View):
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
         form = QuoteRequestForm(instance=quote)
         return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
+    
 
     def post(self, request, quote_id, *args, **kwargs):
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
