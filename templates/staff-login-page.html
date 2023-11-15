@@ -43,7 +43,7 @@
       <div class="collapse black-font-color" id="collapseExample">
         <div class="container-fluid">
           <div class="row">
-            {% for quote in quoteRequests %}
+            {% for quote in quote_requests %}
             <div class="col-md-4 col-sm-6"> 
               <div class="card">
                 <div class="card-header">
@@ -98,34 +98,6 @@
     alert.close();
   }
   setTimeout(closeAlert, 3000);
-
-  function openEditModal(quoteId, json_quoteRequests) {
-  var quoteRequests = JSON.parse(json_quoteRequests);
-
-  // Check if quoteRequests is an array
-  if (!Array.isArray(quoteRequests)) {
-    console.log("quoteRequests is not an array");
-    return;
-  }
-
-  var selectedQuote = quoteRequests.find(function (quote) {
-    return quote.id == quoteId;
-  });
-
-  if (selectedQuote) {
-    console.log("Selected Quote:", selectedQuote);
-
-    $('#id_full_nameORcompany_name').val(selectedQuote.full_nameORcompany_name);
-    $('#id_email').val(selectedQuote.email);
-    $('#id_phone').val(selectedQuote.phone);
-    $('#id_service').val(selectedQuote.service);
-    $('#id_request_description').val(selectedQuote.request_description);
-    $('#id_status').val(selectedQuote.status);
-    $('#myModal').modal('show');
-  } else {
-    console.log("error pulling data from back-end");
-  }
-  }
 </script>
 
 {% endblock content %}
