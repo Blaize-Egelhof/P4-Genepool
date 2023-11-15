@@ -18,6 +18,7 @@ from django.urls import path, include
 from app_genepool import views
 from django.conf import settings
 from django.conf.urls.static import static
+from allauth.account.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),

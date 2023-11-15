@@ -3,7 +3,8 @@
 {% block header %}
 <div>
     <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Log Out</a>
+        <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
     </nav>
 </div>
 {% endblock %}
@@ -13,12 +14,8 @@
 <div class="container">
   <div class="row">
       <div class="col-md-8 offset-md-2">
-          {% for message in messages %}
-              <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg1" role="alert">
-                  {{ message | safe }}
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-          {% endfor %}
+        {%block message%}
+        {% endblock %}
       </div>
   </div>
 </div>
@@ -89,15 +86,14 @@
 <script>
 
 function closeAlert() {
-    let messages = document.getElementById("msg1");
-    console.log("executed!");
-    
-    if (messages) {
-        let alert = new bootstrap.Alert(messages);
-        console.log(messages[0])
-        alert.close();
-    }
-}
+            let messages = document.getElementById("msg");
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }
+
+        setTimeout(closeAlert, 3000);
 </script>
 
 {% endblock content %}

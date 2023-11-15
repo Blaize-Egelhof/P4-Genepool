@@ -21,8 +21,20 @@
             {% block header %}
             {% endblock%}
         </header>
-
         <landingpage class="px-3">
+            {% for message in messages %}
+            {% if message.tags == 'success' and 'Succesfully logged in as ' in message.message %}
+            <div class="alert alert-success alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }} {{user.username}} 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% else %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            {% endfor %}
             {% block landing-page-exclusive %}
             {% endblock %}
         </landingpage>

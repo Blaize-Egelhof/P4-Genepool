@@ -198,18 +198,6 @@
     <quote-form-section id="quote-form-section">
         <div class="container-contact100 image-overlay-form">
             <div class="wrap-contact100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                            {% for message in messages %}
-                                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                                    {{ message | safe }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
                 <form class="contact100-form validate-form" method="POST" id="quote-form">
                     {% csrf_token %}
                     <span class="contact100-form-title">Request A Quote</span>
@@ -321,23 +309,23 @@
         </div>
     </contact-form-model>
     <script>
-        function scrollToQuoteForm() {
-            var formSection = document.getElementById("quote-form-section");
-            if (formSection) {
-                window.location.href = "#quote-form-section";
-            }
-        }
+        // function scrollToQuoteForm() {
+        //     var formSection = document.getElementById("quote-form-section");
+        //     if (formSection) {
+        //         window.location.href = "#quote-form-section";
+        //     }
+        // }
 
         function closeAlert() {
             let messages = document.getElementById("msg");
             if (messages) {
-                scrollToQuoteForm();
+                // scrollToQuoteForm();
                 let alert = new bootstrap.Alert(messages);
                 alert.close();
             }
         }
 
-        setTimeout(closeAlert, 3000);
+        setTimeout(closeAlert, 4000);
     </script>
 {% endblock content %}
 

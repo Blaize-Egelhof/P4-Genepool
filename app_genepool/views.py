@@ -27,7 +27,6 @@ class ProductsAndServices(View):
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
-        messages.success(request, 'Succesfully logged in as ')
         quote_requests = UnauthorisedQuoteRequests.objects.all()
         print(request.session.get('messages'))
         return render(request, 'staff-login-page.html', {'user': user, 'quote_requests': quote_requests})
