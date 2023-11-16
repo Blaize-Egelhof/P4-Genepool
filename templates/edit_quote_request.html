@@ -8,8 +8,17 @@
 {% block content%}
 <form method="POST" action="{% url 'edit-quote-request' quote_id %}">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save Changes">
+    <div class="my-own-container display-full-height">
+        <div class="row form-styling-generic">
+            {{ form.as_p }}
+        </div>
+        <div class="center-align-buttons center-aligned-button-styling">
+            <input type="submit" value="Save Changes">
+            <a href="{% url 'staff-page' %}">
+                <input type="button" value="Go Back">
+            </a>
+        </div>
+    </div>
 </form>
 {% endblock %}
 

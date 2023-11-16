@@ -492,6 +492,50 @@ img {
 
 /*end of styling for reviews*/
 
+/* Edit Fields on Forms GENERIC*/
+
+.display-full-height {
+  height: 35rem;
+  width: 50rem;
+  margin: auto;
+  padding-top: 4rem;
+}
+
+.form-styling-generic p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10px; 
+}
+
+.form-styling-generic label {
+  margin-right: 1rem; 
+  color: black;
+}
+
+.form-styling-generic input,
+.form-styling-generic select,
+.form-styling-generic textarea {
+  flex: 1;
+  width: 100%; 
+}
+
+.center-align-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.center-align-buttons input {
+  margin-bottom: 1rem;
+}
+
+.center-aligned-button-styling {
+  font-weight: 300;
+}
 /* Footer */
 
 .justify-content-end {
