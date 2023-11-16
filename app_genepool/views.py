@@ -43,6 +43,17 @@ class EditQuoteRequest(LoginRequiredMixin, View):
     
 
     def post(self, request, quote_id, *args, **kwargs):
+        # Handle the main form submission
+        if 'save_changes' in request.POST:
+            return self.handle_save_changes(request, quote_id)
+        elif 'delete_quote' in request.POST:
+            return self.handle_delete_quote(request, quote_id)
+        elif 'delete_this_quote' in request.POST:
+            return self.handle_delete_quote(request, quote_id)
+        else:
+            pass            
+
+    def handle_save_changes(self, request, quote_id):
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
         form = QuoteRequestForm(request.POST, instance=quote)
 
@@ -51,5 +62,18 @@ class EditQuoteRequest(LoginRequiredMixin, View):
             messages.success(request, f'Quote Num:{quote.id} has been updated successfully!')
             return redirect('staff-page')
         else:
-            messages.error(request, f'Error updating {quote.id} Please check the form data.')
+            messages.error(request, f'Error updating {quote.id}. Please check the form data.')
             return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
+
+    def handle_delete_quote(self, request, quote_id):
+        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+        messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
+        quote.delete()
+        return redirect('staff-page')
+    
+class DeleteQuoteRequest(LoginRequiredMixin, View):
+    def post(self, request, quote_id):
+        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+        messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
+        quote.delete()
+        return redirect('staff-page')

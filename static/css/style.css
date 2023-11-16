@@ -95,6 +95,18 @@ h2{
  * Header
  */
 
+ .nb{
+  color:red;
+  font-weight:bold;
+  font-size: 2rem;
+ }
+
+ .nb1{
+  color:white;
+  font-weight:bold;
+  font-size: 2rem;
+ }
+
 .nav-masthead .nav-link {
   color: rgba(228, 227, 233, 0.895);
   border-bottom: .25rem solid transparent;
@@ -523,10 +535,7 @@ img {
 
 .center-align-buttons {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+  justify-content: center;
 }
 
 .center-align-buttons input {

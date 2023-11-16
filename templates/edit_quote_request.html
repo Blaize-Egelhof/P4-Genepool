@@ -20,12 +20,12 @@
             {{ form.as_p }}
         </div>
         <div class="center-align-buttons center-aligned-button-styling">
-            <input type="submit" value="Save Changes">
-            <a href="{% url 'staff-page' %}">
-                <input type="button" value="Go Back">
+            <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
+            <input type="submit" name="delete_quote" class="btn btn-danger" value="Delete">
+            <a href="{% url 'edit-quote-request' quote_id=quote_id %}">
+                <input type="button" value="Go Back" class="btn btn-success">
             </a>
         </div>
     </div>
 </form>
 {% endblock %}
-
