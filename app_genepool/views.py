@@ -38,6 +38,7 @@ class EditQuoteRequest(LoginRequiredMixin, View):
     def get(self, request, quote_id, *args, **kwargs):
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
         form = QuoteRequestForm(instance=quote)
+        messages.success(request, f'Now Working On Quote Number: {quote.id}')
         return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
     
 
@@ -47,8 +48,8 @@ class EditQuoteRequest(LoginRequiredMixin, View):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Quote request updated successfully!')
+            messages.success(request, f'Quote Num:{quote.id} has been updated successfully!')
             return redirect('staff-page')
         else:
-            messages.error(request, 'Error updating quote request. Please check the form data.')
+            messages.error(request, f'Error updating {quote.id} Please check the form data.')
             return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
