@@ -551,15 +551,11 @@ img {
   justify-content: space-evenly !important;
 }
 
-.columb-flex-stack-objects{ 
-  margin-right:2px;
-}
-
 .columb-flex-stack-objects-1{
-  margin-right: -40px;
+  margin-right: -40px !important;
 }
 .right-padding-adjustment{
-  padding-right:0px;
+  padding-right:0px !important;
 }
 
 .my-4 {

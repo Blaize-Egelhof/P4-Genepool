@@ -60,23 +60,35 @@
     </script>
 </body>
 <div class="container-fluid genepool-custom-background">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                <i class="fas fa-code"></i>
             </a>
             <span class="text-muted white-text">&copy; 2023 Genepool Pty Ltd</span>
         </div>
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <div class="columb-flex-stack-objects-1">
-                <li><a class="text-muted" href="https://www.facebook.com/GenepoolIT/" target="_blank"><span class="fab fa-facebook" style="color:#ffffff"></span></a></li>
-                <li><a class="text-muted" href="https://wa.me/0823828035" target="_blank"><span class="fa-brands fa-whatsapp" style="color:#ffffff"> </span> </a></li>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="columb-flex-stack-objects-1 me-4">
+                <a class="text-muted" href="https://www.facebook.com/GenepoolIT/" target="_blank">
+                    <i class="fab fa-facebook" style="color:#ffffff"></i>
+                </a>
+                <a class="text-muted" href="https://wa.me/0823828035" target="_blank">
+                    <i class="fab fa-whatsapp" style="color:#ffffff"></i>
+                </a>
             </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-end">
             <div class="columb-flex-stack-objects">
-                <li><a href="#" ><p class="white-text">Disclaimer</p></a> </li>
-                <li><a href="{% url 'account_login' %}" ><p class="white-text">Staff login</p></a> </li>
+                <a href="#" class="me-3">
+                    <i class="fas fa-exclamation-circle" style="color:#ffffff"></i>
+                    <span class="white-text">Disclaimer</span>
+                </a>
+                <a href="{% url 'account_login' %}">
+                    <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
+                    <span class="white-text">Staff Login</span>
+                </a>
             </div>
-        </ul>
+        </div>
     </footer>
 </div>
 </html>
