@@ -551,6 +551,17 @@ img {
   justify-content: space-evenly !important;
 }
 
+.columb-flex-stack-objects{ 
+  margin-right:2px;
+}
+
+.columb-flex-stack-objects-1{
+  margin-right: -40px;
+}
+.right-padding-adjustment{
+  padding-right:0px;
+}
+
 .my-4 {
   margin-top:0 !important;
   margin-bottom:0 !important;

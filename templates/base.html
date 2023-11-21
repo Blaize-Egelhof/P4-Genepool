@@ -68,9 +68,14 @@
             <span class="text-muted white-text">&copy; 2023 Genepool Pty Ltd</span>
         </div>
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li><a class="text-muted" href="https://www.facebook.com/GenepoolIT/" target="_blank"><span class="fab fa-facebook" style="color:#ffffff"></span></a></li>
-            <li><a class="text-muted" href="https://wa.me/0823828035" target="_blank"><span class="fa-brands fa-whatsapp" style="color:#ffffff"> </span> </a></li>
-            <li><a href="#" ><p class="white-text">Disclaimer</p></a> </li>
+            <div class="columb-flex-stack-objects-1">
+                <li><a class="text-muted" href="https://www.facebook.com/GenepoolIT/" target="_blank"><span class="fab fa-facebook" style="color:#ffffff"></span></a></li>
+                <li><a class="text-muted" href="https://wa.me/0823828035" target="_blank"><span class="fa-brands fa-whatsapp" style="color:#ffffff"> </span> </a></li>
+            </div>
+            <div class="columb-flex-stack-objects">
+                <li><a href="#" ><p class="white-text">Disclaimer</p></a> </li>
+                <li><a href="{% url 'account_login' %}" ><p class="white-text">Staff login</p></a> </li>
+            </div>
         </ul>
     </footer>
 </div>

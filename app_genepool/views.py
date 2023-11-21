@@ -74,6 +74,7 @@ class EditQuoteRequest(LoginRequiredMixin, View):
 class DeleteQuoteRequest(LoginRequiredMixin, View):
     def post(self, request, quote_id):
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
-        messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
-        quote.delete()
-        return redirect('staff-page')
+        if request.method == 'POST':
+            messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
+            quote.delete()
+            return redirect('staff-page')
