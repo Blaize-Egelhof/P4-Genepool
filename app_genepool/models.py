@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+
+
 class UnauthorisedQuoteRequests(models.Model):
      full_nameORcompany_name = models.CharField(max_length=100 , blank=False)
      email = models.EmailField(blank=False)
@@ -20,3 +22,5 @@ class UnauthorisedQuoteRequests(models.Model):
      service = models.CharField(max_length=20, choices=SERVICE_CHOICES, blank=True)
      status = models.CharField(max_length=20, choices =STATUS_CHOICES , default="Ongoing", blank=True)
      time_requested = models.DateTimeField(default=timezone.now)
+
+

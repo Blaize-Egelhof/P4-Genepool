@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.Index.as_view() , name ='home-page'), # FIND INDEX CLASS AND CONVERT TO A GLORIFED VIEW FUNCTION USING .as_view , name is used for reverse URL lookup, in html doc for example
     path('products-and-services/', views.ProductsAndServices.as_view(), name ='products_and_services') ,
     path('accounts/', include('allauth.urls')),
-    path('staff-login-page/', views.StaffPage.as_view(), name='staff-page'),
+    path('staff-page/', views.StaffPage.as_view(), name='staff-page'),
     path('edit-quote-request/<int:quote_id>/', views.EditQuoteRequest.as_view(), name='edit-quote-request'),
     path('delete-quote-request/<int:quote_id>/', views.DeleteQuoteRequest.as_view(), name='delete-quote-request'),
 ]

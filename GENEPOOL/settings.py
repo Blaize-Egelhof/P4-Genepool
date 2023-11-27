@@ -74,7 +74,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL='/staff-login-page/'
+LOGIN_REDIRECT_URL='/staff-page'
 LOGOUT_REDIRECT_URL='/'
 
 MIDDLEWARE = [

@@ -5,6 +5,11 @@ from django.contrib import messages
 from django.views import View
 from .forms import QuoteRequestForm
 from .models import UnauthorisedQuoteRequests
+from django.contrib.auth.models import Group, User
+from django import template
+from django.db.models import Q
+
+register = template.Library()
 
 class Index(View):
     def get(self, request):
@@ -24,12 +29,22 @@ class ProductsAndServices(View):
     def get(self, request):
         return render(request, 'products-and-services.html')
 
+
+
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
         quote_requests = UnauthorisedQuoteRequests.objects.all()
         print(request.session.get('messages'))
-        return render(request, 'staff-login-page.html', {'user': user, 'quote_requests': quote_requests})
+
+        staff_group = user.groups.filter(Q(name='Staff')).exists()
+
+        if staff_group:
+            return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
+        else:
+            # return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
+            messages.info(request, 'You do not have access to this page.')
+            return render(request, 'index.html')
 
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit_quote_request.html'
