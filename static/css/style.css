@@ -449,6 +449,12 @@ h2{
   margin: 0 auto;
 }
 
+/*client-page css*/
+.client-buttons { 
+  margin:1rem;
+
+}
+
 @media (min-width: 768px){
   .hash-list.cols-3 > li:nth-last-child(-n+3) {
       border-bottom: none;

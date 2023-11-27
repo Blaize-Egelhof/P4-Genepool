@@ -41,10 +41,12 @@ class StaffPage(LoginRequiredMixin, View):
 
         if staff_group:
             return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
+            messages.info(request, 'YOUR ARE A STAFF GROUP MEMBER.')
         else:
-            # return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
-            messages.info(request, 'You do not have access to this page.')
-            return render(request, 'index.html')
+            return render(request, 'client-page.html', {'user': user, 'quote_requests': quote_requests})
+            messages.error(request, 'YOUR ARE NOT STAFF GROUP MEMBER.')
+            # messages.info(request, 'You do not have access to this page.')
+            # return render(request, 'index.html')
 
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit_quote_request.html'
