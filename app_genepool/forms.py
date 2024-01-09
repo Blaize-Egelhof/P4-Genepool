@@ -1,5 +1,6 @@
 from django import forms
 from .models import UnauthorisedQuoteRequests
+from django.contrib.auth.forms import AuthenticationForm
 
 class QuoteRequestForm(forms.ModelForm):
     class Meta:

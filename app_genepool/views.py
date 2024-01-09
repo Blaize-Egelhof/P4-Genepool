@@ -35,8 +35,6 @@ class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
         quote_requests = UnauthorisedQuoteRequests.objects.all()
-        print(request.session.get('messages'))
-
         staff_group = user.groups.filter(Q(name='Staff')).exists()
 
         if staff_group:
@@ -44,7 +42,7 @@ class StaffPage(LoginRequiredMixin, View):
             messages.info(request, 'YOUR ARE A STAFF GROUP MEMBER.')
         else:
             return render(request, 'client-page.html', {'user': user, 'quote_requests': quote_requests})
-            messages.error(request, 'YOUR ARE NOT STAFF GROUP MEMBER.')
+            messages.error(request, 'YOUR ARE NOT A STAFF GROUP MEMBER.')
             # messages.info(request, 'You do not have access to this page.')
             # return render(request, 'index.html')
 
@@ -95,3 +93,4 @@ class DeleteQuoteRequest(LoginRequiredMixin, View):
             messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
             quote.delete()
             return redirect('staff-page')
+
