@@ -1,34 +1,45 @@
-{% extends "account/base_entrance.html" %}
-{% load i18n %}
-{% load allauth account socialaccount %}
-{% block head_title %}
-    {% trans "Sign In" %}
-{% endblock head_title %}
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+<div>
+    <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Image"></a>
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+            <i class="fas fa-cogs"></i> Products/Services
+        </a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
+            <i class="fas fa-sign-in-alt"></i> Log a Ticket
+        </a>
+    </nav>
+</div>
+
+{% endblock %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign In" %}
-    {% endelement %}
-    <p>
-        {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-    </p>
-    {% url 'account_login' as login_url %}
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-        {% slot body %}
-            {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" tags="prominent,login" %}
-                {% trans "Sign In" %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <form method="post" action="{{ login_url }}">
+                    {% csrf_token %}
+                    
+                    {{ form.as_p }}
+                    
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    
+                    <button type="submit">
+                        {% trans "Sign In" %}
+                    </button>
+                </form>
+                
+                {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            </div>
+        </div>
+    </div>
 {% endblock content %}

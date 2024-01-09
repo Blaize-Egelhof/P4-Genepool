@@ -31,15 +31,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEV_DEBUG =os.environ.get('DUBUG_')
-
 DEBUG = True
 
 localhost = os.environ.get('ALLOWED_LOCAL_HOST')
 publichost = os.environ.get('ALLOWED_PUBLIC_HOST')
 
 ALLOWED_HOSTS = [localhost, publichost]
-
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
