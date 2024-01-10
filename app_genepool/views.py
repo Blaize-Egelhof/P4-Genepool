@@ -38,13 +38,12 @@ class StaffPage(LoginRequiredMixin, View):
         staff_group = user.groups.filter(Q(name='Staff')).exists()
 
         if staff_group:
+            messages.info(request, 'YOU ARE A STAFF GROUP MEMBER.')  # Moved here
             return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
-            messages.info(request, 'YOUR ARE A STAFF GROUP MEMBER.')
         else:
+            messages.error(request, 'YOU ARE NOT A STAFF GROUP MEMBER.')  # Moved here
             return render(request, 'client-page.html', {'user': user, 'quote_requests': quote_requests})
-            messages.error(request, 'YOUR ARE NOT A STAFF GROUP MEMBER.')
-            # messages.info(request, 'You do not have access to this page.')
-            # return render(request, 'index.html')
+
 
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit_quote_request.html'

@@ -455,6 +455,19 @@ h2{
 
 }
 
+/*
+SIGN-UP / LOGIN PAGE
+*/
+.my-centered-flexbox{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  color:black;
+}
+
+
 @media (min-width: 768px){
   .hash-list.cols-3 > li:nth-last-child(-n+3) {
       border-bottom: none;
