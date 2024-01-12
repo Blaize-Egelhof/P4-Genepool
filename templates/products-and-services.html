@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block header %}
 <div>
     <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img"></a>
     <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 " aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">Home</a>
-        <a class="nav-link fw-bold py-1 px-0 " aria-label="products and services" href="{% url 'products_and_services' %}">Products/Services</a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label="administration login" href="{% url 'account_login' %}">Admin Login</a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+            <i class="fas fa-cogs"></i> Products/Services
+        </a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
+            <i class="fas fa-sign-in-alt"></i> Log a Ticket
+        </a>
     </nav>
 </div>
 
@@ -14,274 +22,104 @@
 
 {% block content %}
 
-<!-- <div id="carouselButtonControls" class="carousel slide sticky-top" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/products-services.css' %}">
+{% endblock extra_css %}
+<div class="create-some-space"></div>
             <div class="container">
-                <div class="row sticky-nav-header">
-                    <div class="col-sm">
-                        <a href="#support" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">Support</a>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title" id="support">SUPPORT</h4>
+                                <p class="card-text">At Genepool, our dedicated and highly skilled support team is committed to providing professional and efficient IT support tailored to your needs. With a proactive approach, we anticipate and address potential challenges before they impact your operations, ensuring a secure and seamless IT environment for your business. Trust Genepool to be your strategic IT partner, delivering excellence in every aspect of technical support.</p>
+                                <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        <a href="#hardware" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">Hardware</a>
+
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-start">Services</h4>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Network Support</li>
+                                        <li>Printing Issues</li>
+                                        <li>Hardware and Software Sales</li>
+                                        <li>General IT related Issues</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        <a href="#software" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">Software</a>
-                    </div>
-                    <div class="col-sm">
-                        <a href="#services" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">Services</a>
-                    </div>
+                    <div class="create-some-space"> <hr></div>
                 </div>
             </div>
-        </div>
-
-        <div class="carousel-item">
             <div class="container">
-                <div class="row sticky-nav-header">
-                    <div class="col-sm">
-                        <a href="#more1" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">More 1</a>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title" id="support">SUPPORT</h4>
+                                <p class="card-text">At Genepool, our dedicated and highly skilled support team is committed to providing professional and efficient IT support tailored to your needs. With a proactive approach, we anticipate and address potential challenges before they impact your operations, ensuring a secure and seamless IT environment for your business. Trust Genepool to be your strategic IT partner, delivering excellence in every aspect of technical support.</p>
+                                <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        <a href="#more2" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">More 2</a>
-                    </div>
-                    <div class="col-sm">
-                        <a href="#more3" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">More 3</a>
-                    </div>
-                    <div class="col-sm">
-                        <a href="#more4" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">More 4</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselButtonControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselButtonControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
-<div class="container my-5">
-    <div class="row container container-background">
-        <div class="col-lg-6">
-            <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" alt="Service Image" class="img-fluid">
-        </div>
-            <div class="col-lg-6">
-                <h2 class="black-text">Support</h2>
-                <p class="black-text">
-                    At Genepool , We swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.
-                </p>
-                <div class="mb-3">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#extraInfo" aria-expanded="false" aria-controls="extraInfo">
-                        Show Extra Information
-                    </button>
-                </div>
-                <div class="collapse" id="extraInfo">
-                    <div class="card card-body black-text">
-                        Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00 ,Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-start">Services</h4>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Network Support</li>
+                                        <li>Printing Issues</li>
+                                        <li>Hardware and Software Sales</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
 
-    <div class="create-some-space"></div>
 
-    <div class="row container container-background">
-        <div class="col-lg-6">
-            <h2 class="black-text">Support</h2>
-            <p class="black-text">
-                At Genepool, we swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.
-            </p>
-            <div class="mb-3">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#extraInfo" aria-expanded="false" aria-controls="extraInfo">
-                    Show Extra Information
-                </button>
-            </div>
-            <div class="collapse" id="extraInfo">
-                <div class="card card-body black-text">
-                    Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00. Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" alt="Service Image" class="img-fluid">
-        </div>
-    </div>
 
-    <div class="create-some-space"></div>
 
-    <div class="row container container-background">
-        <div class="col-lg-6">
-            <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" alt="Service Image" class="img-fluid">
-        </div>
-            <div class="col-lg-6">
-                <h2 class="black-text">Support</h2>
-                <p class="black-text">
-                    At Genepool , We swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.
-                </p>
-                <div class="mb-3">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#extraInfo" aria-expanded="false" aria-controls="extraInfo">
-                        Show Extra Information
-                    </button>
-                </div>
-                <div class="collapse" id="extraInfo">
-                    <div class="card card-body black-text">
-                        Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00 ,Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!
+            <contact-form-model>
+                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Contacts</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h3 class="model-heading-custom">Accounts</h3>
+                            <ul class="fix-padding">
+                                <li>accounts@genepool.co.za</li>
+                                <li>support@genepool.co.za</li>
+                            </ul>
+                            <h3 class="model-heading-custom">Technical Support</h3>
+                            <ul class="fix-padding">
+                                <li>support@genepool.co.za</li>
+                                <li>sales@genepool.co.za</li>
+                                <li>082 382 8035</li>
+                                <a class="text-muted" href="https://wa.me/0823828035" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                     </div>
                 </div>
-            </div>
-    </div>
-
-    <div class="create-some-space"></div>
-
-    <div class="row container container-background">
-        <div class="col-lg-6">
-            <h2 class="black-text">Support</h2>
-            <p class="black-text">
-                At Genepool, we swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.
-            </p>
-            <div class="mb-3">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#extraInfo" aria-expanded="false" aria-controls="extraInfo">
-                    Show Extra Information
-                </button>
-            </div>
-            <div class="collapse" id="extraInfo">
-                <div class="card card-body black-text">
-                    Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00. Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" alt="Service Image" class="img-fluid">
-        </div>
-    </div>
-    
-</div> -->
-
-<div class="container">
-    <div class="card-group vgr-cards">
-      <div class="card">
-        <div class="card-img-body">
-        <img class="card-img" src="https://picsum.photos/500/230" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-            bit longer.</p>
-          <a href="#" class="btn btn-outline-primary">Primary</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img-body">
-          <img class="card-img" src="https://picsum.photos/400/200" alt="Card image cap"></div>
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This card has supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-outline-primary">Primary</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img-body">
-          <img class="card-img" src="https://picsum.photos/450/250" alt="Card image cap"></div>
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.</p>
-          <a href="#" class="btn btn-outline-primary">Primary</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-<!-- <div class="container-fluid spacing-for-container">
-
-    <div class="row products-background1">
-        <div class="col-6 product-text">
-            <div class="col-12">
-                <h4 class="product-heading" id="support">Support</h4>
-            </div>
-            <div class="col-8 center-text">
-                <p >
-                    <div class="col">
-                        <h5><span class="attention-text"><bold>Tailored to your needs.</bold></span></h5>
-                    </div>
-                     <br>
-                     <div class="col product-text">
-                        <p class="product-inner-text">At Genepool , We swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.<br>
-                        <a class="product-text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> more...</a></p>
-                    </div>
-                <p class="product-text collapse" id="collapseExample">Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00 ,Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!</p>
-            </div>
-        </div>
-            <div class="col center-img d-flex justify-content-center">
-                <div class="contain-img">
-                    <img class="product-img" src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" aria-label="Support Stick Man">
-                </div>
-            </div>
-    </div>
-</div>
-
-<div class="container-fluid spacing-for-container">
-
-    <div class="row products-background1">
-        <div class="col-6 product-text">
-            <div class="col-12">
-                <h4 class="product-heading" id="support">Support</h4>
-            </div>
-            <div class="col-8 center-text">
-                <p >
-                    <div class="col">
-                        <h5><span class="attention-text"><bold>Tailored to your needs.</bold></span></h5>
-                    </div>
-                     <br>
-                     <div class="col product-text">
-                        <p class="product-inner-text">At Genepool , We swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.<br>
-                        <a class="product-text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> more...</a></p>
-                    </div>
-                <p class="product-text collapse" id="collapseExample">Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00 ,Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!</p>
-            </div>
-        </div>
-            <div class="col center-img d-flex justify-content-center">
-                <div class="contain-img">
-                    <img class="product-img" src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" aria-label="Support Stick Man">
-                </div>
-            </div>
-    </div>
-</div>
-
-<div class="container-fluid spacing-for-container">
-
-    <div class="row products-background1">
-        <div class="col-6 product-text">
-            <div class="col-12">
-                <h4 class="product-heading" id="support">Support</h4>
-            </div>
-            <div class="col-8 center-text">
-                <p >
-                    <div class="col">
-                        <h5><span class="attention-text"><bold>Tailored to your needs.</bold></span></h5>
-                    </div>
-                     <br>
-                     <div class="col product-text">
-                        <p class="product-inner-text">At Genepool , We swiftly address issues based on severity, prioritizing service outages for uninterrupted business operations. Service-related concerns and inquiries are handled with expertise and care.<br>
-                        <a class="product-text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> more...</a></p>
-                    </div>
-                <p class="product-text collapse" id="collapseExample">Our dedicated support team is at your service via email and telephone, every Monday through Friday, from 08h00 to 17h00 ,Rest assured, support requests submitted outside these hours receive prompt attention and resolution. For added peace of mind, explore our range of scheduled preventative maintenance contracts. With Genepool, your IT solutions are in capable hands, ensuring seamless operations around the clock. Experience the next level of support excellence today!</p>
-            </div>
-        </div>
-            <div class="col center-img d-flex justify-content-center">
-                <div class="contain-img">
-                    <img class="product-img" src="https://res.cloudinary.com/drdelhvyt/image/upload/v1698859394/website-6700615_1920-removebg-preview_ifcg7w.png" aria-label="Support Stick Man">
-                </div>
-            </div>
-    </div>
-</div> -->
-
+            </contact-form-model>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('collapseExample').classList.add('collapse');
