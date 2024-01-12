@@ -10,11 +10,6 @@
     margin-left: 20px;
 }
 
-.card:hover {
-    border: 1px solid transparent !important; 
-    outline: none !important;
-}
-
 hr {
     border: 1px solid #000; 
     margin: 20px 0; 
