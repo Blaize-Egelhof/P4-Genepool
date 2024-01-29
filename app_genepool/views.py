@@ -28,8 +28,16 @@ class Index(View):
 class ProductsAndServices(View):
     def get(self, request):
         return render(request, 'products-and-services.html')
-
-
+    
+    def post(self, request):
+        form = QuoteRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'CallBack Form Request submitted successfully! We will be in contact via provided email or phone number')
+            return redirect('products_and_services')
+        else:
+            messages.error(request, 'Error submitting callback request. Please ensure the required fields indicated by * are correctly filled in')
+            return redirect('products_and_services')
 
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
@@ -38,10 +46,10 @@ class StaffPage(LoginRequiredMixin, View):
         staff_group = user.groups.filter(Q(name='Staff')).exists()
 
         if staff_group:
-            messages.info(request, 'YOU ARE A STAFF GROUP MEMBER.')  # Moved here
+            messages.info(request, 'YOU ARE A STAFF GROUP MEMBER.')  
             return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
         else:
-            messages.error(request, 'YOU ARE NOT A STAFF GROUP MEMBER.')  # Moved here
+            messages.error(request, 'YOU ARE NOT A STAFF GROUP MEMBER.') 
             return render(request, 'client-page.html', {'user': user, 'quote_requests': quote_requests})
 
 
