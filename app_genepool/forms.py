@@ -13,7 +13,7 @@ class QuoteRequestForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'readonly': 'readonly'}),
         }
 
-class QuoteRequestForm(forms.ModelForm):
+class CallBackForm(forms.ModelForm):
     class Meta:
         model = UnauthorisedCallBackRequests
         fields = ['id','full_nameORcompany_name','email','phone','service','request_description','status']

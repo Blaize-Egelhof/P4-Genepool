@@ -44,6 +44,7 @@
                 </div>
                 <div class="card-body">
                   <p>{{ quote.request_description }}</p>
+                  <p>{{ quote.email}}</p>
                 </div>
                 <div class="card-footer">
                   <a href="{% url 'edit-quote-request' quote.id %}" class="card-link">Edit</a>
@@ -83,46 +84,104 @@
   </div>
 </edit-quote-request-model>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 text-center full-width">
+      <p class="d-inline-flex gap-1">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#unauthorisedRequestsCollapse" aria-expanded="false" aria-controls="unauthorisedRequestsCollapse">
+          Callback Requests
+        </button>
+      </p>
+      <div class="collapse black-font-color" id="unauthorisedRequestsCollapse">
+        <div class="container-fluid">
+          <div class="row">
+            {% for callback_requests in callback_requests %}
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3>{{ callback_requests.full_nameORcompany_name }}</h3>
+                </div>
+                <div class="card-body">
+                  <p>{{ callback_requests.request_description }}</p>
+                  <p>{{ callback_requests.email}}</p>
+                </div>
+                <div class="card-footer">
+                  <a href="#" class="card-link">Edit</a>
+                  <a href="#" class="card-link" onclick="deleteCallbackRequest({{ callback_requests.id }})">Delete</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+  function closeAlert() {
+      let messages = document.getElementById("msg");
+      if (messages) {
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }
+  }
 
-function closeAlert() {
-            let messages = document.getElementById("msg");
-            if (messages) {
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }
-        }
+  setTimeout(closeAlert, 3000);
 
-        setTimeout(closeAlert, 3000);
+  function deleteQuote(quoteId) {
+      if (confirm('Are you sure you want to delete this quote?')) {
+          var csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
 
-        function deleteQuote(quoteId) {
-        if (confirm('Are you sure you want to delete this quote?')) {
-            var csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+          // Create a form dynamically
+          var form = document.createElement('form');
+          form.method = 'POST';
+          form.action = '/delete-quote-request/' + quoteId + '/';
 
-            // Create a form dynamically
-            var form = document.createElement('form');
-            form.method = 'POST';
-            form.action = '/delete-quote-request/' + quoteId + '/';
+          // Create a hidden input for the CSRF token
+          var csrfInput = document.createElement('input');
+          csrfInput.type = 'hidden';
+          csrfInput.name = 'csrfmiddlewaretoken';
+          csrfInput.value = csrfToken;
 
-            // Create a hidden input for the CSRF token
-            var csrfInput = document.createElement('input');
-            csrfInput.type = 'hidden';
-            csrfInput.name = 'csrfmiddlewaretoken';
-            csrfInput.value = csrfToken;
+          // Append the CSRF input to the form
+          form.appendChild(csrfInput);
 
-            // Append the CSRF input to the form
-            form.appendChild(csrfInput);
+          // Append the form to the body
+          document.body.appendChild(form);
 
-            // Append the form to the body
-            document.body.appendChild(form);
+          // Submit the form
+          form.submit();
+      }
+  }
 
-            // Submit the form
-            form.submit();
-        }
+  function deleteCallbackRequest(callbackRequestId) {
+      if (confirm('Are you sure you want to delete this callback request?')) {
+          var csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
 
-        // achieve a seamless user experience without requiring a separate confirmation page or a visible form on the page.This approach is a workaround to achieve a specific interaction pattern (POST request triggered by a link click with a confirmation step)
-    }
+          // Create a form dynamically
+          var form = document.createElement('form');
+          form.method = 'POST';
+          form.action = '/delete-callback-request/' + callbackRequestId + '/';
 
+          // Create a hidden input for the CSRF token
+          var csrfInput = document.createElement('input');
+          csrfInput.type = 'hidden';
+          csrfInput.name = 'csrfmiddlewaretoken';
+          csrfInput.value = csrfToken;
+
+          // Append the CSRF input to the form
+          form.appendChild(csrfInput);
+
+          // Append the form to the body
+          document.body.appendChild(form);
+
+          // Submit the form
+          form.submit();
+      }
+  }
 </script>
+
 
 {% endblock content %}

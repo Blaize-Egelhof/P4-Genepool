@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
 from .forms import QuoteRequestForm
-from .models import UnauthorisedQuoteRequests
+from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests
 from django.contrib.auth.models import Group, User
 from django import template
 from django.db.models import Q
@@ -43,11 +43,12 @@ class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
         quote_requests = UnauthorisedQuoteRequests.objects.all()
+        callback_requests =UnauthorisedCallBackRequests.objects.all()
         staff_group = user.groups.filter(Q(name='Staff')).exists()
 
         if staff_group:
             messages.info(request, 'YOU ARE A STAFF GROUP MEMBER.')  
-            return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests})
+            return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests ,'callback_requests': callback_requests})
         else:
             messages.error(request, 'YOU ARE NOT A STAFF GROUP MEMBER.') 
             return render(request, 'client-page.html', {'user': user, 'quote_requests': quote_requests})
@@ -92,6 +93,29 @@ class EditQuoteRequest(LoginRequiredMixin, View):
         messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
         quote.delete()
         return redirect('staff-page')
+
+class EditCallBackRequest(LoginRequiredMixin, View):
+    template_name = 'edit_callback_request.html'
+    login_url = reverse_lazy('login')
+
+    def get(self, request, callback_request_id, *args, **kwargs):
+        callbackform = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_requests.id)
+        form = QuoteRequestForm(instance=callbackform)
+        messages.success(request, f'Now Working On Quote Number: {quote.id}')
+        return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
+    
+
+    def post(self, request, quote_id, *args, **kwargs):
+        # Handle the main form submission
+        if 'save_changes' in request.POST:
+            return self.handle_save_changes(request, quote_id)
+        elif 'delete_quote' in request.POST:
+            return self.handle_delete_quote(request, quote_id)
+        elif 'delete_this_quote' in request.POST:
+            return self.handle_delete_quote(request, quote_id)
+        else:
+            pass
+
     
 class DeleteQuoteRequest(LoginRequiredMixin, View):
     def post(self, request, quote_id):
@@ -100,4 +124,13 @@ class DeleteQuoteRequest(LoginRequiredMixin, View):
             messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
             quote.delete()
             return redirect('staff-page')
+
+class DeleteCallBackRequest(LoginRequiredMixin, View):
+    def post(self, request, callback_request_id):
+        callback_request = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        if request.method == 'POST':
+            messages.success(request, f'Callback request with ID: {callback_request.id} has been deleted successfully!')
+            callback_request.delete()
+            return redirect('staff-page')
+
 
