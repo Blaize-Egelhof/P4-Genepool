@@ -5,15 +5,15 @@
 
 <div>
     <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
+        <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
         <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
     </nav>
 </div>
 
 {% endblock %}
 
-{% block content%}
-<form method="POST" action="{% url 'edit-quote-request' quote_id %}">
+{% block content %}
+<form method="POST" action="{% url 'edit-callback-request' callback_request_id %}">
     {% csrf_token %}
     <div class="my-own-container display-full-height">
         <div class="row form-styling-generic">
@@ -21,9 +21,8 @@
         </div>
         <div class="center-align-buttons center-aligned-button-styling">
             <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
-            <a href="{% url 'edit-quote-request' quote_id=quote_id %}">
-                <input type="button" value="Go Back" class="btn btn-success">
-            </a>
+            <!-- Replace the Go Back button with an appropriate URL or remove if not needed -->
+            <a href="{% url 'appropriate-url-for-go-back' %}" class="btn btn-success">Go Back</a>
         </div>
     </div>
 </form>

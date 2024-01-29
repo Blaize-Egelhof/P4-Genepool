@@ -106,7 +106,7 @@
                   <p>{{ callback_requests.email}}</p>
                 </div>
                 <div class="card-footer">
-                  <a href="#" class="card-link">Edit</a>
+                  <a href="{% url 'edit-callback-request' callback_requests.id %}" class="card-link">Edit</a>
                   <a href="#" class="card-link" onclick="deleteCallbackRequest({{ callback_requests.id }})">Delete</a>
                 </div>
               </div>
