@@ -21,12 +21,21 @@
 {% endblock%}
 
 {% block landing-page-exclusive %}
-    <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool Logo"></a>
+    <!-- <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool Logo" class="landing-img"></a>
     <h1 class="lead">Genepool, established in 2000, is a prominent IT solutions provider based in Johannesburg. Our services include Networking, Hardware, Software, and specialized load shedding solutions, all customized to suit the specific needs of businesses and organizations.</h1>
     <p class="lead lead1">
         <a class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
         <a href="#quote-form" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn ">Request a Quote</a>
-    </p>
+    </p> -->
+
+    <div class="landing-content">
+        <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool Logo" class="landing-img"></a>
+        <h1 class="lead">Genepool, established in 2000, is a prominent IT solutions provider based in Johannesburg. Our services include Networking, Hardware, Software, and specialized load shedding solutions, all customized to suit the specific needs of businesses and organizations.</h1>
+        <p class="lead lead1">
+            <a class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+            <a href="#quote-form" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn">Request a Quote</a>
+        </p>
+    </div>
 {% endblock %}
 
 {% block content %}
@@ -36,10 +45,21 @@
     {% endblock extra_css %}
 
     <fields-section>
-        <div class="container-fluid p-3">
+        <!-- <div class="container-fluid p-3 support-section-media-spacing">
             <div class="row justify-content-center">
                 <div class="col-sm-6">
                     <h2 class="bold-text black-font-color center-my-text section-spacing ">HOW CAN WE <strong>SUPPORT YOU?</strong> <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Logo"></h2>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container-fluid p-3">
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <h2 class="bold-text black-font-color center-my-text section-spacing support-section">
+                        HOW CAN WE <strong>SUPPORT YOU?</strong> 
+                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Logo" style="vertical-align: middle;">
+                    </h2>
                 </div>
             </div>
         </div>
@@ -51,7 +71,7 @@
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
                             <h5 class="card-title">SUPPORT</h5>
-                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                            <a href="{% url 'products_and_services' %}#support" class="btn btn-primary fields-btns">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +80,7 @@
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
                             <h5 class="card-title">HARDWARE</h5>
-                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                            <a href="{% url 'products_and_services' %}#hardware" class="btn btn-primary fields-btns">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +89,7 @@
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
                             <h5 class="card-title">SOFTWARE</h5>
-                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                            <a href="{% url 'products_and_services' %}#software" class="btn btn-primary fields-btns">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +100,7 @@
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
                             <h5 class="card-title">NETWORKING</h5>
-                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                            <a href="{% url 'products_and_services' %}#networking" class="btn btn-primary fields-btns">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +109,7 @@
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
                             <h5 class="card-title">MICROSOFT</h5>
-                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                            <a href="{% url 'products_and_services' %}#microsoft" class="btn btn-primary fields-btns">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -98,7 +118,7 @@
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
                             <h5 class="card-title">POWER SOLUTIONS</h5>
-                            <a href="#" class="btn btn-primary fields-btns">Find Out More</a>
+                            <a href="{% url 'products_and_services' %}#power-solutions" class="btn btn-primary fields-btns">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +157,7 @@
             <div id="customerReviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="false">
-                        <div class="row">
+                        <div class="row cols-lg-4 cols-md-3 cols-sm-2">
                             <div class="col">
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-linkedin-sales-navigator-2182970_mqbfvl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of business man" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
@@ -254,11 +274,6 @@
     </quote-form-section>
 
     <partnerships>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col partner-heading bold-text black-font-color center-my-text section-spacing">Our Partnerships</div>
-            </div>
-        </div>
 
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
