@@ -521,6 +521,13 @@ img {
   font-weight: 700 !important;
 }
 
+.review-name { 
+  padding-top:1rem;
+}
+
+.review-name-medium-size-review { 
+  padding-top:2rem;
+}
 /*end of styling for reviews*/
 
 /* Edit Fields on Forms GENERIC*/
