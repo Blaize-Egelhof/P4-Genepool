@@ -168,6 +168,12 @@ h2{
   font-weight: 500;
 }
 
+.contact-us-btns .btn.fields-btns {
+  width: 100% !important;
+  display: block; /* Makes sure each button takes its own line */
+  margin-bottom: 10px; /* Optional: Adds some space between the buttons */
+}
+
 /* My custom styles for landing Page */
 .lead1 {
   justify-content: center;
@@ -451,8 +457,9 @@ h2{
   border-width: 10px;
 }
 
-.important { 
-  color:red
+.container-contact100 {
+  width: 100%;
+  min-height:0vh !important;
 }
 
 /* css for reviews*/
@@ -616,6 +623,10 @@ SIGN-UP / LOGIN PAGE
   .wrap-contact100 {
     padding: 0px 43px 15px !important;
   }
+  .container-contact100 {
+    width: 100%;
+    min-height:0vh !important;
+  }
 
 }
 
@@ -724,6 +735,47 @@ SIGN-UP / LOGIN PAGE
   .partner-img-container{
     height: 35px;
     width: 35px !important;
+  }
+}
+
+@media (max-width:330px){
+  .landing-img {
+    margin-left: 5px;
+  }
+  .nav {
+    font-size: 11px;
+  }
+  .landing-content {
+    margin-left: -5px;
+  }
+  .lead{
+    padding: 28px 18px 28px 20px !important;
+    font-size:14px;
+    gap: 13px ;
+  }
+  .support-section {
+    font-size: 33px !important;
+  }
+  .row>* {
+    margin-bottom: 3px !important;
+  }
+  .hurry-header-text {
+    font-size: 27px !important;
+  }
+  .contact100-form-title {
+    font-size: 39px;
+  }
+  .container-contact100 {
+    width: 100%;
+    min-height:0vh !important;
+  }
+  .wrap-input100 {
+    border: 1px solid rgba(13,110,253,.25) !important;
+    padding: 0px 0px 7px 5px !important;
+    margin-bottom: 20px !important;
+  }
+  .mb-auto {
+    margin-bottom: 1rem !important;
   }
 }
 
