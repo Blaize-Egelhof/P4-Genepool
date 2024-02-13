@@ -2,15 +2,13 @@
 
 Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner headquartered in the bustling city of Johannesburg, South Africa. Established in 2000, Genepool is dedicated to delivering an all-encompassing "batteries included" experience to cater to the unique IT needs of our clients.
 
-<img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG>
+<img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG>"
 
- **Our Commitment:** At Genepool, we take pride in offering a holistic approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking innovative Loadshedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your IT journey. 
+ **Our Commitment:** At Genepool, we take pride in offering a holistic approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking reliable Loadshedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your company!. 
  
  **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform, streamlining the communication process. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
  
- **Staff Empowerment:** What sets Genepool apart is our dedication to empowering our staff. No coding experience is required for team members to modify the website's content and appearance. Through intuitive forms and interfaces, our staff plays a crucial role in shaping the online presence of Genepool, reflecting the dynamic nature of the IT industry. Join us at Genepool as we redefine IT excellence. Discover a world where innovation meets functionality, and let us be your partner in building a future driven by technology.
-
-<h2 ><img src="docs/readme/images/features/anthemology-homepage.png"></h2>
+ **Staff Empowerment:** Our staff Through intuitive forms and interfaces, can manage all incomming callback and quote requests made by our site visitors. Our staff thus plays a crucial role in providing the fastest service possible, Join us at Genepool as we redefine IT excellence ,let us be your partner in building a future driven by technology.
 
 ## __User Experience (UX)__
 
@@ -31,15 +29,14 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
            - As a first-time visitor, I can conveniently view the various partnerships Genepool has formed by exploring the visually appealing carousel feature.
 
         5. **Client Testimonials:**
-           - As a first-time visitor, I can quickly access Google Reviews left by previous clients. This provides valuable insights into the experiences of others and helps me gauge the quality of services offered by Genepool.
+           - As a first-time visitor, I can quickly view Reviews left by previous clients. This provides valuable insights into the experiences of others and helps me gauge the quality of services offered by Genepool.
 
    - #### Returning Visitor Goals
    
 1.  **Efficient Contact:**  - As a returning visitor, I want to quickly reach out to Genepool. Utilizing the "Get in Contact" feature allows me to efficiently access contact details for any follow-up inquiries or additional information. 
 2.  **Streamlined Service Review:**  - As a returning visitor, I aim to easily review the various services offered by Genepool. The straightforward navigation ensures a seamless process to explore and stay informed about the available services. 
 3.   **Staying Updated on Partnerships:**  - As a returning visitor, I'm interested in staying updated on the partnerships Genepool has formed. Leveraging the carousel feature allows me to conveniently view any new collaborations or developments.
- 4.  **Checking for Updates:**  - As a returning visitor, I seek any updates or changes in the website's content and appearance. The dynamic nature of the platform, editable by staff, ensures that I am always informed about the latest developments. 
- 5.  **Reviewing Client Feedback:**  - As a returning visitor, I want to revisit Google Reviews from previous clients to reaffirm the reputation and reliability of Genepool's services. Quick access to client testimonials helps me make informed decisions based on others' experiences.
+4.  **Checking for Updates:**  - As a returning visitor, I seek any updates or changes to the quote requests,callback requests and tickets Ive opened. 
 
 -   ### ***Design***
     

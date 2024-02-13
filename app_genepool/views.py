@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
-from .forms import QuoteRequestForm
-from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests
+from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm
+from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests
 from django.contrib.auth.models import Group, User
 from django import template
 from django.db.models import Q
@@ -42,17 +43,39 @@ class ProductsAndServices(View):
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
-        quote_requests = UnauthorisedQuoteRequests.objects.all()
-        callback_requests =UnauthorisedCallBackRequests.objects.all()
+        authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user)  
+        unauthorised_quote_requests = UnauthorisedQuoteRequests.objects.all()
+        unauthorised_callback_requests = UnauthorisedCallBackRequests.objects.all()
         staff_group = user.groups.filter(Q(name='Staff')).exists()
 
         if staff_group:
             messages.info(request, 'YOU ARE A STAFF GROUP MEMBER.')  
-            return render(request, 'staff-page.html', {'user': user, 'quote_requests': quote_requests ,'callback_requests': callback_requests})
+            return render(request, 'staff-page.html', {
+                'user': user, 
+                'unauthorised_quote_requests': unauthorised_quote_requests,
+                'unauthorised_callback_requests': unauthorised_callback_requests,
+                'authorisedclient_quote_requests': authorisedclient_quote_requests
+            })
         else:
             messages.error(request, 'YOU ARE NOT A STAFF GROUP MEMBER.') 
-            return render(request, 'client-page.html', {'user': user, 'quote_requests': quote_requests})
+            return render(request, 'client-page.html', {
+                'user': user, 
+                'authorisedclient_quote_requests': authorisedclient_quote_requests 
+            })
 
+@login_required
+def submit_authorised_quote_request(request):
+    if request.method == 'POST':
+        form = AuthorisedQuoteRequestForm(request.POST)
+        if form.is_valid():
+            authorised_quote_request = form.save(commit=False)
+            authorised_quote_request.client = request.user  
+            authorised_quote_request.save()
+            messages.success(request, 'Your authorized quote request has been submitted successfully.')
+            return redirect('staff-page') 
+    else:
+        form = AuthorisedQuoteRequestForm()
+    return render(request, 'client-page.html', {'form': form})  
 
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit-quote-request.html'

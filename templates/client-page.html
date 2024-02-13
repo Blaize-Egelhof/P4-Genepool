@@ -106,12 +106,20 @@
 </div> -->
 
 <div class="container-fluid">
+    <div class="row">
+        <div class="col center-my-text black-text">
+            <h2>QUOTE REQUESTS</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
   <div class="row">
       <div class="col-md-6 text-center full-width">
           <!-- Quote Requests Button -->
               <div class="container-fluid">
                   <div class="row">
-                      {% for quote in quote_requests %}
+                      {% for quote in authorisedclient_quote_requests  %}
                       <div class="col-md-4 col-sm-6">
                           <div class="card">
                               <div class="card-header">
@@ -147,12 +155,12 @@
           <div class="collapse black-font-color" id="collapseExample">
               <div class="container-contact100 image-overlay-form">
                   <div class="wrap-contact100">
-                      <form class="contact100-form validate-form" method="POST" id="quote-form">
+                      <form class="contact100-form validate-form" method="POST" id="quote-form " action="{% url 'submit_authorised_quote_request' %}">
                           {% csrf_token %}
                           <span class="contact100-form-title">Request A Quote</span>
                           <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
                               <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
-                              <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
+                              <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name" value="{{ user.username }}" readonly>
                           </div>
                           <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
                               <span class="label-input100">Email <span class="important">*</span></span>

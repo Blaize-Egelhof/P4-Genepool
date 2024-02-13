@@ -1,6 +1,7 @@
 from django import forms
 from .models import UnauthorisedQuoteRequests
 from .models import UnauthorisedCallBackRequests
+from .models import AuthorisedQuoteRequests
 from django.contrib.auth.forms import AuthenticationForm
 
 class QuoteRequestForm(forms.ModelForm):
@@ -24,4 +25,13 @@ class CallBackForm(forms.ModelForm):
             'request_description': forms.TextInput(attrs={'readonly': 'readonly'}),
         }
 
+class AuthorisedQuoteRequestForm(forms.ModelForm):
+    class Meta:
+        model = AuthorisedQuoteRequests
+        fields = ['full_nameORcompany_name', 'email', 'phone', 'service', 'request_description', 'status']
+        widgets = {
+            'email': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'phone': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'status': forms.TextInput(attrs={'readonly': 'readonly'}),
+        }
 
