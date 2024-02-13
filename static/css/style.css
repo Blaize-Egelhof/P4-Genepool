@@ -490,14 +490,11 @@ SIGN-UP / LOGIN PAGE
   color:black;
 }
 
-@media (min-width:947px) {
+@media (max-width:947px) {
   .lead{
     font-size:18px;
     padding:1rem;
     margin-bottom:-1rem;
-  }
-  .landing-content{
-    background-color:red;
   }
   .center-my-text{
     text-align:none;
@@ -514,16 +511,222 @@ SIGN-UP / LOGIN PAGE
 
 }
 
-@media (min-width: 768px){
-  .hash-list.cols-3 > li:nth-last-child(-n+3) {
-      border-bottom: none;
+@media (max-width: 768px){
+
+  .landing-img{
+    margin-left: 26px;
+  }
+
+  .support-section { 
+    font-size:30px;
+  }
+  .support-section-card-header{
+    font-size:20px;
+  }
+  .support-section-card-btn{
+    font-size:15px;
+  }
+  .hurry-header-text{
+    font-size:25px;
+  }
+  .help-btn{
+    font-size:14px;
+  }
+  .help-btn-hurry-section{
+    margin-bottom:0rem;
+  }
+  .partner-heading{
+    font-size:28px;
+  }
+  .font-cond-l{
+    font-size:12px
+  }
+  .review-name{
+    font-size:12px;
+    font-weight: 200;
+  }
+  .contact-us-img img{
+    padding: 2rem !important;
+  }
+  .columb-flex-stack-objects-1 {
+    margin-right: 0; 
+  }
+
+  .justify-content-end, .columb-flex-stack-objects-1 {
+    justify-content: center; 
+    flex-direction: column; 
+  }
+
+  .footer-item {
+    padding: 10px 0; 
+  }
+  .container-fluid.genepool-custom-background footer {
+    justify-content: space-between !important;
+  }
+  .partner-img-container{
+    height:70px;
+    width:70px !important;
+  }
+  .create-some-space {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .lead1{
+    gap:0px;
+  }
+  .lead1{
+    gap:0px;
+  }
+  .g-4, .gy-4 {
+    --bs-gutter-y:0rem;
   }
 }
-@media (min-width: 768px){
-  .hash-list.cols-3 > li {
-      width: 33.3333%;
+
+@media (max-width:623px){
+  .support-section { 
+    font-size:30px;
+  }
+  .support-section-card-header{
+    font-size:18px;
+  }
+  .support-section-card-btn{
+    font-size:16px;
+  }
+  .font-cond-l {
+    font-size: 10px;
+  }
+  .contact100-form-title {
+    font-size: 34px;
+    font-weight: 300;
+    padding-top:15px;
+  }
+  .input100::placeholder { 
+    font-size: 12px;
+  }
+  .container-contact100-form-btn {
+    padding-top: 17px;
+  }
+  .contact100-form-btn {
+    width: 65%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    width:72%;
+  } 
+  .wrap-contact100 {
+    padding: 0px 43px 15px !important;
+  }
+
+}
+
+@media (max-width:555px){
+  .lead{
+    font-size:16px;
+    padding: 28px !important;
+  }
+  .landing-btn{
+    font-size:16px;
+    padding-left: 20px;
+    padding-right: 20px
+  }
+
+  .hurry-header-text {
+    font-size: 18px;
+  }
+
+  .help-btn-hurry-section{
+    font-size:12px;
+  }
+
+}
+@media (max-width:505px){
+  .partner-img-container{
+    height: 60px;
+    width: 60px !important;
+  }
+
+}
+
+@media (max-width:482px){
+  .contact100-form-title {
+    font-size: 30px !important;
   }
 }
+
+@media (max-width:476px){
+  .landing-btn{
+    font-size:13px;
+  }
+  .contact-us-img img {
+    padding: 1rem !important;
+  }
+  .container-fluid .genepool-custom-background {
+    height: 15rem;
+  }
+  .partner-img-container{
+    height: 55px;
+    width: 55px !important;
+  }
+
+}
+@media (max-width:440px){
+  .lead{
+    margin-top: 8px;
+  }
+  .hurry-header-text {
+    font-size: 16px;
+  }
+
+  .help-btn-hurry-section{
+    font-size:10px;
+  }
+  .partner-img-container{
+    height: 40px;
+    width: 40px !important;
+  }
+  .container-fluid.genepool-custom-background footer {
+    font-size: 10px;
+}
+  .staff-url{
+    font-size: 10px;
+  }
+
+}
+
+@media (max-width:409px){
+  .landing-btn{
+    font-size:12px;
+  }
+  .nav{
+    font-size: 12px;
+  }
+}
+
+@media (max-width:363px){
+  .landing-btn{
+    font-size:12px;
+  }
+  .label-input100{
+    font-size:8px !important;
+  }
+  .input.input100 {
+    height:0px !important;
+ }
+}
+
+@media (max-width:346px){
+  .landing-img{
+  margin-left: 10px;
+  }
+  .lead{
+    font-size:16px;
+  }
+  .partner-img-container{
+    height: 35px;
+    width: 35px !important;
+  }
+}
+
 .hash-list > li {
   display: block;
   float: left;
@@ -623,9 +826,6 @@ img {
   justify-content: space-evenly !important;
 }
 
-.columb-flex-stack-objects-1{
-  margin-right: -40px !important;
-}
 .right-padding-adjustment{
   padding-right:0px !important;
 }

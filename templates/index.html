@@ -65,60 +65,60 @@
         </div>
 
         <div class="container-fluid p-3 fields-parent-container generic-bakground-color">
-            <div class="row rows-cols-sm-2 g-4">
-                <div class="col">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card h-100 custom-card card">
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
-                            <h5 class="card-title">SUPPORT</h5>
-                            <a href="{% url 'products_and_services' %}#support" class="btn btn-primary fields-btns">Find Out More</a>
+                            <h5 class="card-title support-section-card-header">SUPPORT</h5>
+                            <a href="{% url 'products_and_services' %}#support" class="btn btn-primary fields-btns support-section-card-btn">Find Out More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card h-100 custom-card card">
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
-                            <h5 class="card-title">HARDWARE</h5>
-                            <a href="{% url 'products_and_services' %}#hardware" class="btn btn-primary fields-btns">Find Out More</a>
+                            <h5 class="card-title support-section-card-header">HARDWARE</h5>
+                            <a href="{% url 'products_and_services' %}#hardware" class="btn btn-primary fields-btns support-section-card-btn">Find Out More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card h-100 custom-card card">
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
-                            <h5 class="card-title">SOFTWARE</h5>
-                            <a href="{% url 'products_and_services' %}#software" class="btn btn-primary fields-btns">Find Out More</a>
+                            <h5 class="card-title support-section-card-header">SOFTWARE</h5>
+                            <a href="{% url 'products_and_services' %}#software" class="btn btn-primary fields-btns support-section-card-btn">Find Out More</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row rows-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4">
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card h-100 custom-card card">
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
-                            <h5 class="card-title">NETWORKING</h5>
-                            <a href="{% url 'products_and_services' %}#networking" class="btn btn-primary fields-btns">Find Out More</a>
+                            <h5 class="card-title support-section-card-header">NETWORKING</h5>
+                            <a href="{% url 'products_and_services' %}#networking" class="btn btn-primary fields-btns support-section-card-btn">Find Out More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card h-100 custom-card card">
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
-                            <h5 class="card-title">MICROSOFT</h5>
-                            <a href="{% url 'products_and_services' %}#microsoft" class="btn btn-primary fields-btns">Find Out More</a>
+                            <h5 class="card-title support-section-card-header">MICROSOFT</h5>
+                            <a href="{% url 'products_and_services' %}#microsoft" class="btn btn-primary fields-btns support-section-card-btn">Find Out More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card h-100 custom-card card">
                         <div class="custom-card-image-overlay"></div>
                         <div class="card-content-wrapper">
-                            <h5 class="card-title">POWER SOLUTIONS</h5>
-                            <a href="{% url 'products_and_services' %}#power-solutions" class="btn btn-primary fields-btns">Find Out More</a>
+                            <h5 class="card-title support-section-card-header">POWER SOLUTIONS</h5>
+                            <a href="{% url 'products_and_services' %}#power-solutions" class="btn btn-primary fields-btns support-section-card-btn">Find Out More</a>
                         </div>
                     </div>
                 </div>
@@ -134,8 +134,8 @@
                 <div class="col d-flex align-items-center justify-content-center">
                     <div class="text-center">
                         <h3 class="underline hurry-header-text">Need help in a hurry?</h3>
-                        <a href="#" class="btn btn-primary fields-btns">082 382 8035</a>
-                        <a href="#" class="btn btn-primary fields-btns">support@genepool.co.za</a>
+                        <a href="#" class="btn btn-primary fields-btns help-btn-hurry-section">082 382 8035</a>
+                        <a href="#" class="btn btn-primary fields-btns help-btn-hurry-section">support@genepool.co.za</a>
                     </div>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center contact-us-img">
@@ -153,78 +153,71 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div id="customerReviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="false">
-                        <div class="row cols-lg-4 cols-md-3 cols-sm-2">
-                            <div class="col">
-                                <div class="img-container">
-                                    <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-linkedin-sales-navigator-2182970_mqbfvl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of business man" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+            <div class="container">
+                <div id="customerReviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="false">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="img-container">
+                                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-linkedin-sales-navigator-2182970_mqbfvl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of business man">
+                                    </div>
+                                    <p class="font-cond-l">"The team's IT expertise significantly improved our workflow efficiency and data security. Their personalized approach ensured that all solutions perfectly aligned with our business needs. Truly outstanding service that goes above and beyond expectations"</p>
+                                    <h5 class="font-cond mgb-5 fg-text-d review-name">-Timmothy Turner</h5>
                                 </div>
-                                <p class="font-cond-l">"The team's IT expertise significantly improved our workflow efficiency and data security. Their personalized approach ensured that all solutions perfectly aligned with our business needs. Truly outstanding service that goes above and beyond expectations"</p>
-                                <h5 class="font-cond mgb-5 fg-text-d review-name">-Timmothy Turner</h5>
-                                <small class="font-cond case-u lts-sm fg-text-l">Business Man</small>
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="img-container">
+                                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041057/pexels-daniel-reche-1556691_ffkn6j.jpg" class="wpx-100 img-round mgb-20" alt="Lady posing in front of sunset">
+                                    </div>
+                                    <p class="font-cond-l">" The level of expertise and professionalism displayed by the IT service team was unparalleled. They not only resolved our immediate technical issues but also implemented forward-thinking solutions that greatly improved our overall infrastructure."</p>
+                                    <h5 class="font-cond mgb-5 fg-text-d review-name">-Martha Stewart</h5>
+                                </div>
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="img-container">
+                                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red/b_rgb:262c35/v1707041057/pexels-kristina-paukshtite-112324_zg9jue.jpg" class="wpx-100 img-round mgb-20" alt="Rose being held by woman">
+                                    </div>
+                                    <p class="font-cond-l">"The IT service team provided exceptional support during our company's digital transformation. Their quick response times, attention to detail, and ability to address complex challenges were instrumental in enhancing our operations."</p>
+                                    <h5 class="font-cond mgb-5 fg-text-d review-name">-Jessie Heuger</h5>
+                                </div>
                             </div>
-                            <div class="col">
-                                <div class="img-container">
-                                    <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041057/pexels-daniel-reche-1556691_ffkn6j.jpg" class="wpx-100 img-round mgb-20" alt="Lady posing in front of sunset" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+                        </div>
+            
+                        <div class="carousel-item" data-bs-interval="false">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="img-container">
+                                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041060/pexels-christina-morillo-1181391_wrzvct.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of man in business suit">
+                                    </div>
+                                    <p class="font-cond-l">"The team's IT expertise significantly improved our workflow efficiency and data security. Their personalized approach ensured that all solutions perfectly aligned with our business needs. Truly outstanding service that goes above and beyond expectations"</p>
+                                    <h5 class="font-cond mgb-5 fg-text-d review-name">-Greg Mccarthy</h5>
                                 </div>
-                                <p class="font-cond-l">" The level of expertise and professionalism displayed by the IT service team was unparalleled. They not only resolved our immediate technical issues but also implemented forward-thinking solutions that greatly improved our overall infrastructure."</p>
-                                <h5 class="font-cond mgb-5 fg-text-d review-name">-Martha Stewart</h5>
-                                <small class="font-cond case-u lts-sm fg-text-l">Business Woman</small>
-                            </div>
-                            <div class="col">
-                                <div class="img-container">
-                                    <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041057/pexels-kristina-paukshtite-112324_zg9jue.jpg" class="wpx-100 img-round mgb-20" alt="Rose being held by woman" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="img-container">
+                                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-andrea-piacquadio-774909_ubtrtl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of woman smiling">
+                                    </div>
+                                    <p class="font-cond-l">"Their rapid response to our IT concerns and proactive maintenance has minimized downtime, driving our productivity to new heights. This team not only solves problems but also anticipates them, making them invaluable partners in our business growth."</p>
+                                    <h5 class="font-cond mgb-5 fg-text-d review-name">-Lisa Stuarts</h5>
                                 </div>
-                                <p class="font-cond-l">"The IT service team provided exceptional support during our company's digital transformation. Their quick response times, attention to detail, and ability to address complex challenges were instrumental in enhancing our operations."</p>
-                                <h5 class="font-cond mgb-5 fg-text-d review-name-medium-size-review">-Jessie Heuger</h5>
-                                <small class="font-cond case-u lts-sm fg-text-l">Business Woman</small>
+                                <div class="col-lg-4 col-sm-12">
+                                    <div class="img-container">
+                                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-christina-morillo-1181690_rhrxax.jpg" class="wpx-100 img-round mgb-20" alt="Business lady">
+                                    </div>
+                                    <p class="font-cond-l">"Working with this IT service has been a game-changer for us. Their expertise and dedication have significantly enhanced our operational efficiency, allowing us to focus on our core business without worrying about technical issues."</p>
+                                    <h5 class="font-cond mgb-5 fg-text-d review-name">-Gwen Abigail</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-    
-                    <div class="carousel-item" data-bs-interval="false">
-                        <div class="row">
-                            <div class="col">
-                                <div class="img-container">
-                                    <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041060/pexels-christina-morillo-1181391_wrzvct.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of man in business suit" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-                                </div>
-                                <p class="font-cond-l">"The team's IT expertise significantly improved our workflow efficiency and data security. Their personalized approach ensured that all solutions perfectly aligned with our business needs. Truly outstanding service that goes above and beyond expectations"</p>
-                                <h5 class="font-cond mgb-5 fg-text-d review-name">-Greg Mccarthy</h5>
-                                <small class="font-cond case-u lts-sm fg-text-l">Business Man </small>
-                            </div>
-                            <div class="col">
-                                <div class="img-container">
-                                    <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-andrea-piacquadio-774909_ubtrtl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of woman smiling" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-                                </div>
-                                <p class="font-cond-l">"Their rapid response to our IT concerns and proactive maintenance has minimized downtime, driving our productivity to new heights. This team not only solves problems but also anticipates them, making them invaluable partners in our business growth."</p>
-                                <h5 class="font-cond mgb-5 fg-text-d review-name">-Lisa Stuarts</h5>
-                                <small class="font-cond case-u lts-sm fg-text-l">Business Woman </small>
-                            </div>
-                            <div class="col">
-                                <div class="img-container">
-                                    <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-christina-morillo-1181690_rhrxax.jpg" class="wpx-100 img-round mgb-20" title="" alt="Business lady" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-                                </div>
-                                <p class="font-cond-l">"Working with this IT service has been a game-changer for us. Their expertise and dedication have significantly enhanced our operational efficiency, allowing us to focus on our core business without worrying about technical issues."</p>
-                                <h5 class="font-cond mgb-5 fg-text-d review-name-medium-size-review">-Gwen Abigail</h5>
-                                <small class="font-cond case-u lts-sm fg-text-l">Business Woman </small>
-                            </div>
-                        </div>
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#customerReviewsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#customerReviewsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-    
-                <button class="carousel-control-prev" type="button" data-bs-target="#customerReviewsCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#customerReviewsCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </div>
     </review-section>    
 
     <hr class="black-text">
