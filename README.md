@@ -1,4 +1,4 @@
-<h1 >Genepool</h1>
+<h1 align='center'>Genepool</h1>
 
 Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner headquartered in the bustling city of Johannesburg, South Africa. Established in 2000, Genepool is dedicated to delivering an all-encompassing "batteries included" experience to cater to the unique IT needs of our clients.
 
