@@ -497,6 +497,12 @@ SIGN-UP / LOGIN PAGE
   color:black;
 }
 
+@media (max-width:1130px){
+  .landing-img{
+    padding-left: 28px;
+  }
+}
+
 @media (max-width:947px) {
   .lead{
     font-size:18px;
@@ -515,7 +521,9 @@ SIGN-UP / LOGIN PAGE
     height:auto;
     padding:41px 44px 28px !important;
   }
-
+  .landing-img{
+    padding-left: 30px;
+  }
 }
 
 @media (max-width: 768px){
@@ -600,7 +608,7 @@ SIGN-UP / LOGIN PAGE
     font-size:16px;
   }
   .font-cond-l {
-    font-size: 10px;
+    font-size: 12px;
   }
   .contact100-form-title {
     font-size: 34px;
@@ -654,6 +662,9 @@ SIGN-UP / LOGIN PAGE
   .partner-img-container{
     height: 60px;
     width: 60px !important;
+  }
+  .landing-img {
+    margin-left: 10px;
   }
 
 }
@@ -711,6 +722,9 @@ SIGN-UP / LOGIN PAGE
   .nav{
     font-size: 12px;
   }
+  .landing-img{
+    margin-left:10px;
+  }
 }
 
 @media (max-width:363px){
@@ -740,7 +754,7 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width:330px){
   .landing-img {
-    margin-left: 5px;
+    margin-left: 0px;
   }
   .nav {
     font-size: 11px;
