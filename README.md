@@ -2,6 +2,8 @@
 
 Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner headquartered in the bustling city of Johannesburg, South Africa. Established in 2000, Genepool is dedicated to delivering an all-encompassing "batteries included" experience to cater to the unique IT needs of our clients.
 
+<img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG>
+
  **Our Commitment:** At Genepool, we take pride in offering a holistic approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking innovative Loadshedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your IT journey. 
  
  **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform, streamlining the communication process. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
