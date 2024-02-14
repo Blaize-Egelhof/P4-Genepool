@@ -316,6 +316,46 @@ h2{
   justify-content: center
 }
 
+.h2-spacing{
+  padding-top:35px;
+  padding-bottom:35px;
+}
+
+/*Client's Page CSS*/
+
+.client-card-styling{
+  border-radius: 2rem;
+  border: 1px solid !important;
+  transition: border 0.5s ease !important;
+}
+
+.client-container-styling{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.right-align{
+  float: right;
+  color:green;
+  text-decoration: none;
+}
+
+.card-title, .card-text {
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  text-overflow: ellipsis; /* Add ellipses at the end of the hidden text */
+}
+.card-text {
+  white-space: normal; /* Allow text wrap for card body, remove or adjust as needed */
+  text-overflow: clip; /* Default, can change to 'ellipsis' if using nowrap */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit text to 3 lines, only works in webkit browsers */
+  -webkit-box-orient: vertical;
+  height: 3em; /* Adjust based on line height to fit exactly 3 lines */
+}
+
 
 /* Our partnership section */
 
@@ -483,6 +523,11 @@ h2{
 .client-buttons { 
   margin:1rem;
 
+}
+
+.client-card-footer-styling{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*

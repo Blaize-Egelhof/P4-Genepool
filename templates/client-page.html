@@ -3,16 +3,10 @@
 {% load static %}
 
 {% block header %}
+
 <nav class="nav nav-masthead justify-content-center float-md-end">
-  <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
-  <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      My Items
-  </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">My Quotes</a>
-      <a class="dropdown-item" href="#">My Tickets</a>
-  </div>
+    <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
+    <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
 </nav>
 
 {% endblock %}
@@ -22,233 +16,98 @@
 <div class="container">
   <div class="row">
       <div class="col-md-8 offset-md-2">
-        {%block message%}
+        {% block message %}
         {% endblock %}
       </div>
-
-{% endblock%}
+{% endblock %}
 
 {% block content %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/quote-form.css' %}">
 {% endblock extra_css %}
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 text-center full-width">
-          <p class="d-inline-flex gap-1">
-            <button class="btn btn-primary client-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              Submit A Quote Request
-            </button>
-          </p>
-          <div class="collapse black-font-color" id="collapseExample">
-            <div class="container-contact100 image-overlay-form">
-              <div class="wrap-contact100">
-                  <form class="contact100-form validate-form" method="POST" id="quote-form">
-                      {% csrf_token %}
-                      <span class="contact100-form-title">Request A Quote</span>
-                      <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-                          <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
-                          <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
-                      </div>
-                      <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
-                          <span class="label-input100">Email <span class="important">*</span></span>
-                          <input class="input100" type="text" name="email" placeholder="Enter Your Email ">
-                      </div>
-                      <div class="wrap-input100 bg1 rs1-wrap-input100">
-                          <span class="label-input100">Phone</span>
-                          <input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
-                      </div>
-                      <div class="wrap-input100 input100-select bg1">
-                          <span class="label-input100">Needed Services <span class="important">*</span></span>
-                          <div>
-                              <select class="js-select2" name="service">
-                                  <option value="support">Support</option>
-                                  <option value="hardware">Hardware</option>
-                                  <option value="software">Software</option>
-                                  <option value="microsoft">Microsoft</option>
-                                  <option value="power_solutions">Power Solutions</option>
-                              </select>
-                          </div>
-                      </div>
-                      <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
-                          <span class="label-input100">Message</span>
-                          <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
-                      </div>
-                      <div class="container-contact100-form-btn">
-                          <button class="contact100-form-btn">
-                              <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
-                          </button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 text-center full-width">
-          <p class="d-inline-flex gap-1">
-            <button class="btn btn-primary client-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              My Quotes
-            </button>
-          </p>
-    
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col center-my-text black-text">
-            <h2>QUOTE REQUESTS</h2>
-        </div>
-    </div>
 </div>
-
-<div class="container-fluid">
-  <div class="row">
-      <div class="col-md-6 text-center full-width">
-          <!-- Quote Requests Button -->
-              <div class="container-fluid">
-                  <div class="row">
-                      {% for quote in authorisedclient_quote_requests  %}
-                      <div class="col-md-4 col-sm-6">
-                          <div class="card">
-                              <div class="card-header">
-                                  <h3>{{ quote.full_nameORcompany_name }}</h3>
-                              </div>
-                              <div class="card-body">
-                                  <p>{{ quote.request_description }}</p>
-                              </div>
-                              <div class="card-footer">
-                                  <a href="{% url 'edit-quote-request' quote.id %}" class="card-link">Edit</a>
-                                  <a href="#" class="card-link" onclick="deleteQuote({{ quote.id }})">Delete</a>
-                              </div>
-                          </div>
-                      </div>
-                      {% endfor %}
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-      <div class="col text-center full-width">
-          <!-- Submit A Quote Request Button -->
-          <p class="d-inline-flex gap-1">
-              <button class="btn btn-primary client-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Submit A Quote Request
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col center-my-text black-text h2-spacing">
+                <h2>QUOTE REQUESTS</h2>
+            </div>
+          <div class="col-md-6 text-center full-width">
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary client-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="submitQuoteButton">
+                Submit A Quote Request
               </button>
-          </p>
-          <!-- Form for Submit A Quote Request -->
-          <div class="collapse black-font-color" id="collapseExample">
+            </p>
+            <div class="collapse black-font-color" id="collapseExample">
               <div class="container-contact100 image-overlay-form">
-                  <div class="wrap-contact100">
-                      <form class="contact100-form validate-form" method="POST" id="quote-form " action="{% url 'submit_authorised_quote_request' %}">
-                          {% csrf_token %}
-                          <span class="contact100-form-title">Request A Quote</span>
-                          <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-                              <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
-                              <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name" value="{{ user.username }}" readonly>
-                          </div>
-                          <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
-                              <span class="label-input100">Email <span class="important">*</span></span>
-                              <input class="input100" type="text" name="email" placeholder="Enter Your Email">
-                          </div>
-                          <div class="wrap-input100 bg1 rs1-wrap-input100">
-                              <span class="label-input100">Phone</span>
-                              <input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
-                          </div>
-                          <div class="wrap-input100 input100-select bg1">
-                              <span class="label-input100">Needed Services <span class="important">*</span></span>
-                              <div>
-                                  <select class="js-select2" name="service">
-                                      <option value="support">Support</option>
-                                      <option value="hardware">Hardware</option>
-                                      <option value="software">Software</option>
-                                      <option value="microsoft">Microsoft</option>
-                                      <option value="power_solutions">Power Solutions</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
-                              <span class="label-input100">Message</span>
-                              <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
-                          </div>
-                          <div class="container-contact100-form-btn">
-                              <button class="contact100-form-btn">
-                                  <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
-                              </button>
-                          </div>
-                      </form>
-                  </div>
+                <div class="wrap-contact100">
+                    <form class="contact100-form validate-form" method="POST" id="quote-form">
+                        {% csrf_token %}
+                        <span class="contact100-form-title">Request A Quote</span>
+                        <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                            <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
+                            <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
+                            <span class="label-input100">Email <span class="important">*</span></span>
+                            <input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+                        </div>
+                        <div class="wrap-input100 bg1 rs1-wrap-input100">
+                            <span class="label-input100">Phone</span>
+                            <input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
+                        </div>
+                        <div class="wrap-input100 input100-select bg1">
+                            <span class="label-input100">Needed Services <span class="important">*</span></span>
+                            <div>
+                                <select class="js-select2" name="service">
+                                    <option value="support">Support</option>
+                                    <option value="hardware">Hardware</option>
+                                    <option value="software">Software</option>
+                                    <option value="microsoft">Microsoft</option>
+                                    <option value="power_solutions">Power Solutions</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
+                            <span class="label-input100">Message</span>
+                            <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
+                        </div>
+                        <div class="container-contact100-form-btn">
+                            <button class="contact100-form-btn">
+                                <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-</div>
-
-
-
-
-
-</script>
-
-<script>
-  
-  $(document).ready(function(){
-      $('.dropdown-toggle').dropdown();
-  });
-
-function closeAlert() {
-            let messages = document.getElementById("msg");
-            if (messages) {
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }
-        }
-
-        setTimeout(closeAlert, 3000);
-
-        function deleteQuote(quoteId) {
-        if (confirm('Are you sure you want to delete this quote?')) {
-            var csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-
-            // Create a form dynamically
-            var form = document.createElement('form');
-            form.method = 'POST';
-            form.action = '/delete-quote-request/' + quoteId + '/';
-
-            // Create a hidden input for the CSRF token
-            var csrfInput = document.createElement('input');
-            csrfInput.type = 'hidden';
-            csrfInput.name = 'csrfmiddlewaretoken';
-            csrfInput.value = csrfToken;
-
-            // Append the CSRF input to the form
-            form.appendChild(csrfInput);
-
-            // Append the form to the body
-            document.body.appendChild(form);
-
-            // Submit the form
-            form.submit();
-        }
-
-        // achieve a seamless user experience without requiring a separate confirmation page or a visible form on the page.This approach is a workaround to achieve a specific interaction pattern (POST request triggered by a link click with a confirmation step)
-    }
-
-</script>
+      <div class="container mt-3 client-container-styling">
+        <div class="row">
+            {% for quote in authorisedclient_quote_requests %}
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div class="card client-card-styling">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ quote.full_nameORcompany_name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Date Created: {{ quote.time_requested }}</h6>
+                        <span class="badge {% if quote.status == 'Ongoing' %}bg-success{% else %}bg-secondary{% endif %}">{{ quote.status }}</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ quote.request_description|truncatechars:100 }}</p>
+                        <p class="card-text full-description" style="display: none;">{{ quote.request_description }}</p>
+                        <a href="#" class="card-link" onclick="toggleDescription(this); return false;">Read more</a>
+                    </div>
+                    <div class="card-footer client-card-footer-styling">
+                        <a href="{% url 'edit-quote-request' quote.id %}"class="btn btn-primary">View/Edit</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div
 
 {% endblock content %}

@@ -26,12 +26,16 @@ class CallBackForm(forms.ModelForm):
         }
 
 class AuthorisedQuoteRequestForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super(AuthorisedQuoteRequestForm, self).__init__(*args, **kwargs)
+        
+        if not user.is_staff:
+            readonly_fields = ['full_nameORcompany_name', 'email', 'phone', 'status']
+            for field_name in readonly_fields:
+                self.fields[field_name].widget.attrs['readonly'] = 'readonly'
+
     class Meta:
         model = AuthorisedQuoteRequests
         fields = ['full_nameORcompany_name', 'email', 'phone', 'service', 'request_description', 'status']
-        widgets = {
-            'email': forms.TextInput(attrs={'readonly': 'readonly'}),
-            'phone': forms.TextInput(attrs={'readonly': 'readonly'}),
-            'status': forms.TextInput(attrs={'readonly': 'readonly'}),
-        }
 

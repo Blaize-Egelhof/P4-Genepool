@@ -82,22 +82,20 @@ class EditQuoteRequest(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
     def get(self, request, quote_id, *args, **kwargs):
-        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
-        form = QuoteRequestForm(instance=quote)
-        messages.success(request, f'Now Working On Quote Number: {quote.id}')
+        quote = get_object_or_404(AuthorisedQuoteRequests, pk=quote_id)
+        form = AuthorisedQuoteRequestForm(instance=quote, user=request.user)  
+        messages.success(request, f'Now Editing Quote: {quote.id}')
         return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
-    
 
     def post(self, request, quote_id, *args, **kwargs):
-        # Handle the main form submission
         if 'save_changes' in request.POST:
             return self.handle_save_changes(request, quote_id)
-        elif 'delete_this_quote' in request.POST:
-            return self.handle_delete_quote(request, quote_id)
+        elif 'go_back' in request.POST:
+            return render(request, 'staff-page.html')
           
 
     def handle_save_changes(self, request, quote_id):
-        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+        quote = get_object_or_404(AuthorisedQuoteRequests, pk=quote_id)
         form = QuoteRequestForm(request.POST, instance=quote)
 
         if form.is_valid():
@@ -125,7 +123,6 @@ class EditCallBackRequest(LoginRequiredMixin, View):
         return render(request, self.template_name, {'callback_request_id': callback_request_id, 'form': form})
     
     def post(self, request, callback_request_id, *args, **kwargs):
-        # Handle the main form submission
         if 'save_changes' in request.POST:
             return self.handle_save_changes(request, callback_request_id)
         elif 'delete_this_quote' in request.POST:
