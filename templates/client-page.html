@@ -41,12 +41,12 @@
             <div class="collapse black-font-color" id="collapseExample">
               <div class="container-contact100 image-overlay-form">
                 <div class="wrap-contact100">
-                    <form class="contact100-form validate-form" method="POST" id="quote-form">
+                    <form class="contact100-form validate-form" method="POST" action="{% url 'submit_authorised_quote_request' %}" id="quote-form">
                         {% csrf_token %}
                         <span class="contact100-form-title">Request A Quote</span>
                         <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
                             <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
-                            <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
+                            <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name" value="{{ user.username }}">
                         </div>
                         <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
                             <span class="label-input100">Email <span class="important">*</span></span>
@@ -85,15 +85,15 @@
           </div>
         </div>
       </div>
-      <div class="container mt-3 client-container-styling">
+      <div class="container-fluid mt-3 client-container-styling">
         <div class="row">
             {% for quote in authorisedclient_quote_requests %}
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+            <div class="col-lg-4 col-md-3 col-sm-4 mb-3">
                 <div class="card client-card-styling">
                     <div class="card-header">
                         <h5 class="card-title">{{ quote.full_nameORcompany_name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Date Created: {{ quote.time_requested }}</h6>
-                        <span class="badge {% if quote.status == 'Ongoing' %}bg-success{% else %}bg-secondary{% endif %}">{{ quote.status }}</span>
+                        <span class="badge {% if quote.status == 'Ongoing' %}bg-primary{% elif quote.status == 'Open' %}bg-success{% else %}bg-secondary{% endif %}">{{ quote.status }}</span>
                     </div>
                     <div class="card-body">
                         <p class="card-text">{{ quote.request_description|truncatechars:100 }}</p>

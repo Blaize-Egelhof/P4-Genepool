@@ -57,25 +57,38 @@ class StaffPage(LoginRequiredMixin, View):
                 'authorisedclient_quote_requests': authorisedclient_quote_requests
             })
         else:
-            messages.error(request, 'YOU ARE NOT A STAFF GROUP MEMBER.') 
             return render(request, 'client-page.html', {
                 'user': user, 
                 'authorisedclient_quote_requests': authorisedclient_quote_requests 
             })
+    # def post(self, request):
+    #     form = AuthorisedQuoteRequestForm(request.POST,user=request.user)
+    #     if form.is_valid():
+    #         form.save()
+    #         messages.success(request, 'Quote Request submitted successfully.')
+    #         return redirect('staff-page')
+    #     else:
+    #         messages.error(request, 'Error submitting Quote Request, please ensure the fields indicated by * are correctly filled in.')
+    #         return render(request, 'staff-page', {'form': form})
 
 @login_required
 def submit_authorised_quote_request(request):
     if request.method == 'POST':
-        form = AuthorisedQuoteRequestForm(request.POST)
+        user = request.user
+        authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user) 
+        form = AuthorisedQuoteRequestForm(request.POST, user=request.user)
         if form.is_valid():
             authorised_quote_request = form.save(commit=False)
             authorised_quote_request.client = request.user  
             authorised_quote_request.save()
             messages.success(request, 'Your authorized quote request has been submitted successfully.')
-            return redirect('staff-page') 
+            return redirect('staff-page')
+        else:
+            messages.error(request, 'There was an error in your form.')
+            return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests})
     else:
-        form = AuthorisedQuoteRequestForm()
-    return render(request, 'client-page.html', {'form': form})  
+        form = AuthorisedQuoteRequestForm(user=request.user)
+        return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests})  
 
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit-quote-request.html'
