@@ -84,6 +84,7 @@ def submit_authorised_quote_request(request):
             messages.success(request, 'Your authorized quote request has been submitted successfully.')
             return redirect('staff-page')
         else:
+            print(form.errors) 
             messages.error(request, 'There was an error in your form.')
             return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests})
     else:

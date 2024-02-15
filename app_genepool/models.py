@@ -56,13 +56,13 @@ class AuthorisedQuoteRequests(models.Model):
         ('power_solutions', 'Power Solutions')  
      ]
      STATUS_CHOICES = [ 
-        ('Unanswered', 'Open'),
-        ('Answered', 'Ongoing'),
+        ('Unanswered', 'Unanswered'),
+        ('Answered', 'Answered'),
         ('Closed', 'Closed'),
      ]
      request_description = models.CharField(max_length=800 , blank=True)
      service = models.CharField(max_length=20, choices=SERVICE_CHOICES, blank=True)
-     status = models.CharField(max_length=20, choices =STATUS_CHOICES , default="Ongoing", blank=True)
+     status = models.CharField(max_length=20, choices =STATUS_CHOICES , default="Unanswered", blank=True)
      time_requested = models.DateTimeField(default=timezone.now)
      client = models.ForeignKey(
         settings.AUTH_USER_MODEL, 

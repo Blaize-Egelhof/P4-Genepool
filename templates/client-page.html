@@ -96,18 +96,42 @@
                         <span class="badge {% if quote.status == 'Ongoing' %}bg-primary{% elif quote.status == 'Open' %}bg-success{% else %}bg-secondary{% endif %}">{{ quote.status }}</span>
                     </div>
                     <div class="card-body">
-                        <p class="card-text">{{ quote.request_description|truncatechars:100 }}</p>
-                        <p class="card-text full-description" style="display: none;">{{ quote.request_description }}</p>
-                        <a href="#" class="card-link" onclick="toggleDescription(this); return false;">Read more</a>
+                        <p class="card-text">
+                            <span class="short-description">{{ quote.request_description|truncatechars:50 }}</span>
+                            <span class="full-description" style="display: none;">{{ quote.request_description }}</span>
+                        </p>
+                        <a href="#" class="card-link toggle-text">Read more</a>
                     </div>
                     <div class="card-footer client-card-footer-styling">
-                        <a href="{% url 'edit-quote-request' quote.id %}"class="btn btn-primary">View/Edit</a>
+                        <a href="{% url 'edit-quote-request' quote.id %}" class="btn btn-primary">View/Edit</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-    </div
+   </div>
+   <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.toggle-text').forEach(function(btn) {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const cardBody = event.target.closest('.card-body');
+                    const fullText = cardBody.querySelector('.full-description');
+                    const shortText = cardBody.querySelector('.short-description');
+
+                    if (fullText.style.display === "none") {
+                        fullText.style.display = "inline";
+                        shortText.style.display = "none";
+                        event.target.textContent = "Read less";
+                    } else {
+                        fullText.style.display = "none";
+                        shortText.style.display = "inline";
+                        event.target.textContent = "Read more";
+                    }
+                });
+            });
+        });
+    </script>
 
 {% endblock content %}
