@@ -70,5 +70,38 @@ class AuthorisedQuoteRequests(models.Model):
         related_name='quote_requests',
      )
 
+class AuthorisedTicketRequests(models.Model):
+    STATUS_CHOICES = [ 
+        ('Unanswered', 'Unanswered'),
+        ('Answered', 'Answered'),
+        ('Closed', 'Closed'),
+    ]
+    
+    full_nameORcompany_name = models.CharField(max_length=100, blank=False)
+    email = models.EmailField(blank=False)
+    time_requested = models.DateTimeField(default=timezone.now)
+    request_description = models.CharField(max_length=800, blank=True)
+    status = models.CharField(
+        max_length=20, 
+        choices=STATUS_CHOICES, 
+        default="Unanswered", 
+        blank=True
+    )
+    client = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE,
+        related_name='client_requests',
+        verbose_name='Client'
+    )
+    staff_members_who_replied = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='replied_staff_tickets',
+        blank=True, 
+        verbose_name='Staff Members Who Replied'
+    )
+
+class TicketFile(models.Model):
+    ticket = models.ForeignKey(AuthorisedTicketRequests, related_name='attached_files', on_delete=models.CASCADE)
+    file = models.FileField(upload_to='../GENEPOOL/templates/ticket-files/')
 
 

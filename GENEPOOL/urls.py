@@ -31,4 +31,5 @@ urlpatterns = [
     path('delete-quote-request/<int:quote_id>/', views.DeleteQuoteRequest.as_view(), name='delete-quote-request'),
     path('edit-callback-request/<int:callback_request_id>/', views.EditCallBackRequest.as_view(), name='edit-callback-request'),
     path('delete-callback-request/<int:callback_request_id>/', views.DeleteCallBackRequest.as_view(), name='delete-callback-request'),
+    path('close-ticket/<int:quote_id>/', views.CloseQuoteForClientPage.as_view(), name='close-client-ticket'),
 ]

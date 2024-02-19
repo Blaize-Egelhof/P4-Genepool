@@ -46,6 +46,9 @@ class StaffPage(LoginRequiredMixin, View):
         authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user)  
         unauthorised_quote_requests = UnauthorisedQuoteRequests.objects.all()
         unauthorised_callback_requests = UnauthorisedCallBackRequests.objects.all()
+        unanswered_quotes = AuthorisedQuoteRequests.objects.filter(status='Unanswered', client=user)
+        answered_quotes = AuthorisedQuoteRequests.objects.filter(status='Answered' , client=user)
+        closed_quotes = AuthorisedQuoteRequests.objects.filter(status='Closed' , client=user)
         staff_group = user.groups.filter(Q(name='Staff')).exists()
 
         if staff_group:
@@ -54,12 +57,15 @@ class StaffPage(LoginRequiredMixin, View):
                 'user': user, 
                 'unauthorised_quote_requests': unauthorised_quote_requests,
                 'unauthorised_callback_requests': unauthorised_callback_requests,
-                'authorisedclient_quote_requests': authorisedclient_quote_requests
+                'authorisedclient_quote_requests': authorisedclient_quote_requests,
             })
         else:
+            print(answered_quotes)
             return render(request, 'client-page.html', {
                 'user': user, 
-                'authorisedclient_quote_requests': authorisedclient_quote_requests 
+                'unanswered_quotes':unanswered_quotes,
+                'answered_quotes':answered_quotes, 'closed_quotes':closed_quotes,
+                'closed_quotes':closed_quotes
             })
     # def post(self, request):
     #     form = AuthorisedQuoteRequestForm(request.POST,user=request.user)
@@ -75,7 +81,7 @@ class StaffPage(LoginRequiredMixin, View):
 def submit_authorised_quote_request(request):
     if request.method == 'POST':
         user = request.user
-        authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user) 
+        authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user)
         form = AuthorisedQuoteRequestForm(request.POST, user=request.user)
         if form.is_valid():
             authorised_quote_request = form.save(commit=False)
@@ -86,10 +92,10 @@ def submit_authorised_quote_request(request):
         else:
             print(form.errors) 
             messages.error(request, 'There was an error in your form.')
-            return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests})
+            return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests })
     else:
         form = AuthorisedQuoteRequestForm(user=request.user)
-        return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests})  
+        return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests, })  
 
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit-quote-request.html'
@@ -157,5 +163,14 @@ class DeleteCallBackRequest(LoginRequiredMixin, View):
             messages.success(request, f'Callback request with ID: {callback_request.id} has been deleted successfully!')
             callback_request.delete()
             return redirect('staff-page')
+
+class CloseQuoteForClientPage(LoginRequiredMixin,View): 
+    def post(self,request, *args, **kwargs):
+        user=request.user
+        quote_id = self.kwargs.get('quote_id')
+        quote_to_close = get_object_or_404(AuthorisedQuoteRequests , pk=quote_id)
+        quote_to_close.status = 'Closed'
+        quote_to_close.save()
+        return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests, })
 
 

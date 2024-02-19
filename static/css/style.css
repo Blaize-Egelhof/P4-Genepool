@@ -330,9 +330,9 @@ h2{
 }
 
 .client-container-styling{
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  margin-left: 8%;
+  margin-right: 8%;
   width: fit-content;
 }
 
@@ -343,20 +343,52 @@ h2{
 }
 
 .card-title, .card-text {
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  text-overflow: ellipsis; /* Add ellipses at the end of the hidden text */
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
 }
 .card-text {
-  white-space: normal; /* Allow text wrap for card body, remove or adjust as needed */
-  text-overflow: clip; /* Default, can change to 'ellipsis' if using nowrap */
+  white-space: normal; 
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit text to 3 lines, only works in webkit browsers */
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
-  height: 3em; /* Adjust based on line height to fit exactly 3 lines */
+  height: 3em; 
 }
 
+.client-custom-footer{
+background:none; 
+margin-left:auto;
+margin-right:auto; 
+}
 
+.close-ticket-styling{
+  color:red;
+}
+.close-ticket-styling:hover{
+  text-decoration: underline;
+}
+.client-custom-footer1{
+  margin-left:auto;
+  margin-right:auto; 
+  }
+
+.closed-quotes-custom-btn{
+  background:none;
+  color:red;
+  text-decoration: none;
+  animation: none!important;
+}
+
+.closed-quotes-custom-btn:hover{
+  text-decoration: underline;
+}
+
+.client-custom-footer-answered-quotes{
+  display:flex;
+}
+.client-custom-footer-answered-quotes-btn{
+  align-items: first baseline;
+}
 /* Our partnership section */
 
 .partner-img{
@@ -525,12 +557,13 @@ h2{
 
 }
 
-.client-card-footer-styling{
-  margin-left: auto;
-  margin-right: auto;
+.dropdown-menu {
+  z-index: 1050; /* Bootstrap's modal z-index is 1050, adjust based on your needs */
 }
 
-#more {display: none;}
+.client-date-styling{
+  font-size:10px;
+}
 
 /*
 SIGN-UP / LOGIN PAGE
