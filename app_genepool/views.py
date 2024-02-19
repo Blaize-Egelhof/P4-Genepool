@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
-from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm
+from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm,AuthorisedTicketRequestForm
 from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests,AuthorisedTicketRequests
 from django.contrib.auth.models import Group, User
 from django import template
@@ -179,3 +179,23 @@ class CloseQuoteForClientPage(LoginRequiredMixin,View):
         return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests, })
 
 
+class EditTicketForClientPage(LoginRequiredMixin,View):
+    def get(self, request, *args, **kwargs):
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        form = AuthorisedTicketRequestForm(instance=ticket, user=request.user) 
+        return render(request, 'some_template.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        ticket_id = self.kwargs.get('ticket_id')
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        form = AuthorisedTicketRequestForm(request.POST, instance=ticket)
+        if form.is_valid():
+            form.save()
+            return redirect('some_view_name')  # Redirect to a new URL
+        return render(request, 'edit-ticket.html', {'form': form})
+
+class ViewTicketForClientPage(LoginRequiredMixin,View):
+    def get(self, request, *args, **kwargs):
+        ticket_id = self.kwargs.get('ticket_id')
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        return render(request,'ticket-view.html')

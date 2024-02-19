@@ -2,6 +2,7 @@ from django import forms
 from .models import UnauthorisedQuoteRequests
 from .models import UnauthorisedCallBackRequests
 from .models import AuthorisedQuoteRequests
+from .models import AuthorisedTicketRequests
 from django.contrib.auth.forms import AuthenticationForm
 
 class QuoteRequestForm(forms.ModelForm):
@@ -38,4 +39,18 @@ class AuthorisedQuoteRequestForm(forms.ModelForm):
     class Meta:
         model = AuthorisedQuoteRequests
         fields = ['full_nameORcompany_name', 'email', 'phone', 'service', 'request_description', 'status']
+
+class AuthorisedTicketRequestForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super(AuthorisedTicketRequestForm, self).__init__(*args, **kwargs)
+        
+        if user and not user.is_staff:
+            readonly_fields = ['full_nameORcompany_name', 'email',]
+            for field_name in readonly_fields:
+                self.fields[field_name].widget.attrs['readonly'] = 'readonly'
+
+    class Meta:
+        model = AuthorisedTicketRequests
+        fields = ['full_nameORcompany_name', 'email', 'request_description',]
 
