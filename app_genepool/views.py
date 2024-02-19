@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
 from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm
-from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests
+from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests,AuthorisedTicketRequests
 from django.contrib.auth.models import Group, User
 from django import template
 from django.db.models import Q
@@ -50,9 +50,13 @@ class StaffPage(LoginRequiredMixin, View):
         answered_quotes = AuthorisedQuoteRequests.objects.filter(status='Answered' , client=user)
         closed_quotes = AuthorisedQuoteRequests.objects.filter(status='Closed' , client=user)
         staff_group = user.groups.filter(Q(name='Staff')).exists()
+        ticket_requests = AuthorisedTicketRequests.objects.all()
+        answered_client_ticket_request = AuthorisedTicketRequests.objects.filter(status='Answered', client=user)
+        unanswered_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Unanswered', client=user)
+        closed_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Closed', client=user)
 
         if staff_group:
-            messages.info(request, 'YOU ARE A STAFF GROUP MEMBER.')  
+            messages.info(request, 'YOU ARE A STAFF MEMBER.')  
             return render(request, 'staff-page.html', {
                 'user': user, 
                 'unauthorised_quote_requests': unauthorised_quote_requests,
@@ -60,12 +64,13 @@ class StaffPage(LoginRequiredMixin, View):
                 'authorisedclient_quote_requests': authorisedclient_quote_requests,
             })
         else:
-            print(answered_quotes)
             return render(request, 'client-page.html', {
                 'user': user, 
                 'unanswered_quotes':unanswered_quotes,
                 'answered_quotes':answered_quotes, 'closed_quotes':closed_quotes,
-                'closed_quotes':closed_quotes
+                'closed_quotes':closed_quotes, 'answered_client_ticket_request': answered_client_ticket_request ,
+                'unanswered_client_ticket_request':unanswered_client_ticket_request,
+                'closed_client_ticket_request':closed_client_ticket_request
             })
     # def post(self, request):
     #     form = AuthorisedQuoteRequestForm(request.POST,user=request.user)
