@@ -197,5 +197,8 @@ class EditTicketForClientPage(LoginRequiredMixin,View):
 class ViewTicketForClientPage(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
+        user=request.user
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        return render(request,'ticket-view.html')
+        return render(request,'ticket-view.html', {'ticket':ticket,'user':user})
+    def post(self,request,*args, **kwargs):
+        

@@ -84,8 +84,7 @@ class AuthorisedTicketRequests(models.Model):
     status = models.CharField(
         max_length=20, 
         choices=STATUS_CHOICES, 
-        default="Unanswered", 
-        blank=True
+        default="Unanswered",
     )
     client = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
@@ -100,8 +99,13 @@ class AuthorisedTicketRequests(models.Model):
         verbose_name='Staff Members Who Replied'
     )
 
-class TicketFile(models.Model):
-    ticket = models.ForeignKey(AuthorisedTicketRequests, related_name='attached_files', on_delete=models.CASCADE)
-    file = models.FileField(upload_to='../GENEPOOL/templates/ticket-files/')
+class ChatDialogue(models.Model):
+    ticket = models.ForeignKey(AuthorisedTicketRequests, related_name='chat_dialogues', on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    file = models.FileField(upload_to='../GENEPOOL/templates/ticket-files/', blank=True)
+
+    
 
 

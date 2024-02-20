@@ -3,6 +3,7 @@ from .models import UnauthorisedQuoteRequests
 from .models import UnauthorisedCallBackRequests
 from .models import AuthorisedQuoteRequests
 from .models import AuthorisedTicketRequests
+from .models import ChatDialogue
 from django.contrib.auth.forms import AuthenticationForm
 
 class QuoteRequestForm(forms.ModelForm):
@@ -53,4 +54,9 @@ class AuthorisedTicketRequestForm(forms.ModelForm):
     class Meta:
         model = AuthorisedTicketRequests
         fields = ['full_nameORcompany_name', 'email', 'request_description',]
+
+class ChatDialogue(forms.ModelForm):
+    class Meta:
+        model=ChatDialogue 
+        fields['full_nameORcompany_name','request_description','file']
 

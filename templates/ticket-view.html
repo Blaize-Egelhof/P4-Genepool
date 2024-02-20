@@ -25,41 +25,86 @@
 {% block content %}
 
 <div class="container client-ticket-container">
-        <div class="col d-flex justify-content-between align-items-center black-text">
+        <div class="col d-flex justify-content-between align-items-center black-text pt-1 pb-2">
             <h4>Ticket Information:</h4>
             <button class="btn client-ticket-btn">Urgent?</button>
         </div>
         <div class="col-lg-4 col-xl-3 black-text">
-        <p>Created By *Insert Name*</p>
+        <p>Created By <strong>{{ ticket.client.username}}</strong></p>
         </div>
         <div class="col-lg-4 col-xl-3 black-text">
-        <p>Submitted on : *Insert Date*</p>
+        <p>Submitted on : <strong>{{ticket.time_requested}}</strong></p>
         </div>
         <div class="col-lg-4 col-xl-3 black-text">
-        <p>Status: *Insert Status*</p>
+            <p>Status: 
+                {% if ticket.status == "Unanswered" %}
+                    <span class="badge bg-primary">Unanswered</span>
+                {% elif ticket.status == "Answered" %}
+                    <span class="badge bg-success">Answered</span>
+                {% elif ticket.status == "Closed" %}
+                    <span class="badge bg-danger">Closed</span>
+                {% endif %}
+            </p>
         </div>
+        <div class="col d-flex align-items-center black-text">
+            <p>Description:</p>
+            <p class="ticket-description">
+                {{ticket.request_description}}
+            </p>
+            <button class="btn client-ticket-btn">reply</button>
+        </div>     
         <div class="col">
-            <button class="btn btn-success client-ticket-btn" style="width:100%;">
+            <button class="btn btn-success client-ticket-btn" style="width:100%;margin-bottom:2rem;">
                 reply
             </button>
         </div>
 </div>
 
-<div class="container client-ticket-container">
-    <div class="row">
-        <div class="col d-flex justify-content-between align-items-center black-text">
-            <h4 class="header-spacing">Subject: *Insert Header*</h4>
-            <button class="btn client-ticket-btn">reply</button>
-        </div>
-    </div>    
-    <div class="row">
-        <div class="col d-flex align-items-center black-text">
-            <p>Description:</p>
-            <p class="ticket-description">
-                dknfpsdfpgmrpindfpvkmdfvpfmvpeifnvepvneropvnfpvnsfpvmvpernviernvljfv fovnerouvnerlvinervpoinpi
-            </p>
+<div class="container client-ticket-container-posted-by black-text">
+    <div class="row grey-background">
+        <div class="col black-text text-center d-flex align-items-center justify-content-center">
+            <p class="mb-0">Posted by *Insert Person's Name* on *Date and Time*</p>
+            <span class="badge bg-info ms-2">Owner</span>
         </div>
     </div>
+    <div class="row">*person* has attached a file click *here* to open</div>
+    <div class="row">
+        <div class="col reply-text">
+            HI , flkmsdpmsdpfmsipf
+            sdfgsdsdgsgsfgdf
+            dfgdfgdf
+        </div>
+    </div>
+</div>
+
+<div class="container client-ticket-container-reply-container black-text text-center">
+    <div class="row">
+        <div class="col">
+            <h4>Reply</h4>
+        </div>
+    </div>
+    <form action="#" method="POST" class="text-center" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row d-flex flex-column align-items-center"> 
+            <div class="col-6"> 
+                <p>Name</p>
+                <input type="text" name="name" class="form-control" required value="{{ user.username }}">
+            </div>
+            <div class="col-6">
+                <p>Message</p>
+                <textarea type="text" name="message" class="form-control" required>Type your message here</textarea>
+            </div>
+            <div class="col-6">
+                <p>Upload Document</p>
+                <input type="file" name="document" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary mt-3">Submit</button> 
+            </div>
+        </div>
+    </form>
 </div>
 
 {% endblock content %}
