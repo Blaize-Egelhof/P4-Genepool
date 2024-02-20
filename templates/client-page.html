@@ -45,15 +45,34 @@
         <div class="collapse black-font-color" id="collapseExample1">
           <div class="container-contact100 image-overlay-form">
             <div class="wrap-contact100">
-              <form class="contact100-form validate-form" method="POST" action="#" id="ticket-form">
-                {% csrf_token %}
-                <span class="contact100-form-title">Create A Ticket</span>
-                <div class="container-contact100-form-btn">
-                  <button class="contact100-form-btn">
-                    <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
-                  </button>
-                </div>
-              </form>
+                <form class="contact100-form validate-form" method="POST" action="#" id="ticket-form">
+                    {% csrf_token %}
+                    <span class="contact100-form-title">Create A Ticket</span>
+                  
+                    <!-- FULL NAME/COMPANY NAME Field -->
+                    <div class="wrap-input100 validate-input bg1">
+                      {{ form.full_nameORcompany_name.label_tag }}
+                      {{ form.full_nameORcompany_name }}
+                    </div>
+                  
+                    <!-- Time Requested Field -->
+                    <div class="wrap-input100 validate-input bg1">
+                      {{ form.time_requested.label_tag }}
+                      {{ form.time_requested }}
+                    </div>
+                  
+                    <!-- Description Field -->
+                    <div class="wrap-input100 validate-input bg1">
+                      {{ form.description.label_tag }}
+                      {{ form.description }}
+                    </div>
+                  
+                    <div class="container-contact100-form-btn">
+                      <button class="contact100-form-btn">
+                        <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
+                      </button>
+                    </div>
+                  </form>                  
             </div>
           </div>
         </div>

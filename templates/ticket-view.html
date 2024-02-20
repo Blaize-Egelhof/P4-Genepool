@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block header %}
+
+<nav class="nav nav-masthead justify-content-center float-md-end">
+    <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
+    <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
+</nav>
+
+{% endblock %}
+
+{% block index-page-exclusive %}
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 offset-md-2">
+        {% block message %}
+        {% endblock %}
+      </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container client-ticket-container">
+        <div class="col d-flex justify-content-between align-items-center black-text">
+            <h4>Ticket Information:</h4>
+            <button class="btn client-ticket-btn">Urgent?</button>
+        </div>
+        <div class="col-lg-4 col-xl-3 black-text">
+        <p>Created By *Insert Name*</p>
+        </div>
+        <div class="col-lg-4 col-xl-3 black-text">
+        <p>Submitted on : *Insert Date*</p>
+        </div>
+        <div class="col-lg-4 col-xl-3 black-text">
+        <p>Status: *Insert Status*</p>
+        </div>
+        <div class="col">
+            <button class="btn btn-success client-ticket-btn" style="width:100%;">
+                reply
+            </button>
+        </div>
+</div>
+
+<div class="container client-ticket-container">
+    <div class="row">
+        <div class="col d-flex justify-content-between align-items-center black-text">
+            <h4 class="header-spacing">Subject: *Insert Header*</h4>
+            <button class="btn client-ticket-btn">reply</button>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col d-flex align-items-center black-text">
+            <p>Description:</p>
+            <p class="ticket-description">
+                dknfpsdfpgmrpindfpvkmdfvpfmvpeifnvepvneropvnfpvnsfpvmvpernviernvljfv fovnerouvnerlvinervpoinpi
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

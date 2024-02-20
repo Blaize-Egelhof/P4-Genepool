@@ -386,6 +386,39 @@ margin-right:auto;
 .client-custom-footer-answered-quotes-btn{
   align-items: first baseline;
 }
+
+.client-ticket-view{
+  margin-left:-15px;
+  margin-right:-15px;
+}
+
+.client-ticket-container{ 
+  width:100%;
+  padding-left:15px;
+  padding-right:15px;
+  margin-left:auto;
+  margin-right:auto;
+  border: 2px solid black;
+  padding-top: 25px;
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+
+.client-ticket-btn{
+  padding-top:1px;
+  padding-bottom:1px;
+  margin-top: 1px;
+  margin-bottom: 8px;
+}
+
+.ticket-description{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.header-spacing{
+  padding-bottom:25px;
+}
 /* Our partnership section */
 
 .partner-img{
