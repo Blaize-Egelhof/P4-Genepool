@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
-from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm,AuthorisedTicketRequestForm
-from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests,AuthorisedTicketRequests
+from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm,AuthorisedTicketRequestForm,ChatDialogue1
+from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests,AuthorisedTicketRequests,ChatDialogue
 from django.contrib.auth.models import Group, User
 from django import template
 from django.db.models import Q
@@ -191,7 +191,7 @@ class EditTicketForClientPage(LoginRequiredMixin,View):
         form = AuthorisedTicketRequestForm(request.POST, instance=ticket)
         if form.is_valid():
             form.save()
-            return redirect('some_view_name')  # Redirect to a new URL
+            return redirect('some_view_name')
         return render(request, 'edit-ticket.html', {'form': form})
 
 class ViewTicketForClientPage(LoginRequiredMixin,View):
@@ -199,6 +199,25 @@ class ViewTicketForClientPage(LoginRequiredMixin,View):
         ticket_id = self.kwargs.get('ticket_id')
         user=request.user
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        return render(request,'ticket-view.html', {'ticket':ticket,'user':user})
-    def post(self,request,*args, **kwargs):
-        
+        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('timestamp')
+        return render(request,'ticket-view.html', {'ticket': ticket, 'user': user, 'chat_messages': chat_messages})
+    def post(self, request, *args, **kwargs):
+        ticket_id = self.kwargs.get('ticket_id')
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        user = request.user
+        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('timestamp')
+        form = ChatDialogue1(request.POST, request.FILES) 
+        if form.is_valid(): 
+            reply = form.save(commit=False) 
+            reply.ticket = ticket 
+            reply.author = user  
+            reply.save()
+            messages.success(request, 'Reply Send Succesfully !')
+            print(chat_messages)
+            return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+        else:
+            messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
+            print(chat_messages)
+            return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+
+

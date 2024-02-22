@@ -61,7 +61,38 @@
 </div>
 
 <div class="container client-ticket-container-posted-by black-text">
+    {% for dialogue in chat_messages %}
     <div class="row grey-background">
+        <div class="col black-text text-center d-flex align-items-center justify-content-center">
+            <p class="mb-0">Posted by {{ dialogue.author.username }} on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
+            {% if dialogue.author == ticket.user %}
+                <span class="badge bg-info ms-2">Owner</span>
+            {% endif %}
+        </div>
+    </div>
+    {% if dialogue.file %}
+    <div class="row">
+        <div class="col">
+            <a href="{{ dialogue.file.url }}" target="_blank">{{ dialogue.author.username }} has attached a file, click here to open</a>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col reply-text">
+            {{ dialogue.message|linebreaksbr }}
+        </div>
+    </div>
+    {% empty %}
+    <div class="row">
+        <div class="col text-center">
+            <p>No replies yet.</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+    <!-- <div class="row grey-background">
         <div class="col black-text text-center d-flex align-items-center justify-content-center">
             <p class="mb-0">Posted by *Insert Person's Name* on *Date and Time*</p>
             <span class="badge bg-info ms-2">Owner</span>
@@ -74,8 +105,7 @@
             sdfgsdsdgsgsfgdf
             dfgdfgdf
         </div>
-    </div>
-</div>
+    </div> -->
 
 <div class="container client-ticket-container-reply-container black-text text-center">
     <div class="row">
@@ -83,7 +113,7 @@
             <h4>Reply</h4>
         </div>
     </div>
-    <form action="#" method="POST" class="text-center" enctype="multipart/form-data">
+    <form method="POST" class="text-center" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row d-flex flex-column align-items-center"> 
             <div class="col-6"> 

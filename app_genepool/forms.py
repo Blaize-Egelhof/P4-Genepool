@@ -55,8 +55,8 @@ class AuthorisedTicketRequestForm(forms.ModelForm):
         model = AuthorisedTicketRequests
         fields = ['full_nameORcompany_name', 'email', 'request_description',]
 
-class ChatDialogue(forms.ModelForm):
+class ChatDialogue1(forms.ModelForm):
     class Meta:
         model=ChatDialogue 
-        fields['full_nameORcompany_name','request_description','file']
+        fields = ['message','file']
 
