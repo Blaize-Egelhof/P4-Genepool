@@ -2,7 +2,7 @@
 
 Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner headquartered in the bustling city of Johannesburg, South Africa. Established in 2000, Genepool is dedicated to delivering an all-encompassing "batteries included" experience to cater to the unique IT needs of our clients.
 
-<img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG>"
+<img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG">
 
  **Our Commitment:** At Genepool, we take pride in offering a holistic approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking reliable Loadshedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your company!. 
  
@@ -37,6 +37,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 2.  **Streamlined Service Review:**  - As a returning visitor, I aim to easily review the various services offered by Genepool. The straightforward navigation ensures a seamless process to explore and stay informed about the available services. 
 3.   **Staying Updated on Partnerships:**  - As a returning visitor, I'm interested in staying updated on the partnerships Genepool has formed. Leveraging the carousel feature allows me to conveniently view any new collaborations or developments.
 4.  **Checking for Updates:**  - As a returning visitor, I seek any updates or changes to the quote requests,callback requests and tickets Ive opened. 
+5. **Able to communicate to a staff member via the ticket chat** - As a returning visitor , I am able to review tickets and quotes for any feedback given by staff members, as well as reply back to feedback via the ticket chat dialogue.
 
 -   ### ***Design***
     
@@ -53,7 +54,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
     -   #### Typography
 
-        - [Roboto]([Roboto - Google Fonts](https://fonts.google.com/specimen/Roboto)) and the default [Sans-Seriff](https://fonts.google.com/knowledge/glossary/sans_serif) fonts are used across the site, with Robot being used as the default font-family for all text which exisit within my website.
+        -[Roboto - Google Fonts](https://fonts.google.com/specimen/Roboto) and the default [Sans-Seriff](https://fonts.google.com/knowledge/glossary/sans_serif) fonts are used across the site, with Robot being used as the default font-family for all text which exisit within my website.
 
         - The font was chosen as it gives a very clean , crisp look to text . Ive chosen to not include any other fonts in order to maintain consistancy and visual cleanlieness for my site visitors
     
@@ -70,9 +71,10 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
           
          - Need Help in a Hurry image:
 			- On the right of this section is a animated cartoon drawing which attempts to relay the idea of IT support through an image, the image has no background in order to merge with its background without making it difficult for users to view and make sense of.6UY
+         - All Icons were taken from [Font-Awesome](https://fontawesome.com/)
     -   ### ***Wireframes and Mock-Ups***
 
-    - Wireframes and mock-ups were created for the homepage and song lyric pages. These were adapted and improved upon throughout the development process. 
+    - Wireframes and mock-ups : 
 
       -   Homepage Wireframe:
           ![Homepage Wireframe](docs/readme/images/design/wireframe-homepage.png)
