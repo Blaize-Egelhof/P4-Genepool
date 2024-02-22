@@ -77,21 +77,27 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
     - Wireframes and mock-ups : 
 
       -   Homepage Wireframes:
-        -Hero Section of HomePage
+            -Hero Section of HomePage
             <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page1.PNG">
-        -Help section and request of quote section
+            -Help section and request of quote section
             <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page2.PNG">
-        -Client reviews and partnerships
+            -Client reviews and partnerships
             <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page3.PNG">
 
       -   Sign Up/ Login Wireframes:
-        -Sign Up page
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/sign-up-page.PNG">
-        -Login Page
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-page.PNG">
 
-      -   Homepage Mock-Up:
-          ![Homepage Mock-Up](docs/readme/images/design/mockup-homepage.png)
+            -Sign Up page
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/sign-up-page.PNG">
+            -Login Page
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-page.PNG">
+      -   Products and services WireFrame:
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-services.PNG">
+          
       
-      -   Song Lyrics Mock-Up:
-          ![Song Lyrics Mock-Up](docs/readme/images/design/mockup-song-page.png)
+      -   Client Page Wireframe: 
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/client-page.PNG">
+      -   Staff Page Wireframe: 
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-page.PNG">
+            
+
+          
