@@ -76,11 +76,19 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
     - Wireframes and mock-ups : 
 
-      -   Homepage Wireframe:
-          ![Homepage Wireframe](docs/readme/images/design/wireframe-homepage.png)
+      -   Homepage Wireframes:
+        -Hero Section of HomePage
+            <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page1.PNG">
+        -Help section and request of quote section
+            <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page2.PNG">
+        -Client reviews and partnerships
+            <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page3.PNG">
 
-      -   Song Lyrics Wireframe:
-          ![Song Lyrics Wireframe](docs/readme/images/design/wireframe-song-page.png)
+      -   Sign Up/ Login Wireframes:
+        -Sign Up page
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/sign-up-page.PNG">
+        -Login Page
+          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-page.PNG">
 
       -   Homepage Mock-Up:
           ![Homepage Mock-Up](docs/readme/images/design/mockup-homepage.png)
