@@ -31,6 +31,10 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
         5. **Client Testimonials:**
            - As a first-time visitor, I can quickly view Reviews left by previous clients. This provides valuable insights into the experiences of others and helps me gauge the quality of services offered by Genepool.
 
+        6. **Requesting a Callback:**
+           - As a first-time visitor, I can use the "Request a Callback" button to reveal the callback form in order to submit a callback request. 
+           
+
    - #### Returning Visitor Goals
    
 1.  **Efficient Contact:**  - As a returning visitor, I want to quickly reach out to Genepool. Utilizing the "Get in Contact" feature allows me to efficiently access contact details for any follow-up inquiries or additional information. 
@@ -74,30 +78,36 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
          - All Icons were taken from [Font-Awesome](https://fontawesome.com/)
     -   ### ***Wireframes and Mock-Ups***
 
-    - Wireframes and mock-ups : 
+# Wireframes and Mock-ups
 
-      -   Homepage Wireframes:
-            -Hero Section of HomePage
-            <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page1.PNG">
-            -Help section and request of quote section
-            <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page2.PNG">
-            -Client reviews and partnerships
-            <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page3.PNG">
+## Homepage Wireframes
 
-      -   Sign Up/ Login Wireframes:
+### Hero Section of HomePage
+![Hero Section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page1.PNG)
 
-            -Sign Up page
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/sign-up-page.PNG">
-            -Login Page
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-page.PNG">
-      -   Products and services WireFrame:
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-services.PNG">
-          
-      
-      -   Client Page Wireframe: 
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/client-page.PNG">
-      -   Staff Page Wireframe: 
-          <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-page.PNG">
+### Help Section and Request of Quote Section
+![Help and Request Quote](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page2.PNG)
+
+### Client Reviews and Partnerships
+![Reviews and Partnerships](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page3.PNG)
+
+## Sign Up/ Login Wireframes
+
+### Sign Up Page
+![Sign Up Page](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/sign-up-page.PNG)
+
+### Login Page
+![Login Page](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-page.PNG)
+
+## Products and Services Wireframe
+![Products and Services](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-services.PNG)
+
+## Client Page Wireframe
+![Client Page](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/client-view.PNG)
+
+## Staff Page Wireframe
+![Staff Page](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-page.PNG)
+
             
 
           

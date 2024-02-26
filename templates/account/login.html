@@ -2,6 +2,19 @@
 
 {% load static %}
 
+{% block header %}
+<div>
+  <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+  <nav class="nav nav-masthead justify-content-center float-md-end">
+
+      <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+          <i class="fas fa-home"></i> Go Back
+      </a>
+  </nav>
+</div>
+
+{% endblock%}
+
 {% load i18n %}
 {% load account socialaccount %}
 
