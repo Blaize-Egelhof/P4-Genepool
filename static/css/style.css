@@ -640,9 +640,13 @@ SIGN-UP / LOGIN PAGE
   justify-content: center;
   justify-items: center;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   color:black;
+  margin-bottom: 40vh;
+  padding-top: 2vh;
 }
+
+
 
 @media (max-width:1130px){
   .landing-img{
@@ -810,7 +814,6 @@ SIGN-UP / LOGIN PAGE
   }
   .products-services-text{
     font-size:14px !important;
-    color:red !important;
   }
 
   .products-and-services-form-title{
@@ -823,6 +826,12 @@ SIGN-UP / LOGIN PAGE
   }
   .rs1-wrap-input100 {
     width: 100% !important;
+  }
+  .login-logout-p-text{
+    font-size:12px;
+  }
+  .my-centered-flexbox h1{
+    font-size:24px;
   }
 
 }
@@ -883,6 +892,9 @@ SIGN-UP / LOGIN PAGE
   .products-and-services-form-title{
     font-size:19px;
   }
+  .my-centered-flexbox{
+    padding-top: 3vh;
+  }
 
 }
 
@@ -895,6 +907,12 @@ SIGN-UP / LOGIN PAGE
   }
   .landing-img{
     margin-left:10px;
+  }
+  .login-logout-p-text{
+    font-size:10px;
+  }
+  .my-centered-flexbox{
+    padding-top: 5vh;
   }
 }
 
@@ -961,6 +979,9 @@ SIGN-UP / LOGIN PAGE
   }
   .mb-auto {
     margin-bottom: 1rem !important;
+  }
+  .my-centered-flexbox{
+    padding-top: 10vh;
   }
 }
 
