@@ -44,15 +44,16 @@ body {
 }
 
 .landing-img {
-  width: 100%; /* Make the image width responsive to the container */
-  max-width: 600px; /* Optional: limit the max width of the image to prevent it from becoming too large */
+  width: 100%; 
+  max-width: 600px; 
+  padding-left:38px;
 }
 
 .lead1 {
-  width: 100%; /* Ensure the paragraph containing buttons fills the container */
+  width: 100%;
   display: flex;
-  justify-content: center; /* Center the buttons if they don't fill the width */
-  gap: 10px; /* Optional: add some space between the buttons */
+  justify-content: center; 
+  gap: 10px; 
 }
 
 /* .generic-bakground-color{
@@ -72,6 +73,7 @@ footer{
 .landing-page{
   background:#0081FF;
   box-shadow: inset 0 0 14rem rgba(9, 18, 56, 0.5);
+  
 }
 
 
