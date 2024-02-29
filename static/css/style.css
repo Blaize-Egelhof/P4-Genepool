@@ -648,6 +648,21 @@ SIGN-UP / LOGIN PAGE
   padding-top: 2vh;
 }
 
+.my-centered-flexbox-1{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  color:black;
+  margin-bottom: 35vh;
+  padding-top: 2vh;
+}
+
+.sign-up-header-txt{
+  padding-top:1rem;
+}
+
 
 
 @media (max-width:1130px){
@@ -916,6 +931,18 @@ SIGN-UP / LOGIN PAGE
   .my-centered-flexbox{
     padding-top: 5vh;
   }
+
+  .my-centered-flexbox-1{
+    font-size:16px !important;
+  }
+
+  .sign-up-header-txt{
+    font-size:34px !important;
+  }
+
+  .already-account-text{
+    font-size:14px;
+  }
 }
 
 @media (max-width:363px){
@@ -927,6 +954,10 @@ SIGN-UP / LOGIN PAGE
   }
   .input.input100 {
     height:0px !important;
+ }
+ .my-centered-flexbox-1{
+  font-size:14px !important;
+  margin-bottom: 38vh;
  }
 }
 
@@ -984,6 +1015,9 @@ SIGN-UP / LOGIN PAGE
   }
   .my-centered-flexbox{
     padding-top: 10vh;
+  }
+  .my-centered-flexbox-1{
+    padding-top: 5vh;
   }
 }
 
