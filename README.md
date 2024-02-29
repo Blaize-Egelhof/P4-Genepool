@@ -127,7 +127,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
   - The navigation bar includes various clickable links, allowing the user to easily access the pages on the site. Access is distinct between admin staff users and standard client users, with restricted access to standard client users. There is also signup, login and logout functionality which changes according to the status of the user. 
     - First Time Visitor Nav Bar:
-    ![Unauthorised Nav Bar View](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-page.PNG)
+    ![Unauthorised Nav Bar View](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/sign-up-and-login-view.PNG)
     - Standard User Login:
     ![Nav Bar Standard User](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/user-nav-bar.PNG)
     - Staff Login:
@@ -139,7 +139,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
     - Login Page
     - Logout Page
     - Ticket View (for standard users)
-    - Ticket View (for admin/staff users)
+    - Staff View (for admin/staff users)
     - Ticket Chat View (for both standard and staff users)
 
   - In order to make navigation easier and clear for users , Ive used clear bold white text over a blue background to create contrast, additionally each navigation link has a simple graphic to further clarify the function of the navigation link.
@@ -162,13 +162,15 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   - Below the white introduction text is two bootstrap buttons, these buttons are white in color with black text in order to provide contrast to the white text and logo used above the buttons, the black text provides a different form of contrast compaired to the all white and blue themes mentioned above.
 
   - If a user selects the "Get in Contact" button a bootstrap pop-up model appears , displaying the various methods of contacting our support channels.
-  ![Pop-up Model](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/get-in-contact-btn-popup.PNG)
+  <div align="center">
+   ![Pop-up Model](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/get-in-contact-btn-popup.PNG)
+  </div>
 
   - If a user selects the "Request a Quote" button , users will be immediatly directed to the Request a Quote form .
   ![Request a Quote Form](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-quote-section.PNG)
 
   #### Support Section
-  ![Suppprt Section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-howcanwehelpyou-section-section.PNG)
+  ![Suppprt Section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-howcanwehelpyou-section.PNG)
 
   - The support section consists of a black heading over a white background to provide contrast, the "support you" wording of the heading has been bolded in order to emphasis that this section is for the needs of the client strictly, next to the text is a blue snowflake logo which is my company's logo ,I've chosen to include this in order to provide visual beauty to an otherwise generic heading. 
 
@@ -201,7 +203,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   - Each carosoul view consists of 3 reviews objects , with this pattern repeating on each new view, users can eiether manually toggle between the reviews or have the review page automatically change over a specific period (Default Bootrap toggle buttons used to navigate the wheel) 
 
   #### Request a Quote Section
-  ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-review-section.PNG)
+  ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-quote-section.PNG)
 
   - The request a quote section is a carefully layed out form which is intended for users to request quotes directly through my company without needing to create an account , this is intended for ease of use for new site visitors who are interested in working with us. 
 
@@ -227,7 +229,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
   - Ive chosen to keep the background white as all supplier logo's used , have components of different colors except for the color white , this ensures theres visual clarity for users when viewing ALL supplier logo's. 
 
-  
+
 
 
 
