@@ -37,7 +37,7 @@
                                 <p class="card-text no-card-height products-services-text">At Genepool, our dedicated and highly skilled support team is committed to providing professional and efficient IT support tailored to your needs. With a proactive approach, we anticipate and address potential challenges before they impact your operations, ensuring a secure and seamless IT environment for your business. Trust Genepool to be your strategic IT partner, delivering excellence in every aspect of technical support.</p>
                                 <div class="d-flex flex-column">
                                     <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 </p>
                                 <div class="d-flex flex-column">
                                     <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                                 </p>
                                 <div class="d-flex flex-column">
                                     <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                                 </p>
                                 <div class="d-flex flex-column">
                                     <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                                 </p>
                                 <div class="d-flex flex-column">
                                     <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                                 </p>
                                 <div class="d-flex flex-column">
                                     <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary">Request a call back</a>
+                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                 
                 <div class="create-some-space"></div>
 
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#callbackFormContainer" aria-expanded="false" aria-controls="callbackFormContainer">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#callbackFormContainer" aria-expanded="false" aria-controls="callbackFormContainer" id="callbackFormButton">
                         CALLBACK FORM
                 </button>
                 
@@ -212,6 +212,24 @@
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('collapseExample').classList.add('collapse');
     });
+
+        document.querySelectorAll('.callback-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            document.querySelector('.btn-primary[data-bs-toggle="collapse"]').click();
+            document.body.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    
+    function closeAlert() {
+            let messages = document.getElementById("msg");
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
+        }
+
+        setTimeout(closeAlert, 4000);
 </script>
 
 {% endblock content %}

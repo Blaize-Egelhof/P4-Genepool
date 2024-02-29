@@ -162,12 +162,10 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   - Below the white introduction text is two bootstrap buttons, these buttons are white in color with black text in order to provide contrast to the white text and logo used above the buttons, the black text provides a different form of contrast compaired to the all white and blue themes mentioned above.
 
   - If a user selects the "Get in Contact" button a bootstrap pop-up model appears , displaying the various methods of contacting our support channels.
-  <div align="center">
    ![Pop-up Model](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/get-in-contact-btn-popup.PNG)
-  </div>
 
-  - If a user selects the "Request a Quote" button , users will be immediatly directed to the Request a Quote form .
-  ![Request a Quote Form](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-quote-section.PNG)
+
+  - If a user selects the "Request a Quote" button , users will be immediatly directed to the Request a Quote form, this form is shown under the "Request a Quote Section"
 
   #### Support Section
   ![Suppprt Section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-howcanwehelpyou-section.PNG)
@@ -228,6 +226,44 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   - The carosoul automatically toggles views , users can only choose to navigate through the carosoul using the left and right arrow indicators
 
   - Ive chosen to keep the background white as all supplier logo's used , have components of different colors except for the color white , this ensures theres visual clarity for users when viewing ALL supplier logo's. 
+
+  ### Products and Services Page
+
+  - NOTE : This entire form is fully responsive between width sizes of 320px and 1080px.
+
+  - My products and services page consists of slightly unique header as compaired to index page in the sense that my company's logo is displayed on the left , the choice of colors, fonts and icons remain the same for consistancy. 
+
+  - The entire page is made up of 6 Boostrap cards each with unique bold headers and text below the headers to clarify in detail what Genepool offers for each topic , both the header and text are black over a default white background in order to provide clarity for readers, the topics covered accross each cards are as follows: "Support", "Software", "Hardware", "Microsoft" , "Power Solutions" and "Networking" 
+
+  - Below the text for each card are two bootstrap buttons , with a blue border and blue text in order to stand out from the black text used above them , for each card theres a "Get in Contact" button and a "Request a call back" button which have unique blue hover properties to highlight the type of button a user is hovering over. 
+
+  - The "Get In contact" button when pressed triggers a bootstrap pop-up model which advertises our Product Enquires and Technical Support channels users can contact for questions of queries regarding the topics mentioned on each card. 
+
+  - The "Request a call back" button when pressed , opens the Request a Quote Form , which is initially hidden from view. 
+  
+  ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p1.PNG) 
+
+  ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p2.PNG) 
+
+  ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p3.PNG) 
+
+  - When the blue Callback Form button is pressed a form reveals itself to users , this form is designed for users who have queries and would like to either be called back or contacted via email
+
+  ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p4.PNG) 
+
+  - This form follows the exact same layout and color theme as the Request a Quote form used on my index page , the decision to keep the same layout and color schema was enforced to maintain consistancy. 
+
+  - If a user succesfully submits the form a green pop-up will appear in the header notifying users that Genepool has recived their request and will be in contact shortly. 
+
+  ![Callback Success](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/callback-success.PNG) 
+
+  - Similarly if a user doesnt complete the form correctly a red error message will display notifying users. 
+
+  ![Callback Failure](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/callback-failure.PNG) 
+
+
+
+
 
 
 
