@@ -262,6 +262,23 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   ![Callback Failure](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/callback-failure.PNG) 
 
 
+  Complete Existing Features section of Readme then UI UX is done. 
+
+  That includes entity relationship diagram
+
+  ## __Technologies Used__
+
+   ### ***Languages Used***
+
+   -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+   -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+
+   -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+   -   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+
 
 
 
