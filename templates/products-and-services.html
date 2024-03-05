@@ -3,22 +3,23 @@
 {% load static %}
 
 {% block header %}
-<div>
-    <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
-    <nav class="nav nav-masthead justify-content-center float-md-end">
+<header>
+    <div>
+        <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
 
-        <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
-            <i class="fas fa-cogs"></i> Products/Services
-        </a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
-            <i class="fas fa-sign-in-alt"></i> Log a Ticket
-        </a>
-    </nav>
-</div>
-
+            <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                <i class="fas fa-cogs"></i> Products/Services
+            </a>
+            <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
+                <i class="fas fa-sign-in-alt"></i> Log a Ticket
+            </a>
+        </nav>
+    </div>
+</header>
 {% endblock %}
 
 {% block content %}
@@ -27,187 +28,189 @@
 <link rel="stylesheet" href="{% static 'css/products-services.css' %}">
 <link rel="stylesheet" href="{% static 'css/quote-form.css' %}">
 {% endblock extra_css %}
-<div class="create-some-space"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title" id="support">SUPPORT</h4>
-                                <p class="card-text no-card-height products-services-text">At Genepool, our dedicated and highly skilled support team is committed to providing professional and efficient IT support tailored to your needs. With a proactive approach, we anticipate and address potential challenges before they impact your operations, ensuring a secure and seamless IT environment for your business. Trust Genepool to be your strategic IT partner, delivering excellence in every aspect of technical support.</p>
-                                <div class="d-flex flex-column">
-                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+<products-and-services-cards>
+    <div class="create-some-space"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title" id="support">SUPPORT</h4>
+                                    <p class="card-text no-card-height products-services-text">At Genepool, our dedicated and highly skilled support team is committed to providing professional and efficient IT support tailored to your needs. With a proactive approach, we anticipate and address potential challenges before they impact your operations, ensuring a secure and seamless IT environment for your business. Trust Genepool to be your strategic IT partner, delivering excellence in every aspect of technical support.</p>
+                                    <div class="d-flex flex-column">
+                                        <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                        <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title" id="software">SOFTWARE</h4>
-                                <p class="card-text no-card-height products-services-text">
-                                    Unlock the full potential of your business with our cutting-edge software solutions. From custom software development to seamless application integration, Genepool is your strategic partner for staying ahead in the digital landscape. Embrace innovation, streamline operations, and achieve unparalleled efficiency with our tailored software services.
-                                </p>
-                                <div class="d-flex flex-column">
-                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title" id="software">SOFTWARE</h4>
+                                    <p class="card-text no-card-height products-services-text">
+                                        Unlock the full potential of your business with our cutting-edge software solutions. From custom software development to seamless application integration, Genepool is your strategic partner for staying ahead in the digital landscape. Embrace innovation, streamline operations, and achieve unparalleled efficiency with our tailored software services.
+                                    </p>
+                                    <div class="d-flex flex-column">
+                                        <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                        <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="create-some-space"> <hr></div>
                     </div>
-                    <div class="create-some-space"> <hr></div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title" id="hardware">HARDWARE</h4>
+                                    <p class="card-text no-card-height products-services-text">
+                                        Elevate your IT infrastructure with our comprehensive hardware solutions. Genepool offers a range of high-performance hardware products, from servers and storage solutions to workstations and peripherals. Experience reliability, scalability, and cutting-edge technology with our tailored hardware services.
+                                    </p>
+                                    <div class="d-flex flex-column">
+                                        <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                        <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title" id="microsoft">MICROSOFT</h4>
+                                    <p class="card-text no-card-height products-services-text">
+                                        Harness the power of Microsoft technologies to drive productivity and innovation in your organization. Our Microsoft services cover a spectrum of solutions, including Office 365 implementation, SharePoint development, and Dynamics 365 customization. Stay ahead in the digital era with our expert Microsoft services.
+                                    </p>
+                                    <div class="d-flex flex-column">
+                                        <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                        <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="create-some-space"> <hr></div>
+
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title" id="power-solutions">POWER SOLUTIONS</h4>
+                                    <p class="card-text no-card-height products-services-text">
+                                        Empower your business with robust power solutions designed for efficiency and sustainability. Genepool offers innovative power management solutions, including renewable energy integration, backup power systems, and energy-efficient technologies. Take control of your power needs with our tailored solutions.
+                                    </p>
+                                    <div class="d-flex flex-column">
+                                        <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                        <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title" id="networking">NETWORKING</h4>
+                                    <p class="card-text no-card-height products-services-text">
+                                        Build a secure and reliable network infrastructure with Genepool's networking services. Our solutions cover network design, implementation, and maintenance, ensuring seamless connectivity and data integrity. Elevate your communication and collaboration with our advanced networking solutions.
+                                    </p>
+                                    <div class="d-flex flex-column">
+                                        <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
+                                        <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="create-some-space"></div>
+
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#callbackFormContainer" aria-expanded="false" aria-controls="callbackFormContainer" id="callbackFormButton">
+                            CALLBACK FORM
+                    </button>
+                    
+                    <div class="collapse" id="callbackFormContainer"> 
+                        <callback-form-section id="callback-form-section">
+                            <div class="container-contact100 image-overlay-form">
+                                <div class="wrap-contact100">
+                                    <form class="contact100-form validate-form" method="POST" id="callback-form">
+                                        {% csrf_token %}
+                                        <span class="contact100-form-title products-and-services-form-title">Request A Callback</span>
+                                        <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                                            <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
+                                            <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
+                                        </div>
+                                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
+                                            <span class="label-input100">Email <span class="important">*</span></span>
+                                            <input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+                                        </div>
+                                        <div class="wrap-input100 bg1 rs1-wrap-input100">
+                                            <span class="label-input100">Phone</span>
+                                            <input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
+                                        </div>
+                                        <div class="wrap-input100 input100-select bg1">
+                                            <span class="label-input100">Needed Services <span class="important">*</span></span>
+                                            <div>
+                                                <select class="js-select2" name="service">
+                                                    <option value="support">Support</option>
+                                                    <option value="hardware">Hardware</option>
+                                                    <option value="software">Software</option>
+                                                    <option value="microsoft">Microsoft</option>
+                                                    <option value="power_solutions">Power Solutions</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
+                                            <span class="label-input100">Message</span>
+                                            <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
+                                        </div>
+                                        <div class="container-contact100-form-btn">
+                                            <button class="contact100-form-btn">
+                                                <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </quote-form-section>
+                    </div>
+</products-and-services-cards>
+            
+<div class="create-some-space"></div>  
+                
+<contact-form-model>
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Contacts</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 class="model-heading-custom">Product Enquires</h3>
+                <div class="fix-padding">
+                    <p>accounts@genepool.co.za</p>
+                    <p>enquires@genepool.co.za</p>
+                </div>
+                <h3 class="model-heading-custom">Technical Support</h3>
+                <div class="fix-padding">
+                    <p>support@genepool.co.za</p>
+                    <p>sales@genepool.co.za</p>
+                    <p>082 382 8035</p>
+                    <a class="text-muted" href="https://wa.me/0823828035" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title" id="hardware">HARDWARE</h4>
-                                <p class="card-text no-card-height products-services-text">
-                                    Elevate your IT infrastructure with our comprehensive hardware solutions. Genepool offers a range of high-performance hardware products, from servers and storage solutions to workstations and peripherals. Experience reliability, scalability, and cutting-edge technology with our tailored hardware services.
-                                </p>
-                                <div class="d-flex flex-column">
-                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title" id="microsoft">MICROSOFT</h4>
-                                <p class="card-text no-card-height products-services-text">
-                                    Harness the power of Microsoft technologies to drive productivity and innovation in your organization. Our Microsoft services cover a spectrum of solutions, including Office 365 implementation, SharePoint development, and Dynamics 365 customization. Stay ahead in the digital era with our expert Microsoft services.
-                                </p>
-                                <div class="d-flex flex-column">
-                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="create-some-space"> <hr></div>
-
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title" id="power-solutions">POWER SOLUTIONS</h4>
-                                <p class="card-text no-card-height products-services-text">
-                                    Empower your business with robust power solutions designed for efficiency and sustainability. Genepool offers innovative power management solutions, including renewable energy integration, backup power systems, and energy-efficient technologies. Take control of your power needs with our tailored solutions.
-                                </p>
-                                <div class="d-flex flex-column">
-                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title" id="networking">NETWORKING</h4>
-                                <p class="card-text no-card-height products-services-text">
-                                    Build a secure and reliable network infrastructure with Genepool's networking services. Our solutions cover network design, implementation, and maintenance, ensuring seamless connectivity and data integrity. Elevate your communication and collaboration with our advanced networking solutions.
-                                </p>
-                                <div class="d-flex flex-column">
-                                    <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
-                                    <a href="#" class="btn btn-outline-primary callback-btn">Request a call back</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                <div class="create-some-space"></div>
-
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#callbackFormContainer" aria-expanded="false" aria-controls="callbackFormContainer" id="callbackFormButton">
-                        CALLBACK FORM
-                </button>
-                
-                <div class="collapse" id="callbackFormContainer"> 
-                    <callback-form-section id="callback-form-section">
-                        <div class="container-contact100 image-overlay-form">
-                            <div class="wrap-contact100">
-                                <form class="contact100-form validate-form" method="POST" id="callback-form">
-                                    {% csrf_token %}
-                                    <span class="contact100-form-title products-and-services-form-title">Request A Callback</span>
-                                    <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-                                        <span class="label-input100">FULL NAME/COMPANY NAME <span class="important">*</span></span>
-                                        <input class="input100" type="text" name="full_nameORcompany_name" placeholder="Enter Your Name/Company Name">
-                                    </div>
-                                    <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Enter Your Email (e@a.x)">
-                                        <span class="label-input100">Email <span class="important">*</span></span>
-                                        <input class="input100" type="text" name="email" placeholder="Enter Your Email ">
-                                    </div>
-                                    <div class="wrap-input100 bg1 rs1-wrap-input100">
-                                        <span class="label-input100">Phone</span>
-                                        <input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
-                                    </div>
-                                    <div class="wrap-input100 input100-select bg1">
-                                        <span class="label-input100">Needed Services <span class="important">*</span></span>
-                                        <div>
-                                            <select class="js-select2" name="service">
-                                                <option value="support">Support</option>
-                                                <option value="hardware">Hardware</option>
-                                                <option value="software">Software</option>
-                                                <option value="microsoft">Microsoft</option>
-                                                <option value="power_solutions">Power Solutions</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
-                                        <span class="label-input100">Message</span>
-                                        <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
-                                    </div>
-                                    <div class="container-contact100-form-btn">
-                                        <button class="contact100-form-btn">
-                                            <span>Submit <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </quote-form-section>
-                </div>
-            
-            <div class="create-some-space"></div>  
-                
-            <contact-form-model>
-                <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                    
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Contacts</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <h3 class="model-heading-custom">Product Enquires</h3>
-                            <div class="fix-padding">
-                                <p>accounts@genepool.co.za</p>
-                                <p>enquires@genepool.co.za</p>
-                            </div>
-                            <h3 class="model-heading-custom">Technical Support</h3>
-                            <div class="fix-padding">
-                                <p>support@genepool.co.za</p>
-                                <p>sales@genepool.co.za</p>
-                                <p>082 382 8035</p>
-                                <a class="text-muted" href="https://wa.me/0823828035" target="_blank"><span class="fa-brands fa-whatsapp"></span></a>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </contact-form-model>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</contact-form-model>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('collapseExample').classList.add('collapse');
@@ -220,7 +223,6 @@
         });
     });
 
-    
     function closeAlert() {
             let messages = document.getElementById("msg");
             if (messages) {
