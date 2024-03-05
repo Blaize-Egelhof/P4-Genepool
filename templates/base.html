@@ -26,7 +26,7 @@
         </header>
         <landingpage class="px-3">
             {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" id="msg">
                 {{ message | safe }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -57,6 +57,14 @@
                 }
             });
         });
+        function closeAlert() {
+        let messages = document.getElementById("msg");
+        if (messages) {
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }
+    }
+    setTimeout(closeAlert, 4000);
     </script>
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 container-fluid genepool-custom-background mb-0">
         <div class="col-md-4 d-flex align-items-center">
