@@ -152,8 +152,6 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
   ### Homepage
 
-  -Note: all elements mentioned below are fully responsive between view widths of 320px - 1080px 
-
   #### Landing Page 
   ![Landing Page](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-hero-img.PNG)
 
@@ -228,8 +226,6 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   - Ive chosen to keep the background white as all supplier logo's used , have components of different colors except for the color white , this ensures theres visual clarity for users when viewing ALL supplier logo's. 
 
   ### Products and Services Page
-
-  - NOTE : This entire form is fully responsive between width sizes of 320px and 1080px.
 
   - My products and services page consists of slightly unique header as compaired to index page in the sense that my company's logo is displayed on the left , the choice of colors, fonts and icons remain the same for consistancy. 
 
@@ -318,7 +314,130 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
          - Hero Image and snowflake images were taken from Genepool's design team.
 
       1. [Cloudinary](https://cloudinary.com/)
-         - Is used in this project as a cloud plateform to store all images used in this site
+         - Is used in this project as a cloud plateform to store all images used in this site. 
+
+## __Testing__
+
+### ***HTML, CSS , JavaScript and Python Testing***
+
+INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
+
+### ***Manual Testing***
+
+### ***Performance, Accessibility, Best Practices, and SEO Testing***
+
+#### Desktop Testing with [Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+#### Mobile Testing with [Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse)
+
+### ***Responsive Testing***
+
+  - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was used to regularly check for any responsive design issues. The media queries are the same as the DevTools breakpoints. 
+
+  - The site is responsive down to 320px viewport widths. 
+
+  ### ***Further Testing***
+
+-   The Website was tested on Google Chrome, Firefox, and Microsoft Edge browsers.
+
+-   A large amount of testing was done to ensure that all pages were linking correctly.
+
+-   Testing was conducted to ensure all forms POST'd correctly and the related database objects are saved correctly. 
+
+   INSERT TESTING TABLE HERE: 
+
+
+### ***Fixed Bugs***
+
+### ***Known Bugs***
+
+## Deployment
+
+### Heroku
+
+1. Navigate to your [Heroku dashboard](https://dashboard.heroku.com/apps)
+2. Click "New" and select "Create new app".  
+  ![New heroku](./docs/readme/images/deployment/heroku-new.png)
+3. Input a meaningful name for your app and choose the region best suited to
+  your location.  
+  ![Create new app](./docs/readme/images/deployment/heroku-create.png)
+4. Select "Settings" from the tabs.  
+  ![Settings tab](./docs/readme/images/deployment/heroku-settings.png)
+5. Click "Reveal Config Vars".  
+ ![Config vars button](./docs/readme/images/deployment/heroku-config-vars.png)
+6. Input all key-value pairs as necessary from the `.env` file. **Ensure DEBUG
+   and DEVELOPMENT are not included**.
+   ![Config vars](./docs/readme/images/deployment/heroku-config-var.png)
+7. Click "Add buildpack".  
+ ![Add buildpack](./docs/readme/images/deployment/heroku-add-buildpacks.png)
+8. Add "python" from the list or search if necessary, remember to
+ click save.  
+ ![Select buildpacks](./docs/readme/images/deployment/heroku-select-buildpacks.png)
+9. Select "Deploy" from the tabs.  
+![Settings tab](./docs/readme/images/deployment/heroku-deploy-tab.png)
+10. Select "GitHub - Connect to GitHub" from deployment methods.  
+ ![Select GitHub](./docs/readme/images/deployment/heroku-select-github.png)
+11. Click "Connect to GitHub" in the created section.  
+ ![Connect to GitHub](./docs/readme/images/deployment/heroku-connect-github.png)
+12. Search for the GitHub repository by name.  
+13. Click to connect to the relevant repo.
+14. Either click `Enable Automatic Deploys` for automatic deploys or `Deploy
+ Branch` to deploy manually. Manually deployed branches will need
+ re-deploying each time the repo is updated.  
+ ![Heroku deploy branch](./docs/readme/images/deployment/heroku-deploy-branch.png)
+15. Click `View` to view the deployed site.  
+    ![Heroku view](./docs/readme/images/deployment/heroku-view.png)
+16. The live site can also be accessed from your repo in GitHub from the
+    environments section of the repo.
+
+The site is now live and operational
+
+
+## __Credits__
+
+### ***Code***
+
+- The following were used as references to help with writing the HTML, CSS, JavaScript and Python code:
+  - [Code Institute LMS](https://learn.codeinstitute.net/ci_program/diplomainsoftwaredevelopmentecommerce), in particular the [CI I Think Therefore I Blog Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/)
+  - [W3Schools](https://www.w3schools.com/) 
+  - [Stack Overflow](https://stackoverflow.com/)
+  - [Django Documentation](https://docs.djangoproject.com/en/4.1/)
+
+- The form used throughout this project was taken as a template and made my own from [colorlib](https://colorlib.com/wp/free-html5-contact-form-templates/)
+
+- The header structure for the index.html page was taken from [Mark Otto](https://twitter.com/mdo) from the website [Getbootstrap.com](https://getbootstrap.com/docs/5.3/examples/cover/) and made my own.
+
+### ***Content***
+
+- The overall structure of this README was taken from [AlexaH88](https://github.com/AlexaH88), who skillfully crafted a merit worthy project.
+
+### ***Media***
+
+- The hero logo (Genepool image) was taken from my company's design team , with permissions from [Sean Nijenhuis](https://www.f6s.com/company/yomane#about), in addition ive attached the below Cloudinary links to the other Genepool imagery used for this project.
+
+   [Genepool Hero Image](https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png)
+   [Genepool Snowflake Logo](https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png)
+   [Genepool Background](https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1697635373/background_p0jlat.png)
+
+- Reviewee photo's were taken from [Pexals](https://www.pexels.com/)
+
+- Help in a hurry section on landing page imagery was taken from [CleanPNG](www.cleanpng.com)
+
+- Basic Icons were taken from [Font Awesome](https://fontawesome.com/)
+
+- Supplier/Partnership imagery on index.html were taken from various suppliers , the use of these images are public domain , the suppliers can easily be identifed as their company names are written on each imagery.
+
+### ***Acknowledgements***
+
+- Tutor Support, Student Care and the Slack Community at [Code Institute](https://codeinstitute.net/global/) for their support.
+
+- My mentor, [Lauren-Nicole](https://github.com/CluelessBiker), for guiding me and giving me helpful feedback and advice. 
+
+- [John Solly](https://www.youtube.com/@johnsolly) , for teaching me AJAX methods in Django.
+
+- [Sean Nijenhuis](https://www.f6s.com/company/yomane#about) , my current employer and senior programmer for giving me amazing tips and tricks during the development of this project.
+
+
 
 
 
