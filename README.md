@@ -319,6 +319,10 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
 INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
+- [W3C Markup Validator](https://validator.w3.org/) was used to validate every page of the project to ensure there were no HTML syntax errors in the project.
+
+
+
 ### ***Manual Testing***
 
    INSERT TESTING TABLE HERE: 
