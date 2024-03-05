@@ -6,7 +6,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
  **Our Commitment:** At Genepool, we take pride in offering a holistic approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking reliable Loadshedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your company!. 
  
- **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform, streamlining the communication process. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
+ **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform or directly get in contact with us using our supplied contact points, streamlining the communication process. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
  
  **Staff Empowerment:** Our staff Through intuitive forms and interfaces, can manage all incomming callback and quote requests made by our site visitors. Our staff thus plays a crucial role in providing the fastest service possible, Join us at Genepool as we redefine IT excellence ,let us be your partner in building a future driven by technology.
 
@@ -303,9 +303,6 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
       1. [Font Awesome:](https://fontawesome.com/)
          - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
-      1. [Font Awesome Favicon Generator:](https://gauger.io/fonticon/)
-         - Font Awesome Favicon Generator was used to reproduce a favicon version of the [Font Awesome Music Icon](https://fontawesome.com/icons/music?s=solid) used in the header site name.
-
       1. [Balsamic Wireframes:](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAuYuvBhApEiwAzq_Yiepq07k0Tz1mJB0GhfGdwnKwWnySZj1b24YIQ0ktc909_GY-JFCSthoCJXAQAvD_BwE)
          - Balsamic Wireframes was used to create the wireframes and mock-ups during the design process.
 
@@ -323,6 +320,8 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
 ### ***Manual Testing***
+
+   INSERT TESTING TABLE HERE: 
 
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 
@@ -343,8 +342,6 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 
 -   Testing was conducted to ensure all forms POST'd correctly and the related database objects are saved correctly. 
-
-   INSERT TESTING TABLE HERE: 
 
 
 ### ***Fixed Bugs***
