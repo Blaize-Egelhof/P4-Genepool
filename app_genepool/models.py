@@ -104,7 +104,7 @@ class ChatDialogue(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(upload_to='../GENEPOOL/templates/ticket-files/', blank=True)
+    file = models.FileField(upload_to='../templates/ticket-files/', blank=True)
 
     
 

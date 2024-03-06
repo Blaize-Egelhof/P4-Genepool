@@ -7,7 +7,9 @@
 
 <nav class="nav nav-masthead justify-content-center float-md-end">
     <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
-    <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
+    <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
+        <i class="fas fa-sign-in-alt"></i> Go Back
+    </a>
 </nav>
 
 {% endblock %}
@@ -27,7 +29,6 @@
 <div class="container client-ticket-container">
         <div class="col d-flex justify-content-between align-items-center black-text pt-1 pb-2">
             <h4>Ticket Information:</h4>
-            <button class="btn client-ticket-btn">Urgent?</button>
         </div>
         <div class="col-lg-4 col-xl-3 black-text">
         <p>Created By <strong>{{ ticket.client.username}}</strong></p>
@@ -51,12 +52,11 @@
             <p class="ticket-description">
                 {{ticket.request_description}}
             </p>
-            <button class="btn client-ticket-btn">reply</button>
         </div>     
         <div class="col">
-            <button class="btn btn-success client-ticket-btn" style="width:100%;margin-bottom:2rem;">
-                reply
-            </button>
+            <a class="btn btn-success client-ticket-btn" href="#reply-box" style="width:100%;margin-bottom:2rem;">
+                Reply
+            </a>
         </div>
 </div>
 
@@ -64,9 +64,11 @@
     {% for dialogue in chat_messages %}
     <div class="row grey-background">
         <div class="col black-text text-center d-flex align-items-center justify-content-center">
-            <p class="mb-0">Posted by {{ dialogue.author.username }} on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
-            {% if dialogue.author == ticket.user %}
-                <span class="badge bg-info ms-2">Owner</span>
+            <p class="mb-0">Posted by <strong>{{ dialogue.author.username }} </strong> on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
+            {% if dialogue.author == ticket.full_nameORcompany_name %}
+                <span class="badge bg-primary ticket-author-badges">Staff Memeber</span>
+            {% else %}
+                <span class ="badge bg-dark ticket-author-badges">Ticket Owner</span>
             {% endif %}
         </div>
     </div>
@@ -76,6 +78,9 @@
             <a href="{{ dialogue.file.url }}" target="_blank">{{ dialogue.author.username }} has attached a file, click here to open</a>
         </div>
     </div>
+
+    {% else %}
+    <p>NO ATTACHMENTS </p>
     {% endif %}
     <div class="row">
         <div class="col reply-text">
@@ -113,7 +118,7 @@
             <h4>Reply</h4>
         </div>
     </div>
-    <form method="POST" class="text-center" enctype="multipart/form-data">
+    <form method="POST" class="text-center" enctype="multipart/form-data" id="reply-box">
         {% csrf_token %}
         <div class="row d-flex flex-column align-items-center"> 
             <div class="col-6"> 

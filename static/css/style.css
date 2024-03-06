@@ -426,9 +426,12 @@ margin-right:auto;
   padding-bottom:25px;
 }
 .client-ticket-container-posted-by{
-  margin-top: -8px;
-  margin-bottom: 7px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85vh;
 }
 
 .reply-text{
@@ -441,8 +444,12 @@ margin-right:auto;
 }
 
 .client-ticket-container-reply-container{
-  width:70%;
-  border:1px solid black;
+  padding-bottom: 0px;
+  margin-bottom: 2rem
+}
+
+.ticket-author-badges{
+  margin-left:1rem;
 }
 
 /* Our partnership section */

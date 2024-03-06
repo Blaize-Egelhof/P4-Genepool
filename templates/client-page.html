@@ -493,14 +493,6 @@
                 toggleClosedQuotesBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
             });
         });
-        function closeAlert() {
-            let messages = document.getElementById("msg");
-            if (messages) {
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }
-        }
-        setTimeout(closeAlert, 4000);
     </script>
 
 {% endblock content %}
