@@ -418,8 +418,7 @@ margin-right:auto;
 }
 
 .ticket-description{
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: 1rem;
 }
 
 .header-spacing{
@@ -445,7 +444,8 @@ margin-right:auto;
 
 .client-ticket-container-reply-container{
   padding-bottom: 0px;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
+  border: 1px solid black;
 }
 
 .ticket-author-badges{
