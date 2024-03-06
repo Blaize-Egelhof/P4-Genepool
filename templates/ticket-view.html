@@ -6,7 +6,7 @@
 {% block header %}
 
 <nav class="nav nav-masthead justify-content-center float-md-end">
-    <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
+    <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}"><i><i class="fa-solid fa-mug-saucer"></i></i> Browse-Logged-In</a>
     <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
         <i class="fas fa-sign-in-alt"></i> Go Back
     </a>
@@ -25,7 +25,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="container client-ticket-container">
         <div class="col d-flex justify-content-between align-items-center black-text pt-1 pb-2">
             <h4>Ticket Information:</h4>
@@ -95,7 +94,6 @@
     </div>
     {% endfor %}
 </div>
-
 
     <!-- <div class="row grey-background">
         <div class="col black-text text-center d-flex align-items-center justify-content-center">
