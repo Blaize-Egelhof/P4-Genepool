@@ -14,6 +14,8 @@
 
 {% endblock %}
 
+<div class="create-some-space-v1"></div>
+
 {% block index-page-exclusive %}
 
 <div class="container">
@@ -25,119 +27,107 @@
 {% endblock %}
 
 {% block content %}
-<div class="container client-ticket-container">
-        <div class="col d-flex justify-content-between align-items-center black-text pt-1 pb-2">
-            <h4>Ticket Information:</h4>
-        </div>
-        <div class="col-lg-4 col-xl-3 black-text">
-        <p>Created By <strong>{{ ticket.client.username}}</strong></p>
-        </div>
-        <div class="col-lg-4 col-xl-3 black-text">
-        <p>Submitted on : <strong>{{ticket.time_requested}}</strong></p>
-        </div>
-        <div class="col-lg-4 col-xl-3 black-text">
-            <p>Status: 
-                {% if ticket.status == "Unanswered" %}
-                    <span class="badge bg-primary">Unanswered</span>
-                {% elif ticket.status == "Answered" %}
-                    <span class="badge bg-success">Answered</span>
-                {% elif ticket.status == "Closed" %}
-                    <span class="badge bg-danger">Closed</span>
+<div class="genepool-custom-background-v2">
+    <div class="create-some-space-v1 genepool-custom-background-v2"></div>
+    <div class="container client-ticket-container">
+            <div class="col d-flex justify-content-between align-items-center black-text pt-1 pb-2">
+                <h4>Ticket Information:</h4>
+            </div>
+            <div class="col-lg-4 col-xl-3 black-text">
+            <p>Created By <strong>{{ ticket.client.username}}</strong></p>
+            </div>
+            <div class="col-lg-4 col-xl-3 black-text">
+            <p>Submitted on : <strong>{{ticket.time_requested}}</strong></p>
+            </div>
+            <div class="col-lg-4 col-xl-3 black-text">
+                <p>Status: 
+                    {% if ticket.status == "Unanswered" %}
+                        <span class="badge bg-primary">Unanswered</span>
+                    {% elif ticket.status == "Answered" %}
+                        <span class="badge bg-success">Answered</span>
+                    {% elif ticket.status == "Closed" %}
+                        <span class="badge bg-danger">Closed</span>
+                    {% endif %}
+                </p>
+            </div>
+            <div class="col d-flex align-items-center black-text">
+                <p>Description:</p>
+                <p class="ticket-description">
+                    {{ticket.request_description}}
+                </p>
+            </div>     
+            <div class="col">
+                <a class="btn btn-success client-ticket-btn" href="#reply-box" style="width:100%;margin-bottom:2rem;">
+                    Reply
+                </a>
+            </div>
+    </div>
+
+    <div class="container client-ticket-container-posted-by black-text">
+        {% for dialogue in chat_messages %}
+        <div class="row grey-background">
+            <div class="col black-text text-center d-flex align-items-center justify-content-center">
+                <p class="mb-0">Posted by <strong>{{ dialogue.author.username }} </strong> on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
+                {% if dialogue.author == ticket.full_nameORcompany_name %}
+                    <span class="badge bg-primary ticket-author-badges">Staff Memeber</span>
+                {% else %}
+                    <span class ="badge bg-dark ticket-author-badges">Ticket Owner</span>
                 {% endif %}
-            </p>
-        </div>
-        <div class="col d-flex align-items-center black-text">
-            <p>Description:</p>
-            <p class="ticket-description">
-                {{ticket.request_description}}
-            </p>
-        </div>     
-        <div class="col">
-            <a class="btn btn-success client-ticket-btn" href="#reply-box" style="width:100%;margin-bottom:2rem;">
-                Reply
-            </a>
-        </div>
-</div>
-
-<div class="container client-ticket-container-posted-by black-text">
-    {% for dialogue in chat_messages %}
-    <div class="row grey-background">
-        <div class="col black-text text-center d-flex align-items-center justify-content-center">
-            <p class="mb-0">Posted by <strong>{{ dialogue.author.username }} </strong> on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
-            {% if dialogue.author == ticket.full_nameORcompany_name %}
-                <span class="badge bg-primary ticket-author-badges">Staff Memeber</span>
-            {% else %}
-                <span class ="badge bg-dark ticket-author-badges">Ticket Owner</span>
-            {% endif %}
-        </div>
-    </div>
-    {% if dialogue.file %}
-    <div class="row">
-        <div class="col">
-            <a href="{{ dialogue.file.url }}" target="_blank">{{ dialogue.author.username }} has attached a file, click here to open</a>
-        </div>
-    </div>
-
-    {% else %}
-    <p>NO ATTACHMENTS </p>
-    {% endif %}
-    <div class="row">
-        <div class="col reply-text">
-            {{ dialogue.message|linebreaksbr }}
-        </div>
-    </div>
-    {% empty %}
-    <div class="row">
-        <div class="col text-center">
-            <p>No replies yet.</p>
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
-    <!-- <div class="row grey-background">
-        <div class="col black-text text-center d-flex align-items-center justify-content-center">
-            <p class="mb-0">Posted by *Insert Person's Name* on *Date and Time*</p>
-            <span class="badge bg-info ms-2">Owner</span>
-        </div>
-    </div>
-    <div class="row">*person* has attached a file click *here* to open</div>
-    <div class="row">
-        <div class="col reply-text">
-            HI , flkmsdpmsdpfmsipf
-            sdfgsdsdgsgsfgdf
-            dfgdfgdf
-        </div>
-    </div> -->
-
-<div class="container client-ticket-container-reply-container black-text text-center">
-    <div class="row">
-        <div class="col">
-            <h4>Reply</h4>
-        </div>
-    </div>
-    <form method="POST" class="text-center" enctype="multipart/form-data" id="reply-box">
-        {% csrf_token %}
-        <div class="row d-flex flex-column align-items-center"> 
-            <div class="col-6"> 
-                <p>Name</p>
-                <input type="text" name="name" class="form-control" required value="{{ user.username }}">
-            </div>
-            <div class="col-6">
-                <p>Message</p>
-                <textarea type="text" name="message" class="form-control" required>Type your message here</textarea>
-            </div>
-            <div class="col-6">
-                <p>Upload Document</p>
-                <input type="file" name="document" class="form-control">
             </div>
         </div>
+        {% if dialogue.file %}
+        <div class="row black-text">
+            <div class="col">
+                <a href="{{ dialogue.file.url }}" target="_blank">{{ dialogue.author.username }} has attached a file, click here to open</a>
+            </div>
+        </div>
+
+        {% else %}
+        <p>NO ATTACHMENTS </p>
+        {% endif %}
+        <div class="row black-text">
+            <div class="col reply-text black-text">
+                {{ dialogue.message|linebreaksbr }}
+            </div>
+        </div>
+        {% empty %}
+        <div class="row black-text">
+            <div class="col text-center black-text">
+                <p>No replies yet.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="container client-ticket-container-reply-container black-text text-center">
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-primary mt-3">Submit</button> 
+                <h4>Reply</h4>
             </div>
         </div>
-    </form>
+        <form method="POST" class="text-center" enctype="multipart/form-data" id="reply-box">
+            {% csrf_token %}
+            <div class="row d-flex flex-column align-items-center"> 
+                <div class="col-6"> 
+                    <p>Name</p>
+                    <input type="text" name="name" class="form-control" required value="{{ user.username }}">
+                </div>
+                <div class="col-6">
+                    <p>Message</p>
+                    <textarea type="text" name="message" class="form-control" required>Type your message here</textarea>
+                </div>
+                <div class="col-6">
+                    <p>Upload Document</p>
+                    <input type="file" name="file" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button> 
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="create-some-space-v1"></div>
 </div>
-
 {% endblock content %}
