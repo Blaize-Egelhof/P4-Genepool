@@ -102,6 +102,24 @@ def submit_authorised_quote_request(request):
         form = AuthorisedQuoteRequestForm(user=request.user)
         return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests, })  
 
+@login_required
+def submit_authorised_ticket_request(request):
+    if request.method == 'POST':
+        user = request.user
+        authorisedclient_ticket_requests = AuthorisedTicketRequests.objects.filter(client=user)
+        form = AuthorisedTicketRequestForm(request.POST, user=request.user)
+        if form.is_valid():
+            authorised_ticket_request = form.save(commit=False)
+            authorised_quote_request.client = request.user  
+            authorised_quote_request.save()
+            messages.success(request, 'Your Ticket request has been submitted successfully.')
+            return redirect('client-page.html')
+        else:
+            print(form.errors) 
+            messages.error(request, 'There was an error in your form.')
+            return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests })
+
+
 class EditQuoteRequest(LoginRequiredMixin, View):
     template_name = 'edit-quote-request.html'
     login_url = reverse_lazy('login')

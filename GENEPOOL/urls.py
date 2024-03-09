@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('client-page/', views.StaffPage.as_view(), name='staff-page'),
     path('submit-authorised-quote/', views.submit_authorised_quote_request, name='submit_authorised_quote_request'),
+    path('submit-authorised-ticket-request/', views.submit_authorised_ticket_request, name='submit_authorised_ticket_request'),
     path('edit-quote-request/<int:quote_id>/', views.EditQuoteRequest.as_view(), name='edit-quote-request'),
     path('delete-quote-request/<int:quote_id>/', views.DeleteQuoteRequest.as_view(), name='delete-quote-request'),
     path('edit-callback-request/<int:callback_request_id>/', views.EditCallBackRequest.as_view(), name='edit-callback-request'),

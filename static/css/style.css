@@ -715,6 +715,14 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width: 768px){
 
+  .lead{
+    font-size:22px;
+  }
+
+  .nav-links{
+    font-size: 20px;
+  }
+
   .product-services-genepool-logo{
     display:none;
   }
@@ -727,10 +735,11 @@ SIGN-UP / LOGIN PAGE
     font-size:30px;
   }
   .support-section-card-header{
-    font-size:20px;
+    font-size: 2rem;
   }
   .support-section-card-btn{
-    font-size:15px;
+    font-size:18px;
+    font-weight: 500;
   }
   .hurry-header-text{
     font-size:25px;
@@ -742,14 +751,14 @@ SIGN-UP / LOGIN PAGE
     margin-bottom:0rem;
   }
   .partner-heading{
-    font-size:28px;
+    font-size: 3rem;
   }
   .font-cond-l{
-    font-size:12px
+    font-size: 1rem;
   }
   .review-name{
-    font-size:12px;
-    font-weight: 200;
+    padding-top: 1rem;
+    font-weight: bold;
   }
   .contact-us-img img{
     padding: 2rem !important;
@@ -1056,7 +1065,7 @@ img {
   margin-bottom: 20px;
 }
 .wpx-100, .wpx-100-after:after {
-  width: 100px;
+  width: 9rem;
 }
 .img-round, .img-rel-round {
   border-radius: 50%;

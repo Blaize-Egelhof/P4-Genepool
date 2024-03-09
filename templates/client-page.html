@@ -45,27 +45,20 @@
         <div class="collapse black-font-color" id="collapseExample1">
           <div class="container-contact100 image-overlay-form">
             <div class="wrap-contact100">
-                <form class="contact100-form validate-form" method="POST" action="#" id="ticket-form">
+                <form class="contact100-form validate-form" method="POST" action="{% url 'submit_authorised_ticket_request' %}" id="ticket-form">
                     {% csrf_token %}
                     <span class="contact100-form-title">Create A Ticket</span>
                   
                     <!-- FULL NAME/COMPANY NAME Field -->
                     <div class="wrap-input100 validate-input bg1">
-                      {{ form.full_nameORcompany_name.label_tag }}
-                      {{ form.full_nameORcompany_name }}
+                        <span class="label-input100">Ticket Title<span class="important">*</span></span>
+                      <input class="input100" type="text" name="full_nameORcompany_name">
                     </div>
-                  
-                    <!-- Time Requested Field -->
-                    <div class="wrap-input100 validate-input bg1">
-                      {{ form.time_requested.label_tag }}
-                      {{ form.time_requested }}
-                    </div>
-                  
-                    <!-- Description Field -->
-                    <div class="wrap-input100 validate-input bg1">
-                      {{ form.description.label_tag }}
-                      {{ form.description }}
-                    </div>
+                  <!-- Description Field -->
+                    <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
+                        <span class="label-input100">Message</span>
+                        <textarea class="input100" name="request_description" placeholder="Your message here..."></textarea>
+                    </div>               
                   
                     <div class="container-contact100-form-btn">
                       <button class="contact100-form-btn">

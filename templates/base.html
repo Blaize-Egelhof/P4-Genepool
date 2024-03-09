@@ -18,10 +18,10 @@
 <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column landing-page">
         <header class="mb-auto">
+            <p class="nb1">Hello, <span class="nb1">{{ user.username }} !</span></p>
             {% block header %}
             {% endblock %}
             {% if user.is_authenticated %}
-            <p class="nb1">Hello, <span class="nb1">{{ user.username }}</span></p>
             {% endif %}
         </header>
         <landingpage class="px-3">
@@ -66,28 +66,27 @@
     }
     setTimeout(closeAlert, 4000);
     </script>
-    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 container-fluid genepool-custom-background mb-0">
-        <div class="col-md-4 d-flex align-items-center">
+    
+<footer class="py-3 container-fluid genepool-custom-background mb-0">
+    <div class="row justify-content-between align-items-center">
+        <div class="col d-flex align-items-center">
             <span class="text-muted white-text">&copy; 2024 Genepool Pty Ltd</span>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
-            <div class="column-flex-stack-objects-1 me-4 icon-formatting">
-                <a class="text-muted" href="https://www.facebook.com/GenepoolIT/" target="_blank">
-                    <i class="fab fa-facebook" style="color:#ffffff"></i>
-                </a>
-                <a class="text-muted" href="https://wa.me/0823828035" target="_blank">
-                    <i class="fab fa-whatsapp" style="color:#ffffff"></i>
-                </a>
-            </div>
+        <div class="col d-flex justify-content-center">
+            <a class="text-muted me-2" href="https://www.facebook.com/GenepoolIT/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook" style="color:#ffffff"></i>
+            </a>
+            <a class="text-muted" href="https://wa.me/0823828035" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp" style="color:#ffffff"></i>
+            </a>
         </div>
-        <div class="col-md-4 d-flex justify-content-end">
-            <div class="column-flex-stack-objects">
-                <a href="{% url 'account_login' %}">
-                    <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
-                    <span class="white-text staff-url">Staff Login</span>
-                </a>
-            </div>
+        <div class="col d-flex justify-content-end">
+            <a href="{% url 'account_login' %}">
+                <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
+                <span class="white-text staff-url">Staff Login</span>
+            </a>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
