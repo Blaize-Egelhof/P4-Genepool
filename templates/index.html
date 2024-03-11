@@ -3,6 +3,8 @@
 {% load static %}
 
 {% block header %}
+
+<!-- Start of Header/Nav Section-->
 <header>
     <div>
         <nav class="nav nav-masthead justify-content-center float-md-end nav-links">
@@ -13,42 +15,63 @@
                 <i class="fas fa-cogs"></i> Products/Services
             </a>
             <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
-                <i class="fas fa-sign-in-alt"></i> Log a Ticket
+                <i class="fas fa-sign-in-alt"></i> Sign In
             </a>
         </nav>
     </div>
 </header>
+
+<!-- End of Header/Nav Section-->
 {% endblock%}
 
 {% block landing-page-exclusive %}
+
+<!-- Start of Landing Section-->
 <landing-section>
     <div class="landing-content">
+        <!-- Start of Hero Image -->
         <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool Logo" class="landing-img"></a>
+        <!-- End of Hero Image -->
+        <!-- Start of Introduction Text -->
         <h1 class="lead">Genepool, established in 2000, is a prominent IT solutions provider based in Johannesburg. Our services include Networking, Hardware, Software, and specialized load shedding solutions, all customized to suit the specific needs of businesses and organizations.</h1>
+        <!-- End of Introduction Text -->
+        <!-- Start of Lead Buttons -->
         <p class="lead lead1">
             <a class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn" data-bs-toggle="modal" data-bs-target="#myModal">Get in Contact</a>
             <a href="#quote-form" class="btn btn-lg btn-light fw-bold border-white bg-white landing-btn">Request a Quote</a>
         </p>
+        <!-- End of Lead Buttons -->
     </div>
 </landing-section>
+<!-- End of Landing Section-->
+
 {% endblock %}
 
 {% block content %}
     {% block extra_css %}
+
+    <!-- Start of Extra CSS section , this CSS is uniquely belonging to this page comming from a seperate CSS file-->
         <link rel="stylesheet" href="{% static 'css/quote-form.css' %}">
+    <!-- End of Extra CSS section-->
+
     {% endblock extra_css %}
+<!-- Start of Service Fields Section-->
 <fields-section>
+    <!-- Start of Heading For Service Fields Section-->
         <div class="container-fluid p-3">
             <div class="row justify-content-center">
                 <div class="col">
                     <h2 class="bold-text black-font-color center-my-text section-spacing support-section">
                         HOW CAN WE <strong>SUPPORT YOU?</strong> 
-                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Genepool SnowFlake Logo" style="vertical-align: middle;">
+                        <!-- Start of Genepool Snowflake Image-->
+                        <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Blue SnowFlake Logo" style="vertical-align: middle;">
+                        <!-- End of Genepool Snowflake Image-->
                     </h2>
                 </div>
             </div>
         </div>
-
+    <!-- End of Heading For Service Fields Section-->
+    <!-- Start of Service Fields Containers-->
         <div class="container-fluid p-3 fields-parent-container generic-bakground-color">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
@@ -109,28 +132,40 @@
                 </div>
             </div>
         </div>
+    <!-- End of Service Fields Containers-->
 </fields-section>
+<!-- End of Service Fields Section-->
 
+<!-- Custom Class Created to ensure even spacing amoungst all sections-->
 <div class="create-some-space"></div>
+<!-- End-->
 
+<!-- Start of Contact Us Section-->
 <contact-us-section>
     <div class="container-fluid mx-auto contact-us-section-styling">
         <div class="row genepool-custom-background">
             <div class="col d-flex align-items-center justify-content-center">
+                    <!-- Buttons are intentionally designed to not react to clicks -->
                 <div class="text-center contact-us-btns">
                     <h3 class="underline hurry-header-text">Need help in a hurry?</h3>
                         <a href="javascript:void(0)"  class="btn btn-primary fields-btns help-btn-hurry-section">082 382 8035</a>
-                    <a href="javascript:void(0)" class="btn btn-primary fields-btns help-btn-hurry-section">support@genepool.co.za</a>
+                        <a href="javascript:void(0)" class="btn btn-primary fields-btns help-btn-hurry-section">support@genepool.co.za</a>
                 </div>
+                    <!-- End of Buttons -->
             </div>
+            <!-- Cartoon image to show we fix computers -->
             <div class="col d-flex align-items-center justify-content-center contact-us-img">
-                <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1709381537/computer-repair-cleanpng_nxapny.png" alt="IT-Support-Server-Picture" style="object-fit: scale-down;max-width: 100%;max-height: 100%;padding: 5rem;">
+                <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1709381537/computer-repair-cleanpng_nxapny.png" alt="Computer Repair Image" style="object-fit: scale-down;max-width: 100%;max-height: 100%;padding: 5rem;">
             </div>
+            <!-- End -->
         </div>
     </div>
 </contact-us-section>
+<!-- End of Contact Us Section-->
 
+<!-- Start of Review Section -->
 <review-section>
+    <!--Start Review Header -->
     <div class="container-fluid p-3">
         <div class="row justify-content-center">
             <div class="col-sm-6">
@@ -138,31 +173,45 @@
             </div>
         </div>
     </div>
+    <!--End Review Header -->
+    <!-- Start of Reviewee Carousel  -->
         <div class="container">
             <div id="customerReviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="false">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
+                                <!-- Start of Reviewee Image  -->
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-linkedin-sales-navigator-2182970_mqbfvl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of business man">
                                 </div>
+                                <!-- End of Reviewee Image  -->
+                                <!-- Start of Reviewee Comment and Name  -->
                                 <p class="font-cond-l">"The team's IT expertise significantly improved our workflow efficiency and data security. Their personalized approach ensured that all solutions perfectly aligned with our business needs. Truly outstanding service that goes above and beyond expectations"</p>
                                 <h5 class="font-cond mgb-5 fg-text-d review-name">-Timmothy Turner</h5>
+                                <!-- End of Reviewee Comment and Name  -->
                             </div>
                             <div class="col-lg-4 col-sm-12">
+                                <!-- Start of Reviewee Image  -->
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041057/pexels-daniel-reche-1556691_ffkn6j.jpg" class="wpx-100 img-round mgb-20" alt="Lady posing in front of sunset">
                                 </div>
+                                <!-- End of Reviewee Image  -->
+                                <!-- Start of Reviewee Comment and Name  -->
                                 <p class="font-cond-l">" The level of expertise and professionalism displayed by the IT service team was unparalleled. They not only resolved our immediate technical issues but also implemented forward-thinking solutions that greatly improved our overall infrastructure."</p>
                                 <h5 class="font-cond mgb-5 fg-text-d review-name">-Martha Stewart</h5>
+                                <!-- End of Reviewee Comment and Name  -->
                             </div>
                             <div class="col-lg-4 col-sm-12">
+                                <!-- Start of Reviewee Image  -->
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red/b_rgb:262c35/v1707041057/pexels-kristina-paukshtite-112324_zg9jue.jpg" class="wpx-100 img-round mgb-20" alt="Rose being held by woman">
                                 </div>
+                                <!-- End of Reviewee Image  -->
+                                <!-- Start of Reviewee Comment and Name  -->
                                 <p class="font-cond-l">"The IT service team provided exceptional support during our company's digital transformation. Their quick response times, attention to detail, and ability to address complex challenges were instrumental in enhancing our operations."</p>
                                 <h5 class="font-cond mgb-5 fg-text-d review-name">-Jessie Heuger</h5>
+                                <!-- End of Reviewee Comment and Name  -->
                             </div>
                         </div>
                     </div>
@@ -170,29 +219,42 @@
                     <div class="carousel-item" data-bs-interval="false">
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
+                                <!-- Start of Reviewee Image  -->
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041060/pexels-christina-morillo-1181391_wrzvct.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of man in business suit">
                                 </div>
+                                <!-- End of Reviewee Image  -->
+                                <!-- Start of Reviewee Comment and Name  -->
                                 <p class="font-cond-l">"The team's IT expertise significantly improved our workflow efficiency and data security. Their personalized approach ensured that all solutions perfectly aligned with our business needs. Truly outstanding service that goes above and beyond expectations"</p>
                                 <h5 class="font-cond mgb-5 fg-text-d review-name">-Greg Mccarthy</h5>
+                                <!-- End of Reviewee Comment and Name  -->
                             </div>
                             <div class="col-lg-4 col-sm-12">
+                                <!-- Start of Reviewee Image  -->
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-andrea-piacquadio-774909_ubtrtl.jpg" class="wpx-100 img-round mgb-20" alt="Portrait of woman smiling">
                                 </div>
+                                <!-- End of Reviewee Image  -->
+                                <!-- Start of Reviewee Comment and Name  -->
                                 <p class="font-cond-l">"Their rapid response to our IT concerns and proactive maintenance has minimized downtime, driving our productivity to new heights. This team not only solves problems but also anticipates them, making them invaluable partners in our business growth."</p>
                                 <h5 class="font-cond mgb-5 fg-text-d review-name">-Lisa Stuarts</h5>
+                                <!-- End of Reviewee Comment and Name  -->
                             </div>
                             <div class="col-lg-4 col-sm-12">
+                                <!-- Start of Reviewee Image  -->
                                 <div class="img-container">
                                     <img src="https://res.cloudinary.com/drdelhvyt/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1707041059/pexels-christina-morillo-1181690_rhrxax.jpg" class="wpx-100 img-round mgb-20" alt="Business lady">
                                 </div>
+                                <!-- End of Reviewee Image  -->
+                                <!-- Start of Reviewee Comment and Name  -->
                                 <p class="font-cond-l">"Working with this IT service has been a game-changer for us. Their expertise and dedication have significantly enhanced our operational efficiency, allowing us to focus on our core business without worrying about technical issues."</p>
                                 <h5 class="font-cond mgb-5 fg-text-d review-name">-Gwen Abigail</h5>
+                                <!-- End of Reviewee Comment and Name  -->
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Start of Carousel Navigation Buttons  -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#customerReviewsCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -201,12 +263,16 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+                <!-- End of Carousel Navigation Buttons  -->
             </div>
         </div>
-</review-section>    
+    <!-- End of Reviewee Carousel  -->
+</review-section>
+<!-- End of Review Section --> 
 
 <hr class="black-text">
 
+<!-- Start of Unauthorised Quote Request Form  -->
 <quote-form-section id="quote-form-section">
     <div class="container-contact100 image-overlay-form">
         <div class="wrap-contact100">
@@ -250,7 +316,9 @@
         </div>
     </div>
 </quote-form-section>
+<!-- End of Unauthorised Quote Request Form  -->
 
+<!-- Start of Partnership Image Carousel  -->
 <my-partnerships>
 
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -273,7 +341,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Start of Partnership Image Carousel Navigation Buttons  -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden ">Previous</span>
@@ -282,9 +350,12 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden ">Next</span>
         </button>
+        <!-- End of Partnership Image Carousel Navigation Buttons  -->
     </div>
 </my-partnerships>
+<!-- End of Partnership Image Carousel  -->
 
+<!-- Start of Contact Form Model Popup-->
 <contact-form-model>
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -320,6 +391,7 @@
         </div>
     </div>
 </contact-form-model>
+<!-- End of Contact Form Model Popup-->
 {% endblock content %}
 
 
