@@ -488,9 +488,8 @@ margin-right:auto;
 }
 
 .partner-img-container {
-  border-radius: 50%;
-  width:100px !important;
-  height:100px;
+  width:160px !important;
+  height:129px;
   object-fit: contain;
 }
 
@@ -629,502 +628,6 @@ margin-right:auto;
   min-height:0vh !important;
 }
 
-/* css for reviews*/
-
-.img-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.align-center {
-  text-align: center;
-}
-.hash-list {
-  display: block;
-  padding: 0;
-  margin: 0 auto;
-}
-
-/*client-page css*/
-.client-buttons { 
-  margin:1rem;
-
-}
-
-.dropdown-menu {
-  z-index: 1050; /* Bootstrap's modal z-index is 1050, adjust based on your needs */
-}
-
-.client-date-styling{
-  font-size:10px;
-}
-
-/*
-SIGN-UP / LOGIN PAGE
-*/
-.my-centered-flexbox{
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  flex-direction: column;
-  align-items: center;
-  color:black;
-  margin-bottom: 40vh;
-  padding-top: 2vh;
-}
-
-.my-centered-flexbox-1{
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  flex-direction: column;
-  align-items: center;
-  color:black;
-  margin-bottom: 35vh;
-  padding-top: 2vh;
-}
-
-.sign-up-header-txt{
-  padding-top:1rem;
-}
-
-
-
-@media (max-width:1130px){
-  .landing-img{
-    padding-left: 28px;
-  }
-}
-
-@media (max-width:947px) {
-  .lead{
-    font-size:18px;
-    padding:2rem;
-    margin-bottom:-1rem;
-  }
-  .center-my-text{
-    text-align:none;
-  }
-  .card-title {
-    font-size:25px;
-    word-wrap: break-word;
-  }
-  .wrap-contact100{
-    width:90hw!important;
-    height:auto;
-    padding:41px 44px 28px !important;
-  }
-  .landing-img{
-    padding-left: 30px;
-  }
-}
-
-@media (max-width: 768px){
-
-  .label-input100 {
-    font-size: 1rem;
-  }
-
-  .lead{
-    font-size:22px;
-  }
-
-  .nav-links{
-    font-size: 20px;
-  }
-
-  .product-services-genepool-logo{
-    display:none;
-  }
-
-  .landing-img {
-    margin-left: 11px;
-  }
-
-  .support-section { 
-    font-size:30px;
-  }
-  .support-section-card-header{
-    font-size: 2rem;
-  }
-  .support-section-card-btn{
-    font-size:18px;
-    font-weight: 500;
-  }
-  .hurry-header-text{
-    font-size:25px;
-  }
-  .help-btn{
-    font-size:14px;
-  }
-  .help-btn-hurry-section{
-    margin-bottom:0rem;
-  }
-  .partner-heading{
-    font-size: 3rem;
-  }
-  .font-cond-l{
-    font-size: 1rem;
-  }
-  .review-name{
-    padding-top: 1rem;
-    font-weight: bold;
-    padding-bottom: 1rem;
-  }
-  .contact-us-img img{
-    padding: 2rem !important;
-  }
-  .columb-flex-stack-objects-1 {
-    margin-right: 0; 
-  }
-
-  .justify-content-end, .columb-flex-stack-objects-1 {
-    justify-content: center; 
-    flex-direction: column; 
-  }
-
-  .footer-item {
-    padding: 10px 0; 
-  }
-  .container-fluid.genepool-custom-background footer {
-    justify-content: space-between !important;
-  }
-  .partner-img-container{
-  height: 5rem;
-  width: 5rem !important;
-  }
-
- .create-some-space {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-  .lead1{
-    gap:0px;
-  }
-  .lead1{
-    gap:0px;
-  }
-  .g-4, .gy-4 {
-    --bs-gutter-y:0rem;
-  }
-  .footer-font-styling{
-    font-size:1rem;
-  }
-  
-}
-
-@media (max-width:623px){
-  .contact100-form-title {
-    font-size: 34px;
-    font-weight: 300;
-    padding-top:15px;
-  }
-  .input100::placeholder { 
-    font-size: 12px;
-  }
-  .container-contact100-form-btn {
-    padding-top: 17px;
-  }
-  .contact100-form-btn {
-    width: 65%;
-    height: 50px;
-    border-radius: 25px;
-    font-size: 16px;
-    width:72%;
-  } 
-  .wrap-contact100 {
-    padding: 0px 43px 15px !important;
-  }
-  .container-contact100 {
-    width: 100%;
-    min-height:0vh !important;
-  }
-
-}
-
-@media (max-width:555px){
-
-  .carousel-inner {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem;
-  }
-
-  .label-input100 {
-    font-size: 1rem !important;
-  }
-
-  .partner-img-container {
-    height: 4rem;
-    width: 10rem !important;
-  }
-
-  .label-input100 {
-    font-size: 1rem;
-  }
-
-  .partner-img-container{
-    border-radius:0%;
-  }
-
-  .hurry-header-text {
-    font-size: 2rem;
-  }
-
-  .help-btn-hurry-section{
-    font-size:13px;
-  }
-  .products-services-text{
-    font-size:14px !important;
-  }
-
-  .products-and-services-form-title{
-    font-size:24px !important;
-  }
-
-  .contact100-form {
-    flex-direction: column !important;
-
-  }
-  .rs1-wrap-input100 {
-    width: 100% !important;
-  }
-  .login-logout-p-text{
-    font-size:12px;
-  }
-  .my-centered-flexbox h1{
-    font-size:24px;
-  }
-
-  .landing-img {
-    margin-left: 4px;
-  }
-
-}
-
-@media (max-width:482px){
-  .contact100-form-title {
-    font-size: 30px !important;
-  }
-  .label-input100 {
-    font-size: 1rem !important;
-  }
-
-  .partner-img-container {
-    width: 8rem !important;
-  }
-
-}
-
-@media (max-width:476px){
-  .landing-btn {
-    font-size: 21px;
-  }
-
-  .contact-us-img img {
-    padding: 1rem !important;
-  }
-  .container-fluid .genepool-custom-background {
-    height: 18rem;
-  }
-  .partner-img-container {
-    width: 8rem !important;
-  }
-
-  .label-input100 {
-    font-size: 1rem !important;
-  }
-
-  .nav-links {
-    font-size: 18px;
-  }
-
-}
-@media (max-width:440px){
-  .lead {
-    font-weight: 400;
-    padding-top:40px !important;
-    padding-bottom:40px !important;
-  }
-  
-  .nb1 {
-    font-size: 20px;
-  }
-  .hurry-header-text {
-    font-size: 2rem;
-  }
-
-  .partner-img-container {
-    width: 8rem !important;
-  }
-  .container-fluid.genepool-custom-background footer {
-    font-size: 10px;
-  }
-  .staff-url {
-    font-size: 13px;
-  }
-  .products-and-services-form-title{
-    font-size:19px;
-  }
-  .my-centered-flexbox{
-    padding-top: 3vh;
-  }
-
-  .label-input100 {
-    font-size: 1rem !important;
-  }
-
-}
-
-@media (max-width:409px){
-
-  .landing-img{
-    margin-left:10px;
-  }
-  .login-logout-p-text{
-    font-size:10px;
-  }
-  .my-centered-flexbox{
-    padding-top: 5vh;
-  }
-
-  .my-centered-flexbox-1{
-    font-size:16px !important;
-  }
-
-  .sign-up-header-txt{
-    font-size:34px !important;
-  }
-
-  .already-account-text{
-    font-size:14px;
-  }
-
-  .landing-btn {
-    font-size: 18px;
-
-  }
-
-  .partner-img-container {
-    width: 7rem !important;
-  }
-
-  .label-input100 {
-    font-size: 1rem !important;
-  }
-}
-
-@media (max-width:367px){
-  .partner-img-container {
-    width: 6rem !important;
-    }
-
-  .lead {
-    font-size: 19px;
-  }
-}
-
-@media (max-width:363px){
-  .landing-btn{
-    font-size:12px;
-  }
-  .label-input100{
-    font-size:1rem !important;
-  }
-  .input.input100 {
-    height:0px !important;
- }
- .my-centered-flexbox-1{
-  font-size:14px !important;
-  margin-bottom: 38vh;
- }
-
- .partner-img-container {
-  width: 5rem !important;
-  }
-}
-
-@media (max-width:346px){
-  .lead {
-    font-size: 18px;
-  }
-
-  .landing-btn {
-    font-size: 16px;
-  }
-  .landing-img {
-    margin-left: -4px;
-  }
-
-  .footer-font-styling {
-    font-size: 13px;
-  }
-
-  .staff-url {
-    font-size: 13px !important;
-  }
-  .font-cond-l {
-    font-size: 14px;
-  }
-  .wpx-100 {
-    width: 8rem;
-  }
-}
-
-@media (max-width:330px){
-  .landing-img {
-    margin-left: 0px;
-  }
-  .nav {
-    font-size: 14px;
-  }
-  .landing-content {
-    margin-left: -5px;
-  }
-  .lead{
-    padding: 28px 18px 28px 20px !important;
-    font-size:17px;
-    gap: 13px ;
-  }
-  .support-section {
-    font-size: 33px !important;
-  }
-  .row>* {
-    margin-bottom: 3px !important;
-  }
-  .hurry-header-text {
-    font-size: 27px !important;
-  }
-  .contact100-form-title {
-    font-size: 39px;
-  }
-  .container-contact100 {
-    width: 100%;
-    min-height:0vh !important;
-  }
-  .wrap-input100 {
-    border: 1px solid rgba(13,110,253,.25) !important;
-    padding: 0px 0px 7px 5px !important;
-    margin-bottom: 20px !important;
-  }
-  .mb-auto {
-    margin-bottom: 1rem !important;
-  }
-  .my-centered-flexbox{
-    padding-top: 10vh;
-  }
-  .my-centered-flexbox-1{
-    padding-top: 5vh;
-  }
-}
-
-@media (max-width:325px){
-  .landing-img {
-    margin-left: -4px;
-  }
-}
-
 .hash-list > li {
   display: block;
   float: left;
@@ -1218,6 +721,67 @@ img {
 .center-aligned-button-styling {
   font-weight: 300;
 }
+
+/* css for reviews*/
+
+.img-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.align-center {
+  text-align: center;
+}
+.hash-list {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/*client-page css*/
+.client-buttons { 
+  margin:1rem;
+
+}
+
+.dropdown-menu {
+  z-index: 1050; /* Bootstrap's modal z-index is 1050, adjust based on your needs */
+}
+
+.client-date-styling{
+  font-size:10px;
+}
+
+/*
+SIGN-UP / LOGIN PAGE
+*/
+.my-centered-flexbox{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  color:black;
+  margin-bottom: 40vh;
+  padding-top: 2vh;
+}
+
+.my-centered-flexbox-1{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  color:black;
+  margin-bottom: 35vh;
+  padding-top: 2vh;
+}
+
+.sign-up-header-txt{
+  padding-top:1rem;
+}
+
 /* Footer */
 
 .justify-content-end {
@@ -1233,8 +797,483 @@ img {
   margin-bottom:0 !important;
 }
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
+@media (max-width:1130px){
+  .landing-img{
+    padding-left: 28px;
   }
+}
+
+@media (max-width:947px) {
+  .lead{
+    font-size:18px;
+    padding:2rem;
+    margin-bottom:-1rem;
+  }
+
+  .center-my-text{
+    text-align:none;
+  }
+
+  .card-title {
+    font-size:25px;
+    word-wrap: break-word;
+  }
+
+  .wrap-contact100{
+    width:90hw!important;
+    height:auto;
+    padding:41px 44px 28px !important;
+  }
+
+  .landing-img{
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 768px){
+
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+
+  .label-input100 {
+    font-size: 1rem;
+  }
+
+  .lead{
+    font-size:22px;
+  }
+
+  .nav-links{
+    font-size: 20px;
+  }
+
+  .product-services-genepool-logo{
+    display:none;
+  }
+
+  .landing-img {
+    margin-left: 11px;
+  }
+
+  .support-section { 
+    font-size:30px;
+  }
+
+  .support-section-card-header{
+    font-size: 2rem;
+  }
+
+  .support-section-card-btn{
+    font-size:18px;
+    font-weight: 500;
+  }
+
+  .hurry-header-text{
+    font-size:25px;
+  }
+
+  .help-btn{
+    font-size:14px;
+  }
+
+  .help-btn-hurry-section{
+    margin-bottom:0rem;
+  }
+
+  .partner-heading{
+    font-size: 3rem;
+  }
+
+  .font-cond-l{
+    font-size: 1rem;
+  }
+
+  .review-name{
+    padding-top: 1rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+
+  .contact-us-img img{
+    padding: 2rem !important;
+  }
+
+  .columb-flex-stack-objects-1 {
+    margin-right: 0; 
+  }
+
+  .justify-content-end, .columb-flex-stack-objects-1 {
+    justify-content: center; 
+    flex-direction: column; 
+  }
+
+  .footer-item {
+    padding: 10px 0; 
+  }
+
+  .container-fluid.genepool-custom-background footer {
+    justify-content: space-between !important;
+  }
+
+  .partner-img-container{
+  height: 5rem;
+  width: 5rem !important;
+  }
+
+ .create-some-space {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .lead1{
+    gap:0px;
+  }
+
+  .lead1{
+    gap:0px;
+  }
+
+  .g-4, .gy-4 {
+    --bs-gutter-y:0rem;
+  }
+
+  .footer-font-styling{
+    font-size:1rem;
+  }
+}
+
+@media (max-width:623px){
+  .contact100-form-title {
+    font-size: 34px;
+    font-weight: 300;
+    padding-top:15px;
+  }
+
+  .input100::placeholder { 
+    font-size: 12px;
+  }
+
+  .container-contact100-form-btn {
+    padding-top: 17px;
+  }
+
+  .contact100-form-btn {
+    width: 65%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    width:72%;
+  } 
+
+  .wrap-contact100 {
+    padding: 0px 43px 15px !important;
+  }
+
+  .container-contact100 {
+    width: 100%;
+    min-height:0vh !important;
+  }
+}
+
+@media (max-width:555px){
+  .carousel-inner {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+  }
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
+  .partner-img-container {
+    height: 4rem;
+    width: 10rem !important;
+  }
+
+  .label-input100 {
+    font-size: 1rem;
+  }
+
+  .partner-img-container{
+    border-radius:0%;
+  }
+
+  .hurry-header-text {
+    font-size: 2rem;
+  }
+
+  .help-btn-hurry-section{
+    font-size:13px;
+  }
+  .products-services-text{
+    font-size:14px !important;
+  }
+
+  .products-and-services-form-title{
+    font-size:24px !important;
+  }
+
+  .contact100-form {
+    flex-direction: column !important;
+
+  }
+  .rs1-wrap-input100 {
+    width: 100% !important;
+  }
+  .login-logout-p-text{
+    font-size:12px;
+  }
+  .my-centered-flexbox h1{
+    font-size:24px;
+  }
+
+  .landing-img {
+    margin-left: 4px;
+  }
+}
+
+@media (max-width:482px){
+  .contact100-form-title {
+    font-size: 30px !important;
+  }
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
+  .partner-img-container {
+    width: 8rem !important;
+  }
+}
+
+@media (max-width:476px){
+
+  .landing-btn {
+    font-size: 21px;
+  }
+
+  .contact-us-img img {
+    padding: 1rem !important;
+  }
+
+  .container-fluid .genepool-custom-background {
+    height: 18rem;
+  }
+
+  .partner-img-container {
+    width: 8rem !important;
+  }
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
+  .nav-links {
+    font-size: 18px;
+  }
+}
+
+@media (max-width:440px){
+
+  .lead {
+    font-weight: 400;
+    padding-top:40px !important;
+    padding-bottom:40px !important;
+  }
+  
+  .nb1 {
+    font-size: 20px;
+  }
+
+  .hurry-header-text {
+    font-size: 2rem;
+  }
+
+  .partner-img-container {
+    width: 8rem !important;
+  }
+
+  .container-fluid.genepool-custom-background footer {
+    font-size: 10px;
+  }
+
+  .staff-url {
+    font-size: 13px;
+  }
+
+  .products-and-services-form-title{
+    font-size:19px;
+  }
+
+  .my-centered-flexbox{
+    padding-top: 3vh;
+  }
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width:409px){
+
+  .landing-img{
+    margin-left:10px;
+  }
+
+  .login-logout-p-text{
+    font-size:10px;
+  }
+
+  .my-centered-flexbox{
+    padding-top: 5vh;
+  }
+
+  .my-centered-flexbox-1{
+    font-size:16px !important;
+  }
+
+  .sign-up-header-txt{
+    font-size:34px !important;
+  }
+
+  .already-account-text{
+    font-size:14px;
+  }
+
+  .landing-btn {
+    font-size: 18px;
+  }
+
+  .partner-img-container {
+    width: 7rem !important;
+  }
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width:367px){
+
+  .partner-img-container {
+    width: 6rem !important;
+  }
+
+  .lead {
+    font-size: 19px;
+  }
+}
+
+@media (max-width:363px){
+  .landing-btn{
+    font-size:12px;
+  }
+  .label-input100{
+    font-size:1rem !important;
+  }
+  .input.input100 {
+    height:0px !important;
+ }
+ .my-centered-flexbox-1{
+  font-size:14px !important;
+  margin-bottom: 38vh;
+ }
+
+ .partner-img-container {
+  width: 5rem !important;
+  }
+} 
+
+@media (max-width:346px){
+
+  .lead {
+    font-size: 18px;
+  }
+
+  .landing-btn {
+    font-size: 16px;
+  }
+  .landing-img {
+    margin-left: -4px;
+  }
+
+  .footer-font-styling {
+    font-size: 13px;
+  }
+
+  .staff-url {
+    font-size: 13px !important;
+  }
+  .font-cond-l {
+    font-size: 14px;
+  }
+  .wpx-100 {
+    width: 8rem;
+  }
+}
+
+@media (max-width:330px){
+  .landing-img {
+    margin-left: 0px;
+  }
+
+  .nav {
+    font-size: 14px;
+  }
+
+  .landing-content {
+    margin-left: -5px;
+  }
+
+  .lead{
+    padding: 28px 18px 28px 20px !important;
+    font-size:17px;
+    gap: 13px ;
+  }
+
+  .support-section {
+    font-size: 33px !important;
+  }
+
+  .row>* {
+    margin-bottom: 3px !important;
+  }
+
+  .hurry-header-text {
+    font-size: 27px !important;
+  }
+
+  .contact100-form-title {
+    font-size: 39px;
+  }
+
+  .container-contact100 {
+    width: 100%;
+    min-height:0vh !important;
+  }
+
+  .wrap-input100 {
+    border: 1px solid rgba(13,110,253,.25) !important;
+    padding: 0px 0px 7px 5px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .mb-auto {
+    margin-bottom: 1rem !important;
+  }
+
+  .my-centered-flexbox{
+    padding-top: 10vh;
+  }
+  
+  .my-centered-flexbox-1{
+    padding-top: 5vh;
+  }
+}
+
+@media (max-width:325px){
+  .landing-img {
+    margin-left: -4px;
+  }
+}
