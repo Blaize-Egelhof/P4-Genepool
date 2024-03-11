@@ -18,13 +18,13 @@
 <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column landing-page">
         <header class="mb-auto">
+            {% if user.is_authenticated %}
             <p class="nb1">Hello, <span class="nb1">{{ user.username }} !</span></p>
+            {% endif %}
             {% block header %}
             {% endblock %}
-            {% if user.is_authenticated %}
-            {% endif %}
         </header>
-        <landingpage class="px-3">
+        <div class="px-3">
             {% for message in messages %}
             <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" id="msg">
                 {{ message | safe }}
@@ -33,7 +33,7 @@
             {% endfor %}
             {% block landing-page-exclusive %}
             {% endblock %}
-        </landingpage>
+        </div>
     </div>
     
     <main class="flex-shrink-0 main-bg">
@@ -67,26 +67,26 @@
     setTimeout(closeAlert, 4000);
     </script>
 
-<footer class="py-3 container-fluid genepool-custom-background mb-0 footer-font-styling">
-    <div class="row justify-content-between align-items-center">
-        <div class="col d-flex align-items-center">
-            <span class="text-muted white-text">&copy; 2024 Genepool Pty Ltd</span>
+    <footer class="py-3 container-fluid genepool-custom-background mb-0 footer-font-styling">
+        <div class="row justify-content-between align-items-center">
+            <div class="col d-flex align-items-center">
+                <span class="text-muted white-text">&copy; 2024 Genepool Pty Ltd</span>
+            </div>
+            <div class="col d-flex justify-content-center footer-font-styling">
+                <a class="text-muted me-2" href="https://www.facebook.com/GenepoolIT/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook" style="color:#ffffff"></i>
+                </a>
+                <a class="text-muted" href="https://wa.me/0823828035" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp" style="color:#ffffff"></i>
+                </a>
+            </div>
+            <div class="col d-flex justify-content-end footer-font-styling">
+                <a href="{% url 'account_login' %}">
+                    <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
+                    <span class="white-text staff-url">Staff Login</span>
+                </a>
+            </div>
         </div>
-        <div class="col d-flex justify-content-center footer-font-styling">
-            <a class="text-muted me-2" href="https://www.facebook.com/GenepoolIT/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-facebook" style="color:#ffffff"></i>
-            </a>
-            <a class="text-muted" href="https://wa.me/0823828035" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp" style="color:#ffffff"></i>
-            </a>
-        </div>
-        <div class="col d-flex justify-content-end footer-font-styling">
-            <a href="{% url 'account_login' %}">
-                <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
-                <span class="white-text staff-url">Staff Login</span>
-            </a>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

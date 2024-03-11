@@ -93,16 +93,12 @@ h2{
   text-shadow: none;
 }
 
-.cover-container {
-  max-width: auto;
-}
-
 .section-spacing{
   padding:2rem;
 }
 
-.border-for-fields-title{
-  border:1px , black;
+.border-for-fields-title {
+  border: 1px solid black;
 }
 
 .create-some-space{
@@ -522,13 +518,6 @@ margin-right:auto;
   justify-content: center;
   align-items: flex-end;
 }
-.product-text{
-  text-align: left;
-  font-family: 'Roboto' , 'sans-serif';
-  color:black;
-  text-wrap: balance;
-  font-size: 15px;
-}
 
 .product-img{
   width: 80%;
@@ -586,10 +575,6 @@ margin-right:auto;
 .spacing-for-container{
   padding-left: 8rem;
   padding-right: 8rem;
-}
-
-.product-inner-text{
-  align-content: right;
 }
 
 .sticky-nav-bar {
@@ -811,7 +796,7 @@ SIGN-UP / LOGIN PAGE
   }
 
   .center-my-text{
-    text-align:none;
+    text-align:initial;
   }
 
   .card-title {
@@ -820,7 +805,6 @@ SIGN-UP / LOGIN PAGE
   }
 
   .wrap-contact100{
-    width:90hw!important;
     height:auto;
     padding:41px 44px 28px !important;
   }

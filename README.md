@@ -321,13 +321,28 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
 - [W3C Markup Validator](https://validator.w3.org/) was used to validate every page of the project to ensure there were no HTML syntax errors in the project.
 
-
-
-
-
 ### ***Manual Testing***
 
-   INSERT TESTING TABLE HERE: 
+   | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| printstatements - settings.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p4.PNG)  | ✅ |
+| blog app - forms.py | PEP8 validator | No issues found | ✅ |
+| artprint app - forms.py | PEP8 validator | No issues found | ✅ |
+| style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
+| quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
+| Home page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) validator - source code | No issues found | ✅ |
+| About page - html | W3C validator - source code | No issues found | ✅ |
+| Blog page - html | W3C validator - source code | No issues found | ✅ |
+| Prints page - html | W3C validator - source code | No issues found | ✅ |
+| Sign-in page - html | W3C validator - source code | No issues found | ✅ |
+| Home page - html | lighthouse | [Acceptable scores](static/images-readme/readme-lighthouse.png) | ✅ |
+| About page - html | lighthouse | Acceptable scores | ✅ |
+| Blog page - html | lighthouse | Acceptable scores | ✅ |
+| Prints page - html | lighthouse | Acceptable scores | ✅ |
+| Sign-in page - html | lighthouse | Acceptable scores | ✅ |
+| Brave browser | Launch site | Site opens without issue | ✅ |
+| Chrome browser | Launch site | Site opens without issue | ✅ |
+| Safari browser | Launch site | Site opens without issue | ✅ | 
 
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 
