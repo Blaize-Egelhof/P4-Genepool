@@ -334,6 +334,12 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Home page - html | lighthouse | [Acceptable scores](static/images-readme/readme-lighthouse.png) | ✅ |
 *Insert Lighthouse testing  Testing*
 
+### Responsiveness testing
+
+| **TEST**                      | **ACTION**              | **EXPECTATION**             | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 
 #### Desktop Testing with [Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse)
