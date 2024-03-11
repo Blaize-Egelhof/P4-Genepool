@@ -340,6 +340,26 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
 | Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 
+### C.R.U.D. testing
+
+| **TEST**          | **ACTION**             | **EXPECTATION**          | **RESULT** |
+| ----------------- | ---------------------- | ------------------------ | ---------- |
+
+
+### FEATURES
+
+| **TEST**                      | **ACTION**             | **EXPECTATION**                                           | **RESULT** |
+| ----------------------------- | ---------------------- | --------------------------------------------------------- | ---------- |
+| Navigation bar                | Click on nav link      | user routed to correct page                               | ✅         |
+| Footer links                  | Click on footer links  | user routed to new browser tab                            | ✅         |
+| Like button                   | Click "like"           | Post liked/unliked accordingly                            | ✅         |
+| Edit button                   | Click edit button      | user navigated to edit screen                             | ✅         |
+| Delete button                 | Click delete button    | print/blog removed from UI                                | ✅         |
+| Internal links                | Click link             | User routed to appropriate page                           | ✅         |
+| Login                         | User logs in           | UI updates & user is logged in                            | ✅         |
+| Sign up                       | User signs up          | new account created for the user                          | ✅         |
+| Logout                        | User clicks logout     | UI updates, user is logged out, user cannot create a post | ✅         |
+
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 
 #### Desktop Testing with [Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse)
