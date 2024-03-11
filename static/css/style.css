@@ -2,6 +2,11 @@
  * Globals
  */
 
+ .important{
+  color:red;
+  font-weight: bold;
+ }
+
 
 /* Custom default button */
 .btn-light,
@@ -175,7 +180,7 @@ h2{
 }
 
 .lead{
-  padding: 40px !important;
+  padding: 40px;
   font-weight:400;
 }
 
@@ -494,10 +499,12 @@ margin-right:auto;
 }
 
 .carousel-inner{
-  width:72% !important;
-  margin-left:auto;
-  margin-right:auto;
+  width: 85% !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
 }
+
 
 /*CSS for products-services */
 
@@ -693,7 +700,7 @@ SIGN-UP / LOGIN PAGE
 @media (max-width:947px) {
   .lead{
     font-size:18px;
-    padding:1rem;
+    padding:2rem;
     margin-bottom:-1rem;
   }
   .center-my-text{
@@ -715,6 +722,10 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width: 768px){
 
+  .label-input100 {
+    font-size: 1rem;
+  }
+
   .lead{
     font-size:22px;
   }
@@ -727,8 +738,8 @@ SIGN-UP / LOGIN PAGE
     display:none;
   }
 
-  .landing-img{
-    margin-left: 26px;
+  .landing-img {
+    margin-left: 11px;
   }
 
   .support-section { 
@@ -759,6 +770,7 @@ SIGN-UP / LOGIN PAGE
   .review-name{
     padding-top: 1rem;
     font-weight: bold;
+    padding-bottom: 1rem;
   }
   .contact-us-img img{
     padding: 2rem !important;
@@ -779,10 +791,11 @@ SIGN-UP / LOGIN PAGE
     justify-content: space-between !important;
   }
   .partner-img-container{
-    height:70px;
-    width:70px !important;
+  height: 5rem;
+  width: 5rem !important;
   }
-  .create-some-space {
+
+ .create-some-space {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
   }
@@ -795,22 +808,13 @@ SIGN-UP / LOGIN PAGE
   .g-4, .gy-4 {
     --bs-gutter-y:0rem;
   }
+  .footer-font-styling{
+    font-size:1rem;
+  }
   
 }
 
 @media (max-width:623px){
-  .support-section { 
-    font-size:30px;
-  }
-  .support-section-card-header{
-    font-size:18px;
-  }
-  .support-section-card-btn{
-    font-size:16px;
-  }
-  .font-cond-l {
-    font-size: 12px;
-  }
   .contact100-form-title {
     font-size: 34px;
     font-weight: 300;
@@ -840,22 +844,36 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:555px){
-  .lead{
-    font-size:16px;
-    padding: 28px !important;
+
+  .carousel-inner {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
   }
-  .landing-btn{
-    font-size:16px;
-    padding-left: 20px;
-    padding-right: 20px
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
+  .partner-img-container {
+    height: 4rem;
+    width: 10rem !important;
+  }
+
+  .label-input100 {
+    font-size: 1rem;
+  }
+
+  .partner-img-container{
+    border-radius:0%;
   }
 
   .hurry-header-text {
-    font-size: 18px;
+    font-size: 2rem;
   }
 
   .help-btn-hurry-section{
-    font-size:12px;
+    font-size:13px;
   }
   .products-services-text{
     font-size:14px !important;
@@ -879,14 +897,8 @@ SIGN-UP / LOGIN PAGE
     font-size:24px;
   }
 
-}
-@media (max-width:505px){
-  .partner-img-container{
-    height: 60px;
-    width: 60px !important;
-  }
   .landing-img {
-    margin-left: 10px;
+    margin-left: 4px;
   }
 
 }
@@ -895,44 +907,62 @@ SIGN-UP / LOGIN PAGE
   .contact100-form-title {
     font-size: 30px !important;
   }
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
+  .partner-img-container {
+    width: 8rem !important;
+  }
+
 }
 
 @media (max-width:476px){
-  .landing-btn{
-    font-size:13px;
+  .landing-btn {
+    font-size: 21px;
   }
+
   .contact-us-img img {
     padding: 1rem !important;
   }
   .container-fluid .genepool-custom-background {
-    height: 15rem;
+    height: 18rem;
   }
-  .partner-img-container{
-    height: 55px;
-    width: 55px !important;
+  .partner-img-container {
+    width: 8rem !important;
+  }
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
+  .nav-links {
+    font-size: 18px;
   }
 
 }
 @media (max-width:440px){
-  .lead{
-    margin-top: 8px;
+  .lead {
+    font-weight: 400;
+    padding-top:40px !important;
+    padding-bottom:40px !important;
+  }
+  
+  .nb1 {
+    font-size: 20px;
   }
   .hurry-header-text {
-    font-size: 16px;
+    font-size: 2rem;
   }
 
-  .help-btn-hurry-section{
-    font-size:10px;
-  }
-  .partner-img-container{
-    height: 40px;
-    width: 40px !important;
+  .partner-img-container {
+    width: 8rem !important;
   }
   .container-fluid.genepool-custom-background footer {
     font-size: 10px;
-}
-  .staff-url{
-    font-size: 10px;
+  }
+  .staff-url {
+    font-size: 13px;
   }
   .products-and-services-form-title{
     font-size:19px;
@@ -941,15 +971,14 @@ SIGN-UP / LOGIN PAGE
     padding-top: 3vh;
   }
 
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+
 }
 
 @media (max-width:409px){
-  .landing-btn{
-    font-size:12px;
-  }
-  .nav{
-    font-size: 12px;
-  }
+
   .landing-img{
     margin-left:10px;
   }
@@ -971,6 +1000,29 @@ SIGN-UP / LOGIN PAGE
   .already-account-text{
     font-size:14px;
   }
+
+  .landing-btn {
+    font-size: 18px;
+
+  }
+
+  .partner-img-container {
+    width: 7rem !important;
+  }
+
+  .label-input100 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width:367px){
+  .partner-img-container {
+    width: 6rem !important;
+    }
+
+  .lead {
+    font-size: 19px;
+  }
 }
 
 @media (max-width:363px){
@@ -978,7 +1030,7 @@ SIGN-UP / LOGIN PAGE
     font-size:12px;
   }
   .label-input100{
-    font-size:8px !important;
+    font-size:1rem !important;
   }
   .input.input100 {
     height:0px !important;
@@ -987,18 +1039,36 @@ SIGN-UP / LOGIN PAGE
   font-size:14px !important;
   margin-bottom: 38vh;
  }
+
+ .partner-img-container {
+  width: 5rem !important;
+  }
 }
 
 @media (max-width:346px){
-  .landing-img{
-  margin-left: 10px;
+  .lead {
+    font-size: 18px;
   }
-  .lead{
-    font-size:16px;
+
+  .landing-btn {
+    font-size: 16px;
   }
-  .partner-img-container{
-    height: 35px;
-    width: 35px !important;
+  .landing-img {
+    margin-left: -4px;
+  }
+
+  .footer-font-styling {
+    font-size: 13px;
+  }
+
+  .staff-url {
+    font-size: 13px !important;
+  }
+  .font-cond-l {
+    font-size: 14px;
+  }
+  .wpx-100 {
+    width: 8rem;
   }
 }
 
@@ -1007,14 +1077,14 @@ SIGN-UP / LOGIN PAGE
     margin-left: 0px;
   }
   .nav {
-    font-size: 11px;
+    font-size: 14px;
   }
   .landing-content {
     margin-left: -5px;
   }
   .lead{
     padding: 28px 18px 28px 20px !important;
-    font-size:14px;
+    font-size:17px;
     gap: 13px ;
   }
   .support-section {
@@ -1046,6 +1116,12 @@ SIGN-UP / LOGIN PAGE
   }
   .my-centered-flexbox-1{
     padding-top: 5vh;
+  }
+}
+
+@media (max-width:325px){
+  .landing-img {
+    margin-left: -4px;
   }
 }
 
