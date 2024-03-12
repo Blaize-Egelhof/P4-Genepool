@@ -4,7 +4,9 @@
 
  .custom-br{
   border: 1px solid #000;
-  margin: 20px 27rem
+  margin-top: 20px;
+  margin-left: 25vw;
+  margin-right: 25vw;
  }
 
  .important{
@@ -841,6 +843,13 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width: 768px){
 
+  .product-services-genepool-logo {
+    display: none;
+  }
+  .nav-masthead {
+    justify-content: center;
+  }
+
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
@@ -855,10 +864,6 @@ SIGN-UP / LOGIN PAGE
 
   .nav-links{
     font-size: 20px;
-  }
-
-  .product-services-genepool-logo{
-    display:none;
   }
 
   .landing-img {
@@ -1044,6 +1049,10 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:482px){
+
+  .nav-links {
+    font-size: 18px;
+  }
   .contact100-form-title {
     font-size: 30px !important;
   }
@@ -1126,6 +1135,10 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width:409px){
 
+  .nav-links {
+    font-size: 17px;
+  }
+
   .landing-img{
     margin-left:10px;
   }
@@ -1175,6 +1188,10 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:363px){
+
+  .nav-links {
+    font-size: 16px;
+  }
   .landing-btn{
     font-size:12px;
   }

@@ -31,12 +31,14 @@
 {% endblock extra_css %}
 <products-and-services-cards>
     <div class="container-fluid">
-        <h2 class="bold-text black-font-color center-my-text section-spacing support-section">
-            <strong>Our Services</strong> 
-            <!-- Start of Genepool Snowflake Image-->
-            <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Blue SnowFlake Logo" style="vertical-align: middle;">
-            <!-- End of Genepool Snowflake Image-->
-        </h2>
+        <div class="text-center">
+            <h2 class="bold-text black-font-color section-spacing support-section">
+                <strong>Our Services</strong> 
+                <!-- Start of Genepool Snowflake Image-->
+                <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Blue SnowFlake Logo" style="vertical-align: middle;">
+                <!-- End of Genepool Snowflake Image-->
+            </h2>
+        </div>
         <hr class="custom-br">
     </div>
                 <div class="container">
@@ -222,14 +224,20 @@
 </contact-form-model>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('#callbackFormButton').forEach(button => {
-        button.addEventListener('click', () => {
-            // document.querySelector('.btn-primary[data-bs-toggle="collapse"]').click();
-            // document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('callbackFormContainer').scrollIntoView();
+    document.querySelectorAll('.callback-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            document.getElementById('callbackFormButton').click();
+            setTimeout(() => {
+                const callbackFormContainer = document.getElementById('callbackFormContainer');
+                callbackFormContainer.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }, 200); 
         });
     });
 });
+
 </script>
 
 {% endblock content %}
