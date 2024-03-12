@@ -88,27 +88,39 @@
     <script src="https://kit.fontawesome.com/e5d47f9c86.js" crossorigin="anonymous"></script>
     <!-- Script to highlight active nav link and auto-close alert messages -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var navLinks = document.querySelectorAll('.nav-link');
-            var currentUrl = window.location.href;
-            
-            navLinks.forEach(function(link) {
-                var linkUrl = link.href;
+    /**
+     * Adds an 'active' class to the navigation link that matches the current URL.
+     * 
+     * This script is executed when the DOM content has fully loaded. It iterates through
+     * all elements with the class 'nav-link' and compares the URL of each link with the
+     * current page's URL. If a match is found, it adds the 'active' class to highlight
+     * that navigation link as active.
+     */
+            document.addEventListener("DOMContentLoaded", function() {
+                var navLinks = document.querySelectorAll('.nav-link');
+                var currentUrl = window.location.href;
                 
-                if (currentUrl === linkUrl) {
-                    link.classList.add('active');
-                }
+                navLinks.forEach(function(link) {
+                    var linkUrl = link.href;
+                    
+                    if (currentUrl === linkUrl) {
+                        link.classList.add('active');
+                    }
+                });
             });
-        });
-        // Auto-close alert messages after 4 seconds
-        function closeAlert() {
-        let messages = document.getElementById("msg");
-        if (messages) {
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
+    /**
+     * Closes an alert message after a 4 second time interval.
+     * This function targets an element with the ID 'msg' and utilizes Bootstrap's Alert component
+     * to programmatically close the alert. If the targeted element exists, the alert will be closed
+     */
+            function closeAlert() {
+            let messages = document.getElementById("msg");
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
         }
-    }
-    setTimeout(closeAlert, 4000);
+        setTimeout(closeAlert, 4000);
     </script>
 </body>
 </html>
