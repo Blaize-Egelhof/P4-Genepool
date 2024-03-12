@@ -5,16 +5,26 @@
 {% load account socialaccount %}
 
 {% block header %}
-<header>
-    <div>
-        <a href="{% url 'home-page' %}"><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
-                <i class="fas fa-home"></i> Go Back
-            </a>
+<!-- Start of Header/Nav Section-->
+<nav-section>
+    <div class="nav-container">
+        <nav class="nav nav-masthead">
+            <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+            <div class="nav-links">
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                    <i class="fas fa-cogs"></i> Products/Services
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'home-page' %}">
+                    <i class="fa-solid fa-arrow-left"></i> Go Back
+                </a>
+            </div>
         </nav>
     </div>
-</header>
+</nav-section>
+<!-- End of Header/Nav Section-->
 {% endblock %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}

@@ -165,7 +165,6 @@ h2{
  }
 
  .nav-masthead {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -822,10 +821,6 @@ SIGN-UP / LOGIN PAGE
     margin-bottom:-1rem;
   }
 
-  .center-my-text{
-    text-align:initial;
-  }
-
   .card-title {
     font-size:25px;
     word-wrap: break-word;
@@ -1149,7 +1144,7 @@ SIGN-UP / LOGIN PAGE
   }
 
   .landing-img{
-    margin-left:10px;
+    margin-left:2px;
   }
 
   .login-logout-p-text{
@@ -1198,7 +1193,7 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width:363px){
   .landing-btn{
-    font-size:12px;
+    font-size:15px;
   }
   .label-input100{
     font-size:1rem !important;
@@ -1220,13 +1215,14 @@ SIGN-UP / LOGIN PAGE
 
   .lead {
     font-size: 18px;
+    margin-left: -10px;
   }
 
   .landing-btn {
     font-size: 16px;
   }
   .landing-img {
-    margin-left: -4px;
+    margin-left: -9px;
   }
 
   .footer-font-styling {
@@ -1248,9 +1244,12 @@ SIGN-UP / LOGIN PAGE
   .landing-img {
     margin-left: 0px;
   }
+  .support-section-card-header {
+    font-size: 26px;
+  }
 
   .nav {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .landing-content {
