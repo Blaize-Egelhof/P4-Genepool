@@ -958,6 +958,9 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:623px){
+  .flex-column {
+    padding-top: 1rem;
+  }
   .contact100-form-title {
     font-size: 34px;
     font-weight: 300;
@@ -1136,7 +1139,13 @@ SIGN-UP / LOGIN PAGE
 @media (max-width:409px){
 
   .nav-links {
-    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mb-auto {
+    margin-bottom: 0px !important;
   }
 
   .landing-img{
@@ -1188,10 +1197,6 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:363px){
-
-  .nav-links {
-    font-size: 16px;
-  }
   .landing-btn{
     font-size:12px;
   }
