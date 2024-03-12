@@ -4,19 +4,20 @@
 
 {% block header %}
 <header>
-    <div>
-        <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-
-            <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
-                <i class="fas fa-home"></i> Home
-            </a>
-            <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
-                <i class="fas fa-cogs"></i> Products/Services
-            </a>
-            <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
-                <i class="fas fa-sign-in-alt"></i> Log a Ticket
-            </a>
+    <div class="nav-container">
+        <nav class="nav nav-masthead">
+            <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+            <div class="nav-links">
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                    <i class="fas fa-cogs"></i> Products/Services
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </a>
+            </div>
         </nav>
     </div>
 </header>
@@ -29,7 +30,15 @@
 <link rel="stylesheet" href="{% static 'css/quote-form.css' %}">
 {% endblock extra_css %}
 <products-and-services-cards>
-    <div class="create-some-space"></div>
+    <div class="container-fluid">
+        <h2 class="bold-text black-font-color center-my-text section-spacing support-section">
+            <strong>Our Services</strong> 
+            <!-- Start of Genepool Snowflake Image-->
+            <img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png" alt="Blue SnowFlake Logo" style="vertical-align: middle;">
+            <!-- End of Genepool Snowflake Image-->
+        </h2>
+        <hr class="custom-br">
+    </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -212,26 +221,15 @@
     </div>
 </contact-form-model>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('collapseExample').classList.add('collapse');
-    });
-
-        document.querySelectorAll('.callback-btn').forEach(function(button) {
-        button.addEventListener('click', function() {
-            document.querySelector('.btn-primary[data-bs-toggle="collapse"]').click();
-            document.body.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('#callbackFormButton').forEach(button => {
+        button.addEventListener('click', () => {
+            // document.querySelector('.btn-primary[data-bs-toggle="collapse"]').click();
+            // document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('callbackFormContainer').scrollIntoView();
         });
     });
-
-    function closeAlert() {
-            let messages = document.getElementById("msg");
-            if (messages) {
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }
-        }
-
-        setTimeout(closeAlert, 4000);
+});
 </script>
 
 {% endblock content %}

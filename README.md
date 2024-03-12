@@ -78,7 +78,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
          - All Icons were taken from [Font-Awesome](https://fontawesome.com/)
     -   ### ***Wireframes and Mock-Ups***
 
-# Wireframes and Mock-ups
+# Wireframes
 
 ## Homepage Wireframes
 
@@ -331,7 +331,8 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
 | Home page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) validator - source code | No issues found | ✅ |
 *Insert HTML VALIDATOR FOR OTHER PAGES Validator Testing*
-| Home page - html | lighthouse | [Acceptable scores](static/images-readme/readme-lighthouse.png) | ✅ |
+| Home page - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/indexlighthouse.PNG) | ✅ |
+| Products and Services - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-lighthouse.PNG) | ✅ |
 *Insert Lighthouse testing  Testing*
 
 ### Responsiveness testing
@@ -350,15 +351,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
 | **TEST**                      | **ACTION**             | **EXPECTATION**                                           | **RESULT** |
 | ----------------------------- | ---------------------- | --------------------------------------------------------- | ---------- |
-| Navigation bar                | Click on nav link      | user routed to correct page                               | ✅         |
-| Footer links                  | Click on footer links  | user routed to new browser tab                            | ✅         |
-| Like button                   | Click "like"           | Post liked/unliked accordingly                            | ✅         |
-| Edit button                   | Click edit button      | user navigated to edit screen                             | ✅         |
-| Delete button                 | Click delete button    | print/blog removed from UI                                | ✅         |
-| Internal links                | Click link             | User routed to appropriate page                           | ✅         |
-| Login                         | User logs in           | UI updates & user is logged in                            | ✅         |
-| Sign up                       | User signs up          | new account created for the user                          | ✅         |
-| Logout                        | User clicks logout     | UI updates, user is logged out, user cannot create a post | ✅         |
+| Navigation bar                | Click on nav link      | user routed to correct page                               | ✅                  |
 
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 

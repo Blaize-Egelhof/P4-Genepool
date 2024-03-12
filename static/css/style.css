@@ -2,6 +2,11 @@
  * Globals
  */
 
+ .custom-br{
+  border: 1px solid #000;
+  margin: 20px 27rem
+ }
+
  .important{
   color:red;
   font-weight: bold;
@@ -125,12 +130,25 @@ h2{
 .genepool-left-corner-img{
   width: 100%;
   height: auto;
-  max-width: 110px
+  max-width: 12rem;
 }
 
 /*
  * Header
  */
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-services-genepool-logo {
+    height: auto;
+    width: auto;
+    max-height: 6rem;
+  }
+
 
  .nb{
   color:red;
@@ -142,6 +160,13 @@ h2{
   color:white;
   font-weight:bold;
   font-size: 2rem;
+ }
+
+ .nav-masthead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
  }
 
 .nav-masthead .nav-link {
