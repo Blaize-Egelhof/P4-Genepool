@@ -327,10 +327,18 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
 | printstatements - settings.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p4.PNG)  | ✅ |
 *Insert PEP8 Validator Testing*
+
+
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
+
+
 | Home page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) validator - source code | No issues found | ✅ |
+| Products-Services - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-w3validator.PNG) validator - source code | No issues found | ✅ |
 *Insert HTML VALIDATOR FOR OTHER PAGES Validator Testing*
+
+
+
 | Home page - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/indexlighthouse.PNG) | ✅ |
 | Products and Services - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-lighthouse.PNG) | ✅ |
 *Insert Lighthouse testing  Testing*
@@ -340,6 +348,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | **TEST**                      | **ACTION**              | **EXPECTATION**             | **RESULT** |
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
 | Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Products and Services - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 
 ### C.R.U.D. testing
 
@@ -376,48 +385,32 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
 ### ***Fixed Bugs***
 
+Note bug with products and services click JS function 
+
 ### ***Known Bugs***
 
 ## Deployment
 
 ### Heroku
 
-1. Navigate to your [Heroku dashboard](https://dashboard.heroku.com/apps)
-2. Click "New" and select "Create new app".  
-  ![New heroku](./docs/readme/images/deployment/heroku-new.png)
-3. Input a meaningful name for your app and choose the region best suited to
-  your location.  
-  ![Create new app](./docs/readme/images/deployment/heroku-create.png)
-4. Select "Settings" from the tabs.  
-  ![Settings tab](./docs/readme/images/deployment/heroku-settings.png)
-5. Click "Reveal Config Vars".  
- ![Config vars button](./docs/readme/images/deployment/heroku-config-vars.png)
-6. Input all key-value pairs as necessary from the `.env` file. **Ensure DEBUG
-   and DEVELOPMENT are not included**.
-   ![Config vars](./docs/readme/images/deployment/heroku-config-var.png)
-7. Click "Add buildpack".  
- ![Add buildpack](./docs/readme/images/deployment/heroku-add-buildpacks.png)
-8. Add "python" from the list or search if necessary, remember to
- click save.  
- ![Select buildpacks](./docs/readme/images/deployment/heroku-select-buildpacks.png)
-9. Select "Deploy" from the tabs.  
-![Settings tab](./docs/readme/images/deployment/heroku-deploy-tab.png)
-10. Select "GitHub - Connect to GitHub" from deployment methods.  
- ![Select GitHub](./docs/readme/images/deployment/heroku-select-github.png)
-11. Click "Connect to GitHub" in the created section.  
- ![Connect to GitHub](./docs/readme/images/deployment/heroku-connect-github.png)
-12. Search for the GitHub repository by name.  
+1. Navigate to your Heroku dashboard
+2. Click "New" and select "Create new app".
+3. Input a meaningful name for your app and choose the region best suited to your location.
+4. Select "Settings" from the tabs.
+5. Click "Reveal Config Vars".
+6. Input all key-value pairs as necessary from the .env file. Ensure DEBUG and DEVELOPMENT are not included.
+7. Click "Add buildpack".
+8. Add "python" from the list or search if necessary, remember to click save.
+9. Select "Deploy" from the tabs.
+10. Select "GitHub - Connect to GitHub" from deployment methods.
+11. Click "Connect to GitHub" in the created section.
+12. Search for the GitHub repository by name.
 13. Click to connect to the relevant repo.
-14. Either click `Enable Automatic Deploys` for automatic deploys or `Deploy
- Branch` to deploy manually. Manually deployed branches will need
- re-deploying each time the repo is updated.  
- ![Heroku deploy branch](./docs/readme/images/deployment/heroku-deploy-branch.png)
-15. Click `View` to view the deployed site.  
-    ![Heroku view](./docs/readme/images/deployment/heroku-view.png)
-16. The live site can also be accessed from your repo in GitHub from the
-    environments section of the repo.
+14. Either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+15. Click View to view the deployed site.
+16. The live site can also be accessed from your repo in GitHub from the environments section of the repo.
 
-The site is now live and operational
+The site is now live and operational!
 
 
 ## __Credits__
