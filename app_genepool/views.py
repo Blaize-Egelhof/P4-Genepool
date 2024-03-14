@@ -65,12 +65,14 @@ class StaffPage(LoginRequiredMixin, View):
             })
         else:
             return render(request, 'client-page.html', {
-                'user': user, 
+                'user': user,
+
                 'unanswered_quotes':unanswered_quotes,
                 'answered_quotes':answered_quotes, 'closed_quotes':closed_quotes,
-                'closed_quotes':closed_quotes, 'answered_client_ticket_request': answered_client_ticket_request ,
+                'closed_quotes':closed_quotes, 
+                'answered_client_ticket_request': answered_client_ticket_request ,
                 'unanswered_client_ticket_request':unanswered_client_ticket_request,
-                'closed_client_ticket_request':closed_client_ticket_request
+                'closed_client_ticket_request':closed_client_ticket_request,
             })
     # def post(self, request):
     #     form = AuthorisedQuoteRequestForm(request.POST,user=request.user)
@@ -169,14 +171,15 @@ class DeleteCallBackRequest(LoginRequiredMixin, View):
             callback_request.delete()
             return redirect('staff-page')
 
-class CloseQuoteForClientPage(LoginRequiredMixin,View): 
+class CloseTicketForClientPage(LoginRequiredMixin,View): 
     def post(self,request, *args, **kwargs):
         user=request.user
-        quote_id = self.kwargs.get('quote_id')
-        quote_to_close = get_object_or_404(AuthorisedQuoteRequests , pk=quote_id)
-        quote_to_close.status = 'Closed'
-        quote_to_close.save()
-        return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests, })
+        ticket_id = self.kwargs.get('ticket_id')
+        print(f"Ticket ID: {ticket_id}")
+        ticket_to_close = get_object_or_404(AuthorisedTicketRequests , pk=ticket_id)
+        ticket_to_close.status = 'Closed'
+        ticket_to_close.save()
+        return redirect('staff-page')
 
 
 class EditTicketForClientPage(LoginRequiredMixin,View):
@@ -243,5 +246,18 @@ class ViewTicketForClientPage(LoginRequiredMixin,View):
             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
             print(chat_messages)
             return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+
+class ReopenTicket(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        ticket_id = kwargs.get('ticket_id')
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        ticket.status = "Unanswered"
+        ticket.save()
+        messages.success(request, "Ticket has been reopened successfully.")
+        return redirect('staff-page') 
+        
+
+
+
 
 

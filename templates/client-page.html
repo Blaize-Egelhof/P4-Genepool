@@ -95,7 +95,11 @@
                     <div class="card-header">
                         <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                        <span class="badge bg-primary">Status:{{ ticket.status }} </span> <a class="right-align close-ticket-styling" onclick="closeTicket(event, {{ quote.id }})">Close Ticket ?</a>
+                        <span class="badge bg-primary">Status:{{ ticket.status }} </span>
+                            <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="right-align close-ticket-styling">Close Ticket ?</button>
+                            </form>
                     </div>
                     <div class="card-body">
                         <p class="card-text">
@@ -135,29 +139,32 @@
         </div>
   </div>
   <div class="container d-flex justify-content-center">
-  <button class="closed-quotes-custom-btn" id="toggleClosedQuotes">Show Closed Tickets</button>
+  <button class="closed-quotes-custom-btn" id="toggleClosedTickets">Show Closed Tickets</button>
   </div>
   <div class="container-fluid client-container-styling">
       <div class="row">
-          <div id="closedQuotesSection"  style="display: none;"> 
-              {% for quote in closed_quotes %}
+          <div id="closedTicketsSection"  style="display: none;"> 
+              {% for ticket in closed_client_ticket_request %}
                   <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                       <div class="card client-card-styling">
                           <div class="card-header">
-                              <h5 class="card-title">{{ quote.full_nameORcompany_name }}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ quote.time_requested }}</h6>
-                              <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ quote.get_service_display }}</h6>
-                              <span class="badge bg-danger">Status: {{ quote.status }}</span>
+                              <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                              <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                              <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
+                              <span class="badge bg-danger">Status: {{ ticket.status }}</span>
                           </div>
                           <div class="card-body">
                               <p class="card-text">
-                                  <span class="short-description">{{ quote.request_description|truncatechars:50 }}</span>
-                                  <span class="full-description" style="display: none;">{{ quote.request_description }}</span>
+                                  <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                                  <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
                               </p>
                               <a href="#" class="card-link toggle-text">Read more</a>
                           </div>
                           <div class="card-footer client-card-footer-styling client-custom-footer">
-                              <a href="#" class="btn btn-primary">Re-open ?</a>
+                            <form class="contact100-form validate-form" method="POST" action="{% url 're-open-ticket' ticket.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">Re-open ?</button>
+                            </form>
                           </div>
                       </div>
                   </div>
@@ -438,70 +445,16 @@
         </div>
     
 <script>
-    function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                const cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
-                    const cookie = cookies[i].trim();
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
-        
-    function closeTicket(event, quoteId) {
-        event.preventDefault(); // Prevent the default link behavior
 
-        // Create a form programmatically
-        var form = document.createElement('form');
-        form.style.display = 'none'; // Hide the form
-        form.method = 'POST';
-        form.action = `{% url 'close-client-ticket' 0 %}`.replace('/0/', `/${quoteId}/`); // Dynamically set the action URL
-
-        // Add CSRF token from cookie
-        var csrfToken = getCookie('csrftoken');
-        var csrfInput = document.createElement('input');
-        csrfInput.type = 'hidden';
-        csrfInput.name = 'csrfmiddlewaretoken';
-        csrfInput.value = csrfToken;
-        form.appendChild(csrfInput);
-
-        document.body.appendChild(form);
-        form.submit(); // Submit the form
-        }
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('.toggle-text').forEach(function(btn) {
-                btn.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const cardBody = event.target.closest('.card-body');
-                    const fullText = cardBody.querySelector('.full-description');
-                    const shortText = cardBody.querySelector('.short-description');
+const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
+            const closedQuotesSection = document.getElementById('closedTicketsSection');
     
-                    if (fullText.style.display === "none") {
-                        fullText.style.display = "inline";
-                        shortText.style.display = "none";
-                        event.target.textContent = "Read less";
-                    } else {
-                        fullText.style.display = "none";
-                        shortText.style.display = "inline";
-                        event.target.textContent = "Read more";
-                    }
-                });
+            toggleClosedTicketsBtn.addEventListener('click', function() {
+                const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
+                closedTicketsSection.style.display = isHidden ? "flex" : "none";
+                toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
             });
-    
-            const toggleClosedQuotesBtn = document.getElementById('toggleClosedQuotes');
-            const closedQuotesSection = document.getElementById('closedQuotesSection');
-    
-            toggleClosedQuotesBtn.addEventListener('click', function() {
-                const isHidden = closedQuotesSection.style.display === "none" || closedQuotesSection.style.display === "";
-                closedQuotesSection.style.display = isHidden ? "flex" : "none"; // This line toggles between flex and none
-                toggleClosedQuotesBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
-            });
-        });
-    </script>
+ 
+</script>
 
 {% endblock content %}
