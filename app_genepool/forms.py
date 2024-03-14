@@ -47,13 +47,13 @@ class AuthorisedTicketRequestForm(forms.ModelForm):
         super(AuthorisedTicketRequestForm, self).__init__(*args, **kwargs)
         
         if user and not user.is_staff:
-            readonly_fields = ['full_nameORcompany_name', 'email',]
+            readonly_fields = ['full_nameORcompany_name']
             for field_name in readonly_fields:
                 self.fields[field_name].widget.attrs['readonly'] = 'readonly'
 
     class Meta:
         model = AuthorisedTicketRequests
-        fields = ['full_nameORcompany_name', 'email', 'request_description',]
+        fields = ['full_nameORcompany_name','request_description',]
 
 class ChatDialogue1(forms.ModelForm):
     class Meta:
