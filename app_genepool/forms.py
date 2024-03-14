@@ -45,11 +45,7 @@ class AuthorisedTicketRequestForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
         super(AuthorisedTicketRequestForm, self).__init__(*args, **kwargs)
-        
-        if user and not user.is_staff:
-            readonly_fields = ['full_nameORcompany_name']
-            for field_name in readonly_fields:
-                self.fields[field_name].widget.attrs['readonly'] = 'readonly'
+        self.fields['full_nameORcompany_name'].label = 'Ticket Title'
 
     class Meta:
         model = AuthorisedTicketRequests

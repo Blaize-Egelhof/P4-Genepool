@@ -129,30 +129,13 @@ class EditQuoteRequest(LoginRequiredMixin, View):
         messages.success(request, f'Now Editing Quote: {quote.id}')
         return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
 
-    def post(self, request, quote_id, *args, **kwargs):
+    def post(self, request, ticket_id, *args, **kwargs):
         if 'save_changes' in request.POST:
-            return self.handle_save_changes(request, quote_id)
+            return self.handle_save_changes(request, ticket_id)
         elif 'go_back' in request.POST:
             return render(request, 'staff-page.html')
-          
 
-    def handle_save_changes(self, request, quote_id):
-        quote = get_object_or_404(AuthorisedQuoteRequests, pk=quote_id)
-        form = QuoteRequestForm(request.POST, instance=quote)
 
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Quote Num:{quote.id} has been updated successfully!')
-            return redirect('staff-page')
-        else:
-            messages.error(request, f'Error updating {quote.id}. Please check the form data.')
-            return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
-
-    def handle_delete_quote(self, request, quote_id):
-        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
-        messages.success(request, f'Quote Num:{quote.id} has been deleted successfully!')
-        quote.delete()
-        return redirect('staff-page')
 
 class EditCallBackRequest(LoginRequiredMixin, View):
     template_name = 'edit-callback-request.html'
@@ -201,16 +184,39 @@ class EditTicketForClientPage(LoginRequiredMixin,View):
         ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
         form = AuthorisedTicketRequestForm(instance=ticket, user=request.user) 
-        return render(request, 'edit-ticket.html', {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        ticket_id = self.kwargs.get('ticket_id')
+        return render(request, 'edit-ticket.html', {'form': form, 'ticket_id': ticket_id})
+    
+    def post(self, request, ticket_id, *args, **kwargs):
+        if 'save_changes' in request.POST:
+            return self.handle_save_changes(request, ticket_id)
+        elif 'delete_this_ticket' in request.POST:
+            return self.handle_delete_quote(request, ticket_id)
+    
+    def handle_save_changes(self, request, ticket_id):
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        form = AuthorisedTicketRequestForm(request.POST, instance=ticket)
+        form = AuthorisedTicketRequestForm(request.POST, instance=ticket, user=request.user)
         if form.is_valid():
             form.save()
-            return redirect('some_view_name')
-        return render(request, 'edit-ticket.html', {'form': form})
+            messages.success(request, f'Ticket Num:{ticket.id} has been updated successfully!')
+            return redirect('staff-page')
+        else:
+            messages.error(request, f'Error updating {ticket.id}. Please check the form data.') 
+            return render(request, 'edit-ticket.html', {'form': form})
+    
+    def handle_delete_quote(self, request, ticket_id):
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        messages.success(request, f'Ticket Num:{ticket.id} has been deleted successfully!')
+        quote.delete()
+        return redirect('staff-page')
+
+    # def post(self, request, *args, **kwargs):
+    #     ticket_id = self.kwargs.get('ticket_id')
+    #     ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+    #     form = AuthorisedTicketRequestForm(request.POST, instance=ticket)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('staff-page')
+    #     return render(request, 'edit-ticket.html', {'form': form})
 
 class ViewTicketForClientPage(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
