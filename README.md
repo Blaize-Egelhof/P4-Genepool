@@ -349,6 +349,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
 | Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Products and Services - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Login - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 
 ### C.R.U.D. testing
 
@@ -456,25 +457,3 @@ The site is now live and operational!
 - [John Solly](https://www.youtube.com/@johnsolly) , for teaching me AJAX methods in Django.
 
 - [Sean Nijenhuis](https://www.f6s.com/company/yomane#about) , my current employer and senior programmer for giving me amazing tips and tricks during the development of this project.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-          

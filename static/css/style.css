@@ -815,6 +815,10 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:947px) {
+
+  .my-centered-flexbox {
+    margin-bottom: 36vh;
+  }
   .lead{
     font-size:18px;
     padding:2rem;
@@ -950,6 +954,10 @@ SIGN-UP / LOGIN PAGE
   .footer-font-styling{
     font-size:1rem;
   }
+
+  .my-centered-flexbox {
+    margin-bottom: 40vh;
+  }
 }
 
 @media (max-width:623px){
@@ -1035,10 +1043,10 @@ SIGN-UP / LOGIN PAGE
     width: 100% !important;
   }
   .login-logout-p-text{
-    font-size:12px;
+    font-size:1rem;
   }
   .my-centered-flexbox h1{
-    font-size:24px;
+    font-size:2rem;
   }
 
   .landing-img {
@@ -1148,15 +1156,15 @@ SIGN-UP / LOGIN PAGE
   }
 
   .login-logout-p-text{
-    font-size:10px;
+    font-size:1rem;
   }
 
   .my-centered-flexbox{
     padding-top: 5vh;
   }
 
-  .my-centered-flexbox-1{
-    font-size:16px !important;
+  .my-centered-flexbox {
+    margin-bottom: 27vh;
   }
 
   .sign-up-header-txt{
@@ -1212,6 +1220,8 @@ SIGN-UP / LOGIN PAGE
 } 
 
 @media (max-width:346px){
+
+
 
   .lead {
     font-size: 18px;
@@ -1291,10 +1301,6 @@ SIGN-UP / LOGIN PAGE
 
   .mb-auto {
     margin-bottom: 1rem !important;
-  }
-
-  .my-centered-flexbox{
-    padding-top: 10vh;
   }
   
   .my-centered-flexbox-1{

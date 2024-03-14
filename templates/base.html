@@ -73,10 +73,12 @@
             </div>
             <div class="col d-flex justify-content-end footer-font-styling">
                 <!-- Staff Login Link -->
-                <a href="{% url 'account_login' %}">
-                    <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
-                    <span class="white-text staff-url">Staff Login</span>
-                </a>
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'account_login' %}">
+                        <i class="fas fa-sign-in-alt" style="color:#ffffff"></i>
+                        <span class="white-text staff-url">Staff Login</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </footer>
