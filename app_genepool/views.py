@@ -198,9 +198,10 @@ class CloseQuoteForClientPage(LoginRequiredMixin,View):
 
 class EditTicketForClientPage(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
+        ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
         form = AuthorisedTicketRequestForm(instance=ticket, user=request.user) 
-        return render(request, 'some_template.html', {'form': form})
+        return render(request, 'edit-ticket.html', {'form': form})
 
     def post(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
