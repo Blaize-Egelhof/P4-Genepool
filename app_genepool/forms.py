@@ -1,4 +1,5 @@
 from django import forms
+from django.forms.widgets import Textarea
 from .models import UnauthorisedQuoteRequests
 from .models import UnauthorisedCallBackRequests
 from .models import AuthorisedQuoteRequests
@@ -46,6 +47,7 @@ class AuthorisedTicketRequestForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         super(AuthorisedTicketRequestForm, self).__init__(*args, **kwargs)
         self.fields['full_nameORcompany_name'].label = 'Ticket Title'
+        self.fields['request_description'].widget = Textarea(attrs={'rows': 3, 'cols': 20})
 
     class Meta:
         model = AuthorisedTicketRequests

@@ -120,7 +120,7 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                <span class="short-description">{{ ticket_description|truncatechars:50 }}</span>
+                                <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
                                 <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
                             </p>
                             <a href="#" class="card-link toggle-text">Read more</a>
