@@ -317,6 +317,7 @@ h2{
   font-size: 2rem;
   text-align: center;
   text-shadow:none;
+  padding-bottom: 1rem;
 }
 
 .fields-btns {
@@ -765,7 +766,7 @@ img {
 }
 
 .client-date-styling{
-  font-size:10px;
+  font-size:15px;
 }
 
 /*
@@ -1104,6 +1105,12 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width:440px){
 
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .lead {
     font-weight: 400;
     padding-top:40px !important;
@@ -1144,12 +1151,6 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:409px){
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
   .mb-auto {
     margin-bottom: 0px !important;
@@ -1278,10 +1279,6 @@ SIGN-UP / LOGIN PAGE
 
   .support-section {
     font-size: 33px !important;
-  }
-
-  .row>* {
-    margin-bottom: 3px !important;
   }
 
   .hurry-header-text {
