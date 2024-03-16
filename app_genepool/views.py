@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -226,8 +227,16 @@ class ViewTicketForClientPage(LoginRequiredMixin,View):
         ticket_id = self.kwargs.get('ticket_id')
         user=request.user
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('timestamp')
-        return render(request,'ticket-view.html', {'ticket': ticket, 'user': user, 'chat_messages': chat_messages})
+        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
+
+        # Paginate 10 messages for the page
+        paginator = Paginator(chat_messages, 10)
+        page_number = request.GET.get('page')
+        chat_messages = paginator.get_page(page_number)
+
+        return render(request, 'ticket-view.html', {'ticket': ticket,'user': user,'chat_messages': chat_messages})
+
+
     def post(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)

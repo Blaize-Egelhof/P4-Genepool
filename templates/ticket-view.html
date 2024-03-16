@@ -69,9 +69,9 @@
             <div class="col black-text text-center d-flex align-items-center justify-content-center">
                 <p class="mb-0">Posted by <strong>{{ dialogue.author.username }} </strong> on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
                 {% if dialogue.author == ticket.full_nameORcompany_name %}
-                    <span class="badge bg-primary ticket-author-badges">Staff Memeber</span>
+                    <span class="badge bg-primary ticket-author-badges">Staff Member</span>
                 {% else %}
-                    <span class ="badge bg-dark ticket-author-badges">Ticket Owner</span>
+                    <span class="badge bg-dark ticket-author-badges">Ticket Owner</span>
                 {% endif %}
             </div>
         </div>
@@ -81,9 +81,8 @@
                 <a href="{{ dialogue.file.url }}" target="_blank">{{ dialogue.author.username }} has attached a file, click here to open</a>
             </div>
         </div>
-
         {% else %}
-        <p>NO ATTACHMENTS </p>
+        <p>NO ATTACHMENTS</p>
         {% endif %}
         <div class="row black-text">
             <div class="col reply-text black-text">
@@ -98,6 +97,27 @@
         </div>
         {% endfor %}
     </div>
+    
+    <!-- Pagination Links -->
+    <div class="container mt-4">
+        <div class="pagination justify-content-center">
+            <span class="step-links">
+                {% if chat_messages.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ chat_messages.previous_page_number }}">previous</a>
+                {% endif %}
+    
+                <span class="current">
+                    Page {{ chat_messages.number }} of {{ chat_messages.paginator.num_pages }}.
+                </span>
+    
+                {% if chat_messages.has_next %}
+                    <a href="?page={{ chat_messages.next_page_number }}">next</a>
+                    <a href="?page={{ chat_messages.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>    
 
     <div class="container client-ticket-container-reply-container black-text text-center">
         <div class="row">
