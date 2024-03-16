@@ -236,26 +236,30 @@ class ViewTicketForClientPage(LoginRequiredMixin,View):
 
         return render(request, 'ticket-view.html', {'ticket': ticket,'user': user,'chat_messages': chat_messages})
 
-
     def post(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
         user = request.user
         chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('timestamp')
+        staff_group = user.groups.filter(Q(name='Staff')).exists()
         form = ChatDialogue1(request.POST, request.FILES) 
-        if form.is_valid(): 
-            reply = form.save(commit=False) 
-            reply.ticket = ticket 
-            reply.author = user  
-            reply.save()
-            messages.success(request, 'Reply Send Succesfully !')
-            print(chat_messages)
-            return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+        if form.is_valid():
+                reply = form.save(commit=False)
+                reply.ticket = ticket
+                reply.author = user
+                reply.save()
+
+                if staff_group:
+                    ticket.status = "Answered"
+                else:
+                    ticket.status = "Unanswered"
+                ticket.save()
+
+                messages.success(request, 'Reply Sent Successfully!')
+                return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
         else:
             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
-            print(chat_messages)
             return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
-
 class ReopenTicket(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         ticket_id = kwargs.get('ticket_id')
