@@ -179,7 +179,7 @@
                               {% csrf_token %}
                               <button type="submit" class="btn btn-primary">Re-open ?</button>
                           </form>
-                          <button type="button" class="btn btn-danger delete-ticket-btn" data-ticket-id="{{ ticket.id }}">Delete</button>
+                          <button type="button" class="btn btn-danger delete-ticket-btn" data-ticket-id="{{ ticket.id }}" data-ticket-title="{{ ticket.full_nameORcompany_name }}">Delete</button>
                           <!-- End -->
                         </div>
                     </div>
@@ -226,29 +226,36 @@
    * - Updates the button's text to "Hide Closed Quotes" or "Show Closed Quotes" accordingly.
    */
   
+   document.addEventListener("DOMContentLoaded", function() {
+  // Toggling closed tickets section
   const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
-              const closedQuotesSection = document.getElementById('closedTicketsSection');
-      
-              toggleClosedTicketsBtn.addEventListener('click', function() {
-                  const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
-                  closedTicketsSection.style.display = isHidden ? "flex" : "none";
-                  toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
-              });
-   
+  const closedTicketsSection = document.getElementById('closedTicketsSection');
 
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.delete-ticket-btn').forEach(function(button) {
-      button.addEventListener('click', function() {
-        const ticketId = this.getAttribute('data-ticket-id');
-        
-        const actionUrl = `/delete-ticket/${ticketId}/`;
-        
-        document.getElementById('deleteForm').setAttribute('action', actionUrl);
-        
-        var deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
-        deleteModal.show();
-      });
+  toggleClosedTicketsBtn.addEventListener('click', function() {
+    const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
+    closedTicketsSection.style.display = isHidden ? "flex" : "none";
+    toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Tickets" : "Show Closed Tickets";
+  });
+
+  // Handling delete ticket button clicks
+  document.querySelectorAll('.delete-ticket-btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      const ticketId = this.getAttribute('data-ticket-id');
+      const ticketTitle = this.getAttribute('data-ticket-full_nameORcompany_name'); // Using ticketTitle for consistency
+      
+      // Update the form's action to include the ticket ID
+      const actionUrl = `/delete-ticket/${ticketId}/`; // Ensure this URL pattern matches your Django URL
+      document.getElementById('deleteForm').setAttribute('action', actionUrl);
+
+      // Update the modal's body text with the ticket's title
+      document.querySelector('#deleteConfirmationModal .modal-body').innerHTML = 
+        `Are you sure you want to delete the ticket titled "${ticketTitle}"?`;
+      
+      // Show the confirmation modal
+      var deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
+      deleteModal.show();
     });
+  });
 });
-  </script>
+</script>
 {% endblock content %}
