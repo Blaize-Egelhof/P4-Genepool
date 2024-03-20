@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 
 {% block header %}
-<div>
-    <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}"> <i class="fa-solid fa-mug-saucer"></i> Browse-Logged-In</a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
-    </nav>
-</div>
+<!-- Start of Header/Nav Section-->
+<nav-section>
+  <div class="nav-container">
+      <nav class="nav nav-masthead">
+          <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+          <div class="nav-links">
+              <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                  <i class="fas fa-home"></i> Home
+              </a>
+              <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                  <i class="fas fa-cogs"></i> Products/Services
+              </a>
+              <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_logout' %}">
+                  <i class="fas fa-sign-in-alt"></i> Log Out
+              </a>
+          </div>
+      </nav>
+  </div>
+</nav-section>
+<!-- End of Header/Nav Section-->
 {% endblock %}
 
 {% block index-page-exclusive %}
@@ -24,164 +38,177 @@
 
 {% block content %}
 
-<div class="create-some-space"></div>
-<div class="container-fluid">
+<div class="container-fluid ">
+  <!-- Start of Unanswered Tickets Header -->
   <div class="row">
-    <div class="col-md-6 text-center full-width">
-      <p class="d-inline-flex gap-1">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Quote Requests
-        </button>
-      </p>
-      <div class="collapse black-font-color" id="collapseExample">
-        <div class="container-fluid">
-          <div class="row">
-            {% for quote in quote_requests %}
-            <div class="col-md-4 col-sm-6"> 
-              <div class="card">
-                <div class="card-header">
-                  <h3>{{ quote.full_nameORcompany_name }}</h3>
-                </div>
-                <div class="card-body">
-                  <p>{{ quote.request_description }}</p>
-                  <p>{{ quote.email}}</p>
-                </div>
-                <div class="card-footer">
-                  <a href="{% url 'edit-quote-request' quote.id %}" class="card-link">Edit</a>
-                  <a href="#" class="card-link" onclick="deleteQuote({{ quote.id }})">Delete</a>
-                </div>
-              </div>
-            </div>
-            {% endfor %}            
-          </div>
-        </div>
+      <div class="col center-my-text black-text h2-spacing">
+          <h2>Unanswered Tickets</h2>
+          <hr class="custom-br">
       </div>
-    </div>
   </div>
+
+  <!-- Start of Container housing the Unanswered Ticket objects -->
+  <div class="container-fluid mt-3 client-container-styling">
+      <div class="row">
+          <!-- Start of Ticket objects for status of "Unanswered" -->
+          {% for ticket in staff_unanswered_client_ticket_request %}
+              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <div class="card client-card-styling">
+                      <div class="card-header">
+                          <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.name}}</h6>
+                          <span class="badge bg-success">Status:{{ ticket.status }} </span> 
+                      </div>
+                      <div class="card-body">
+                          <p class="card-text">
+                              <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                              <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                          </p>
+                          <a href="#" class="card-link toggle-text">Read more</a>
+                      </div>
+                      <div class="card-footer client-card-footer-styling client-custom-footer">
+                          <a href="{% url 'view-ticket' ticket.id %}" class="btn btn-success">View</a>
+                          <a href="{% url 'edit-ticket' ticket.id %}" class="btn btn-success">Edit</a>
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
+          <!-- End of Ticket objects for status of "Unanswered" -->
+      </div>
+  </div>
+  <!-- End of Container housing the Unanswered Ticket objects -->
 </div>
 
-<edit-quote-request-model>
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="editQuoteModel" aria-hidden="true">
-      <div class="modal-dialog">
-      <div class="modal-content">
-      
-          <div class="modal-header">
-          <h5 class="modal-title" id="editQuoteModel">Edit Clients Request Status</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="edit-form" method="POST" action="{% url 'staff-page' %}">
-              {% csrf_token %}
-              {{ form.as_p }}
-              <input type="submit" class="btn btn-primary" value="Save Changes">
-            </form>
-          </div>
-          <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-      </div>
-      </div>
-  </div>
-</edit-quote-request-model>
-
+<!-- Start of Answered Tickets Section -->
 <div class="container-fluid">
+  <!-- Start of Answered Tickets Header -->
   <div class="row">
-    <div class="col-md-6 text-center full-width">
-      <p class="d-inline-flex gap-1">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#unauthorisedRequestsCollapse" aria-expanded="false" aria-controls="unauthorisedRequestsCollapse">
-          Callback Requests
-        </button>
-      </p>
-      <div class="collapse black-font-color" id="unauthorisedRequestsCollapse">
-        <div class="container-fluid">
-          <div class="row">
-            {% for callback_requests in callback_requests %}
-            <div class="col-md-4 col-sm-6">
-              <div class="card">
-                <div class="card-header">
-                  <h3>{{ callback_requests.full_nameORcompany_name }}</h3>
-                </div>
-                <div class="card-body">
-                  <p>{{ callback_requests.request_description }}</p>
-                  <p>{{ callback_requests.email}}</p>
-                </div>
-                <div class="card-footer">
-                  <a href="{% url 'edit-callback-request' callback_requests.id %}" class="card-link">Edit</a>
-                  <a href="#" class="card-link" onclick="deleteCallbackRequest({{ callback_requests.id }})">Delete</a>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+      <div class="col center-my-text black-text h2-spacing">
+          <h2>Answered Tickets</h2>
+          <hr class="custom-br">
       </div>
-    </div>
   </div>
+  <!-- Check if there are any answered tickets -->
+  {% if staff_answered_client_ticket_request %}
+    <!-- Answered Tickets Cards -->
+    <div class="row">
+        {% for ticket in staff_answered_client_ticket_request %}
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div class="card client-card-styling">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.username}}</h6>
+                        <span class="badge bg-primary">Status:{{ ticket.status }} </span>
+                        <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="right-align close-ticket-styling">Close Ticket?</button>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                            <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                        </p>
+                        <a href="#" class="card-link toggle-text">Read more</a>
+                    </div>
+                    <div class="card-footer client-card-footer-styling client-custom-footer">
+                        <a href="{% url 'view-ticket' ticket.id %}" class="btn btn-primary">View/Reply</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+  {% else %}
+    <!-- Display when no answered tickets are available -->
+    <div class="row">
+        <div class="col">
+            <p class="center-my-text">No Tickets To Show</p>
+        </div>
+    </div>
+  {% endif %}
+</div>
+<!-- End of Answered Tickets Section -->
+
+<div class="container d-flex justify-content-center">
+  <!-- Start of Closed Ticket Heading -->
+<button class="closed-quotes-custom-btn" id="toggleClosedTickets">Show Closed Tickets</button>
+</div>
+<!-- End of Closed Ticket Heading -->
+
+<!-- Start of closed ticket container -->
+<div class="container-fluid client-container-styling">
+    <div class="row">
+        <div id="closedTicketsSection"  style="display: none;">
+            <!-- Start of tickets with the status of "Closed" -->
+            {% for ticket in staff_closed_client_ticket_request %}
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                    <div class="card client-card-styling">
+                        <div class="card-header">
+                              <!-- Start of tickets title -->
+                            <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                            <!-- End -->
+                            <!-- Start of tickets time requested -->
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                            <!-- End -->
+                            <!-- Start of tickets time closed -->
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.name}}</h6>
+                            <!-- End -->
+                            <!-- Start of tickets status ( Will always be "Closed" in this context) -->
+                            <span class="badge bg-danger">Status: {{ ticket.status }}</span>
+                            <!-- End -->
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <!-- Start of tickets shortened description -->
+                                <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                                 <!-- End -->
+                                 <!-- Start of tickets full description -->
+                                <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                                <!-- End -->
+                            </p>
+                            <!-- Button To view more ticket description content without having to directly open ticket object-->
+                            <a href="#" class="card-link toggle-text">Read more</a>
+                            <!-- End-->
+                        </div>
+                        <div class="card-footer client-card-footer-styling client-custom-footer">
+                          <!-- Button To Toggle Ticket Status from "Closed" to "Unanswered"-->
+                          <form class="contact100-form validate-form" method="POST" action="{% url 're-open-ticket' ticket.id %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-primary">Re-open ?</button>
+                          </form>
+                          <!-- End -->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- End of tickets with the status of "Closed" -->
+        </div>
+    </div> 
+</div>
+  <!-- End of closed ticket container -->
 </div>
 
 <script>
-  function closeAlert() {
-      let messages = document.getElementById("msg");
-      if (messages) {
-          let alert = new bootstrap.Alert(messages);
-          alert.close();
-      }
-  }
 
-  setTimeout(closeAlert, 3000);
-
-  function deleteQuote(quoteId) {
-      if (confirm('Are you sure you want to delete this quote?')) {
-          var csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-
-          // Create a form dynamically
-          var form = document.createElement('form');
-          form.method = 'POST';
-          form.action = '/delete-quote-request/' + quoteId + '/';
-
-          // Create a hidden input for the CSRF token
-          var csrfInput = document.createElement('input');
-          csrfInput.type = 'hidden';
-          csrfInput.name = 'csrfmiddlewaretoken';
-          csrfInput.value = csrfToken;
-
-          // Append the CSRF input to the form
-          form.appendChild(csrfInput);
-
-          // Append the form to the body
-          document.body.appendChild(form);
-
-          // Submit the form
-          form.submit();
-      }
-  }
-
-  function deleteCallbackRequest(callbackRequestId) {
-      if (confirm('Are you sure you want to delete this callback request?')) {
-          var csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-
-          // Create a form dynamically
-          var form = document.createElement('form');
-          form.method = 'POST';
-          form.action = '/delete-callback-request/' + callbackRequestId + '/';
-
-          // Create a hidden input for the CSRF token
-          var csrfInput = document.createElement('input');
-          csrfInput.type = 'hidden';
-          csrfInput.name = 'csrfmiddlewaretoken';
-          csrfInput.value = csrfToken;
-
-          // Append the CSRF input to the form
-          form.appendChild(csrfInput);
-
-          // Append the form to the body
-          document.body.appendChild(form);
-
-          // Submit the form
-          form.submit();
-      }
-  }
-</script>
-
-
+  /**
+   * Toggles the visibility of the 'closedTicketsSection' and updates the button text.
+   *
+   * This function adds a click event listener to the 'toggleClosedTicketsBtn' that:
+   * - Toggles the display style of 'closedTicketsSection' between "flex" and "none".
+   * - Updates the button's text to "Hide Closed Quotes" or "Show Closed Quotes" accordingly.
+   */
+  
+  const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
+              const closedQuotesSection = document.getElementById('closedTicketsSection');
+      
+              toggleClosedTicketsBtn.addEventListener('click', function() {
+                  const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
+                  closedTicketsSection.style.display = isHidden ? "flex" : "none";
+                  toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
+              });
+   
+  </script>
 {% endblock content %}

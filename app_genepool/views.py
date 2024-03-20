@@ -44,33 +44,30 @@ class ProductsAndServices(View):
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
-        authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user)  
-        unauthorised_quote_requests = UnauthorisedQuoteRequests.objects.all()
-        unauthorised_callback_requests = UnauthorisedCallBackRequests.objects.all()
-        unanswered_quotes = AuthorisedQuoteRequests.objects.filter(status='Unanswered', client=user)
-        answered_quotes = AuthorisedQuoteRequests.objects.filter(status='Answered' , client=user)
-        closed_quotes = AuthorisedQuoteRequests.objects.filter(status='Closed' , client=user)
+        staff_unauthorised_callback_requests = UnauthorisedCallBackRequests.objects.all()
+        staff_unauthorised_callback_requests = UnauthorisedQuoteRequests.objects.all()
         staff_group = user.groups.filter(Q(name='Staff')).exists()
-        ticket_requests = AuthorisedTicketRequests.objects.all()
+        staff_ticket_requests = AuthorisedTicketRequests.objects.all()
         answered_client_ticket_request = AuthorisedTicketRequests.objects.filter(status='Answered', client=user)
+        staff_answered_client_ticket_request = AuthorisedTicketRequests.objects.filter(status='Answered')
         unanswered_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Unanswered', client=user)
+        staff_unanswered_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Unanswered')
         closed_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Closed', client=user)
+        staff_closed_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Closed')
 
         if staff_group:
             messages.info(request, 'YOU ARE A STAFF MEMBER.')  
             return render(request, 'staff-page.html', {
                 'user': user, 
-                'unauthorised_quote_requests': unauthorised_quote_requests,
-                'unauthorised_callback_requests': unauthorised_callback_requests,
-                'authorisedclient_quote_requests': authorisedclient_quote_requests,
+                'staff_ticket_requests' : staff_ticket_requests,
+                'staff_unanswered_client_ticket_request' : staff_unanswered_client_ticket_request,
+                'staff_answered_client_ticket_request' : staff_answered_client_ticket_request,
+                'staff_closed_client_ticket_request' : staff_closed_client_ticket_request,
+                'staff_unauthorised_callback_requests' : staff_unauthorised_callback_requests, 
             })
         else:
             return render(request, 'client-page.html', {
                 'user': user,
-
-                'unanswered_quotes':unanswered_quotes,
-                'answered_quotes':answered_quotes, 'closed_quotes':closed_quotes,
-                'closed_quotes':closed_quotes, 
                 'answered_client_ticket_request': answered_client_ticket_request ,
                 'unanswered_client_ticket_request':unanswered_client_ticket_request,
                 'closed_client_ticket_request':closed_client_ticket_request,
