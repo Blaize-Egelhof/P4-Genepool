@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseForbidden
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
@@ -54,8 +55,7 @@ class StaffPage(LoginRequiredMixin, View):
         closed_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Closed', client=user)
         staff_closed_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Closed')
 
-        if staff_group:
-            messages.info(request, 'YOU ARE A STAFF MEMBER.')  
+        if staff_group: 
             return render(request, 'staff-page.html', {
                 'user': user, 
                 'staff_ticket_requests' : staff_ticket_requests,
@@ -160,15 +160,14 @@ class DeleteTicketForClientPage(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         user = request.user
         # Check if the user belongs to the 'staff_group'
-        if not user.groups.filter(name='staff_group').exists():
+        if user.groups.filter(name='staff_group').exists():
             # If the user is not in the staff_group, return HTTP Forbidden status
             return HttpResponseForbidden("You are not authorized to perform this action.")
         ticket_id = self.kwargs.get('ticket_id')
         ticket_to_delete = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        messages.success(request, f'You Have Succesfully Deleted the ticket')
         ticket_to_delete.delete()
         return redirect('staff-page')
-
-
 
 class EditTicketForClientPage(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):

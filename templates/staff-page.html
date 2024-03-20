@@ -57,7 +57,7 @@
                       <div class="card-header">
                           <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                           <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.name}}</h6>
+                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.user}}</h6>
                           <span class="badge bg-success">Status:{{ ticket.status }} </span> 
                       </div>
                       <div class="card-body">
@@ -99,7 +99,7 @@
                     <div class="card-header">
                         <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.username}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
                         <span class="badge bg-primary">Status:{{ ticket.status }} </span>
                         <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
                             {% csrf_token %}
@@ -124,7 +124,7 @@
     <!-- Display when no answered tickets are available -->
     <div class="row">
         <div class="col">
-            <p class="center-my-text">No Tickets To Show</p>
+            <p class="center-my-text black-txt">No Tickets To Show</p>
         </div>
     </div>
   {% endif %}
@@ -154,7 +154,7 @@
                             <!-- End -->
                             <!-- Start of tickets time closed -->
                             <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.name}}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
                             <!-- End -->
                             <!-- Start of tickets status ( Will always be "Closed" in this context) -->
                             <span class="badge bg-danger">Status: {{ ticket.status }}</span>
@@ -179,10 +179,7 @@
                               {% csrf_token %}
                               <button type="submit" class="btn btn-primary">Re-open ?</button>
                           </form>
-                          <form class="contact100-form validate-form" method="POST" action="{% url 'delete-ticket' ticket.id %}">
-                              {% csrf_token %}
-                              <button type="submit" class="btn btn-primary">Delete</button>
-                          </form>
+                          <button type="button" class="btn btn-danger delete-ticket-btn" data-ticket-id="{{ ticket.id }}">Delete</button>
                           <!-- End -->
                         </div>
                     </div>
@@ -193,6 +190,30 @@
     </div> 
 </div>
   <!-- End of closed ticket container -->
+</div>
+
+<!-- Bootstrap Modal for Delete Confirmation -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Confirm Deletion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this ticket?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <form id="deleteForm" method="POST" action="#">
+          {% csrf_token %}
+          <!-- Hidden input to hold the ticket ID -->
+          <input type="hidden" name="ticket_id" id="ticketIdInput">
+          <button type="submit" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -214,5 +235,20 @@
                   toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
               });
    
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.delete-ticket-btn').forEach(function(button) {
+      button.addEventListener('click', function() {
+        const ticketId = this.getAttribute('data-ticket-id');
+        
+        const actionUrl = `/delete-ticket/${ticketId}/`;
+        
+        document.getElementById('deleteForm').setAttribute('action', actionUrl);
+        
+        var deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
+        deleteModal.show();
+      });
+    });
+});
   </script>
 {% endblock content %}
