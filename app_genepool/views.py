@@ -5,12 +5,11 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
-from .forms import QuoteRequestForm, AuthorisedQuoteRequestForm,AuthorisedTicketRequestForm,ChatDialogue1
-from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedQuoteRequests,AuthorisedTicketRequests,ChatDialogue
+from .forms import QuoteRequestForm,AuthorisedTicketRequestForm,ChatDialogue1
+from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedTicketRequests,ChatDialogue
 from django.contrib.auth.models import Group, User
 from django import template
 from django.db.models import Q
-
 register = template.Library()
 
 class Index(View):
@@ -81,27 +80,6 @@ class StaffPage(LoginRequiredMixin, View):
     #     else:
     #         messages.error(request, 'Error submitting Quote Request, please ensure the fields indicated by * are correctly filled in.')
     #         return render(request, 'staff-page', {'form': form})
-
-@login_required
-def submit_authorised_quote_request(request):
-    if request.method == 'POST':
-        user = request.user
-        authorisedclient_quote_requests = AuthorisedQuoteRequests.objects.filter(client=user)
-        form = AuthorisedQuoteRequestForm(request.POST, user=request.user)
-        if form.is_valid():
-            authorised_quote_request = form.save(commit=False)
-            authorised_quote_request.client = request.user  
-            authorised_quote_request.save()
-            messages.success(request, 'Your authorized quote request has been submitted successfully.')
-            return redirect('staff-page')
-        else:
-            print(form.errors) 
-            messages.error(request, 'There was an error in your form.')
-            return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests })
-    else:
-        form = AuthorisedQuoteRequestForm(user=request.user)
-        return render(request, 'client-page.html', {'form': form , 'authorisedclient_quote_requests': authorisedclient_quote_requests, })  
-
 @login_required
 def submit_authorised_ticket_request(request):
     if request.method == 'POST':
@@ -124,10 +102,9 @@ class EditQuoteRequest(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
     def get(self, request, quote_id, *args, **kwargs):
-        quote = get_object_or_404(AuthorisedQuoteRequests, pk=quote_id)
         form = AuthorisedQuoteRequestForm(instance=quote, user=request.user)  
         messages.success(request, f'Now Editing Quote: {quote.id}')
-        return render(request, self.template_name, {'quote_id': quote_id, 'form': form})
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request, ticket_id, *args, **kwargs):
         if 'save_changes' in request.POST:
@@ -179,6 +156,19 @@ class CloseTicketForClientPage(LoginRequiredMixin,View):
         ticket_to_close.save()
         return redirect('staff-page')
 
+class DeleteTicketForClientPage(LoginRequiredMixin, View): 
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        # Check if the user belongs to the 'staff_group'
+        if not user.groups.filter(name='staff_group').exists():
+            # If the user is not in the staff_group, return HTTP Forbidden status
+            return HttpResponseForbidden("You are not authorized to perform this action.")
+        ticket_id = self.kwargs.get('ticket_id')
+        ticket_to_delete = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        ticket_to_delete.delete()
+        return redirect('staff-page')
+
+
 
 class EditTicketForClientPage(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
@@ -210,23 +200,12 @@ class EditTicketForClientPage(LoginRequiredMixin,View):
         quote.delete()
         return redirect('staff-page')
 
-    # def post(self, request, *args, **kwargs):
-    #     ticket_id = self.kwargs.get('ticket_id')
-    #     ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-    #     form = AuthorisedTicketRequestForm(request.POST, instance=ticket)
-    #     if form.is_valid():
-    #         form.save()
-    #         return redirect('staff-page')
-    #     return render(request, 'edit-ticket.html', {'form': form})
-
 class ViewTicketForClientPage(LoginRequiredMixin,View):
     def get(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
         user=request.user
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
         chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
-
-        # Paginate 10 messages for the page
         paginator = Paginator(chat_messages, 10)
         page_number = request.GET.get('page')
         chat_messages = paginator.get_page(page_number)

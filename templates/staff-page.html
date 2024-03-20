@@ -179,6 +179,10 @@
                               {% csrf_token %}
                               <button type="submit" class="btn btn-primary">Re-open ?</button>
                           </form>
+                          <form class="contact100-form validate-form" method="POST" action="{% url 'delete-ticket' ticket.id %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-primary">Delete</button>
+                          </form>
                           <!-- End -->
                         </div>
                     </div>

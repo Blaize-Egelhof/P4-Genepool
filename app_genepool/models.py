@@ -76,7 +76,3 @@ class ChatDialogue(models.Model):
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     file = models.FileField(upload_to='GENEPOOL/templates/ticket-files/', blank=True)
-
-    
-
-

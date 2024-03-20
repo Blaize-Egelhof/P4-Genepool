@@ -2,7 +2,6 @@ from django import forms
 from django.forms.widgets import Textarea
 from .models import UnauthorisedQuoteRequests
 from .models import UnauthorisedCallBackRequests
-from .models import AuthorisedQuoteRequests
 from .models import AuthorisedTicketRequests
 from .models import ChatDialogue
 from django.contrib.auth.forms import AuthenticationForm
@@ -27,20 +26,6 @@ class CallBackForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'readonly': 'readonly'}),
             'request_description': forms.TextInput(attrs={'readonly': 'readonly'}),
         }
-
-class AuthorisedQuoteRequestForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user', None)
-        super(AuthorisedQuoteRequestForm, self).__init__(*args, **kwargs)
-        
-        if not user.is_staff:
-            readonly_fields = ['full_nameORcompany_name', 'email', 'phone', 'status']
-            for field_name in readonly_fields:
-                self.fields[field_name].widget.attrs['readonly'] = 'readonly'
-
-    class Meta:
-        model = AuthorisedQuoteRequests
-        fields = ['full_nameORcompany_name', 'email', 'phone', 'service', 'request_description', 'status']
 
 class AuthorisedTicketRequestForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
