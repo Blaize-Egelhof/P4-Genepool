@@ -327,20 +327,19 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
 | printstatements - settings.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p4.PNG)  | ✅ |
 *Insert PEP8 Validator Testing*
-
-
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
-
-
 | Home page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) validator - source code | No issues found | ✅ |
 | Products-Services - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-w3validator.PNG) validator - source code | No issues found | ✅ |
+| Clients Page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) validator - source code | No issues found | ✅ |
+
 *Insert HTML VALIDATOR FOR OTHER PAGES Validator Testing*
 
 
 
 | Home page - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/indexlighthouse.PNG) | ✅ |
 | Products and Services - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-lighthouse.PNG) | ✅ |
+| Client Page  - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) | ✅ |
 *Insert Lighthouse testing  Testing*
 
 ### Responsiveness testing
@@ -350,6 +349,8 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Products and Services - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Login - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Client Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+
 
 ### C.R.U.D. testing
 
