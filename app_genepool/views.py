@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import View
-from .forms import QuoteRequestForm,AuthorisedTicketRequestForm,ChatDialogue1
+from .forms import QuoteRequestForm,AuthorisedTicketRequestForm,ChatDialogue1,CallBackForm
 from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,AuthorisedTicketRequests,ChatDialogue
 from django.contrib.auth.models import Group, User
 from django import template
@@ -95,20 +95,50 @@ def submit_authorised_ticket_request(request):
             return render(request, 'client-page.html', {'form': form})
 
 
+
+
+
 class EditQuoteRequest(LoginRequiredMixin, View):
-    template_name = 'edit-quote-request.html'
-    login_url = reverse_lazy('login')
 
-    def get(self, request, quote_id, *args, **kwargs):
-        form = AuthorisedQuoteRequestForm(instance=quote, user=request.user)  
+    def get(self, request, *args, **kwargs):
+        quote_id = kwargs.get('quote_id')
+        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)  
+        form = QuoteRequestForm(instance=quote)
         messages.success(request, f'Now Editing Quote: {quote.id}')
-        return render(request, self.template_name, {'form': form})
+        return render(request, "edit-quote-request.html", {'quote_id': quote_id, 'form': form})
 
-    def post(self, request, ticket_id, *args, **kwargs):
-        if 'save_changes' in request.POST:
-            return self.handle_save_changes(request, ticket_id)
-        elif 'go_back' in request.POST:
-            return render(request, 'staff-page.html')
+    # def post(self, request, *args, **kwargs):
+    #     quote_id = kwargs.get('quote_id')
+    #     quote = self.get_object(quote_id)
+    #     form = QuoteRequestForm(request.POST, instance=quote)
+
+    #     if 'save_changes' in request.POST:
+    #         if form.is_valid():
+    #             form.save()
+    #             messages.success(request, 'Quote updated successfully!')
+    #             return redirect('staff-page')
+    #         else:
+    #             messages.error(request, 'Please correct the error below.')
+
+    #     elif 'go_back' in request.POST:
+    #         return redirect('staff-page')
+
+    #     return render(request, self.template_name, {'form': form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -118,7 +148,7 @@ class EditCallBackRequest(LoginRequiredMixin, View):
 
     def get(self, request, callback_request_id, *args, **kwargs):
         callback_request = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
-        form = QuoteRequestForm(instance=callback_request)
+        form = CallBackForm(instance=callback_request)
         messages.success(request, f'Now Working On Callback Number: {callback_request_id}')
         return render(request, self.template_name, {'callback_request_id': callback_request_id, 'form': form})
     

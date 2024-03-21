@@ -225,7 +225,7 @@
                           <a href="#" class="card-link toggle-text">Read more</a>
                       </div>
                       <div class="card-footer client-card-footer-styling client-custom-footer">
-                          <a href="#" class="btn btn-success">View</a>
+                        <a href="{% url 'edit-quote-request' requests.id %}" class="btn btn-success">View</a>
                       </div>
                   </div>
               </div>
@@ -269,7 +269,7 @@
                           <a href="#" class="card-link toggle-text">Read more</a>
                       </div>
                       <div class="card-footer client-card-footer-styling client-custom-footer">
-                          <a href="#" class="btn btn-success">View</a>
+                          <a href="{% url 'edit-callback-request' requests.id %}" class="btn btn-success">View</a>
                       </div>
                   </div>
               </div>
