@@ -44,8 +44,7 @@ class ProductsAndServices(View):
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
-        staff_unauthorised_callback_requests = UnauthorisedCallBackRequests.objects.all()
-        staff_unauthorised_callback_requests = UnauthorisedQuoteRequests.objects.all()
+
         staff_group = user.groups.filter(Q(name='Staff')).exists()
         staff_ticket_requests = AuthorisedTicketRequests.objects.all()
         answered_client_ticket_request = AuthorisedTicketRequests.objects.filter(status='Answered', client=user)
@@ -56,13 +55,20 @@ class StaffPage(LoginRequiredMixin, View):
         staff_closed_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Closed')
 
         if staff_group: 
+            staff_unauthorised_callback_requests_ongoing = UnauthorisedCallBackRequests.objects.filter(status='Ongoing')
+            staff_unauthorised_callback_requests_completed = UnauthorisedCallBackRequests.objects.filter(status='Completed')
+            staff_unauthorised_quote_requests_ongoing = UnauthorisedQuoteRequests.objects.filter(status ='Ongoing')
+            staff_unauthorised_quote_requests_completed = UnauthorisedQuoteRequests.objects.filter(status ='Completed')
             return render(request, 'staff-page.html', {
                 'user': user, 
                 'staff_ticket_requests' : staff_ticket_requests,
                 'staff_unanswered_client_ticket_request' : staff_unanswered_client_ticket_request,
                 'staff_answered_client_ticket_request' : staff_answered_client_ticket_request,
                 'staff_closed_client_ticket_request' : staff_closed_client_ticket_request,
-                'staff_unauthorised_callback_requests' : staff_unauthorised_callback_requests, 
+                'staff_unauthorised_callback_requests_completed' : staff_unauthorised_callback_requests_completed,
+                'staff_unauthorised_callback_requests_ongoing' : staff_unauthorised_callback_requests_ongoing,
+                'staff_unauthorised_quote_requests_ongoing' : staff_unauthorised_quote_requests_ongoing,
+                'staff_unauthorised_quote_requests_completed' : staff_unauthorised_quote_requests_completed, 
             })
         else:
             return render(request, 'client-page.html', {
@@ -71,15 +77,7 @@ class StaffPage(LoginRequiredMixin, View):
                 'unanswered_client_ticket_request':unanswered_client_ticket_request,
                 'closed_client_ticket_request':closed_client_ticket_request,
             })
-    # def post(self, request):
-    #     form = AuthorisedQuoteRequestForm(request.POST,user=request.user)
-    #     if form.is_valid():
-    #         form.save()
-    #         messages.success(request, 'Quote Request submitted successfully.')
-    #         return redirect('staff-page')
-    #     else:
-    #         messages.error(request, 'Error submitting Quote Request, please ensure the fields indicated by * are correctly filled in.')
-    #         return render(request, 'staff-page', {'form': form})
+
 @login_required
 def submit_authorised_ticket_request(request):
     if request.method == 'POST':

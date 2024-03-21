@@ -172,7 +172,6 @@
   <button class="closed-quotes-custom-btn" id="toggleClosedTickets">Show Closed Tickets</button>
   </div>
   <!-- End of Closed Ticket Heading -->
-
   <!-- Start of closed ticket container -->
   <div class="container-fluid client-container-styling">
       <div class="row">
@@ -214,7 +213,7 @@
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-primary">Re-open ?</button>
                             </form>
-                            <!-- End -->
+                            <!-- Button To Toggle Ticket Status from "Closed" to "Unanswered"-->
                           </div>
                       </div>
                   </div>
@@ -244,6 +243,34 @@ const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
                 closedTicketsSection.style.display = isHidden ? "flex" : "none";
                 toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
             });
+
+            document.addEventListener('DOMContentLoaded', function() {
+    var toggleTextLinks = document.querySelectorAll('.toggle-text');
+
+    toggleTextLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Prevent the default link action
+            event.preventDefault();
+
+            // Get the parent .card-body of the clicked link
+            var cardBody = this.closest('.card-body');
+
+            // Toggle visibility of the descriptions inside this .card-body
+            var shortDesc = cardBody.querySelector('.short-description');
+            var fullDesc = cardBody.querySelector('.full-description');
+
+            if (shortDesc.style.display === 'none') {
+                shortDesc.style.display = '';
+                fullDesc.style.display = 'none';
+                this.textContent = 'Read more';
+            } else {
+                shortDesc.style.display = 'none';
+                fullDesc.style.display = '';
+                this.textContent = 'Read less';
+            }
+        });
+    });
+});
  
 </script>
 
