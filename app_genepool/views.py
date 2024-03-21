@@ -11,6 +11,7 @@ from .models import UnauthorisedQuoteRequests,UnauthorisedCallBackRequests,Autho
 from django.contrib.auth.models import Group, User
 from django import template
 from django.db.models import Q
+from django.urls import reverse
 register = template.Library()
 
 class Index(View):
@@ -46,7 +47,7 @@ class StaffPage(LoginRequiredMixin, View):
         user = request.user
 
         staff_group = user.groups.filter(Q(name='Staff')).exists()
-        staff_ticket_requests = AuthorisedTicketRequests.objects.all()
+        staff_ticket_requests_closed = AuthorisedTicketRequests.objects.filter(status='Answered')
         answered_client_ticket_request = AuthorisedTicketRequests.objects.filter(status='Answered', client=user)
         staff_answered_client_ticket_request = AuthorisedTicketRequests.objects.filter(status='Answered')
         unanswered_client_ticket_request =AuthorisedTicketRequests.objects.filter(status='Unanswered', client=user)
@@ -61,7 +62,7 @@ class StaffPage(LoginRequiredMixin, View):
             staff_unauthorised_quote_requests_completed = UnauthorisedQuoteRequests.objects.filter(status ='Completed')
             return render(request, 'staff-page.html', {
                 'user': user, 
-                'staff_ticket_requests' : staff_ticket_requests,
+                'staff_ticket_requests_closed' : staff_ticket_requests_closed,
                 'staff_unanswered_client_ticket_request' : staff_unanswered_client_ticket_request,
                 'staff_answered_client_ticket_request' : staff_answered_client_ticket_request,
                 'staff_closed_client_ticket_request' : staff_closed_client_ticket_request,
@@ -127,7 +128,24 @@ class EditQuoteRequest(LoginRequiredMixin, View):
 
 
 
+class CloseUnauthorisedQuote (LoginRequiredMixin,View):
+    def post(self, request, *args, **kwargs):
+        quote_id = kwargs.get('quote_id')
+        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+        quote.status = 'Completed'
+        quote.save()
+        messages.success(request, f'Quote {quote.id} has been marked as completed!')
+        return redirect(reverse('staff-page'))
 
+class CloseUnauthorisedCallback(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        callback_id = kwargs.get('callback_id')
+        print(callback_id)
+        callback_object = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
+        callback_object.status = 'Completed'
+        callback_object.save()
+        messages.success(request, f'Callback {callback_object.id} has been marked as completed!')
+        return redirect(reverse('staff-page'))
 
 
 
@@ -263,6 +281,7 @@ class ViewTicketForClientPage(LoginRequiredMixin,View):
         else:
             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
             return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+            
 class ReopenTicket(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         ticket_id = kwargs.get('ticket_id')
@@ -272,6 +291,23 @@ class ReopenTicket(LoginRequiredMixin, View):
         messages.success(request, "Ticket has been reopened successfully.")
         return redirect('staff-page') 
         
+class ReopenCallback(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        callback_id = kwargs.get('callback_id')
+        callback = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
+        callback.status = "Ongoing"
+        callback.save()
+        messages.success(request, "Callback Request has been reopened successfully.")
+        return redirect('staff-page') 
+
+class ReopenCallback(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        quote_id = kwargs.get('quote_id')
+        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+        quote.status = "Ongoing"
+        quote.save()
+        messages.success(request, "Quote Request has been reopened successfully.")
+        return redirect('staff-page') 
 
 
 

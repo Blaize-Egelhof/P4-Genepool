@@ -124,7 +124,7 @@
     <!-- Display when no answered tickets are available -->
     <div class="row">
         <div class="col">
-            <p class="center-my-text black-txt">No Tickets To Show</p>
+            <p class="center-my-text black-text">No Tickets To Show</p>
         </div>
     </div>
   {% endif %}
@@ -140,57 +140,48 @@
 <!-- Start of closed ticket container -->
 <div class="container-fluid client-container-styling">
     <div class="row">
-        <div id="closedTicketsSection"  style="display: none;">
-            <!-- Start of tickets with the status of "Closed" -->
-            {% for ticket in staff_closed_client_ticket_request %}
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                    <div class="card client-card-styling">
-                        <div class="card-header">
-                              <!-- Start of tickets title -->
-                            <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
-                            <!-- End -->
-                            <!-- Start of tickets time requested -->
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                            <!-- End -->
-                            <!-- Start of tickets time closed -->
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
-                            <!-- End -->
-                            <!-- Start of tickets status ( Will always be "Closed" in this context) -->
-                            <span class="badge bg-danger">Status: {{ ticket.status }}</span>
-                            <!-- End -->
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <!-- Start of tickets shortened description -->
-                                <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
-                                 <!-- End -->
-                                 <!-- Start of tickets full description -->
-                                <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
-                                <!-- End -->
-                            </p>
-                            <!-- Button To view more ticket description content without having to directly open ticket object-->
-                            <a href="#" class="card-link toggle-text">Read more</a>
-                            <!-- End-->
-                        </div>
-                        <div class="card-footer client-card-footer-styling client-custom-footer">
-                          <!-- Button To Toggle Ticket Status from "Closed" to "Unanswered"-->
-                          <form class="contact100-form validate-form" method="POST" action="{% url 're-open-ticket' ticket.id %}">
-                              {% csrf_token %}
-                              <button type="submit" class="btn btn-primary">Re-open ?</button>
-                          </form>
-                          <button type="button" class="btn btn-danger delete-ticket-btn" data-ticket-id="{{ ticket.id }}" data-ticket-title="{{ ticket.full_nameORcompany_name }}">Delete</button>
-                          <!-- End -->
+        <div id="closedTicketsSection" style="display: none;">
+            <!-- Check if there are any closed tickets -->
+            {% if staff_closed_client_ticket_request %}
+                <!-- Start of tickets with the status of "Closed" -->
+                {% for ticket in staff_closed_client_ticket_request %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                        <div class="card client-card-styling">
+                            <div class="card-header">
+                                <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
+                                <span class="badge bg-danger">Status: {{ ticket.status }}</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                                    <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                                </p>
+                                <a href="#" class="card-link toggle-text">Read more</a>
+                            </div>
+                            <div class="card-footer client-card-footer-styling client-custom-footer">
+                                <form class="contact100-form validate-form" method="POST" action="{% url 're-open-ticket' ticket.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary">Re-open ?</button>
+                                </form>
+                                <button type="button" class="btn btn-danger delete-ticket-btn" data-ticket-id="{{ ticket.id }}" data-ticket-title="{{ ticket.full_nameORcompany_name }}">Delete</button>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
+            {% else %}
+                <!-- Display when no closed tickets are available -->
+                <div class="col">
+                    <p class="center-my-text black-text">No Closed Tickets To Show</p>
                 </div>
-            {% endfor %}
+            {% endif %}
             <!-- End of tickets with the status of "Closed" -->
         </div>
     </div> 
 </div>
-  <!-- End of closed ticket container -->
-</div>
+<!-- End of closed ticket container -->
 
 
 <div class="container-fluid ">
@@ -203,37 +194,44 @@
   </div>
 
   <div class="container-fluid mt-3 client-container-styling">
-      <div class="row">
-          {% for requests in staff_unauthorised_quote_requests_ongoing %}
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                  <div class="card client-card-styling">
-                      <div class="card-header">
-                          <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
-                          <span class="badge bg-success">Status:{{ requests.status }} </span>
-                          <form method="POST" action="{#}">
-                            {% csrf_token %}
-                            <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
-                        </form>
-                      </div>
-                      <div class="card-body">
-                          <p class="card-text">
-                              <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
-                              <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
-                          </p>
-                          <a href="#" class="card-link toggle-text">Read more</a>
-                      </div>
-                      <div class="card-footer client-card-footer-styling client-custom-footer">
-                        <a href="{% url 'edit-quote-request' requests.id %}" class="btn btn-success">View</a>
-                      </div>
-                  </div>
-              </div>
-          {% endfor %}
-      </div>
-  </div>
-  <!-- End of Container housing the Unanswered Ticket objects -->
+    <div class="row">
+        <!-- Check if there are any ongoing unauthorised quote requests -->
+        {% if staff_unauthorised_quote_requests_ongoing %}
+            {% for requests in staff_unauthorised_quote_requests_ongoing %}
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                    <div class="card client-card-styling">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
+                            <span class="badge bg-success">Status:{{ requests.status }} </span>
+                            <form method="POST" action="{% url 'close-quote-object' requests.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
+                            </form>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
+                                <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
+                            </p>
+                            <a href="#" class="card-link toggle-text">Read more</a>
+                        </div>
+                        <div class="card-footer client-card-footer-styling client-custom-footer">
+                            <a href="{% url 'edit-quote-request' requests.id %}" class="btn btn-success">View</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <!-- Display when no ongoing unauthorised quote requests are available -->
+            <div class="col">
+                <p class="center-my-text black-text">No Ongoing Unauthorised Quote Requests To Show</p>
+            </div>
+        {% endif %}
+    </div>
 </div>
+<!-- End of Container housing the Unanswered Ticket objects -->
 
 <div class="container-fluid ">
   <!-- Start of Unanswered Tickets Header -->
@@ -246,38 +244,45 @@
 
   <!-- Start of Container housing the Unanswered Ticket objects -->
   <div class="container-fluid mt-3 client-container-styling">
-      <div class="row">
-          <!-- Start of Ticket objects for status of "Unanswered" -->
-          {% for requests in staff_unauthorised_callback_requests_ongoing %}
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                  <div class="card client-card-styling">
-                      <div class="card-header">
-                          <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
-                          <span class="badge bg-success">Status:{{ requests.status }} </span>
-                          <form method="POST" action="{#}">
-                            {% csrf_token %}
-                            <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
-                        </form>
-                      </div>
-                      <div class="card-body">
-                          <p class="card-text">
-                              <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
-                              <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
-                          </p>
-                          <a href="#" class="card-link toggle-text">Read more</a>
-                      </div>
-                      <div class="card-footer client-card-footer-styling client-custom-footer">
-                          <a href="{% url 'edit-callback-request' requests.id %}" class="btn btn-success">View</a>
-                      </div>
-                  </div>
-              </div>
-          {% endfor %}
-          <!-- End of Ticket objects for status of "Unanswered" -->
-      </div>
-  </div>
-  <!-- End of Container housing the Unanswered Ticket objects -->
+    <div class="row">
+        <!-- Start of Ticket objects for status of "Unanswered" -->
+        <!-- Check if there are any ongoing unauthorised callback requests -->
+        {% if staff_unauthorised_callback_requests_ongoing %}
+            {% for requests in staff_unauthorised_callback_requests_ongoing %}
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                    <div class="card client-card-styling">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
+                            <span class="badge bg-success">Status:{{ requests.status }} </span>
+                            <form method="POST" action="{% url 'close-callback-object' requests.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
+                            </form>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
+                                <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
+                            </p>
+                            <a href="#" class="card-link toggle-text">Read more</a>
+                        </div>
+                        <div class="card-footer client-card-footer-styling client-custom-footer">
+                            <a href="{% url 'edit-callback-request' requests.id %}" class="btn btn-success">View</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col">
+                <p class="center-my-text black-text">No Ongoing Unauthorised Callback Requests To Show</p>
+            </div>
+        {% endif %}
+        <!-- End of Ticket objects for status of "Unanswered" -->
+    </div>
+</div>
+<!-- End of Container housing the Unanswered Ticket objects -->
 </div>
 
 <div class="container d-flex justify-content-center">
@@ -287,55 +292,70 @@
 <!-- End of Closed Ticket Heading -->
 
 <div class="container-fluid client-container-styling">
-  <div class="row">
-      <div id="closedObjectsSection"  style="display: none;">
-          <!-- Start of tickets with the status of "Closed" -->
-          {% for ticket in staff_closed_client_ticket_request %}
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                  <div class="card client-card-styling">
-                      <div class="card-header">
-                            <!-- Start of tickets title -->
-                          <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
-                          <!-- End -->
-                          <!-- Start of tickets time requested -->
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                          <!-- End -->
-                          <!-- Start of tickets time closed -->
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
-                          <!-- End -->
-                          <!-- Start of tickets status ( Will always be "Closed" in this context) -->
-                          <span class="badge bg-danger">Status: {{ ticket.status }}</span>
-                          <!-- End -->
-                      </div>
-                      <div class="card-body">
-                          <p class="card-text">
-                              <!-- Start of tickets shortened description -->
-                              <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
-                               <!-- End -->
-                               <!-- Start of tickets full description -->
-                              <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
-                              <!-- End -->
-                          </p>
-                          <!-- Button To view more ticket description content without having to directly open ticket object-->
-                          <a href="#" class="card-link toggle-text">Read more</a>
-                          <!-- End-->
-                      </div>
-                      <div class="card-footer client-card-footer-styling client-custom-footer">
-                        <!-- Button To Toggle Ticket Status from "Closed" to "Unanswered"-->
-                        <form class="contact100-form validate-form" method="POST" action="{% url 're-open-ticket' ticket.id %}">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-primary">Re-open ?</button>
-                        </form>
-                        <button type="button" class="btn btn-danger delete-ticket-btn" data-ticket-id="{{ ticket.id }}" data-ticket-title="{{ ticket.full_nameORcompany_name }}">Delete</button>
-                        <!-- End -->
-                      </div>
-                  </div>
-              </div>
-          {% endfor %}
-          <!-- End of tickets with the status of "Closed" -->
-      </div>
-  </div> 
+    <div class="row">
+        <div id="closedObjectsSection" style="display: none;">
+            {% if staff_unauthorised_quote_requests_completed or staff_unauthorised_callback_requests_completed %}
+                {% for ticket in staff_unauthorised_quote_requests_completed %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                        <div class="card client-card-styling">
+                            <div class="card-header">
+                                <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id }}</h6>
+                                <span class="badge bg-danger">Status: {{ ticket.status }}</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                                    <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                                </p>
+                                <a href="#" class="card-link toggle-text">Read more</a>
+                            </div>
+                            <div class="card-footer client-card-footer-styling client-custom-footer">
+                                <form method="POST" action="{% url 're-open-quote-request' ticket.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary">Re-open?</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- Iterate over callback requests -->
+                {% for ticket in staff_unauthorised_callback_requests_completed %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                        <div class="card client-card-styling">
+                            <div class="card-header">
+                                <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id }}</h6>
+                                <span class="badge bg-danger">Status: {{ ticket.status }}</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                                    <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                                </p>
+                                <a href="#" class="card-link toggle-text">Read more</a>
+                            </div>
+                            <div class="card-footer client-card-footer-styling client-custom-footer">
+                                <form method="POST" action="{% url 're-open-callback' ticket.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary">Re-open?</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <!-- Display when there are no completed objects to show -->
+                <div class="col">
+                    <p class="text-center black-text">No Completed Objects To Show</p>
+                </div>
+            {% endif %}
+        </div>
+    </div> 
 </div>
 
 <!-- Bootstrap Modal for Delete Confirmation -->
@@ -376,12 +396,14 @@
     // Toggling closed tickets section
     const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
     const closedTicketsSection = document.getElementById('closedTicketsSection');
-
-    toggleClosedTicketsBtn.addEventListener('click', function() {
-        const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
-        closedTicketsSection.style.display = isHidden ? "flex" : "none";
-        toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Tickets" : "Show Closed Tickets";
-    });
+    
+    if(toggleClosedTicketsBtn && closedTicketsSection) {
+        toggleClosedTicketsBtn.addEventListener('click', function() {
+            const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
+            closedTicketsSection.style.display = isHidden ? "flex" : "none";
+            toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Tickets" : "Show Closed Tickets";
+        });
+    }
 
     // Handling delete ticket button clicks
     document.querySelectorAll('.delete-ticket-btn').forEach(function(button) {
@@ -429,6 +451,22 @@
             }
         });
     });
+
+    // Toggling closed unauthorised objects section
+    const toggleClosedObjectsBtn = document.getElementById('toggleClosedObjects');
+    const closedObjectsSection = document.getElementById('closedObjectsSection');
+
+    if(toggleClosedObjectsBtn && closedObjectsSection) {
+        toggleClosedObjectsBtn.addEventListener('click', function() {
+            // Check if the section is currently hidden or not. Consider both "none" and an empty string as hidden.
+            const isHidden = closedObjectsSection.style.display === "none" || closedObjectsSection.style.display === "";
+            closedObjectsSection.style.display = isHidden ? "flex" : "none"; // Toggle display style between "none" and "flex".
+            closedObjectsSection.style.flexWrap = "wrap";
+            // Update button text based on the section's visibility
+            toggleClosedObjectsBtn.textContent = isHidden ? "Hide Closed Unauthorised Objects" : "Show Closed Unauthorised Objects";
+        });
+    }
 });
+
 </script>
 {% endblock content %}

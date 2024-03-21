@@ -32,8 +32,12 @@ urlpatterns = [
     path('edit-callback-request/<int:callback_request_id>/', views.EditCallBackRequest.as_view(), name='edit-callback-request'),
     path('delete-callback-request/<int:callback_request_id>/', views.DeleteCallBackRequest.as_view(), name='delete-callback-request'),
     path('close-ticket/<int:ticket_id>/', views.CloseTicketForClientPage.as_view(), name='close-client-ticket'),
+    path('close-unauthorised-quote/<int:quote_id>/', views.CloseUnauthorisedQuote.as_view(), name='close-quote-object'),
+    path('close-unauthorised-callback/<int:callback_id>/', views.CloseUnauthorisedCallback.as_view(), name='close-callback-object'),
     path('delete-ticket/<int:ticket_id>/', views.DeleteTicketForClientPage.as_view(), name='delete-ticket'),
     path('edit-ticket/<int:ticket_id>/', views.EditTicketForClientPage.as_view(), name='edit-ticket'),
     path('view-ticket/<int:ticket_id>/', views.ViewTicketForClientPage.as_view(), name='view-ticket'),
     path('re-open-ticket/<int:ticket_id>/', views.ReopenTicket.as_view(), name='re-open-ticket'),
+    path('re-open-callback/<int:callback_id>/', views.ReopenCallback.as_view(), name='re-open-callback'),
+    path('re-open-quote-request/<int:quote_id>/', views.ReopenCallback.as_view(), name='re-open-quote-request'),
 ]
