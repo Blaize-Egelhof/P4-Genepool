@@ -104,7 +104,7 @@
                     <div class="card-header">
                         <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                        <span class="badge bg-primary">Status:{{ ticket.status }} </span>
+                        <span class="badge bg-primary">Status: {{ ticket.status }} </span>
                             <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="right-align close-ticket-styling">Close Ticket ?</button>
@@ -136,7 +136,7 @@
                             <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
                             <!--End -->
                             <!--Ticket Status (Will always be Unanswered in this context)-->
-                            <span class="badge bg-success">Status:{{ ticket.status }} </span> 
+                            <span class="badge bg-success">Status: {{ ticket.status }} </span> 
                             <!-- End -->
                         </div>
                         <div class="card-body">

@@ -318,6 +318,7 @@ h2{
   text-align: center;
   text-shadow:none;
   padding-bottom: 1rem;
+  font-weight: bold;
 }
 
 .fields-btns {
@@ -408,6 +409,9 @@ margin-right:auto;
 
 .close-ticket-styling{
   color:red;
+  border: none;
+  background:none;
+  padding-right: 0px;
 }
 .close-ticket-styling:hover{
   text-decoration: underline;
@@ -422,6 +426,7 @@ margin-right:auto;
   color:red;
   text-decoration: none;
   animation: none!important;
+  border:none;
 }
 
 .closed-quotes-custom-btn:hover{
@@ -1147,6 +1152,10 @@ SIGN-UP / LOGIN PAGE
 
   .label-input100 {
     font-size: 1rem !important;
+  }
+  .close-ticket-styling{
+    color:red;
+    font-size:15px;
   }
 }
 

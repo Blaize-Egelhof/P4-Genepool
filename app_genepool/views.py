@@ -308,8 +308,3 @@ class ReopenCallback(LoginRequiredMixin, View):
         quote.save()
         messages.success(request, "Quote Request has been reopened successfully.")
         return redirect('staff-page') 
-
-
-
-
-

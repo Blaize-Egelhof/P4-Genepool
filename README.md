@@ -350,6 +350,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Products and Services - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Login - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Client Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Staff Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 
 
 ### C.R.U.D. testing

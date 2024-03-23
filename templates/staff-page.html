@@ -58,7 +58,7 @@
                           <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                           <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
                           <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.user}}</h6>
-                          <span class="badge bg-success">Status:{{ ticket.status }} </span> 
+                          <span class="badge bg-success">Status: {{ ticket.status }} </span> 
                       </div>
                       <div class="card-body">
                           <p class="card-text">
@@ -100,7 +100,7 @@
                         <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
                         <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
-                        <span class="badge bg-primary">Status:{{ ticket.status }} </span>
+                        <span class="badge bg-primary">Status: {{ ticket.status }} </span>
                         <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
                             {% csrf_token %}
                             <button type="submit" class="right-align close-ticket-styling">Close Ticket?</button>
@@ -204,7 +204,7 @@
                             <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
                             <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
-                            <span class="badge bg-success">Status:{{ requests.status }} </span>
+                            <span class="badge bg-success">Status: {{ requests.status }} </span>
                             <form method="POST" action="{% url 'close-quote-object' requests.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
@@ -255,7 +255,7 @@
                             <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
                             <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
-                            <span class="badge bg-success">Status:{{ requests.status }} </span>
+                            <span class="badge bg-success">Status: {{ requests.status }} </span>
                             <form method="POST" action="{% url 'close-callback-object' requests.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
@@ -293,7 +293,7 @@
 
 <div class="container-fluid client-container-styling">
     <div class="row">
-        <div id="closedObjectsSection" style="display: none;">
+        <div id="closedObjectsSection">
             {% if staff_unauthorised_quote_requests_completed or staff_unauthorised_callback_requests_completed %}
                 {% for ticket in staff_unauthorised_quote_requests_completed %}
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
