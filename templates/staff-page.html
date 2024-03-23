@@ -38,101 +38,115 @@
 
 {% block content %}
 
-<div class="container-fluid ">
-  <!-- Start of Unanswered Tickets Header -->
-  <div class="row">
+<div class="container-fluid">
+    <!-- Start of Unanswered Tickets Header -->
+    <div class="row">
       <div class="col center-my-text black-text h2-spacing">
-          <h2>Unanswered Tickets</h2>
-          <hr class="custom-br">
+        <h2>Unanswered Tickets</h2>
+        <hr class="custom-br">
       </div>
-  </div>
-
-  <!-- Start of Container housing the Unanswered Ticket objects -->
-  <div class="container-fluid mt-3 client-container-styling">
+    </div>
+    
+    <!-- Start of Container housing the Unanswered Ticket objects -->
+    <div class="container-fluid mt-3 client-container-styling">
       <div class="row">
-          <!-- Start of Ticket objects for status of "Unanswered" -->
-          {% for ticket in staff_unanswered_client_ticket_request %}
-              <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                  <div class="card client-card-styling">
-                      <div class="card-header">
-                          <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                          <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.user}}</h6>
-                          <span class="badge bg-success">Status: {{ ticket.status }} </span> 
-                      </div>
-                      <div class="card-body">
-                          <p class="card-text">
-                              <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
-                              <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
-                          </p>
-                          <a href="#" class="card-link toggle-text">Read more</a>
-                      </div>
-                      <div class="card-footer client-card-footer-styling client-custom-footer">
-                          <a href="{% url 'view-ticket' ticket.id %}" class="btn btn-success">View</a>
-                          <a href="{% url 'edit-ticket' ticket.id %}" class="btn btn-success">Edit</a>
-                      </div>
-                  </div>
+        <!-- Loop through each unanswered ticket and display them -->
+        {% for ticket in staff_unanswered_client_ticket_request %}
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+            <!-- Ticket display card -->
+            <div class="card client-card-styling">
+              <!-- Card header with ticket title, creation date, and user who created it -->
+              <div class="card-header">
+                <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.user }}</h6>
+                <span class="badge bg-success">Status: {{ ticket.status }}</span>
               </div>
-          {% endfor %}
-          <!-- End of Ticket objects for status of "Unanswered" -->
+              <!-- Card body with ticket description -->
+              <div class="card-body">
+                <p class="card-text">
+                  <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                  <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                </p>
+                <!-- Link to toggle the display of the full ticket description -->
+                <a href="#" class="card-link toggle-text">Read more</a>
+              </div>
+              <!-- Card footer with action buttons -->
+              <div class="card-footer client-card-footer-styling client-custom-footer">
+                <a href="{% url 'view-ticket' ticket.id %}" class="btn btn-success">View</a>
+                <a href="{% url 'edit-ticket' ticket.id %}" class="btn btn-success">Edit</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <!-- If no tickets are found, display a message -->
+        {% empty %}
+          <div class="col">
+            <p class="center-my-text black-text">No Unanswered Tickets To Show</p>
+          </div>
+        {% endfor %}
       </div>
-  </div>
-  <!-- End of Container housing the Unanswered Ticket objects -->
+    </div>
+    <!-- End of Container housing the Unanswered Ticket objects -->
 </div>
-
+  
 <!-- Start of Answered Tickets Section -->
 <div class="container-fluid">
-  <!-- Start of Answered Tickets Header -->
-  <div class="row">
+    <!-- Start of Answered Tickets Header -->
+    <div class="row">
       <div class="col center-my-text black-text h2-spacing">
-          <h2>Answered Tickets</h2>
-          <hr class="custom-br">
+        <h2>Answered Tickets</h2>
+        <hr class="custom-br">
       </div>
-  </div>
-  <!-- Check if there are any answered tickets -->
-  {% if staff_answered_client_ticket_request %}
-    <!-- Answered Tickets Cards -->
-    <div class="row">
+    </div>
+  
+    {% if staff_answered_client_ticket_request %}
+      <!-- Section for displaying answered tickets cards -->
+      <div class="row">
         {% for ticket in staff_answered_client_ticket_request %}
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                <div class="card client-card-styling">
-                    <div class="card-header">
-                        <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                        <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
-                        <span class="badge bg-primary">Status: {{ ticket.status }} </span>
-                        <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
-                            {% csrf_token %}
-                            <button type="submit" class="right-align close-ticket-styling">Close Ticket?</button>
-                        </form>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
-                            <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
-                        </p>
-                        <a href="#" class="card-link toggle-text">Read more</a>
-                    </div>
-                    <div class="card-footer client-card-footer-styling client-custom-footer">
-                        <a href="{% url 'view-ticket' ticket.id %}" class="btn btn-primary">View/Reply</a>
-                    </div>
-                </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+            <!-- Each ticket represented as a card -->
+            <div class="card client-card-styling">
+              <div class="card-header">
+                <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
+                <span class="badge bg-primary">Status: {{ ticket.status }} </span>
+                <!-- Form for closing ticket -->
+                <form method="POST" action="{% url 'close-client-ticket' ticket.id %}">
+                  {% csrf_token %}
+                  <button type="submit" class="right-align close-ticket-styling">Close Ticket?</button>
+                </form>
+              </div>
+              <div class="card-body">
+                <p class="card-text">
+                  <span class="short-description">{{ ticket.request_description|truncatechars:50 }}</span>
+                  <span class="full-description" style="display: none;">{{ ticket.request_description }}</span>
+                </p>
+                <!-- Link to toggle description view -->
+                <a href="#" class="card-link toggle-text">Read more</a>
+              </div>
+              <div class="card-footer client-card-footer-styling client-custom-footer">
+                <!-- Buttons to view or reply to the ticket -->
+                <a href="{% url 'view-ticket' ticket.id %}" class="btn btn-primary">View/Reply</a>
+              </div>
             </div>
+          </div>
         {% endfor %}
-    </div>
-  {% else %}
-    <!-- Display when no answered tickets are available -->
-    <div class="row">
+      </div>
+    {% else %}
+      <!-- Display message when no answered tickets are available -->
+      <div class="row">
         <div class="col">
-            <p class="center-my-text black-text">No Tickets To Show</p>
+          <p class="center-my-text black-text">No Tickets To Show</p>
         </div>
-    </div>
-  {% endif %}
+      </div>
+    {% endif %}
 </div>
-<!-- End of Answered Tickets Section -->
+<!-- End of Answered Tickets Section -->  
 
 <div class="container d-flex justify-content-center">
-  <!-- Start of Closed Ticket Heading -->
+<!-- Start of Closed Ticket Heading -->
 <button class="closed-quotes-custom-btn" id="toggleClosedTickets">Show Closed Tickets</button>
 </div>
 <!-- End of Closed Ticket Heading -->
@@ -183,58 +197,58 @@
 </div>
 <!-- End of closed ticket container -->
 
-
-<div class="container-fluid ">
-  <!-- Start of Unanswered Tickets Header -->
-  <div class="row">
-      <div class="col center-my-text black-text h2-spacing">
-          <h2>Unauthorised Quote Requests</h2>
-          <hr class="custom-br">
-      </div>
-  </div>
-
-  <div class="container-fluid mt-3 client-container-styling">
+<!-- Start of Unanswered Quote Container -->
+<div class="container-fluid">
     <div class="row">
-        <!-- Check if there are any ongoing unauthorised quote requests -->
-        {% if staff_unauthorised_quote_requests_ongoing %}
-            {% for requests in staff_unauthorised_quote_requests_ongoing %}
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                    <div class="card client-card-styling">
-                        <div class="card-header">
-                            <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
-                            <span class="badge bg-success">Status: {{ requests.status }} </span>
-                            <form method="POST" action="{% url 'close-quote-object' requests.id %}">
-                                {% csrf_token %}
-                                <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
-                            </form>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
-                                <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
-                            </p>
-                            <a href="#" class="card-link toggle-text">Read more</a>
-                        </div>
-                        <div class="card-footer client-card-footer-styling client-custom-footer">
-                            <a href="{% url 'edit-quote-request' requests.id %}" class="btn btn-success">View</a>
+        <div class="col center-my-text black-text h2-spacing">
+            <h2>Unauthorised Quote Requests</h2>
+            <hr class="custom-br">
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3 client-container-styling">
+        <div class="row">
+            <!-- Check if there are any ongoing unauthorised quote requests -->
+            {% if staff_unauthorised_quote_requests_ongoing %}
+                {% for requests in staff_unauthorised_quote_requests_ongoing %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                        <div class="card client-card-styling">
+                            <div class="card-header">
+                                <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user }}</h6>
+                                <span class="badge bg-success">Status: {{ requests.status }} </span>
+                                <form method="POST" action="{% url 'close-quote-object' requests.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
+                                </form>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
+                                    <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
+                                </p>
+                                <a href="#" class="card-link toggle-text">Read more</a>
+                            </div>
+                            <div class="card-footer client-card-footer-styling client-custom-footer">
+                                <a href="{% url 'edit-quote-request' requests.id %}" class="btn btn-success">View</a>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
+            {% else %}
+                <!-- Display when no ongoing unauthorised quote requests are available -->
+                <div class="col">
+                    <p class="center-my-text black-text">No Ongoing Unauthorised Quote Requests To Show</p>
                 </div>
-            {% endfor %}
-        {% else %}
-            <!-- Display when no ongoing unauthorised quote requests are available -->
-            <div class="col">
-                <p class="center-my-text black-text">No Ongoing Unauthorised Quote Requests To Show</p>
-            </div>
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
 </div>
-<!-- End of Container housing the Unanswered Ticket objects -->
+<!-- End of Container housing the Unanswered Quote objects -->
 
 <div class="container-fluid ">
-  <!-- Start of Unanswered Tickets Header -->
+  <!-- Start of Unanswered Callback Header -->
   <div class="row">
       <div class="col center-my-text black-text h2-spacing">
           <h2>Unauthorised CallBack Requests</h2>
@@ -242,59 +256,64 @@
       </div>
   </div>
 
-  <!-- Start of Container housing the Unanswered Ticket objects -->
-  <div class="container-fluid mt-3 client-container-styling">
-    <div class="row">
-        <!-- Start of Ticket objects for status of "Unanswered" -->
-        <!-- Check if there are any ongoing unauthorised callback requests -->
-        {% if staff_unauthorised_callback_requests_ongoing %}
-            {% for requests in staff_unauthorised_callback_requests_ongoing %}
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-                    <div class="card client-card-styling">
-                        <div class="card-header">
-                            <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
-                            <span class="badge bg-success">Status: {{ requests.status }} </span>
-                            <form method="POST" action="{% url 'close-callback-object' requests.id %}">
-                                {% csrf_token %}
-                                <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
-                            </form>
+    <!-- Start of Container housing the Unanswered Callback objects -->
+    <div class="container-fluid mt-3 client-container-styling">
+            <div class="row">
+                <!-- Start of Callback objects for status of "Ongoing" -->
+                <!-- Check if there are any ongoing unauthorised callback requests -->
+                {% if staff_unauthorised_callback_requests_ongoing %}
+                    {% for requests in staff_unauthorised_callback_requests_ongoing %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                            <div class="card client-card-styling">
+                                <div class="card-header">
+                                    <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
+                                    <span class="badge bg-success">Status: {{ requests.status }} </span>
+                                    <form method="POST" action="{% url 'close-callback-object' requests.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="right-align close-ticket-styling">Close Object?</button>
+                                    </form>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
+                                        <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
+                                    </p>
+                                    <a href="#" class="card-link toggle-text">Read more</a>
+                                </div>
+                                <div class="card-footer client-card-footer-styling client-custom-footer">
+                                    <a href="{% url 'edit-callback-request' requests.id %}" class="btn btn-success">View</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <span class="short-description">{{ requests.request_description|truncatechars:50 }}</span>
-                                <span class="full-description" style="display: none;">{{ requests.request_description }}</span>
-                            </p>
-                            <a href="#" class="card-link toggle-text">Read more</a>
-                        </div>
-                        <div class="card-footer client-card-footer-styling client-custom-footer">
-                            <a href="{% url 'edit-callback-request' requests.id %}" class="btn btn-success">View</a>
-                        </div>
+                    {% endfor %}
+                {% else %}
+                <!-- Display when no ongoing unauthorised Callback requests are available -->
+                    <div class="col">
+                        <p class="center-my-text black-text">No Ongoing Unauthorised Callback Requests To Show</p>
                     </div>
-                </div>
-            {% endfor %}
-        {% else %}
-            <div class="col">
-                <p class="center-my-text black-text">No Ongoing Unauthorised Callback Requests To Show</p>
+                {% endif %}
+                <!-- End of Callback objects for status of "Ongoing" -->
             </div>
-        {% endif %}
-        <!-- End of Ticket objects for status of "Unanswered" -->
     </div>
-</div>
-<!-- End of Container housing the Unanswered Ticket objects -->
+    <!-- End of Container housing the Unanswered Ticket objects -->
 </div>
 
 <div class="container d-flex justify-content-center">
-  <!-- Start of Closed Ticket Heading -->
-<button class="closed-quotes-custom-btn" id="toggleClosedObjects">Show Closed Unauthorised Objects</button>
+  <!-- Start of Completed Unauthorised Objects header  -->
+<button class="closed-quotes-custom-btn" id="toggleClosedObjects">Show Completed Unauthorised Objects</button>
 </div>
-<!-- End of Closed Ticket Heading -->
+<!-- End of Completed Unauthorised Heading -->
 
+<!-- Start of Closed Objects Section -->
 <div class="container-fluid client-container-styling">
     <div class="row">
-        <div id="closedObjectsSection">
+        <!-- This section is initially hidden and may be toggled to show closed objects -->
+        <div id="closedObjectsSection" style="display:none;">
+            <!-- Check if there are either closed quote requests or callback requests -->
             {% if staff_unauthorised_quote_requests_completed or staff_unauthorised_callback_requests_completed %}
+                <!-- Iterate over closed quote requests -->
                 {% for ticket in staff_unauthorised_quote_requests_completed %}
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                         <div class="card client-card-styling">
@@ -321,7 +340,7 @@
                         </div>
                     </div>
                 {% endfor %}
-                <!-- Iterate over callback requests -->
+                <!-- Iterate over closed callback requests -->
                 {% for ticket in staff_unauthorised_callback_requests_completed %}
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                         <div class="card client-card-styling">
@@ -349,7 +368,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <!-- Display when there are no completed objects to show -->
+                <!-- Display message when there are no completed objects to show -->
                 <div class="col">
                     <p class="text-center black-text">No Completed Objects To Show</p>
                 </div>
@@ -357,6 +376,7 @@
         </div>
     </div> 
 </div>
+<!-- End of Closed Objects Section -->
 
 <!-- Bootstrap Modal for Delete Confirmation -->
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -404,15 +424,24 @@
             toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Tickets" : "Show Closed Tickets";
         });
     }
+    /**
+         * Attaches click event listeners to each button with the class '.delete-ticket-btn'. On clicking a button,
+         * it dynamically updates a form's action URL to include the ticket's ID and displays a confirmation modal
+         * with the ticket's title, asking the user to confirm the deletion of the ticket.
+         * 
+         * Each delete button should have 'data-ticket-id' and 'data-ticket-full_nameORcompany_name' attributes
+         * that store the ticket's ID and title, respectively.
+         * 
+         * The 'actionUrl' is constructed using the ticket ID and matches the URL pattern with the name of 'delete-ticket'.
+         * 
+     */
 
-    // Handling delete ticket button clicks
     document.querySelectorAll('.delete-ticket-btn').forEach(function(button) {
         button.addEventListener('click', function() {
             const ticketId = this.getAttribute('data-ticket-id');
             const ticketTitle = this.getAttribute('data-ticket-full_nameORcompany_name'); // Using ticketTitle for consistency
 
-            // Update the form's action to include the ticket ID
-            const actionUrl = `/delete-ticket/${ticketId}/`; // Ensure this URL pattern matches your Django URL
+            const actionUrl = `/delete-ticket/${ticketId}/`; 
             document.getElementById('deleteForm').setAttribute('action', actionUrl);
 
             // Update the modal's body text with the ticket's title
@@ -424,6 +453,15 @@
             deleteModal.show();
         });
     });
+
+    /**    
+        * Attaches click event listeners to each element with the class '.toggle-text' to toggle between
+        * displaying a shortened version and the full version of a text within an element.
+        * When the '.toggle-text' link is clicked, it checks the current visibility state of the '.short-description'
+        * and '.full-description' within the same '.card-body' container. It then toggles the display between these
+        * two states and updates the link text to prompt the user appropriately ("Read more" or "Read less").
+        * The default state only shows a few characters while the other state reveals all characters on the card description.
+    **/
 
     // Toggling between the shortened text and long text
     var toggleTextLinks = document.querySelectorAll('.toggle-text');
@@ -452,7 +490,21 @@
         });
     });
 
-    // Toggling closed unauthorised objects section
+    /**
+         * Attaches a click event listener to a button (identified by 'toggleClosedObjects') to toggle the visibility 
+         * of a section (identified by 'closedObjectsSection'). This script is useful for dynamically showing 
+         * or hiding parts of a web page, such as a section containing specific data or results that the user may want to 
+         * view or hide based on their interaction.
+         *
+         * The visibility toggle is achieved by changing the display style of the target section between 'none' (hidden)
+         * and 'flex' (visible), making this suitable for sections designed with a flexbox layout. Additionally, this script
+         * ensures that when the section is visible, it adopts a 'wrap' behavior for its flex items, accommodating responsive design.
+         *
+         * Upon each click of the toggle button, the script also updates the button's text to reflect the current state of the
+         * section (whether it is now being shown or hidden)
+         *
+    **/
+
     const toggleClosedObjectsBtn = document.getElementById('toggleClosedObjects');
     const closedObjectsSection = document.getElementById('closedObjectsSection');
 
@@ -467,6 +519,5 @@
         });
     }
 });
-
 </script>
 {% endblock content %}

@@ -340,6 +340,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Home page - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/indexlighthouse.PNG) | ✅ |
 | Products and Services - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-lighthouse.PNG) | ✅ |
 | Client Page  - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) | ✅ |
+| Staff Page  - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/lighthouse-staffpage.PNG) | ✅ |
 *Insert Lighthouse testing  Testing*
 
 ### Responsiveness testing
@@ -370,12 +371,6 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 #### Desktop Testing with [Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
 #### Mobile Testing with [Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse)
-
-### ***Responsive Testing***
-
-  - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) was used to regularly check for any responsive design issues. The media queries are the same as the DevTools breakpoints. 
-
-  - The site is responsive down to 320px viewport widths. 
 
   ### ***Further Testing***
 
@@ -414,7 +409,6 @@ Note bug with products and services click JS function
 16. The live site can also be accessed from your repo in GitHub from the environments section of the repo.
 
 The site is now live and operational!
-
 
 ## __Credits__
 
