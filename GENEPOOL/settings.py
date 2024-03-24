@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import dj_database_url # the ability to represent their database settings via a string
+import dj_database_url
 from django.contrib import messages
 
 if os.path.isfile('env.py'):
@@ -125,10 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'https://console.cloudinary.com/pm/c-0fdf73673ac96e3b4c56dd08d073ff/media-explorer/static/css'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
