@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'https://console.cloudinary.com/pm/c-0fdf73673ac96e3b4c56dd08d073ff/media-explorer/static/css'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
