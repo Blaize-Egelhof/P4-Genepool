@@ -20,7 +20,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 localhost = os.environ.get('ALLOWED_LOCAL_HOST')
 publichost = os.environ.get('ALLOWED_PUBLIC_HOST')
