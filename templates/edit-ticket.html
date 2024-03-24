@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block header %}
@@ -13,8 +14,8 @@
                 <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
                     <i class="fas fa-cogs"></i> Products/Services
                 </a>
-                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_logout' %}">
-                    <i class="fas fa-sign-in-alt"></i> Log Out
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'staff-page' %}">
+                    <i class="fas fa-sign-in-alt"></i> Go Back
                 </a>
             </div>
         </nav>
@@ -23,81 +24,9 @@
 {% endblock %}
 
 {% block content %}
-<style>
-    .form-container {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 65%;
-}
-
-.form-styling-generic p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 10px;
-    flex-direction: column;
-}
-
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.my-own-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-styling-generic {
-    margin-bottom: 20px;
-}
-
-input[type="text"], textarea {
-    width: 50%;
-    padding: 10px;
-    margin: 5px 0 20px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-left: 50%;
-    margin-right: 50%;
-    text-align: center;
-}
-
-.btn-primary {
-    color: white;
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-secondary {
-    color: white;
-    background-color: #6c757d;
-}
-
-.btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.center-align-buttons {
-    display: flex;
-    justify-content: center;
-}
-
-.center-aligned-button-styling a {
-    margin-left: 10px;
-}
-</style>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/edit-ticket.css' %}">
+{% endblock extra_css %}
 
 <div class="form-container">
     <h2 class="black-text">Edit Your Ticket</h2>

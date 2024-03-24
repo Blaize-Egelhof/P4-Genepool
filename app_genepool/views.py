@@ -162,9 +162,9 @@ class CloseUnauthorisedCallback(LoginRequiredMixin, View):
 
 class EditCallBackRequest(LoginRequiredMixin, View):
     template_name = 'edit-callback-request.html'
-    login_url = reverse_lazy('login')
 
-    def get(self, request, callback_request_id, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
+        callback_request_id = kwargs.get('callback_request_id')
         callback_request = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
         form = CallBackForm(instance=callback_request)
         messages.success(request, f'Now Working On Callback Number: {callback_request_id}')
@@ -173,8 +173,17 @@ class EditCallBackRequest(LoginRequiredMixin, View):
     def post(self, request, callback_request_id, *args, **kwargs):
         if 'save_changes' in request.POST:
             return self.handle_save_changes(request, callback_request_id)
-        elif 'delete_this_quote' in request.POST:
-            return self.handle_delete_quote(request, callback_request_id)
+    
+    def handle_save_changes(self, request, callback_request_id):
+        callback_request = get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        form = CallBackForm(request.POST, instance=callback_request)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Callback Num:{callback_request_id} has been updated successfully!')
+            return redirect('staff-page')
+        else:
+            messages.error(request, f'Error updating callback {callback_request_id}. Please check the form data.') 
+            return render(request, self.template_name, {'form': form, 'callback_request_id': callback_request_id})
     
 class DeleteQuoteRequest(LoginRequiredMixin, View):
     def post(self, request, quote_id):

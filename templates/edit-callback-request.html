@@ -3,12 +3,26 @@
 
 {% block header %}
 
-<div>
-    <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">Browse-Logged-In</a>
-        <a class="nav-link fw-bold py-1 px-0" aria-label="Logout" href="{% url 'account_logout' %}">Log Out</a>
-    </nav>
-</div>
+<!-- Start of Header/Nav Section-->
+<nav-section>
+    <div class="nav-container">
+        <nav class="nav nav-masthead">
+            <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+            <div class="nav-links">
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                    <i class="fas fa-cogs"></i> Products/Services
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'staff-page' %}">
+                    <i class="fa-solid fa-arrow-left"></i> Go Back
+                </a>
+            </div>
+        </nav>
+    </div>
+  </nav-section>
+  <!-- End of Header/Nav Section-->
 
 {% endblock %}
 
@@ -21,7 +35,7 @@
         </div>
         <div class="center-align-buttons center-aligned-button-styling">
             <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
-            <a href="#" class="btn btn-success">Go Back</a>
+            <a href="{% url 'staff-page' %}" class="btn btn-secondary custom-btn">Go Back</a>
         </div>
     </div>
 </form>

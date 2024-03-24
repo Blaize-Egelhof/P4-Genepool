@@ -336,6 +336,8 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Login html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-w3validator.PNG) validator - source code | No issues found | ✅ |
 | Logout html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/logout-w3validator.PNG) validator - source code | No issues found | ✅ |
 | Sign Up html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/signup-w3validator.PNG) validator - source code | No issues found | ✅ |
+| Ticket View html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-view-w3validator.PNG) validator - source code | No issues found | ✅ |
+| Edit Ticket html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-ticket-w3validator.PNG) validator - source code | No issues found | ✅ |
 
 
 *Insert HTML VALIDATOR FOR OTHER PAGES Validator Testing*
