@@ -1,1 +1,1 @@
-web: gunicorn GENEPOOL.wsgi
+web gunicorn GENEPOOL.wsgi
