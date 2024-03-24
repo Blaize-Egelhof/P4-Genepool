@@ -333,6 +333,9 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Products-Services - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-w3validator.PNG) validator - source code | No issues found | ✅ |
 | Clients Page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) validator - source code | No issues found | ✅ |
 | Staff Page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3validator-staff-page.PNG) validator - source code | No issues found | ✅ |
+| Login html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-w3validator.PNG) validator - source code | No issues found | ✅ |
+| Logout html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/logout-w3validator.PNG) validator - source code | No issues found | ✅ |
+
 
 *Insert HTML VALIDATOR FOR OTHER PAGES Validator Testing*
 
@@ -350,6 +353,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Products and Services - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Login - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Logout - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Client Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Staff Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 
