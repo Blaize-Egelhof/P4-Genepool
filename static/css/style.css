@@ -189,6 +189,10 @@ h2{
   border-bottom-color: rgba(255, 255, 255, 0.255);
 }
 
+.ticket-msg-header {
+  height: 2rem;
+}
+
 .nav-masthead .nav-link + .nav-link {
   margin-left: 1rem;
 }
@@ -471,6 +475,8 @@ margin-right:auto;
 
 .ticket-description{
   margin-left: 1rem;
+  overflow: auto;
+  overflow-wrap: break-word;
 }
 
 .header-spacing{
@@ -497,7 +503,7 @@ margin-right:auto;
 
 .client-ticket-container-reply-container{
   padding-bottom: 0px;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   border: 1px solid black;
   background: #eae8e8;
 }
@@ -980,6 +986,22 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:623px){
+
+  .client-ticket-container-reply-container {
+    margin-bottom: 6rem;
+    width: 481px;
+  }
+  .ticket-msg-header{
+    height: 3rem;
+  }
+
+  .client-ticket-container-posted-by{
+    max-width: 420px;
+  }
+
+  .client-ticket-container{
+    max-width: 459px;
+  }
   .flex-column {
     padding-top: 1rem;
   }
@@ -1016,6 +1038,20 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:555px){
+
+  .client-ticket-container-reply-container {
+    margin-bottom: 6rem;
+    width: 419px;
+  }
+
+  .client-ticket-container {
+    max-width: 416px;
+  }
+
+  .client-ticket-container-posted-by {
+    max-width: 375px;
+  }
+
   .carousel-inner {
     margin-left: auto;
     margin-right: auto;
@@ -1092,6 +1128,11 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width:476px){
 
+  .client-ticket-container-reply-container {
+    margin-bottom: 7rem;
+    width: 400px;
+  }
+
   .landing-btn {
     font-size: 21px;
   }
@@ -1118,6 +1159,19 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:440px){
+
+  .client-ticket-container-reply-container {
+    margin-bottom: 7rem;
+    width: 350px;
+  }
+
+  .client-ticket-container-posted-by {
+    max-width: 355px;
+  }
+
+  .client-ticket-container {
+    max-width: 380px;
+  }
 
   .nav-links {
     display: flex;
@@ -1169,6 +1223,19 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:409px){
+
+  .client-ticket-container-reply-container {
+    margin-bottom: 7rem;
+    width: 330px;
+  }
+
+  .client-ticket-container-posted-by {
+    max-width: 298px;
+  }
+
+  .client-ticket-container {
+    max-width: 340px;
+  }
 
   .mb-auto {
     margin-bottom: 0px !important;
@@ -1223,6 +1290,14 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:363px){
+
+  .client-ticket-container-posted-by {
+    max-width: 270px;
+  }
+
+  .client-ticket-container {
+    max-width: 300px;
+  }
   .landing-btn{
     font-size:15px;
   }
@@ -1244,8 +1319,10 @@ SIGN-UP / LOGIN PAGE
 
 @media (max-width:346px){
 
-
-
+  .client-ticket-container-reply-container {
+    margin-bottom: 6rem;
+    width: 278px;
+  }
   .lead {
     font-size: 18px;
     margin-left: -10px;
@@ -1274,6 +1351,10 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:330px){
+
+  .client-ticket-container {
+    max-width: 285px;
+  }
   .landing-img {
     margin-left: 0px;
   }

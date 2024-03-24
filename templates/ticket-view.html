@@ -5,12 +5,26 @@
 
 {% block header %}
 
-<nav class="nav nav-masthead justify-content-center float-md-end">
-    <a class="nav-link fw-bold py-1 px-0 "aria-label ="Home Page" aria-current="page" href="{% url 'home-page' %}"><i><i class="fa-solid fa-mug-saucer"></i></i> Browse-Logged-In</a>
-    <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'account_login' %}">
-        <i class="fas fa-sign-in-alt"></i> Go Back
-    </a>
-</nav>
+<!-- Start of Header/Nav Section-->
+<nav-section>
+    <div class="nav-container">
+        <nav class="nav nav-masthead">
+            <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+            <div class="nav-links">
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                    <i class="fas fa-cogs"></i> Products/Services
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'staff-page' %}">
+                    <i class="fa-solid fa-arrow-left"></i> Go Back
+                </a>
+            </div>
+        </nav>
+    </div>
+  </nav-section>
+  <!-- End of Header/Nav Section-->
 
 {% endblock %}
 
@@ -65,13 +79,13 @@
 
     <div class="container client-ticket-container-posted-by black-text">
         {% for dialogue in chat_messages %}
-        <div class="row grey-background">
+        <div class="row grey-background ticket-msg-header">
             <div class="col black-text text-center d-flex align-items-center justify-content-center">
                 <p class="mb-0">Posted by <strong>{{ dialogue.author.username }} </strong> on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
-                {% if dialogue.author == ticket.full_nameORcompany_name %}
-                    <span class="badge bg-primary ticket-author-badges">Staff Member</span>
-                {% else %}
+                {% if dialogue.author.username == ticket.full_nameORcompany_name %}
                     <span class="badge bg-dark ticket-author-badges">Ticket Owner</span>
+                {% else %}
+                    <span class="badge bg-primary ticket-author-badges">Staff Member</span>
                 {% endif %}
             </div>
         </div>
@@ -82,7 +96,7 @@
             </div>
         </div>
         {% else %}
-        <p>NO ATTACHMENTS</p>
+        <!--Show No Text!-->
         {% endif %}
         <div class="row black-text">
             <div class="col reply-text black-text">
@@ -103,17 +117,17 @@
         <div class="pagination justify-content-center">
             <span class="step-links">
                 {% if chat_messages.has_previous %}
-                    <a href="?page=1">&laquo; first</a>
-                    <a href="?page={{ chat_messages.previous_page_number }}">previous</a>
+                    <a class="text-white" href="?page=1">&laquo; first</a>
+                    <a class="text-white" href="?page={{ chat_messages.previous_page_number }}">previous</a>
                 {% endif %}
     
-                <span class="current">
+                <span class="current text-white">
                     Page {{ chat_messages.number }} of {{ chat_messages.paginator.num_pages }}.
                 </span>
     
                 {% if chat_messages.has_next %}
-                    <a href="?page={{ chat_messages.next_page_number }}">next</a>
-                    <a href="?page={{ chat_messages.paginator.num_pages }}">last &raquo;</a>
+                    <a class="text-white" href="?page={{ chat_messages.next_page_number }}">next</a>
+                    <a class="text-white" href="?page={{ chat_messages.paginator.num_pages }}">last &raquo;</a>
                 {% endif %}
             </span>
         </div>
@@ -148,6 +162,5 @@
             </div>
         </form>
     </div>
-    <div class="create-some-space-v1"></div>
 </div>
 {% endblock content %}
