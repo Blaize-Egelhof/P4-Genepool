@@ -122,6 +122,17 @@ h2{
   padding-bottom:3rem;
 }
 
+.create-some-space-v2{
+  padding-top:3rem;
+  padding-bottom:6rem;
+}
+
+.my-own-container-callback{
+  width: 50%;
+  margin: auto;
+  padding-top: 1rem;
+}
+
 .create-some-space-v1{
   padding-bottom: 1rem;
   background: white ! important;
@@ -715,8 +726,7 @@ img {
 /* Edit Fields on Forms GENERIC*/
 
 .display-full-height {
-  height: 35rem;
-  width: 50rem;
+  width: 75%;
   margin: auto;
   padding-top: 4rem;
 }
@@ -726,7 +736,8 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+  flex-direction: column;
 }
 
 .form-styling-generic label {
@@ -744,6 +755,7 @@ img {
 .center-align-buttons {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .center-align-buttons input {

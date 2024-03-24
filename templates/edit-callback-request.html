@@ -27,16 +27,23 @@
 {% endblock %}
 
 {% block content %}
-<form method="POST" action="{% url 'edit-callback-request' callback_request_id %}">
-    {% csrf_token %}
-    <div class="my-own-container display-full-height">
-        <div class="row form-styling-generic">
-            {{ form.as_p }}
-        </div>
-        <div class="center-align-buttons center-aligned-button-styling">
-            <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
-            <a href="{% url 'staff-page' %}" class="btn btn-secondary custom-btn">Go Back</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2 class="black-text text-center">Edit Callback Object</h2>
+            <form method="POST" action="{% url 'edit-callback-request' callback_request_id %}">
+                {% csrf_token %}
+                <div class="my-own-container-callback display-full-height">
+                    <div class="row form-styling-generic">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="center-align-buttons center-aligned-button-styling">
+                        <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
+                        <a href="{% url 'staff-page' %}" class="btn btn-secondary custom-btn">Go Back</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
 {% endblock %}
