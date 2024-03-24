@@ -19,6 +19,11 @@
   height: 2rem;
  }
 
+#footer{
+  position:fixed;
+  bottom:0;
+}
+
 /* Custom default button */
 .btn-light,
 .btn-light:hover,
@@ -777,6 +782,10 @@ img {
 /*
 SIGN-UP / LOGIN PAGE
 */
+
+.login-form-positioning{
+  margin-top: 5vh;
+}
 .my-centered-flexbox{
   display: flex;
   justify-content: center;

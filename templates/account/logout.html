@@ -1,21 +1,48 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
+
+{% block header %}
+<!-- Start of Header/Nav Section-->
+<nav-section>
+    <div class="nav-container">
+        <nav class="nav nav-masthead">
+            <a><img src="https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png" alt="Genepool SnowFlake Image" class="genepool-left-corner-img product-services-genepool-logo"></a>
+            <div class="nav-links">
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Home Page" aria-current="page" href="{% url 'home-page' %}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Products and Services" href="{% url 'products_and_services' %}">
+                    <i class="fas fa-cogs"></i> Products/Services
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" aria-label="Administration Login" href="{% url 'home-page' %}">
+                    <i class="fa-solid fa-arrow-left"></i> Go Back
+                </a>
+            </div>
+        </nav>
+    </div>
+</nav-section>
+<!-- End of Header/Nav Section-->
+{% endblock %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
-
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
-
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
-
-
+<div class="container black-text">
+    <div class="row justify-content-center align-items-center"> 
+        <div class="col-12 col-md-8 col-lg-6"> 
+            <div class="text-center">
+                <h1>{% trans "Sign Out" %}</h1>
+                <p>{% trans 'Are you sure you want to sign out?' %}</p>
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary">{% trans 'Sign Out' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
