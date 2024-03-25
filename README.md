@@ -1,6 +1,6 @@
 <h1 align='center'>Genepool</h1>
 
-Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner headquartered in the bustling city of Johannesburg, South Africa. Established in 2000, Genepool is dedicated to delivering an all-encompassing "batteries included" experience to cater to the unique IT needs of our clients.
+Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your trusted IT partner headquartered in the bustling city of Johannesburg, South Africa. Established in 2000, Genepool is dedicated to delivering an all-encompassing "batteries included" experience to cater to the unique IT needs of our clients.
 
 <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG">
 
@@ -8,7 +8,7 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
  
  **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform or directly get in contact with us using our supplied contact points, streamlining the communication process. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
  
- **Staff Empowerment:** Our staff Through intuitive forms and interfaces, can manage all incomming callback and quote requests made by our site visitors. Our staff thus plays a crucial role in providing the fastest service possible, Join us at Genepool as we redefine IT excellence ,let us be your partner in building a future driven by technology.
+ **Staff Empowerment:** Our staff Through intuitive forms and interfaces, can manage all incomming callback,quote requests and ticket querries made by our site visitors. Our staff thus plays a crucial role in providing the fastest service possible, Join us at Genepool as we redefine IT excellence ,let us be your partner in building a future driven by technology.
 
 ## __User Experience (UX)__
 
@@ -33,15 +33,30 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
         6. **Requesting a Callback:**
            - As a first-time visitor, I can use the "Request a Callback" button to reveal the callback form in order to submit a callback request. 
+
+        7. **Creating an Account**
+           - As a first time visitor, I can use the "Sign In" Nav button to navigate to the sign in view , using the prompted text I can navigate to the sign up page to create my own account for ticket creations.
            
 
-   - #### Returning Visitor Goals
-   
-1.  **Efficient Contact:**  - As a returning visitor, I want to quickly reach out to Genepool. Utilizing the "Get in Contact" feature allows me to efficiently access contact details for any follow-up inquiries or additional information. 
-2.  **Streamlined Service Review:**  - As a returning visitor, I aim to easily review the various services offered by Genepool. The straightforward navigation ensures a seamless process to explore and stay informed about the available services. 
-3.   **Staying Updated on Partnerships:**  - As a returning visitor, I'm interested in staying updated on the partnerships Genepool has formed. Leveraging the carousel feature allows me to conveniently view any new collaborations or developments.
-4.  **Checking for Updates:**  - As a returning visitor, I seek any updates or changes to the quote requests,callback requests and tickets Ive opened. 
-5. **Able to communicate to a staff member via the ticket chat** - As a returning visitor , I am able to review tickets and quotes for any feedback given by staff members, as well as reply back to feedback via the ticket chat dialogue.
+-   #### Returning Visitor Goals
+
+    1. **Efficient Contact Re-engagement:**
+       - As a returning visitor, I can swiftly use the "Get in Contact" feature to access contact details, facilitating prompt follow-up inquiries or requests for additional information.
+
+    2. **Streamlined Service Navigation:**
+       - As a returning visitor, I aim to effortlessly review and stay informed about Genepool's services through easy-to-navigate menus, ensuring I can quickly find updates or explore new offerings.
+
+    3. **Partnership Updates at a Glance:**
+       - As a returning visitor, staying abreast of new partnerships and developments is crucial. The dynamic carousel feature enables me to quickly catch up on any new or evolving collaborations.
+
+    4. **Personalized Updates Dashboard:**
+       - As a returning visitor, I seek a personalized dashboard where I can find updates or changes to my previous quote requests, callback requests, and ticket submissions, ensuring I don't miss any critical information.
+
+    5. **Seamless Account Access:**
+       - As a returning visitor, the "Sign In" button leads me directly to a login form, where I can easily access my account to review or create new tickets, streamlining my interaction with support and services.
+
+    6. **Interactive Ticket Chat:**
+       - As a returning visitor, I can engage in meaningful conversations with staff members through the ticket chat dialogue, allowing for real-time feedback and support on my queries or concerns.
 
 -   ### ***Design***
     
@@ -53,30 +68,34 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
   - **Black:** `#0f0f0f`
   - **Grey:** `#dde2e8`
 
-- The decision to incorporate **Black (#0f0f0f)** was deliberate, aiming to create a robust contrast against the dominant **Blue (#0071a6)** hero background. This choice enhances visibility and provides clarity, especially when juxtaposed with sections featuring a **White (#ffffff)** background. **Light Blue (#6ca8f0)** serves as a subtle contrast among the other three colors, strategically employed to accentuate specific elements within a section. **Grey (#dde2e8)** plays a dual role, offering a nuanced contrast between certain section backgrounds and serving as the primary color for the index page's services navigation buttons. Both **Black (#0f0f0f)** and **White (#ffffff)** function as neutral tones, maintaining compatibility with each other, and are strategically applied to reinforce the hero images. Considerations for compatibility and accessibility guided the selection of these four colors, ensuring a harmonious and user-friendly visual experience.
+- We chose to use **Black (#0f0f0f)** on purpose because it really stands out against the main **Blue (#0071a6)** background. This makes everything easier to see and clearer, especially next to parts that are **White (#ffffff).** **Light Blue (#6ca8f0)** is a softer color that we use to make certain things pop out a bit without being too flashy. **Grey (#dde2e8)** is used in two ways: it's a bit different from the other background colors, making things look interesting, and it's the main color for the buttons on the homepage. Both **Black (#0f0f0f)** and **White (#ffffff)** are like middle-ground colors that work well together and help highlight the main pictures. We picked these colors very carefully to make sure everything looks good together and is easy for everyone to use and enjoy.
 
 
     -   #### Typography
 
-        -[Roboto - Google Fonts](https://fonts.google.com/specimen/Roboto) and the default [Sans-Seriff](https://fonts.google.com/knowledge/glossary/sans_serif) fonts are used across the site, with Robot being used as the default font-family for all text which exisit within my website.
+        - [Roboto - Google Fonts](https://fonts.google.com/specimen/Roboto) and the default [Sans-Seriff](https://fonts.google.com/knowledge/glossary/sans_serif) fonts are used across the site, with Roboto being used as the default font-family for all text which exisit within my website, Sans-Seriff is used IF for some reason Google Fonts Roboto font doesnt render correctly for site visitors.
 
         - The font was chosen as it gives a very clean , crisp look to text . Ive chosen to not include any other fonts in order to maintain consistancy and visual cleanlieness for my site visitors
     
-    -   #### Imagery
+   -   #### Imagery
 
-        - Landing Page:
+      - **Landing Page:**
+         - The background is a simple light blue with shadows to make it look interesting but still simple. The Genepool logo is in the middle of the page. Its white color stands out against the blue background, so it's easy to see and read. There's also Genepool's special logo design above it to make the page look better.
 
-          - The landing page consists of a plain lightblue background with shadows in order to create color contrast while keeping the background clean and simplistic.
-          - Genepools white logo is carefully centered in the landing page , the logo's white color nicely contrasts against the vibrant blue background allowing site users to easily recognise and read the text , the image also has Genepools signiture logo designed above it , providing a better visual experience
-       
-		- How Can We Support You Page image:
- 
-          - Directly below the landing page is a heading with a lightblue snowflake logo which sites on the right on the text, the use of this image is to provide suttle styling to the text, this is Genepools signiture logo . 
-          
-         - Need Help in a Hurry image:
-			- On the right of this section is a animated cartoon drawing which attempts to relay the idea of IT support through an image, the image has no background in order to merge with its background without making it difficult for users to view and make sense of.6UY
-         - All Icons were taken from [Font-Awesome](https://fontawesome.com/)
-    -   ### ***Wireframes and Mock-Ups***
+      - **How Can We Support You Page Image:**
+         - Just below the landing page, there's a title with a light blue snowflake logo to the right of the text. This logo adds a subtle touch to the text and is Genepool's special logo.
+
+      - **Need Help in a Hurry Image:**
+         - To the right in this section, there's a cartoon drawing that looks like it's moving. It's supposed to show IT support in a fun way. The drawing doesn't have its own background, so it blends in well without making it hard for people to see and understand.
+
+      - **Review Section:**
+         - Below that, there's a section with reviews about Genepool's imagery. It shows pictures of the people who gave the reviews, and these pictures were taken from [Pexels](https://www.pexels.com/). You can find more information in the credits section.
+
+      - **Supplier Logos Section:**
+         - After the review section and below the form, there's a part showing logos from our suppliers. We got permission to use these logos in a positive way, and each logo shows the company's name so you can tell who they are.
+
+      - **Icons:**
+         - All the icons used on the site are from [Font-Awesome](https://fontawesome.com/).
 
 # Wireframes
 
@@ -116,8 +135,8 @@ Welcome to [Genepool](https://insert-heroku-link-here/), your trusted IT partner
 
     - The fields in blue are could have features that are discussed in the Future Implementations section of this document.  
 
-      -   Entity Relationship Diagram:
-          ![Entity Relationship Diagram](docs/readme/images/design/entity-relationship-diagram.png)
+    - Entity Relationship Diagram:
+      ![Entity Relationship Diagram](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/p4-genepool-db-diagrams.PNG)
 
 ## __Features__
 
