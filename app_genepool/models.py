@@ -51,7 +51,7 @@ class AuthorisedTicketRequests(models.Model):
     
     full_nameORcompany_name = models.CharField(max_length=100, blank=False)
     time_requested = models.DateTimeField(default=timezone.now)
-    request_description = models.CharField(max_length=800, blank=True)
+    request_description = models.CharField(max_length=800, blank=False)
     status = models.CharField(
         max_length=20, 
         choices=STATUS_CHOICES, 

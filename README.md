@@ -131,9 +131,7 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
 
 -   ### ***Entity Relationship Diagram***
 
-    - The following Entity Relationship Diagram was created to show the models used. The in-built Django User model was used for this project, and a unique Song model was created with the fields in purple included. 
-
-    - The fields in blue are could have features that are discussed in the Future Implementations section of this document.  
+    - The following Entity Relationship Diagram was created to show the models used. The in-built Django User model was used for this project.
 
     - Entity Relationship Diagram:
       ![Entity Relationship Diagram](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/p4-genepool-db-diagrams.PNG)
@@ -160,6 +158,9 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
     - Ticket View (for standard users)
     - Staff View (for admin/staff users)
     - Ticket Chat View (for both standard and staff users)
+    - Ticket Edit View (for both standard and staff users)
+    - Quote Request Edit View (for staff users)
+    - Callback Request Edit View (for staff users)
 
   - In order to make navigation easier and clear for users , Ive used clear bold white text over a blue background to create contrast, additionally each navigation link has a simple graphic to further clarify the function of the navigation link.
 
@@ -277,9 +278,32 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
   ![Callback Failure](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/callback-failure.PNG) 
 
 
+  ### Clients Page
+  
+  - My clients page consists of unique header in the sense that my company's logo is displayed on the left , the choice of colors, fonts and icons remain the same for consistancy , users who have signed in succesfully will be greeted in the header above the left aligned Genepool logo "Hello,{*UserName*}".
+
+  - The header remains the same as the products and services page's header in all aspects expect that the "Sign In" buttom is replaced with a "Log Out" button in order to provide a method for logged in users to log Out. 
+
+  - Below the header is a simple underlined text declaring "My Tickets" , this section is to house all of the logged in clients ticket objects , signed in users can click the "Create Ticket Requests" button in order to reveal a Ticket Form in order to create new ticket objects. 
+
+ ![Create a Ticket](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/create-a-ticket.PNG) 
+
+ - Once a ticket has been created clients have the option to either edit the contents of the newly created ticket object OR view the ticket chat dialogue , the edit page for the tickets is heavily restricted for clients (Client are unable to change ticket Created date etc). 
+
+ - If a client selects the "View" button of the respective ticket a chat dialogue of the ticket will open , this chat dialogue is intended for conversations between the Genepool Staff and the Client directly , relating to the topic mentioned in the respective ticket. 
+
+  ![Ticket Chat](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-chat-view.PNG)
+
+  - Clients(Ticket Owner) and staff can publish replies on the same ticket using the navigation form near the bottom of the ticket chat dialogue, depending on if the person who replied is a staff memeber or if its the origional ticket owner , their messages will look slighly different in order to easily allow users to differentiate , additionally all tickets by default have the status of "Unanswered" only when a Staff member replies to the ticket object will the status change to "Answered" anytime a client replies to their own ticket the status toggles back to "Unanswered"
+
+  - Pagination has been used in this page , as the more objects that need to be pulled from the database , the slower the rendering of the page becomes, only 10 message objects are displayed per paginated page.(Pagination Navigation has been included)
+
+  - Upon selecting "Edit" for a ticket clients can edit the tickets header and description. 
+
+   ![Edit Ticket](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-your-ticket.PNG)
+
   Complete Existing Features section of Readme then UI UX is done. 
 
-  That includes entity relationship diagram
 
   ## __Technologies Used__
 

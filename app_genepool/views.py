@@ -254,42 +254,86 @@ class EditTicketForClientPage(LoginRequiredMixin,View):
         quote.delete()
         return redirect('staff-page')
 
-class ViewTicketForClientPage(LoginRequiredMixin,View):
-    def get(self, request, *args, **kwargs):
-        ticket_id = self.kwargs.get('ticket_id')
-        user=request.user
-        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
-        paginator = Paginator(chat_messages, 10)
-        page_number = request.GET.get('page')
-        chat_messages = paginator.get_page(page_number)
+# class ViewTicketForClientPage(LoginRequiredMixin,View):
+#     def get(self, request, *args, **kwargs):
+#         ticket_id = self.kwargs.get('ticket_id')
+#         user=request.user
+#         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+#         chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
+#         paginator = Paginator(chat_messages, 10)
+#         page_number = request.GET.get('page')
+#         chat_messages = paginator.get_page(page_number)
 
-        return render(request, 'ticket-view.html', {'ticket': ticket,'user': user,'chat_messages': chat_messages})
+#         return render(request, 'ticket-view.html', {'ticket': ticket,'user': user,'chat_messages': chat_messages})
+
+#     def post(self, request, *args, **kwargs):
+#         ticket_id = self.kwargs.get('ticket_id')
+#         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+#         user = request.user
+#         chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('timestamp')
+#         staff_group = user.groups.filter(Q(name='Staff')).exists()
+#         form = ChatDialogue1(request.POST, request.FILES) 
+#         if form.is_valid():
+#                 reply = form.save(commit=False)
+#                 reply.ticket = ticket
+#                 reply.author = user
+#                 reply.save()
+
+#                 if staff_group:
+#                     ticket.status = "Answered"
+#                 else:
+#                     ticket.status = "Unanswered"
+#                 ticket.save()
+
+#                 messages.success(request, 'Reply Sent Successfully!')
+#                 return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+#         else:
+#             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
+#             return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+
+
+
+class ViewTicketForClientPage(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        return self.render_ticket_page(request)
 
     def post(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
         user = request.user
-        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('timestamp')
-        staff_group = user.groups.filter(Q(name='Staff')).exists()
-        form = ChatDialogue1(request.POST, request.FILES) 
+        form = ChatDialogue1(request.POST, request.FILES)
+        
         if form.is_valid():
-                reply = form.save(commit=False)
-                reply.ticket = ticket
-                reply.author = user
-                reply.save()
+            reply = form.save(commit=False)
+            reply.ticket = ticket
+            reply.author = user
+            reply.save()
 
-                if staff_group:
-                    ticket.status = "Answered"
-                else:
-                    ticket.status = "Unanswered"
-                ticket.save()
+            staff_group = user.groups.filter(Q(name='Staff')).exists()
+            if staff_group:
+                ticket.status = "Answered"
+            else:
+                ticket.status = "Unanswered"
+            ticket.save()
 
-                messages.success(request, 'Reply Sent Successfully!')
-                return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+            messages.success(request, 'Reply Sent Successfully!')
         else:
             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
-            return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'form': form, 'chat_messages': chat_messages})
+        
+        return self.render_ticket_page(request)
+
+    def render_ticket_page(self, request):
+        ticket_id = self.kwargs.get('ticket_id')
+        user = request.user
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
+        paginator = Paginator(chat_messages, 10)  
+        page_number = request.GET.get('page')
+        chat_messages = paginator.get_page(page_number)
+
+        form = ChatDialogue1()  
+
+        return render(request, 'ticket-view.html', {'ticket': ticket, 'user': user, 'chat_messages': chat_messages, 'form': form})
             
 class ReopenTicket(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
