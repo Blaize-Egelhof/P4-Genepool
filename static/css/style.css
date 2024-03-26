@@ -447,6 +447,7 @@ margin-right:auto;
   text-decoration: none;
   animation: none!important;
   border:none;
+  padding-bottom: 5rem;
 }
 
 .closed-quotes-custom-btn:hover{
@@ -1171,6 +1172,10 @@ SIGN-UP / LOGIN PAGE
 }
 
 @media (max-width:440px){
+
+  .closed-quotes-custom-btn {
+    padding-bottom: 8rem;
+  }
 
   .client-ticket-container-reply-container {
     margin-bottom: 7rem;

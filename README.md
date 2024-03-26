@@ -368,7 +368,12 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
    | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
-| printstatements - settings.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p4.PNG)  | ✅ |
+| Genepool - settings.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-settings.PNG)  | ✅ |
+| Genepool - manage.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-manage.PNG)  | ✅ |
+| Genepool - urls.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-urls.PNG)  | ✅ |
+| Genepool - models.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-models.PNG)  | ✅ |
+| Genepool - views.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-views.PNG)  | ✅ |
+| Genepool - forms.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-forms.PNG)  | ✅ |
 *Insert PEP8 Validator Testing*
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
