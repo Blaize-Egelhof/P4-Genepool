@@ -375,8 +375,11 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Genepool - views.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-views.PNG)  | ✅ |
 | Genepool - forms.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-forms.PNG)  | ✅ |
 
+   | **File Name** | **Validator** | **Validation Result** | **Status** |
+|-----------|-----------|-------------------|--------|
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
+
 
 | Home page - html |  validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) | ✅ |
 | Products-Services - html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-w3validator.PNG) | ✅ |
@@ -407,6 +410,10 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | Logout - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Client Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Staff Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Ticket Message View Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Edit Ticket Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Edit Quote Request Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Edit Callback Request Page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 
 
 ### C.R.U.D. testing
