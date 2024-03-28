@@ -217,6 +217,7 @@ class CloseUnauthorisedQuote (LoginRequiredMixin, View):
         quote_id = kwargs.get('quote_id')
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
         quote.status = 'Completed'
+        callback_object.closed_by = request.user
         quote.save()
         messages.success(request, f'Quote {quote.id} has been marked'
                                   'as completed!')
@@ -239,6 +240,7 @@ class CloseUnauthorisedCallback(LoginRequiredMixin, View):
             get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
         )
         callback_object.status = 'Completed'
+        callback_object.closed_by = request.user
         callback_object.save()
         messages.success(request, f'Callback {callback_object.id} has been'
                                   'marked as completed!')

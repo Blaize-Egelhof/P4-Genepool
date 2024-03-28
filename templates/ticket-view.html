@@ -85,10 +85,10 @@
         <div class="row grey-background ticket-msg-header">
             <div class="col black-text text-center d-flex align-items-center justify-content-center">
                 <p class="mb-0">Posted by <strong>{{ dialogue.author.username }} </strong> on {{ dialogue.timestamp|date:"Y-m-d H:i" }}</p>
-                {% if dialogue.author.username == ticket.full_nameORcompany_name %}
-                    <span class="badge bg-dark ticket-author-badges">Staff Member</span>
+                {% if dialogue.author.username == ticket.client.username %}
+                    <span class="badge bg-dark ticket-author-badges">Ticket Owner</span>
                 {% else %}
-                    <span class="badge bg-primary ticket-author-badges">Ticket Owner</span>
+                    <span class="badge bg-primary ticket-author-badges">Staff Member</span>
                 {% endif %}
             </div>
         </div>

@@ -25,6 +25,10 @@ class UnauthorisedQuoteRequests(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default="Ongoing", blank=True)
     time_requested = models.DateTimeField(default=timezone.now)
+    closed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+        related_name='Closed_requestsQuote', verbose_name='Closedquote', blank=False)
+
 
 
 class UnauthorisedCallBackRequests(models.Model):
@@ -50,6 +54,9 @@ class UnauthorisedCallBackRequests(models.Model):
     status = models.CharField(
         max_length=20, choices=STATUS_CHOICES, default="Ongoing", blank=True)
     time_requested = models.DateTimeField(default=timezone.now)
+    closed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+        related_name='Closed_requests_Callback', verbose_name='Closed_Callback', blank=False)
 
 
 class AuthorisedTicketRequests(models.Model):

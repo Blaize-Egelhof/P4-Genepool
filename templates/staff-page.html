@@ -59,7 +59,7 @@
               <div class="card-header">
                 <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.user }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.client.username }}</h6>
                 <span class="badge bg-success">Status: {{ ticket.status }}</span>
               </div>
               <!-- Card body with ticket description -->
@@ -162,8 +162,8 @@
                             <div class="card-header">
                                 <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id}}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.closed_by.username }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.closed_by.username}}</h6>
                                 <span class="badge bg-danger">Status: {{ ticket.status }}</span>
                             </div>
                             <div class="card-body">
@@ -214,7 +214,7 @@
                             <div class="card-header">
                                 <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.full_nameORcompany_name }}</h6>
                                 <span class="badge bg-success">Status: {{ requests.status }} </span>
                                 <form method="POST" action="{% url 'close-quote-object' requests.id %}">
                                     {% csrf_token %}
@@ -266,7 +266,7 @@
                                 <div class="card-header">
                                     <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                                    <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.user}}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.full_nameORcompany_name}}</h6>
                                     <span class="badge bg-success">Status: {{ requests.status }} </span>
                                     <form method="POST" action="{% url 'close-callback-object' requests.id %}">
                                         {% csrf_token %}
@@ -319,8 +319,8 @@
                             <div class="card-header">
                                 <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.closed_by.username }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.full_nameORcompany_name }}</h6>
                                 <span class="badge bg-danger">Status: {{ ticket.status }}</span>
                             </div>
                             <div class="card-body">
@@ -346,8 +346,8 @@
                             <div class="card-header">
                                 <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.id }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.closed_by.username }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.full_nameORcompany_name }}</h6>
                                 <span class="badge bg-danger">Status: {{ ticket.status }}</span>
                             </div>
                             <div class="card-body">

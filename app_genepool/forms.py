@@ -38,7 +38,7 @@ class CallBackForm(forms.ModelForm):
 class AuthorisedTicketRequestForm(forms.ModelForm):
     class Meta:
         model = AuthorisedTicketRequests
-        fields = ['full_nameORcompany_name', 'request_description'] 
+        fields = ['full_nameORcompany_name', 'request_description','client','closed_by']
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)

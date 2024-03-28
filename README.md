@@ -350,13 +350,27 @@ All user stories can be found in the [project kanban board](https://github.com/u
 
   - Staff Page consists of 4 unique headings , "Unanswered Tickets" , "Answered Tickets" , "Unauthorised Quote Requests" and "Unauthorised Callback Requests" . Below each section is a grouping of all related objects. Unanswered and Answered Tickets simply pull authorised ticket objects based on their status's (Unanswered Or Answered) and groups them for visual clarity. 
 
+   ![Staff Page p1](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-pagep1.PNG)
+   ![Staff Page p2](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-pagep2.PNG)
+   ![Staff Page p3](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-pagep3.PNG)
+
   - Staff can Edit and View Ticket's created by clients , when a staff member replies to a ticket object , the status of the ticket is marked as "Answered", once this has happened both staff and clients have the option to close the ticket , if the requirements have been satisied , if a client replies to the ticket , the status is toggled back to "Unanswered" thus removing the ability to close the ticket. 
 
+   ![Ticket View p1](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-viewp1.PNG)
+   ![Ticket View p2](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-viewp2.PNG)
+
+  - Staff can also edit tickets using the edit button , 
+
+   ![Ticket View p2](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/editticket.PNG)
+
   - Closed tickets are hidden from staff and clients , but can be revealed by clicking the "Show Closed Tickets" , both clients and staff are able to re-open the tickets if needed , however only staff members have the right to delete a ticket once the status has been marked as "closed".
+
+   ![Closed Tickets](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/closedticketobjects.PNG)
 
   -For Unauthorised Quote Requests and Unauthorised Callback Requests , staff can view the objects and make edit modifications to them , additionally they can also mark the objects as "completed" thus hiding them. 
   -These hidden objects can be revealed by clicking the "Show Completed Unauthorised Objects" link which reveals all objects , staff can choose to re-open the objects if needed , thus reversing the hidding feature.
 
+   ![Closed Objects](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/closedauthorisedobjects.PNG)
 
   ## __Technologies Used__
 
@@ -514,6 +528,8 @@ Note: Due to the nature of this project , clients are not allowed to delete any 
 | "Save Changes" button for ticket edit form              | Click on the save changes button    | save changes to ticket                          | ✅                  |
 | "Save Closed Ticket" href              | Click on the href    | show hidden tickets                         | ✅                  |
 | "Re-Open" button              | Click on button   | toggle status of ticket to "Unanswered"                         | ✅                  |
+| "Delete Ticket" button              | Click on button   | Staff user able to delete ticket object                         | ✅                  |
+| "Close Object" href              | Click on href   | Staff user able to toggle status of quote and callback objects to "completed"                         | ✅                  |
 
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 
@@ -532,9 +548,15 @@ Note: Due to the nature of this project , clients are not allowed to delete any 
 
 ### ***Fixed Bugs***
 
-Note bug with products and services click JS function 
+- There was a bug when users selected the "request a callback" button on the products-and-services.html page , this issue stemmed from the fact that no JS 
+funtion forced the users view to move to the form provided below , instead the user would be navigated to the top of the page. 
+This issue was fixed by placing a timer on the function , as the form is only revealed once the user selects the callback button to reveal the form , the JS function would trigger too quickly and wouldnt allow time for the animation of revealing the form to finish , adding the timout function allowed the animation to finish and then the JS function to navigate users to the form to execute , thus achieving a way to a- Open the Form b- Allow the animation to execute c - allow the users view to be pulled to the form. 
+
+- There was a bug where 
 
 ### ***Known Bugs***
+
+NA
 
 ## Deployment
 
