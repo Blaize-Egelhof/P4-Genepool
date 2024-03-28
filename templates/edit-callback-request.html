@@ -27,10 +27,12 @@
 {% endblock %}
 
 {% block content %}
+<!-- Start of Callback Form Object-->
 <div class="container-fluid">
     <div class="row">
         <div class="col">
             <h2 class="black-text text-center">Edit Callback Object</h2>
+            <!-- Custom URL in order to edit Callback Request-->
             <form method="POST" action="{% url 'edit-callback-request' callback_request_id %}">
                 {% csrf_token %}
                 <div class="my-own-container-callback display-full-height">
@@ -38,7 +40,9 @@
                         {{ form.as_p }}
                     </div>
                     <div class="center-align-buttons center-aligned-button-styling">
+                        <!-- Return "save_changes in post request in order to indicate to POST function to save changes if form is valid"-->
                         <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
+                        <!-- Return User/Staff Member back to their default logged in view-->
                         <a href="{% url 'staff-page' %}" class="btn btn-secondary custom-btn">Go Back</a>
                     </div>
                 </div>
@@ -46,4 +50,5 @@
         </div>
     </div>
 </div>
+<!-- End of Callback Form Object-->
 {% endblock %}

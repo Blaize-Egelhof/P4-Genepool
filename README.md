@@ -12,51 +12,93 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
 
 ## __User Experience (UX)__
 
+All user stories can be found in the [project kanban board](https://github.com/users/Blaize-Egelhof/projects/2/views/1)
+
 -   ### ***User Stories***
 
     -   #### First Time Visitor Goals
 
         1. **Contact Information Access:**
            - As a first-time visitor, I can use the "Get in Contact" button to effortlessly access the contact details for all relevant departments.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57957783)
 
         2. **Requesting a Quote:**
            - As a first-time visitor, I can use the "Get a Quote" feature to navigate to the quote form and submit a quote request for personalized assistance.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=41783509)
 
         3. **Service Exploration:**
            - As a first-time visitor, I can easily identify the diverse services offered by Genepool using an intuitive navigation button. This allows me to find detailed information about each specific service.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57958385)
 
         4. **Partnership Insights:**
            - As a first-time visitor, I can conveniently view the various partnerships Genepool has formed by exploring the visually appealing carousel feature.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/1?filterQuery=partner&pane=issue&itemId=41785729)
 
         5. **Client Testimonials:**
            - As a first-time visitor, I can quickly view Reviews left by previous clients. This provides valuable insights into the experiences of others and helps me gauge the quality of services offered by Genepool.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/1?filterQuery=client&pane=issue&itemId=41785696)
 
         6. **Requesting a Callback:**
-           - As a first-time visitor, I can use the "Request a Callback" button to reveal the callback form in order to submit a callback request. 
+           - As a first-time visitor, I can use the "Request a Callback" button to reveal the callback form in order to submit a callback request.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57959544)
 
         7. **Creating an Account**
            - As a first time visitor, I can use the "Sign In" Nav button to navigate to the sign in view , using the prompted text I can navigate to the sign up page to create my own account for ticket creations.
+           [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57959757)
            
 
 -   #### Returning Visitor Goals
 
-    1. **Efficient Contact Re-engagement:**
-       - As a returning visitor, I can swiftly use the "Get in Contact" feature to access contact details, facilitating prompt follow-up inquiries or requests for additional information.
+    1. **Log In**
+       - As a returning visitor, I can easily login to my account , using the "Sign In" Nav button to navigate to the login form , to login and create/ view my own tickets
+         [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57960217)
 
-    2. **Streamlined Service Navigation:**
-       - As a returning visitor, I aim to effortlessly review and stay informed about Genepool's services through easy-to-navigate menus, ensuring I can quickly find updates or explore new offerings.
+    2. **Create Ticket Object**
+      - As a returning visitor, I can easily create my own ticket after loggin in , using the "create a ticket button" , to create tickets to resolve my own IT issues.
+      [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=41784663)
 
-    3. **Partnership Updates at a Glance:**
-       - As a returning visitor, staying abreast of new partnerships and developments is crucial. The dynamic carousel feature enables me to quickly catch up on any new or evolving collaborations.
+    3. **Interactive Ticket Chat:**
+      - As a returning visitor, I can engage in meaningful conversations with staff members through the ticket chat dialogue, allowing for real-time feedback and support on my queries or concerns.
+      [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=54121212)
 
-    4. **Personalized Updates Dashboard:**
-       - As a returning visitor, I seek a personalized dashboard where I can find updates or changes to my previous quote requests, callback requests, and ticket submissions, ensuring I don't miss any critical information.
+    4. **Edit Ticket Object**
+      - As a returning visitor, I can modify my own ticket description, allowing to correct any clarification issues.
+      [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=41783709)
 
-    5. **Seamless Account Access:**
-       - As a returning visitor, the "Sign In" button leads me directly to a login form, where I can easily access my account to review or create new tickets, streamlining my interaction with support and services.
+    5. **Toggle Ticket Status to "Closed"**
+      - As a returning visitor , I can toggle a ticket's status to "closed" after a staff member has replied to it, to show that the ticket has been resolved.
+      [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57962070)
 
-    6. **Interactive Ticket Chat:**
-       - As a returning visitor, I can engage in meaningful conversations with staff members through the ticket chat dialogue, allowing for real-time feedback and support on my queries or concerns.
+-   #### Staff Users 
+      - **View All Objects**
+       - As a staff user, I want to view all objects so that I can monitor and manage all ongoing activities and requests.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964064)
+      - **Edit All Objects**
+       - As a staff user, I want to edit all objects so that I can correct, update, or modify details to ensure accurate and up-to-date information.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964099)
+      - **Interactive Ticket Chat**
+       - As a staff user, I want to participate in interactive ticket chats so that I can communicate directly with users, providing them with assistance or gathering more information about their issues.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964132)
+      - **Close Ticket Objects**
+       - As a staff user, I want to close ticket objects to signify that an issue has been resolved or a query has been adequately addressed.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964166)
+      - **Close Quote Requests Objects**
+       - As a staff user, I want to close quote request objects after they have been reviewed or fulfilled to maintain an organized and efficient request handling process.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964195)
+      - **Close Callback Requests Objects**
+       - As a staff user, I want to close callback request objects once the required callback has been made or the issue has been resolved in another way.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964232)
+      - **Delete Ticket Objects**
+       - As a staff user, I want the ability to delete ticket objects in cases where they are spam, resolved outside the ticketing system, or otherwise no longer needed, to keep the ticketing system clean and manageable.
+       [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964265)
+
+-   #### Super User
+   - **Able To Grant User Account Staff Rights**
+      - As a super user, I want to grant user accounts staff rights so that I can authorize additional users to manage and respond to tickets, quotes, and callbacks, effectively distributing the workload.
+      [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964300)
+   - **Inherit All Staff User Rights**
+      - As a super user, I want to inherit all staff user rights so that I can perform all the actions that staff users can, ensuring I can directly manage any aspect of the system when necessary.
+      [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57964329)
 
 -   ### ***Design***
     
@@ -418,8 +460,19 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
 ### C.R.U.D. testing
 
-| **TEST**          | **ACTION**             | **EXPECTATION**          | **RESULT** |
-| ----------------- | ---------------------- | ------------------------ | ---------- |
+Note: Due to the nature of this project , clients are not allowed to delete any objects , only create and modify their own objects, I have reserved this right to staff users only. (Only SuperAdmin's are able to grant regular users Staff Rights)
+
+| **ID** | **CATEGORY**       | **TEST**          | **ACTION**                               | **EXPECTATION**                                                     | **RESULT** |
+|--------|--------------------|-------------------|------------------------------------------|---------------------------------------------------------------------|------------|
+| T1     | **Tickets**        | Create            | Create Ticket Object                     | Signed In Users can create their own tickets                        | ✅         |
+| T2     | **Tickets**        | Edit              | Edit Already Created Ticket Objects      | Signed In users can modify their created tickets                    | ✅         |
+| T3     | **Tickets**        | Comment           | Add comments to tickets                  | Signed in Users and Staff can comment on ticket objects             | ✅         |
+| T4     | **Tickets**        | Delete            | Able to delete Ticket Objects            | Only Staff users can delete ticket objects                          | ✅         |
+| Q1     | **Quote Requests** | Create            | Create Quote Objects                     | Unauthorised Users can create Quote Objects                         | ✅         |
+| Q2     | **Quote Requests** | Modify            | Modify Quote Objects                     | Only Staff can modify unauthorised user created Quote objects       | ✅         |
+| C1     | **Callback Requests** | Create         | Create Callback Objects                  | Unauthorised Users can create Callback Objects                      | ✅         |
+| C2     | **Callback Requests** | Modify         | Modify Callback Objects                  | Only Staff can modify unauthorised user created Callback objects    | ✅         |
+| D1     | **Dialogue Chat** | Create        | Create Dialogue Chats for Ticket objects      | Users and Staff memebers can post chat messages for a specific ticket in order to resolve the issue relating to the ticket    | ✅         |
 
 
 ### FEATURES

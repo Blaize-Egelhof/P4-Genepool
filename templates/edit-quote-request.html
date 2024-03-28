@@ -27,6 +27,8 @@
 {% endblock %}
 
 {% block content%}
+<!-- Start of Quote Request Form-->
+  <!-- Custom URL to save changes made to quote object-->
 <form method="POST" action="{% url 'edit-quote-request' quote_id %}">
     {% csrf_token %}
     <div class="my-own-container-callback display-full-height">
@@ -34,6 +36,7 @@
             {{ form.as_p }}
         </div>
         <div class="center-align-buttons center-aligned-button-styling">
+            <!-- Return "save_changes in post request in order to indicate to POST function to save changes if form is valid"-->
             <input type="submit" name="save_changes" value="Save Changes" class="btn btn-success">
             <a href="{% url 'edit-quote-request' quote_id %}">
                 <input type="button" value="Go Back" name="go_back" class="btn btn-success">
@@ -41,4 +44,5 @@
         </div>
     </div>
 </form>
+<!-- End of Quote Request Form-->
 {% endblock %}
