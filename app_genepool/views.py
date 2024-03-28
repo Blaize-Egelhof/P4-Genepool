@@ -381,9 +381,10 @@ class EditTicketForClientPage(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        form = AuthorisedTicketRequestForm(instance=ticket, user=request.user)
-        return render
-        (request, 'edit-ticket.html', {'form': form, 'ticket_id': ticket_id})
+        form = AuthorisedTicketRequestForm (instance=ticket, user=request.user)
+        return render(
+            request, 'edit-ticket.html', {'form': form, 'ticket_id': ticket_id}
+        )
     
     def post(self, request, ticket_id, *args, **kwargs):
         if 'save_changes' in request.POST:
@@ -424,15 +425,18 @@ users can access the ticket viewing and replying features.
 
 class ViewTicketForClientPage(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
+        # Handles GET requests to display the ticket and associated chat messages
         return self.render_ticket_page(request)
 
     def post(self, request, *args, **kwargs):
+        # Handles POST requests for submitting replies to a ticket
         ticket_id = self.kwargs.get('ticket_id')
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
         user = request.user
         form = ChatDialogue1(request.POST, request.FILES)
         
         if form.is_valid():
+            # If the form is valid, save the reply and update ticket status
             reply = form.save(commit=False)
             reply.ticket = ticket
             reply.author = user
@@ -447,42 +451,34 @@ class ViewTicketForClientPage(LoginRequiredMixin, View):
 
             messages.success(request, 'Reply Sent Successfully!')
         else:
-            messages.error(request, 'Reply is invalid, please '
-                                    'ensure the name and text field is'
-                                    'filled in before submitting.')
+            messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
 
         return self.render_ticket_page(request)
+        
+    def render_ticket_page(self, request):
+        """
+        Renders the ticket page with the ticket details, chat messages, and a form for submitting new messages.
 
+        This method fetches all chat messages related to the ticket, orders them by timestamp, and paginates
+        the result to display on the ticket page.
+        """
+        ticket_id = self.kwargs.get('ticket_id')
+        user = request.user
+        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        chat_messages = ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
+        paginator = Paginator(chat_messages, 10)  # Paginate chat messages
+        page_number = request.GET.get('page')
+        chat_messages = paginator.get_page(page_number)
+        form = ChatDialogue1()  # Initialize the form for new replies
+
+        return render(request, 'ticket-view.html', {
+            'ticket': ticket,
+            'user': user,
+            'chat_messages': chat_messages,
+            'form': form
+        })
 """
-Renders the ticket page with the ticket details, chat messages, and a form for submitting new messages.
-
-This method fetches all chat messages related to the ticket, orders them by timestamp, and paginates
-the result to display on the ticket page.
-
-"""
-
-def render_ticket_page(self, request):
-    ticket_id = self.kwargs.get('ticket_id')
-    user = request.user
-    ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-    chat_messages = (
-        ChatDialogue.objects.filter(ticket=ticket)
-        .order_by('-timestamp')
-    )
-    paginator = Paginator(chat_messages, 10)
-    page_number = request.GET.get('page')
-    chat_messages = paginator.get_page(page_number)
-    form = ChatDialogue1()
-
-    return render(request, 'ticket-view.html', {
-        'ticket': ticket,
-        'user': user,
-        'chat_messages': chat_messages,
-        'form': form
-    })
-
-"""
-A view for reopening a previously closed ticket. Only accessible by authenticated users.
+ReopenTicket view for reopening a previously closed ticket. Only accessible by authenticated users.
 
 Inherits from Django's LoginRequiredMixin to ensure that only authenticated users can access this view.
 
@@ -498,7 +494,7 @@ class ReopenTicket(LoginRequiredMixin, View):
         return redirect('staff-page')
 
 """
-A view for reopening a previously closed callback request. Accessible only to authenticated users.
+ReopenCallback view for reopening a previously closed callback request. Accessible only to authenticated users.
 
 Inherits from Django's LoginRequiredMixin for authentication checks.
 

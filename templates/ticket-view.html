@@ -147,7 +147,7 @@
         <form method="POST" class="text-center" enctype="multipart/form-data" id="reply-box">
             {% csrf_token %}
             <div class="row d-flex flex-column align-items-center"> 
-                <div class="col-6"> 
+                <div class="col-6" style="display:none;"> 
                     <p>Name</p>
                     <input type="text" name="name" class="form-control" required value="{{ user.username }}">
                 </div>

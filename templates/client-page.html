@@ -24,7 +24,6 @@
     </div>
 </nav-section>
 <!-- End of Header/Nav Section-->
-
 {% endblock %}
 
 {% block index-page-exclusive %}
@@ -187,9 +186,6 @@
                               <!-- Start of tickets time requested -->
                               <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
                               <!-- End -->
-                              <!-- Start of tickets time closed -->
-                              <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.get_service_display }}</h6>
-                              <!-- End -->
                               <!-- Start of tickets status ( Will always be "Closed" in this context) -->
                               <span class="badge bg-danger">Status: {{ ticket.status }}</span>
                               <!-- End -->
@@ -232,7 +228,7 @@
  *
  * This function adds a click event listener to the 'toggleClosedTicketsBtn' that:
  * - Toggles the display style of 'closedTicketsSection' between "flex" and "none".
- * - Updates the button's text to "Hide Closed Quotes" or "Show Closed Quotes" accordingly.
+ * - Updates the button's text to "Hide Closed Tickets" or "Show Closed Tickets" accordingly.
  */
 
 const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
@@ -241,7 +237,7 @@ const toggleClosedTicketsBtn = document.getElementById('toggleClosedTickets');
             toggleClosedTicketsBtn.addEventListener('click', function() {
                 const isHidden = closedTicketsSection.style.display === "none" || closedTicketsSection.style.display === "";
                 closedTicketsSection.style.display = isHidden ? "flex" : "none";
-                toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Quotes" : "Show Closed Quotes";
+                toggleClosedTicketsBtn.textContent = isHidden ? "Hide Closed Tickets" : "Show Closed Tickets";
             });
 
             document.addEventListener('DOMContentLoaded', function() {

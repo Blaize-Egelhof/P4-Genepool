@@ -36,13 +36,15 @@ class CallBackForm(forms.ModelForm):
 
 
 class AuthorisedTicketRequestForm(forms.ModelForm):
+    class Meta:
+        model = AuthorisedTicketRequests
+        fields = ['full_nameORcompany_name', 'request_description'] 
+
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
         super(AuthorisedTicketRequestForm, self).__init__(*args, **kwargs)
         self.fields['full_nameORcompany_name'].label = 'Ticket Title'
-        self.fields['request_description'].widget = Textarea(
-            attrs={'rows': 3, 'cols': 20}
-        )
+        self.fields['request_description'].widget = forms.Textarea(attrs={'rows': 3, 'cols': 20})
 
 
 class Meta:

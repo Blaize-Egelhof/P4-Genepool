@@ -67,9 +67,9 @@ class AuthorisedTicketRequests(models.Model):
     client = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
         related_name='client_requests', verbose_name='Client')
-    staff_members_who_replied = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name='replied_staff_tickets',
-        blank=True, verbose_name='Staff Members Who Replied')
+    closed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+        related_name='Closed_requests', verbose_name='Closed', blank=False)
 
 
 class ChatDialogue(models.Model):

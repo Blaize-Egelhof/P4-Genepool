@@ -350,7 +350,12 @@ All user stories can be found in the [project kanban board](https://github.com/u
 
   - Staff Page consists of 4 unique headings , "Unanswered Tickets" , "Answered Tickets" , "Unauthorised Quote Requests" and "Unauthorised Callback Requests" . Below each section is a grouping of all related objects. Unanswered and Answered Tickets simply pull authorised ticket objects based on their status's (Unanswered Or Answered) and groups them for visual clarity. 
 
-  -
+  - Staff can Edit and View Ticket's created by clients , when a staff member replies to a ticket object , the status of the ticket is marked as "Answered", once this has happened both staff and clients have the option to close the ticket , if the requirements have been satisied , if a client replies to the ticket , the status is toggled back to "Unanswered" thus removing the ability to close the ticket. 
+
+  - Closed tickets are hidden from staff and clients , but can be revealed by clicking the "Show Closed Tickets" , both clients and staff are able to re-open the tickets if needed , however only staff members have the right to delete a ticket once the status has been marked as "closed".
+
+  -For Unauthorised Quote Requests and Unauthorised Callback Requests , staff can view the objects and make edit modifications to them , additionally they can also mark the objects as "completed" thus hiding them. 
+  -These hidden objects can be revealed by clicking the "Show Completed Unauthorised Objects" link which reveals all objects , staff can choose to re-open the objects if needed , thus reversing the hidding feature.
 
 
   ## __Technologies Used__
@@ -490,6 +495,25 @@ Note: Due to the nature of this project , clients are not allowed to delete any 
 | **TEST**                      | **ACTION**             | **EXPECTATION**                                           | **RESULT** |
 | ----------------------------- | ---------------------- | --------------------------------------------------------- | ---------- |
 | Navigation bar                | Click on nav link      | user routed to correct page                               | ✅                  |
+| "Get In Contact" button                | Click on button      | contact dialogue openes                               | ✅                  |
+| "Request A Quote" button                | Click on button      | user navigated to quote form                               | ✅                  |
+| Support Section "Find Out More" buttons                | Click on button      | user navigated to products and services page                               | ✅                  |
+| Submit Quote Request Button                | Click on button      | user creates quote object                               | ✅                  |
+| Footer Facebook icon                | Click on icon     | user routed to facebook                               | ✅                  |
+| Footer Whatapp icon                | Click on icon     | user routed to Whatapp                               | ✅                  |
+| Footer Staff Login Button                | Click on button     | user routed to login page                               | ✅                  |
+| Sign In Button                | Click on button     | user able to login to their account                               | ✅                  |
+| "Sign Up" Nav link                | Click on nav link     | user navigated to sign up page                              | ✅                  |
+| "Sign Up" Nav button                | Click on nav button    | user able to create an account                              | ✅                  |
+| "Create A Ticket" button               | Click on the button    | reveals ticket form                             | ✅                  |
+| "Submit" button for ticket form             | Click on the submit button    | submit and create ticket object                            | ✅                  |
+| "View" button for ticket object              | Click on the view button    | open ticket chat dialogue                            | ✅                  |
+| "Submit" button for ticket message form              | Click on the submit button    | submit a chat entry for the ticket                           | ✅                  |
+| "Submit" button for ticket message form              | Click on the submit button    | submit a chat entry for the ticket                           | ✅                  |
+| "Edit" button for ticket object              | Click on the edit button    | view chat input box's                           | ✅                  |
+| "Save Changes" button for ticket edit form              | Click on the save changes button    | save changes to ticket                          | ✅                  |
+| "Save Closed Ticket" href              | Click on the href    | show hidden tickets                         | ✅                  |
+| "Re-Open" button              | Click on button   | toggle status of ticket to "Unanswered"                         | ✅                  |
 
 ### ***Performance, Accessibility, Best Practices, and SEO Testing***
 
