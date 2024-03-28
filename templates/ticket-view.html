@@ -31,15 +31,18 @@
 
 {% block index-page-exclusive %}
 
+<!-- Start Boostrap Alert Messages-->
 <div class="container">
   <div class="row">
       <div class="col-md-8 offset-md-2">
         {% block message %}
         {% endblock %}
       </div>
+<!-- End Boostrap Alert Messages-->
 {% endblock %}
 
 {% block content %}
+<!-- Start of Ticket Object display-->
 <div class="genepool-custom-background-v2">
     <div class="create-some-space-v1 genepool-custom-background-v2"></div>
     <div class="container client-ticket-container">
@@ -75,7 +78,8 @@
                 </a>
             </div>
     </div>
-
+<!-- End of Ticket Object display-->
+<!-- Start of Ticket Messages -->
     <div class="container client-ticket-container-posted-by black-text">
         {% for dialogue in chat_messages %}
         <div class="row grey-background ticket-msg-header">
@@ -131,13 +135,15 @@
             </span>
         </div>
     </div>    
-
+<!-- End of Ticket Messages -->
+<!-- Start of Message Form Submission -->
     <div class="container client-ticket-container-reply-container black-text text-center">
         <div class="row">
             <div class="col">
                 <h4>Reply</h4>
             </div>
         </div>
+        <!-- Form can handle both text messages and attachements -->
         <form method="POST" class="text-center" enctype="multipart/form-data" id="reply-box">
             {% csrf_token %}
             <div class="row d-flex flex-column align-items-center"> 
@@ -162,4 +168,5 @@
         </form>
     </div>
 </div>
+<!-- End of Message Form Submission -->
 {% endblock content %}
