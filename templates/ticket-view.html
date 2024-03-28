@@ -146,7 +146,7 @@
         <!-- Form can handle both text messages and attachements -->
         <form method="POST" class="text-center" enctype="multipart/form-data" id="reply-box">
             {% csrf_token %}
-            <div class="row d-flex flex-column align-items-center"> 
+            <div class="row d-flex flex-column align-items-center ticket-msg-box"> 
                 <div class="col-6" style="display:none;"> 
                     <p>Name</p>
                     <input type="text" name="name" class="form-control" required value="{{ user.username }}">
@@ -162,11 +162,12 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary mt-3">Submit</button> 
+                    <button type="submit" class="btn btn-primary mt-3 msg-submit-button">Submit</button> 
                 </div>
             </div>
         </form>
     </div>
+    <div class="create-some-space"></div>
 </div>
 <!-- End of Message Form Submission -->
 {% endblock content %}
