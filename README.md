@@ -4,11 +4,11 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
 
 <img src="https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/amiresponsive-p4.PNG">
 
- **Our Commitment:** At Genepool, we take pride in offering a holistic approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking reliable Loadshedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your company!. 
+ **Our Commitment:** At Genepool, we take pride in offering a agile approach to IT solutions. Whether you're in need of cutting-edge Hardware/Software services or seeking reliable load-shedding solutions, we've got you covered. We believe in providing more than just products – we offer tailored experiences that empower your company! 
  
- **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform or directly get in contact with us using our supplied contact points, streamlining the communication process. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
+ **Interactive Engagement:** Engaging with Genepool is seamless and efficient. Clients can easily enquire or request a quote through our user-friendly platform or directly get in contact with us using our supplied contact points, streamlining communication on all channels. We prioritize your experience, ensuring that your interactions with us are as smooth as the solutions we provide. 
  
- **Staff Empowerment:** Our staff Through intuitive forms and interfaces, can manage all incomming callback,quote requests and ticket querries made by our site visitors. Our staff thus plays a crucial role in providing the fastest service possible, Join us at Genepool as we redefine IT excellence ,let us be your partner in building a future driven by technology.
+ **Staff Empowerment:** Our staff Through intuitive forms and interfaces, can manage all incoming callback, quote requests and ticket queries made by our site visitors. Our staff thus plays a crucial role in providing the fastest service possible, Join us at Genepool as we redefine IT excellence.
 
 ## __User Experience (UX)__
 
@@ -43,9 +43,8 @@ All user stories can be found in the [project kanban board](https://github.com/u
            [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57959544)
 
         7. **Creating an Account**
-           - As a first time visitor, I can use the "Sign In" Nav button to navigate to the sign in view , using the prompted text I can navigate to the sign up page to create my own account for ticket creations.
+           - As a first-time visitor, I can use the "Sign In" Nav button to navigate to the sign-in view, using the prompted text I can navigate to the signup page to create my own account for ticket creations.
            [Created Issue](https://github.com/users/Blaize-Egelhof/projects/2/views/2?pane=issue&itemId=57959757)
-           
 
 -   #### Returning Visitor Goals
 
@@ -110,8 +109,7 @@ All user stories can be found in the [project kanban board](https://github.com/u
   - **Black:** `#0f0f0f`
   - **Grey:** `#dde2e8`
 
-- We chose to use **Black (#0f0f0f)** on purpose because it really stands out against the main **Blue (#0071a6)** background. This makes everything easier to see and clearer, especially next to parts that are **White (#ffffff).** **Light Blue (#6ca8f0)** is a softer color that we use to make certain things pop out a bit without being too flashy. **Grey (#dde2e8)** is used in two ways: it's a bit different from the other background colors, making things look interesting, and it's the main color for the buttons on the homepage. Both **Black (#0f0f0f)** and **White (#ffffff)** are like middle-ground colors that work well together and help highlight the main pictures. We picked these colors very carefully to make sure everything looks good together and is easy for everyone to use and enjoy.
-
+- The choices of colors were intentionally selected,  **Black (#0f0f0f)** due to its striking contrast against the dominant **Blue (#0071a6)** backdrop. This enhances clarity and visibility, particularly alongside elements that are **White (#ffffff).** To subtly draw attention to specific details without appearing too intense, **Light Blue (#6ca8f0).** to utilize the soft hue of  **Grey (#dde2e8)** which is utilized in two ways: as an alternative to other background colors , and as the principal color for homepage buttons. Both **Black (#0f0f0f)** and **White (#ffffff)** provide strong contrast, meshing perfectly to define images. The use of the colors were used to ensure an aesthetically pleasing and user-friendly experience.
 
     -   #### Typography
 
@@ -122,19 +120,19 @@ All user stories can be found in the [project kanban board](https://github.com/u
 #### Imagery
 
 - **Landing Page:**
-   - The background is a simple light blue with shadows to make it look interesting but still simple. The Genepool logo is in the middle of the page. Its white color stands out against the blue background, so it's easy to see and read. There's also Genepool's special logo design above it to make the page look better.
+   - The background is a simple light blue with shadows which creates a balanced contrast. The Genepool logo is in the middle of the page. Its white colour stands out against the blue background, to make the text easy to read. 
 
 - **How Can We Support You Page Image:**
    - Just below the landing page, there's a title with a light blue snowflake logo to the right of the text. This logo adds a subtle touch to the text and is Genepool's special logo.
 
 - **Need Help in a Hurry Image:**
-   - To the right in this section, there's a cartoon drawing that looks like it's moving. It's supposed to show IT support in a fun way. The drawing doesn't have its own background, so it blends in well without making it hard for people to see and understand.
+   - To the right in this section, there's a cartoon dipiction of a stick man trying to immetate the idea of Computer Repair, The drawing doesn't have its own background, helping it blend into its background , creating a cleaner looking image.
 
 - **Review Section:**
-   - Below that, there's a section with reviews about Genepool's imagery. It shows pictures of the people who gave the reviews, and these pictures were taken from [Pexels](https://www.pexels.com/). You can find more information in the credits section.
+   - Below that, there's a section with reviews about Genepool's imagery built into a carousel. It shows pictures and comments of reviewer,these pictures were taken from [Pexels](https://www.pexels.com/). You can find more information in the credits section.
 
 - **Supplier Logos Section:**
-   - After the review section and below the form, there's a part showing logos from our suppliers. We got permission to use these logos in a positive way, and each logo shows the company's name so you can tell who they are.
+   - After the review section and below the form, there's another carousel showing logos from our suppliers. We got permission to use these logos in a positive way, and each logo shows the company's name so you can easily identify there trading name.
 
 - **Icons:**
    - All the icons used on the site are from [Font-Awesome](https://fontawesome.com/).
@@ -241,63 +239,63 @@ All user stories can be found in the [project kanban board](https://github.com/u
   #### Need Help in a Hurry Section
   ![Help Section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-needhelpinahurry-section.PNG)
 
-  - This section follows the principle of "simple is better" , this section contains our company's standard background imagery , with white text , two buttons and a simple image to the of the text and buttons. 
+  - This section follows the principle of "simple is better", this section contains our company's standard background imagery, with white text, two buttons and a simple image of the text and buttons. 
 
-  - The font color of white is exclusivly used throughout this section in order to provide contrast to the mix of blue colors used in the background
+  - The font colour white is exclusively used throughout this section to provide contrast to the mix of blue colours used in the background
 
-  - Both buttons serve the purpose displaying information rather than functioning as an actual button , when a user hovers over the buttons the background changes to a darker shade of blue to indicate selection
+  - Both buttons serve the purpose of displaying information rather than functioning as an actual button, when a user hovers over the buttons the background changes to a darker shade of blue to indicate the selection
 
-  - The cartoon graphic used to the right of all elements mentioned above attempts to convey our ability to fix any computer related issue, the image primarily uses white and black colors in order to stand out over the background used.
+  - The cartoon graphic used to the right of all elements mentioned above attempts to convey our ability to fix any computer-related issue, the image primarily uses white and black colours to stand out over the background used.
 
   #### Reviews Section
   ![Review Section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-review-section.PNG)
 
-  - The review section consists of a bootstrap carosoul , a black heading and the actual review elements. 
+  - The review section consists of a bootstrap carousel, a black heading and the actual review elements. 
 
-  - The review heading text is black and underlined in black , both to add contrast to the white background.
+  - The review heading text is black and underlined in black, both to add contrast to the white background.
 
-  - A single review is broken up into a circular container with a red border to house the reviewee's picture, the red border was chosen to provide suttle contrast, below the image container is the reviewee's review text , which is in black , below is the reviewee's name in a bolder shade of black to provide contrast compaired to their actual review . 
+  - A single review is broken up into a circular container with a red border to house the reviewee's picture, the red border was chosen to provide subtle contrast, below the image container is the reviewee's review text, which is in black, below is the reviewee's name in a bolder shade of black to provide contrast compared to their actual review. 
 
-  - Each carosoul view consists of 3 reviews objects , with this pattern repeating on each new view, users can eiether manually toggle between the reviews or have the review page automatically change over a specific period (Default Bootrap toggle buttons used to navigate the wheel) 
+  - Each carousel view consists of 3 review objects, with this pattern repeating on each new view, users can either manually toggle between the reviews or have the review page automatically change over a specific period (Default Bootstrap toggle buttons used to navigate the wheel) 
 
   #### Request a Quote Section
   ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-quote-section.PNG)
 
-  - The request a quote section is a carefully layed out form which is intended for users to request quotes directly through my company without needing to create an account , this is intended for ease of use for new site visitors who are interested in working with us. 
+  - The request a quote section is a carefully laid out form which is intended for users to request quotes directly through my company without needing to create an account , this is intended for ease of use for new site visitors who are interested in working with us. 
 
-  - The form carefully indicates which fields are required and which are not , the grey background ,light black text and white input box's provide clear visual clarity for users , if a user submits a quote request incorrectly they will be notified using Bootstraps messaging functionality as shown below : 
+  - The form carefully indicates which fields are required and which are not the grey background, light black text and white input boxes provide clear visual clarity for users, if a user submits a quote request incorrectly they will be notified using Bootstraps messaging functionality as shown below : 
   ![Error Message](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/bootstrap-error-msg.PNG)
 
-  - This message box is created using a red background to clearly show that something has gone wrong as the color red is never assosiated with success.
+  - This message box is created using a red background to clearly show that something has gone wrong as the colour red is never associated with success.
   
-  - When a user succesfully creates a quote request they will be met with the following bootstrap message : 
+  - When a user successfully creates a quote request they will be met with the following bootstrap message : 
   ![Error Message](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/bootstrap-success-msg.PNG)
 
-  - This messsage box is created with a green background to clearly show that something has succesfully worked as green is assosiated with success 
+  - This message box is created with a green background to clearly show that something has successfully worked as green is associated with success 
 
-  - Both message boxes appear in the header of all pages , and will disappear after a shortime automatically , users can also choose to close the message box manually with the black "X" on the inner-right side of the message box. 
+  - Both message boxes appear in the header of all pages and will disappear after a short automatically, users can also choose to close the message box manually with the black "X" on the inner-right side of the message box. 
 
   #### Supplier Section
 
   ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/landing-page-supplier-section.PNG)
 
-  - This section has no heading as its inteded to provide a suttle component to wrap up the ending of the index page , this section consists of a bootstrap carosoul with images of our various suppliers. 
+  - This section has no heading as it is intended to provide a subtle component to wrap up the ending of the index page, this section consists of a bootstrap carousel with images of our various suppliers. 
 
-  - The carosoul automatically toggles views , users can only choose to navigate through the carosoul using the left and right arrow indicators
+  - The carousel automatically toggles views, users can only choose to navigate through the carousel using the left and right arrow indicators
 
-  - Ive chosen to keep the background white as all supplier logo's used , have components of different colors except for the color white , this ensures theres visual clarity for users when viewing ALL supplier logo's. 
+  - I've chosen to keep the background white as all supplier logos used, have components of different colours except for the colour white, this ensures there's visual clarity for users when viewing ALL supplier logos. 
 
   ### Products and Services Page
 
-  - My products and services page consists of slightly unique header as compaired to index page in the sense that my company's logo is displayed on the left , the choice of colors, fonts and icons remain the same for consistancy. 
+  - My products and services page consists of a unique header as compared to my index page in the sense that my company's logo is displayed on the left, and the choice of colours, fonts and icons remain the same for consistency. 
 
-  - The entire page is made up of 6 Boostrap cards each with unique bold headers and text below the headers to clarify in detail what Genepool offers for each topic , both the header and text are black over a default white background in order to provide clarity for readers, the topics covered accross each cards are as follows: "Support", "Software", "Hardware", "Microsoft" , "Power Solutions" and "Networking" 
+  - The entire page is made up of 6 Boostrap cards each with unique bold headers and text below the headers to clarify in detail what Genepool offers for each topic, both the header and text are black over a default white background to provide clarity for readers, the topics covered across each card are as follows: "Support", "Software", "Hardware", "Microsoft", "Power Solutions" and "Networking" 
 
-  - Below the text for each card are two bootstrap buttons , with a blue border and blue text in order to stand out from the black text used above them , for each card theres a "Get in Contact" button and a "Request a call back" button which have unique blue hover properties to highlight the type of button a user is hovering over. 
+  - Below the text for each card are two bootstrap buttons, with a blue border and blue text to stand out from the black text used above them, for each card there's a "Get in Contact" button and a "Request a call back" button which has unique blue hover properties to highlight the type of button a user is hovering over. 
 
-  - The "Get In contact" button when pressed triggers a bootstrap pop-up model which advertises our Product Enquires and Technical Support channels users can contact for questions of queries regarding the topics mentioned on each card. 
+  - The "Get In contact" button when pressed triggers a bootstrap pop-up model which advertises our Product Enquires and Technical Support channels users can contact for questions or queries regarding the topics mentioned on each card. 
 
-  - The "Request a call back" button when pressed , opens the Request a Quote Form , which is initially hidden from view. 
+  - The "Request a call back" button when pressed, opens the Request a Quote Form, which is initially hidden from view. 
   
   ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p1.PNG) 
 
@@ -305,40 +303,40 @@ All user stories can be found in the [project kanban board](https://github.com/u
 
   ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p3.PNG) 
 
-  - When the blue Callback Form button is pressed a form reveals itself to users , this form is designed for users who have queries and would like to either be called back or contacted via email
+  - When the blue Callback Form button is pressed users are navigated to the hidden quote form,  this form is designed for users who have queries and would like to either be called back or contacted via email
 
   ![Request a quote section](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-p4.PNG) 
 
-  - This form follows the exact same layout and color theme as the Request a Quote form used on my index page , the decision to keep the same layout and color schema was enforced to maintain consistancy. 
+  - This form follows the same layout and colour theme as the Request a Quote form used on my index page, the decision to keep the same layout and colour schema was enforced to maintain consistency. 
 
-  - If a user succesfully submits the form a green pop-up will appear in the header notifying users that Genepool has recived their request and will be in contact shortly. 
+  - If a user successfully submits the form a green pop-up will appear in the header notifying users that Genepool has received their request and will be in contact shortly. 
 
   ![Callback Success](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/callback-success.PNG) 
 
-  - Similarly if a user doesnt complete the form correctly a red error message will display notifying users. 
+  - Similarly, if a user doesn't complete the form correctly a red error message will display notifying users. 
 
   ![Callback Failure](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/callback-failure.PNG) 
 
 
   ### Clients Page
   
-  - My clients page consists of unique header in the sense that my company's logo is displayed on the left , the choice of colors, fonts and icons remain the same for consistancy , users who have signed in succesfully will be greeted in the header above the left aligned Genepool logo "Hello,{*UserName*}".
+  - My client's page consists of a unique header in the sense that my company's logo is displayed on the left, the choice of colours, fonts and icons remain the same for consistency, and users who have signed in successfully will be greeted in the header above the left aligned Genepool logo "Hello,{*UserName*}".
 
-  - The header remains the same as the products and services page's header in all aspects expect that the "Sign In" buttom is replaced with a "Log Out" button in order to provide a method for logged in users to log Out. 
+  - The header remains the same as the products and services page's header in all aspects except that the "Sign In" button is replaced with a "Log Out" button to provide a method for logged-in users to log Out. 
 
-  - Below the header is a simple underlined text declaring "My Tickets" , this section is to house all of the logged in clients ticket objects , signed in users can click the "Create Ticket Requests" button in order to reveal a Ticket Form in order to create new ticket objects. 
+  - Below the header is a simple underlined text declaring "My Tickets" , this section is to house all of the logged-in client's ticket objects, signed users can click the "Create Ticket Requests" button to reveal a Ticket Form to create a new ticket objects. 
 
  ![Create a Ticket](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/create-a-ticket.PNG) 
 
- - Once a ticket has been created clients have the option to either edit the contents of the newly created ticket object OR view the ticket chat dialogue , the edit page for the tickets is heavily restricted for clients (Client are unable to change ticket Created date etc). 
+ - Once a ticket has been created clients have the option to either edit the contents of the newly created ticket object OR view the ticket chat dialogue, the edit page for the tickets is heavily restricted for clients (Clients are unable to change ticket Created date etc). 
 
- - If a client selects the "View" button of the respective ticket a chat dialogue of the ticket will open , this chat dialogue is intended for conversations between the Genepool Staff and the Client directly , relating to the topic mentioned in the respective ticket. 
+ - If a client selects the "View" button of the respective ticket a chat dialogue of the ticket will open, this chat dialogue is intended for conversations between the Genepool Staff and the Client directly, relating to the topic mentioned in the respective ticket. 
 
   ![Ticket Chat](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-chat-view.PNG)
 
-  - Clients(Ticket Owner) and staff can publish replies on the same ticket using the navigation form near the bottom of the ticket chat dialogue, depending on if the person who replied is a staff memeber or if its the origional ticket owner , their messages will look slighly different in order to easily allow users to differentiate , additionally all tickets by default have the status of "Unanswered" only when a Staff member replies to the ticket object will the status change to "Answered" anytime a client replies to their own ticket the status toggles back to "Unanswered"
+  - Clients(Ticket Owner) and staff can publish replies on the same ticket using the navigation form near the bottom of the ticket chat dialogue, depending on if the person who replied is a staff member or if it's the original ticket owner, their messages will look slightly different to easily allow users to differentiate, additionally, all tickets by default have the status of "Unanswered" only when a Staff member replies to the ticket object will the status change to "Answered" anytime a client replies to their ticket the status toggles back to "Unanswered"
 
-  - Pagination has been used in this page , as the more objects that need to be pulled from the database , the slower the rendering of the page becomes, only 10 message objects are displayed per paginated page.(Pagination Navigation has been included)
+  - Pagination has been used on this page, as the more objects that need to be pulled from the database, the slower the rendering of the page becomes, only 10 message objects are displayed per paginated page. (Pagination Navigation has been included)
 
   - Upon selecting "Edit" for a ticket clients can edit the tickets header and description. 
 
@@ -348,27 +346,27 @@ All user stories can be found in the [project kanban board](https://github.com/u
 
   ### Staff Page
 
-  - Staff Page consists of 4 unique headings , "Unanswered Tickets" , "Answered Tickets" , "Unauthorised Quote Requests" and "Unauthorised Callback Requests" . Below each section is a grouping of all related objects. Unanswered and Answered Tickets simply pull authorised ticket objects based on their status's (Unanswered Or Answered) and groups them for visual clarity. 
+  The staff Page consists of 4 unique headings, "Unanswered Tickets", "Answered Tickets", "Unauthorised Quote Requests" and "Unauthorised Callback Requests". Below each section is a grouping of all related objects. Unanswered and Answered Tickets simply pull authorised ticket objects based on their statuses (Unanswered Or Answered) and groups them for visual clarity. 
 
    ![Staff Page p1](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-pagep1.PNG)
    ![Staff Page p2](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-pagep2.PNG)
    ![Staff Page p3](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/staff-pagep3.PNG)
 
-  - Staff can Edit and View Ticket's created by clients , when a staff member replies to a ticket object , the status of the ticket is marked as "Answered", once this has happened both staff and clients have the option to close the ticket , if the requirements have been satisied , if a client replies to the ticket , the status is toggled back to "Unanswered" thus removing the ability to close the ticket. 
+  - Staff can Edit and View Ticket created by clients, when a staff member replies to a ticket object, the status of the ticket is marked as "Answered", once this has happened both staff and clients have the option to close the ticket if the requirements have been satisfied if a client replies to the ticket, the status is toggled back to "Unanswered" thus removing the ability to close the ticket. 
 
    ![Ticket View p1](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-viewp1.PNG)
    ![Ticket View p2](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-viewp2.PNG)
 
-  - Staff can also edit tickets using the edit button , 
+  - Staff can also edit tickets using the edit button, 
 
    ![Ticket View p2](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/editticket.PNG)
 
-  - Closed tickets are hidden from staff and clients , but can be revealed by clicking the "Show Closed Tickets" , both clients and staff are able to re-open the tickets if needed , however only staff members have the right to delete a ticket once the status has been marked as "closed".
+  - Closed tickets are hidden from staff and clients, but can be revealed by clicking the "Show Closed Tickets", both clients and staff are able to re-open the tickets if needed, however, only staff members have the right to delete a ticket once the status has been marked as "closed".
 
    ![Closed Tickets](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/closedticketobjects.PNG)
 
-  -For Unauthorised Quote Requests and Unauthorised Callback Requests , staff can view the objects and make edit modifications to them , additionally they can also mark the objects as "completed" thus hiding them. 
-  -These hidden objects can be revealed by clicking the "Show Completed Unauthorised Objects" link which reveals all objects , staff can choose to re-open the objects if needed , thus reversing the hidding feature.
+  -For Unauthorised Quote Requests and Unauthorised Callback Requests, staff can view the objects and make edit modifications to them, additionally, they can also mark the objects as "completed" thus hiding them. 
+  -These hidden objects can be revealed by clicking the "Show Completed Unauthorised Objects" link which reveals all objects, staff can choose to re-open the objects if needed , thus reversing the hidding feature.
 
    ![Closed Objects](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/closedauthorisedobjects.PNG)
 
@@ -548,11 +546,28 @@ Note: Due to the nature of this project , clients are not allowed to delete any 
 
 ### ***Fixed Bugs***
 
-- There was a bug when users selected the "request a callback" button on the products-and-services.html page , this issue stemmed from the fact that no JS 
-funtion forced the users view to move to the form provided below , instead the user would be navigated to the top of the page. 
-This issue was fixed by placing a timer on the function , as the form is only revealed once the user selects the callback button to reveal the form , the JS function would trigger too quickly and wouldnt allow time for the animation of revealing the form to finish , adding the timout function allowed the animation to finish and then the JS function to navigate users to the form to execute , thus achieving a way to a- Open the Form b- Allow the animation to execute c - allow the users view to be pulled to the form. 
+## Navigation Issue with "Request a Callback" Button ##
 
-- There was a bug where 
+Description: When users selected the "request a callback" button on the products-and-services.html page, they were navigated to the top of the page instead of the form below. This issue was due to a JavaScript function not directing the user's view to the newly revealed form.
+Fix: The issue was fixed by introducing a delay in the JavaScript function with a timer. Since the form is revealed only after the user clicks the callback button, the original JavaScript function is executed too quickly, not allowing the form reveal animation to finish. Adding the timeout function allowed the animation to complete before the JavaScript function navigated users to the form, thus achieving a smooth transition to the form post-animation.
+
+## Cloudinary CSS Files Not Rendering ##
+
+Description: Cloudinary CSS files were not rendering due to an incorrect STATICFILES_STORAGE setting. This issue was partly due to the nuances of hosting the application on Heroku.
+Fix: The issue was resolved by setting STATICFILES_STORAGE to "cloudinary_storage.storage.StaticHashedCloudinaryStorage" and, on Heroku, using the direct URL link to the Cloudinary CSS path. This adjustment ensured that both local and Heroku-hosted versions of the application could render Cloudinary-hosted CSS files correctly.
+
+## Extended Loading Times for Chat Messages ##
+
+Description: There were extremely long waiting times for chat messages to render for ticket messages, primarily due to ElephantSQL's limited bandwidth and the large volume of objects being pulled from the database.
+Fix: This was fixed by introducing pagination for the ticket-view.html, which only loads the first 10 messages from the database at a time. This significantly reduced loading times and introduced advanced navigation between paginated groups of messages.
+Elevating Users to Staff Status
+Description: There were issues elevating certain users to staff status, as there needed to be a clear division between regular clients and staff members.
+Fix: The workaround involved creating a custom group in Django's admin panel and allocating users to this group. This distinction was then utilized in the views logic to determine if a user belongs to the staff group and render a different view accordingly. This approach achieved the desired separation while maintaining defensive security.
+
+## Rendering Model Forms Efficiently ##
+
+Description: There were difficulties in efficiently and reliably rendering model forms to perform actions like modifying and deleting specific objects.
+Fix: This issue was resolved by using Django's built-in forms.as_p() method, which dynamically renders form fields based on a created form model. This solution saved considerable time and ensured consistency across the application.
 
 ### ***Known Bugs***
 
@@ -597,11 +612,11 @@ The site is now live and operational!
 
 ### ***Content***
 
-- The overall structure of this README was taken from [AlexaH88](https://github.com/AlexaH88), who skillfully crafted a merit worthy project.
+- The overall structure of this README was taken from [AlexaH88](https://github.com/AlexaH88), who skillfully crafted a merit-worthy project.
 
 ### ***Media***
 
-- The hero logo (Genepool image) was taken from my company's design team , with permissions from [Sean Nijenhuis](https://www.f6s.com/company/yomane#about), in addition ive attached the below Cloudinary links to the other Genepool imagery used for this project.
+- The hero logo (Genepool image) was taken from my company's design team, with permissions from [Sean Nijenhuis](https://www.f6s.com/company/yomane#about), in addition, I've attached the below Cloudinary links to the other Genepool imagery used for this project.
 
    [Genepool Hero Image](https://res.cloudinary.com/drdelhvyt/image/upload/v1697631364/logo_ah5wjz.png)
    [Genepool Snowflake Logo](https://res.cloudinary.com/drdelhvyt/image/upload/v1697635373/genepool_psxj9n.png)
@@ -609,11 +624,11 @@ The site is now live and operational!
 
 - Reviewee photo's were taken from [Pexals](https://www.pexels.com/)
 
-- Help in a hurry section on landing page imagery was taken from [CleanPNG](www.cleanpng.com)
+- The help in a hurry section on landing page imagery was taken from [CleanPNG](www.cleanpng.com)
 
 - Basic Icons were taken from [Font Awesome](https://fontawesome.com/)
 
-- Supplier/Partnership imagery on index.html were taken from various suppliers , the use of these images are public domain , the suppliers can easily be identifed as their company names are written on each imagery.
+- Supplier/Partnership imagery on index.html were taken from various suppliers, the use of these images is public domain, the suppliers can easily be identified as their company names are written on each imagery.
 
 ### ***Acknowledgements***
 
@@ -623,4 +638,4 @@ The site is now live and operational!
 
 - [John Solly](https://www.youtube.com/@johnsolly) , for teaching me AJAX methods in Django.
 
-- [Sean Nijenhuis](https://www.f6s.com/company/yomane#about) , my current employer and senior programmer for giving me amazing tips and tricks during the development of this project.
+- [Sean Nijenhuis](https://www.f6s.com/company/yomane#about), my current employer and senior programmer for giving me amazing tips and tricks during the development of this project.

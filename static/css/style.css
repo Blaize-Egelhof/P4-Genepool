@@ -2,10 +2,6 @@
  * Globals
  */
 
- body {
-  padding-bottom: 60px; 
-}
-
  .custom-br{
   border: 1px solid #000;
   margin-top: 20px;
@@ -60,6 +56,7 @@ body {
   color:white;
   font-family: 'Roboto' , 'sans-serif';
   min-height:100% !important;
+  padding-bottom: 60px; 
 }
 
 .landing-content {
@@ -443,7 +440,7 @@ margin-right:auto;
 .client-custom-footer1{
   margin-left:auto;
   margin-right:auto; 
-  }
+}
 
 .closed-quotes-custom-btn{
   background:none;
@@ -654,8 +651,6 @@ margin-right:auto;
   height: 8rem;
 }
 
-
-
 /* Media for landing Page */
 
 /* CSS for form*/
@@ -795,7 +790,7 @@ img {
 }
 
 .dropdown-menu {
-  z-index: 1050; /* Bootstrap's modal z-index is 1050, adjust based on your needs */
+  z-index: 1050; 
 }
 
 .client-date-styling{
@@ -849,6 +844,8 @@ SIGN-UP / LOGIN PAGE
   margin-top:0 !important;
   margin-bottom:0 !important;
 }
+
+/*Start of Media Queries*/
 
 @media (max-width:1130px){
   .landing-img{
