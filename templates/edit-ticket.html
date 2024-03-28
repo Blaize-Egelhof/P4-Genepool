@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block header %}
+
+<!-- Start of Header/Nav Section-->
+
 <nav-section>
     <div class="nav-container">
         <nav class="nav nav-masthead">
@@ -21,28 +24,38 @@
         </nav>
     </div>
 </nav-section>
+
+<!-- End of Header/Nav Section-->
+
 {% endblock %}
 
 {% block content %}
 {% block extra_css %}
+<!-- edit-ticket.html exclusive CSS-->
 <link rel="stylesheet" href="{% static 'css/edit-ticket.css' %}">
 {% endblock extra_css %}
 
+<!-- Start of Ticket Edit Form -->
 <div class="form-container">
     <h2 class="black-text">Edit Your Ticket</h2>
+    <!-- Custom URL for editing ticket -->
     <form method="POST" action="{% url 'edit-ticket' ticket_id=ticket_id %}">
         {% csrf_token %}
         <div class="my-own-container">
             <div class="row form-styling-generic">
                 <div class="col">
+                <!-- Using Django's custom forms.as_p to render form -->
                 {{ form.as_p }}
                 </div>
             </div>
             <div class="center-align-buttons center-aligned-button-styling">
+                <!-- If save_changes is in POST request then save the form -->
                 <input type="submit" name="save_changes" value="Save Changes" class="btn btn-primary custom-btn">
+                <!-- Take user back to default sign up page  -->
                 <a href="{% url 'staff-page' %}" class="btn btn-secondary custom-btn">Go Back</a>
             </div>
         </div>
     </form>
 </div>
+<!-- End of Ticket Edit Form -->
 {% endblock %}

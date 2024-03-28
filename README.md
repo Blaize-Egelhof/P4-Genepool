@@ -344,7 +344,13 @@ All user stories can be found in the [project kanban board](https://github.com/u
 
    ![Edit Ticket](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-your-ticket.PNG)
 
-  Complete Existing Features section of Readme then UI UX is done. 
+ - Clients(Ticket Owner) and staff can update already created Ticket Objects
+
+  ### Staff Page
+
+  - Staff Page consists of 4 unique headings , "Unanswered Tickets" , "Answered Tickets" , "Unauthorised Quote Requests" and "Unauthorised Callback Requests" . Below each section is a grouping of all related objects. Unanswered and Answered Tickets simply pull authorised ticket objects based on their status's (Unanswered Or Answered) and groups them for visual clarity. 
+
+  -
 
 
   ## __Technologies Used__
@@ -422,6 +428,7 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
 | products-services.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-services-cssvalidator.PNG) | ✅ |
+| edit-ticket.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-ticketcss-validator.PNG) | ✅ |
 
 
    | **File Name** | **Validator** | **Validation Result** | **Status** |
