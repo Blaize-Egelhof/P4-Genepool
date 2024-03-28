@@ -6,8 +6,8 @@ from django.utils import timezone
 class UnauthorisedQuoteRequests(models.Model):
     full_nameORcompany_name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(blank=False)
-    phone =
-    models.CharField(max_length=15, blank=True, default='No phone provided')
+    phone = models.CharField(max_length=15, blank=True, 
+                            default='No phone provided')
     SERVICE_CHOICES = [
         ('support', 'Support'),
         ('hardware', 'Hardware'),
@@ -30,8 +30,9 @@ class UnauthorisedQuoteRequests(models.Model):
 class UnauthorisedCallBackRequests(models.Model):
     full_nameORcompany_name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(blank=False)
-    phone =
-    models.CharField(max_length=15, blank=True, default='No phone provided')
+    phone = models.CharField(
+        max_length=15, blank=True, default='No phone provided'
+    )
     SERVICE_CHOICES = [
         ('support', 'Support'),
         ('hardware', 'Hardware'),
@@ -72,13 +73,12 @@ class AuthorisedTicketRequests(models.Model):
 
 
 class ChatDialogue(models.Model):
-    ticket =
-    models.ForeignKey
-    (AuthorisedTicketRequests, related_name='chat_dialogues',
+    ticket = models.ForeignKey(
+        AuthorisedTicketRequests, related_name='chat_dialogues',
         on_delete=models.CASCADE)
-    author =
-    models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
-    file =
-    models.FileField(upload_to='GENEPOOL/templates/ticket-files/', blank=True)
+    file = models.FileField(
+        upload_to='GENEPOOL/templates/ticket-files/', blank=True)

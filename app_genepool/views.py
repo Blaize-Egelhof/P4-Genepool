@@ -64,59 +64,72 @@ class StaffPage(LoginRequiredMixin, View):
         user = request.user
 
         staff_group = user.groups.filter(Q(name='Staff')).exists()
-        staff_ticket_requests_closed =
-        AuthorisedTicketRequests.objects.filter(status='Answered')
-        answered_client_ticket_request =
-        AuthorisedTicketRequests.objects.filter(status='Answered', client=user)
-        staff_answered_client_ticket_request =
-        AuthorisedTicketRequests.objects.filter(status='Answered')
-        unanswered_client_ticket_request =
-        AuthorisedTicketRequests.objects.filter(
-            status='Unanswered', client=user)
-        staff_unanswered_client_ticket_request =
-        AuthorisedTicketRequests.objects.filter(status='Unanswered')
-        closed_client_ticket_request =
-        AuthorisedTicketRequests.objects.filter(status='Closed', client=user)
-        staff_closed_client_ticket_request =
-        AuthorisedTicketRequests.objects.filter(status='Closed')
+
+        staff_ticket_requests_closed = (
+            AuthorisedTicketRequests.objects.filter(status='Answered')
+        )
+
+        answered_client_ticket_request = (
+            AuthorisedTicketRequests.objects.filter(status='Answered', client=user)
+        )
+
+        staff_answered_client_ticket_request = (
+            AuthorisedTicketRequests.objects.filter(status='Answered')
+        )
+
+        unanswered_client_ticket_request = (
+            AuthorisedTicketRequests.objects.filter(status='Unanswered', client=user)
+        )
+
+        staff_unanswered_client_ticket_request = (
+            AuthorisedTicketRequests.objects.filter(status='Unanswered')
+        )
+
+        closed_client_ticket_request = (
+            AuthorisedTicketRequests.objects.filter(status='Closed', client=user)
+        )
+
+        staff_closed_client_ticket_request = (
+            AuthorisedTicketRequests.objects.filter(status='Closed')
+        )
 
         if staff_group:
-            staff_unauthorised_callback_requests_ongoing =
-            UnauthorisedCallBackRequests.objects.filter(status='Ongoing')
-            staff_unauthorised_callback_requests_completed =
-            UnauthorisedCallBackRequests.objects.filter(status='Completed')
-            staff_unauthorised_quote_requests_ongoing =
-            UnauthorisedQuoteRequests.objects.filter(status='Ongoing')
-            staff_unauthorised_quote_requests_completed =
-            UnauthorisedQuoteRequests.objects.filter(status='Completed')
-            return render(request, 'staff-page.html', {
+            staff_unauthorised_callback_requests_ongoing = (
+                UnauthorisedCallBackRequests.objects.filter(status='Ongoing')
+            )
+
+            staff_unauthorised_callback_requests_completed = (
+                UnauthorisedCallBackRequests.objects.filter(status='Completed')
+            )
+
+            staff_unauthorised_quote_requests_ongoing = (
+                UnauthorisedQuoteRequests.objects.filter(status='Ongoing')
+            )
+
+            staff_unauthorised_quote_requests_completed = (
+                UnauthorisedQuoteRequests.objects.filter(status='Completed')
+            )
+
+            context = {
                 'user': user,
                 'staff_ticket_requests_closed': staff_ticket_requests_closed,
-                'staff_unanswered_client_ticket_request':
-                staff_unanswered_client_ticket_request,
-                'staff_answered_client_ticket_request':
-                staff_answered_client_ticket_request,
-                'staff_closed_client_ticket_request':
-                staff_closed_client_ticket_request,
-                'staff_unauthorised_callback_requests_completed':
-                staff_unauthorised_callback_requests_completed,
-                'staff_unauthorised_callback_requests_ongoing':
-                staff_unauthorised_callback_requests_ongoing,
-                'staff_unauthorised_quote_requests_ongoing':
-                staff_unauthorised_quote_requests_ongoing,
-                'staff_unauthorised_quote_requests_completed':
-                staff_unauthorised_quote_requests_completed,
-            })
+                'staff_unanswered_client_ticket_request': staff_unanswered_client_ticket_request,
+                'staff_answered_client_ticket_request': staff_answered_client_ticket_request,
+                'staff_closed_client_ticket_request': staff_closed_client_ticket_request,
+                'staff_unauthorised_callback_requests_ongoing': staff_unauthorised_callback_requests_ongoing,
+                'staff_unauthorised_callback_requests_completed': staff_unauthorised_callback_requests_completed,
+                'staff_unauthorised_quote_requests_ongoing': staff_unauthorised_quote_requests_ongoing,
+                'staff_unauthorised_quote_requests_completed': staff_unauthorised_quote_requests_completed,
+            }
+            return render(request, 'staff-page.html', context)
         else:
-            return render(request, 'client-page.html', {
+            context = {
                 'user': user,
-                'answered_client_ticket_request':
-                answered_client_ticket_request,
-                'unanswered_client_ticket_request':
-                unanswered_client_ticket_request,
-                'closed_client_ticket_request':
-                closed_client_ticket_request,
-            })
+                'answered_client_ticket_request': answered_client_ticket_request,
+                'unanswered_client_ticket_request': unanswered_client_ticket_request,
+                'closed_client_ticket_request': closed_client_ticket_request,
+            }
+            return render(request, 'client-page.html', context)
 
 
 @login_required
@@ -163,8 +176,9 @@ class CloseUnauthorisedCallback(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         callback_id = kwargs.get('callback_id')
         print(callback_id)
-        callback_object =
-        get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
+        callback_object = (
+            get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
+        )
         callback_object.status = 'Completed'
         callback_object.save()
         messages.success(request, f'Callback {callback_object.id} has been'
@@ -177,22 +191,25 @@ class EditCallBackRequest(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         callback_request_id = kwargs.get('callback_request_id')
-        callback_request =
-        get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        callback_request = (
+            get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        )
         form = CallBackForm(instance=callback_request)
-        messages.success(request, f'Now Working On Callback Number:'
-                                  '{callback_request_id}')
-    return render(request, self.template_name,
-                  {'callback_request_id': callback_request_id,
-                   'form': form})
+        messages.success(request, f'Now Working On Callback Number: {callback_request_id}')
+        return render(request, self.template_name, {
+            'callback_request_id': callback_request_id,
+            'form': form
+        })
+
 
     def post(self, request, callback_request_id, *args, **kwargs):
         if 'save_changes' in request.POST:
             return self.handle_save_changes(request, callback_request_id)
 
     def handle_save_changes(self, request, callback_request_id):
-        callback_request =
-        get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        callback_request = (
+            get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        )
         form = CallBackForm(request.POST, instance=callback_request)
         if form.is_valid():
             form.save()
@@ -225,8 +242,9 @@ class DeleteQuoteRequest(LoginRequiredMixin, View):
 
 class DeleteCallBackRequest(LoginRequiredMixin, View):
     def post(self, request, callback_request_id):
-        callback_request =
-        get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        callback_request = (
+            get_object_or_404(UnauthorisedCallBackRequests, pk=callback_request_id)
+        )
         if request.method == 'POST':
             messages.success(request, f'Callback request with ID: '
                                       f'{callback_request.id} has been'
@@ -241,8 +259,9 @@ class CloseTicketForClientPage(LoginRequiredMixin, View):
         user = request.user
         ticket_id = self.kwargs.get('ticket_id')
         print(f"Ticket ID: {ticket_id}")
-        ticket_to_close =
-        get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        ticket_to_close = (
+            get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        )
         ticket_to_close.status = 'Closed'
         ticket_to_close.save()
         return redirect('staff-page')
@@ -257,8 +276,9 @@ class DeleteTicketForClientPage(LoginRequiredMixin, View):
             return HttpResponseForbidden
             ("You are not authorized to perform this action.")
         ticket_id = self.kwargs.get('ticket_id')
-        ticket_to_delete =
-        get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        ticket_to_delete =(
+            get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+        )
         messages.success(request, f'You Have Succesfully Deleted the ticket')
         ticket_to_delete.delete()
         return redirect('staff-page')
@@ -280,9 +300,11 @@ class EditTicketForClientPage(LoginRequiredMixin, View):
     
     def handle_save_changes(self, request, ticket_id):
         ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        form =
-        AuthorisedTicketRequestForm
-        (request.POST, instance=ticket, user=request.user)
+        form = AuthorisedTicketRequestForm(
+            request.POST, 
+            instance=ticket, 
+            user=request.user
+        )
         if form.is_valid():
             form.save()
             messages.success
@@ -333,21 +355,25 @@ class ViewTicketForClientPage(LoginRequiredMixin, View):
 
         return self.render_ticket_page(request)
 
-    def render_ticket_page(self, request):
-        ticket_id = self.kwargs.get('ticket_id')
-        user = request.user
-        ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
-        chat_messages =
-        ChatDialogue.objects.filter(ticket=ticket).order_by('-timestamp')
-        paginator = Paginator(chat_messages, 10)
-        page_number = request.GET.get('page')
-        chat_messages = paginator.get_page(page_number)
+def render_ticket_page(self, request):
+    ticket_id = self.kwargs.get('ticket_id')
+    user = request.user
+    ticket = get_object_or_404(AuthorisedTicketRequests, pk=ticket_id)
+    chat_messages = (
+        ChatDialogue.objects.filter(ticket=ticket)
+        .order_by('-timestamp')
+    )
+    paginator = Paginator(chat_messages, 10)
+    page_number = request.GET.get('page')
+    chat_messages = paginator.get_page(page_number)
+    form = ChatDialogue1()
 
-        form = ChatDialogue1()
-
-    return render(request, 'ticket-view.html',
-                  {'ticket': ticket, 'user': user,
-                   'chat_messages': chat_messages, 'form': form})
+    return render(request, 'ticket-view.html', {
+        'ticket': ticket,
+        'user': user,
+        'chat_messages': chat_messages,
+        'form': form
+    })
 
 
 class ReopenTicket(LoginRequiredMixin, View):
@@ -363,8 +389,9 @@ class ReopenTicket(LoginRequiredMixin, View):
 class ReopenCallback(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         callback_id = kwargs.get('callback_id')
-        callback =
-        get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
+        callback =(
+            get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
+        )
         callback.status = "Ongoing"
         callback.save()
         messages.success

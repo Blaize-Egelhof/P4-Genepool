@@ -77,25 +77,25 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
 
         - The font was chosen as it gives a very clean , crisp look to text . Ive chosen to not include any other fonts in order to maintain consistancy and visual cleanlieness for my site visitors
     
-   -   #### Imagery
+#### Imagery
 
-      - **Landing Page:**
-         - The background is a simple light blue with shadows to make it look interesting but still simple. The Genepool logo is in the middle of the page. Its white color stands out against the blue background, so it's easy to see and read. There's also Genepool's special logo design above it to make the page look better.
+- **Landing Page:**
+   - The background is a simple light blue with shadows to make it look interesting but still simple. The Genepool logo is in the middle of the page. Its white color stands out against the blue background, so it's easy to see and read. There's also Genepool's special logo design above it to make the page look better.
 
-      - **How Can We Support You Page Image:**
-         - Just below the landing page, there's a title with a light blue snowflake logo to the right of the text. This logo adds a subtle touch to the text and is Genepool's special logo.
+- **How Can We Support You Page Image:**
+   - Just below the landing page, there's a title with a light blue snowflake logo to the right of the text. This logo adds a subtle touch to the text and is Genepool's special logo.
 
-      - **Need Help in a Hurry Image:**
-         - To the right in this section, there's a cartoon drawing that looks like it's moving. It's supposed to show IT support in a fun way. The drawing doesn't have its own background, so it blends in well without making it hard for people to see and understand.
+- **Need Help in a Hurry Image:**
+   - To the right in this section, there's a cartoon drawing that looks like it's moving. It's supposed to show IT support in a fun way. The drawing doesn't have its own background, so it blends in well without making it hard for people to see and understand.
 
-      - **Review Section:**
-         - Below that, there's a section with reviews about Genepool's imagery. It shows pictures of the people who gave the reviews, and these pictures were taken from [Pexels](https://www.pexels.com/). You can find more information in the credits section.
+- **Review Section:**
+   - Below that, there's a section with reviews about Genepool's imagery. It shows pictures of the people who gave the reviews, and these pictures were taken from [Pexels](https://www.pexels.com/). You can find more information in the credits section.
 
-      - **Supplier Logos Section:**
-         - After the review section and below the form, there's a part showing logos from our suppliers. We got permission to use these logos in a positive way, and each logo shows the company's name so you can tell who they are.
+- **Supplier Logos Section:**
+   - After the review section and below the form, there's a part showing logos from our suppliers. We got permission to use these logos in a positive way, and each logo shows the company's name so you can tell who they are.
 
-      - **Icons:**
-         - All the icons used on the site are from [Font-Awesome](https://fontawesome.com/).
+- **Icons:**
+   - All the icons used on the site are from [Font-Awesome](https://fontawesome.com/).
 
 # Wireframes
 
@@ -317,44 +317,44 @@ Welcome to [Genepool](https://p4-genepool-bd4b4cf0bda9.herokuapp.com/), your tru
 
    -   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-   ### ***Frameworks, Libraries & Programs Used***
+### ***Frameworks, Libraries & Programs Used***
 
-      1. [Django:](https://www.djangoproject.com/)
-         - The Django web framework was used to create the full-stack web application.
+1. [Django:](https://www.djangoproject.com/)
+   - The Django web framework was used to create the full-stack web application.
 
-      1. [PostgreSQL:](https://en.wikipedia.org/wiki/PostgreSQL)
-         - PostgreSQL was used as the object-relational database system.
+2. [PostgreSQL:](https://en.wikipedia.org/wiki/PostgreSQL)
+   - PostgreSQL was used as the object-relational database system.
 
-      1. [ElephantSQL:](https://www.elephantsql.com/)
-         - ElephantSQL was used to host the database.
+3. [ElephantSQL:](https://www.elephantsql.com/)
+   - ElephantSQL was used to host the database.
 
-      1. [Git:](https://git-scm.com/)
-         - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+4. [Git:](https://git-scm.com/)
+   - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
-      1. [GitHub:](https://github.com/)
-         - GitHub is used to store the projects code after being pushed from Git.
+5. [GitHub:](https://github.com/)
+   - GitHub is used to store the projects code after being pushed from Git.
 
-      1. [Heroku:](https://heroku.com/)
-         - Heroku was used for the deployed application.
+6. [Heroku:](https://heroku.com/)
+   - Heroku was used for the deployed application.
 
-      1. [Chrome DevTools:](https://developer.chrome.com/docs/devtools/)
-         - Chrome DevTools was used to consistently check the site in terms of responsivity, performance, accessibility, best practice and SEO.
+7. [Chrome DevTools:](https://developer.chrome.com/docs/devtools/)
+   - Chrome DevTools was used to consistently check the site in terms of responsivity, performance, accessibility, best practice, and SEO.
 
-      1. [Google Fonts:](https://fonts.google.com/)
-         - Google Fonts was used to import the ''Robot' fonts into the style.css file which is used on all pages throughout the project.([Roboto](https://fonts.google.com/specimen/Roboto)) for the headings , body sections and footer of all pages.
+8. [Google Fonts:](https://fonts.google.com/)
+   - Google Fonts was used to import the 'Roboto' fonts into the style.css file which is used on all pages throughout the project.([Roboto](https://fonts.google.com/specimen/Roboto)) for the headings, body sections, and footer of all pages.
 
-      1. [Font Awesome:](https://fontawesome.com/)
-         - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+9. [Font Awesome:](https://fontawesome.com/)
+   - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
-      1. [Balsamic Wireframes:](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAuYuvBhApEiwAzq_Yiepq07k0Tz1mJB0GhfGdwnKwWnySZj1b24YIQ0ktc909_GY-JFCSthoCJXAQAvD_BwE)
-         - Balsamic Wireframes was used to create the wireframes and mock-ups during the design process.
+10. [Balsamiq Wireframes:](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAuYuvBhApEiwAzq_Yiepq07k0Tz1mJB0GhfGdwnKwWnySZj1b24YIQ0ktc909_GY-JFCSthoCJXAQAvD_BwE)
+    - Balsamiq Wireframes was used to create the wireframes and mock-ups during the design process.
 
-      1. [Pexels](https://www.pexels.com/) and [CleanPNG:](https://www.cleanpng.com/png-computer-repair-technician-laptop-personal-compute-2976113/download-png.html) as well as the Genepool images and logo (snowflake logo) were designed by [Genepool](https://www.genepool.co.za/) design team whom have given conscent to use their custom logo and image's
-         - Pexels and CleanPNG were used to find images for this project.
-         - Hero Image and snowflake images were taken from Genepool's design team.
+11. [Pexels](https://www.pexels.com/) and [CleanPNG:](https://www.cleanpng.com/png-computer-repair-technician-laptop-personal-compute-2976113/download-png.html) as well as the Genepool images and logo (snowflake logo) were designed by [Genepool](https://www.genepool.co.za/) design team who have given consent to use their custom logo and images
+    - Pexels and CleanPNG were used to find images for this project.
+    - Hero Image and snowflake images were taken from Genepool's design team.
 
-      1. [Cloudinary](https://cloudinary.com/)
-         - Is used in this project as a cloud plateform to store all images used in this site. 
+12. [Cloudinary](https://cloudinary.com/)
+    - Is used in this project as a cloud platform to store all images used in this site.
 
 ## __Testing__
 
@@ -368,33 +368,34 @@ INCLUDE ALL TESTING PLATEFORMS WITH IMAGES , W3 Validator , JS HINT ,  ETC
 
    | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
-| Genepool - settings.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-settings.PNG)  | ✅ |
-| Genepool - manage.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-manage.PNG)  | ✅ |
-| Genepool - urls.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-urls.PNG)  | ✅ |
-| Genepool - models.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-models.PNG)  | ✅ |
-| Genepool - views.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-views.PNG)  | ✅ |
-| Genepool - forms.py | PEP8 validator |   ![No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-forms.PNG)  | ✅ |
-*Insert PEP8 Validator Testing*
+| Genepool - settings.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-settings.PNG)  | ✅ |
+| Genepool - manage.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-manage.PNG)  | ✅ |
+| Genepool - urls.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-urls.PNG)  | ✅ |
+| Genepool - models.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-models.PNG)  | ✅ |
+| Genepool - views.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-views.PNG)  | ✅ |
+| Genepool - forms.py | PEP8 validator |   [No Issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/pep8-forms.PNG)  | ✅ |
+
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator.PNG) | ✅ |
 | quote-form.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3cssvalidator-quote-form.PNG) | ✅ |
-| Home page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) validator - source code | No issues found | ✅ |
-| Products-Services - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Clients Page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) validator - source code | No issues found | ✅ |
-| Staff Page - html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3validator-staff-page.PNG) validator - source code | No issues found | ✅ |
-| Login html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Logout html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/logout-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Sign Up html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/signup-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Ticket View html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-view-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Edit Ticket html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-ticket-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Edit Callback html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-callback-w3validator.PNG) validator - source code | No issues found | ✅ |
-| Edit Quote html | [W3C](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/editquoterequest-w3validator.PNG) validator - source code | No issues found | ✅ |
 
+| Home page - html |  validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3indexvalidator.PNG) | ✅ |
+| Products-Services - html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-w3validator.PNG) | ✅ |
+| Clients Page - html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) | ✅ |
+| Staff Page - html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/w3validator-staff-page.PNG) | ✅ |
+| Login html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/login-w3validator.PNG) | ✅ |
+| Logout html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/logout-w3validator.PNG) | ✅ |
+| Sign Up html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/signup-w3validator.PNG) | ✅ |
+| Ticket View html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/ticket-view-w3validator.PNG) | ✅ |
+| Edit Ticket html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-ticket-w3validator.PNG) | ✅ |
+| Edit Callback html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/edit-callback-w3validator.PNG) | ✅ |
+| Edit Quote html | validator - W3C source code | [No issues found](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/editquoterequest-w3validator.PNG) | ✅ |
 
-| Home page - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/indexlighthouse.PNG) | ✅ |
-| Products and Services - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-lighthouse.PNG) | ✅ |
-| Client Page  - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) | ✅ |
-| Staff Page  - html | lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/lighthouse-staffpage.PNG) | ✅ |
-*Insert Lighthouse testing  Testing*
+| **Page** | **Tool** | **Expectation** | **Result** |
+|---------------------------|------------|---------------------------------------------|--------|
+| Home page - html | Lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/indexlighthouse.PNG) | ✅ |
+| Products and Services - html | Lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/products-and-services-lighthouse.PNG) | ✅ |
+| Client Page - html | Lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/clientspage23validator.PNG) | ✅ |
+| Staff Page - html | Lighthouse | [Acceptable scores](https://github.com/Blaize-Egelhof/P4-Genepool/blob/main/media/media-for-readme/lighthouse-staffpage.PNG) | ✅ |
 
 ### Responsiveness testing
 
