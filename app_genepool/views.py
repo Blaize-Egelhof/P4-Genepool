@@ -22,6 +22,11 @@ from django.urls import reverse
 
 register = template.Library()
 
+"""
+Index view that handles the landing page requests. It supports both GET and POST methods.
+GET requests simply render the landing page, while POST requests handle the submission
+of quote requests through a form.
+"""
 
 class Index(View):
     def get(self, request):
@@ -39,13 +44,19 @@ class Index(View):
                                     'indicated by * arecorrectly filled in')
             return redirect('home-page')
 
+"""
+ProductsAndServoces view that handles requests for the 'Products and Services' page.
+This view supports both GET and POST methods.
+The GET method renders the 'products-and-services.html' template,
+while the POST method processes submissions of the CallBackForm.
+"""
 
 class ProductsAndServices(View):
     def get(self, request):
         return render(request, 'products-and-services.html')
 
     def post(self, request):
-        form = QuoteRequestForm(request.POST)
+        form = CallBackForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'CallBack Form Request submitted'
@@ -58,6 +69,15 @@ class ProductsAndServices(View):
                                     'indicated by * are correctly filled in')
             return redirect('products_and_services')
 
+
+"""
+StaffPage view that handles requests to the staff page.
+This page displays various categories of ticket and request objects, 
+differentiating between those addressed to staff and those from clients.
+It requires the user to be logged in and to be a part of the 'Staff' group
+to access the staff-specific information. Users not part of the 'Staff' group will see
+a client-specific view.
+"""
 
 class StaffPage(LoginRequiredMixin, View):
     def get(self, request):
@@ -132,6 +152,21 @@ class StaffPage(LoginRequiredMixin, View):
             return render(request, 'client-page.html', context)
 
 
+"""
+Handles the submission of an authorised ticket request by a logged-in user. 
+This view is responsible for processing the AuthorisedTicketRequestForm,
+saving the form data to create a new authorised ticket
+request linked to the current user, 
+and providing feedback to the user about the submission outcome.
+
+This function requires the user to be authenticated,
+ensuring that only logged-in users can submit ticket requests.
+Upon successful form submission, the user is redirected to the 'staff-page',
+and a success message is displayed.
+If there are issues with the form data, the user is informed
+of the errors, and the form is re-rendered for correction.
+"""
+
 @login_required
 def submit_authorised_ticket_request(request):
     if request.method == 'POST':
@@ -150,6 +185,14 @@ def submit_authorised_ticket_request(request):
             return render(request, 'client-page.html', {'form': form})
 
 
+"""
+A view for editing an existing unauthorised quote request. This view allows users
+with the appropriate permissions to modify details of a specific quote request.
+
+Inherits from Django's LoginRequiredMixin to ensure that only authenticated
+users can access this view.
+"""
+
 class EditQuoteRequest(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
@@ -160,6 +203,14 @@ class EditQuoteRequest(LoginRequiredMixin, View):
         return render(request, "edit-quote-request.html",
                                {'quote_id': quote_id, 'form': form})
 
+"""
+A view for marking an unauthorised quote request as completed. This view is
+intended for use by staff users to update the status of a quote request to
+'Completed'.
+
+Inherits from Django's LoginRequiredMixin to ensure that only authenticated
+users can access this view.
+"""
 
 class CloseUnauthorisedQuote (LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -171,6 +222,14 @@ class CloseUnauthorisedQuote (LoginRequiredMixin, View):
                                   'as completed!')
         return redirect(reverse('staff-page'))
 
+"""
+A view for marking an unauthorised callback request as completed. This action
+is performed by staff users to indicate that a callback request has
+been resolved.
+
+Inherits from Django's LoginRequiredMixin to ensure that only authenticated
+users can access this view.
+"""
 
 class CloseUnauthorisedCallback(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -185,6 +244,16 @@ class CloseUnauthorisedCallback(LoginRequiredMixin, View):
                                   'marked as completed!')
         return redirect(reverse('staff-page'))
 
+
+"""
+A view for editing an existing unauthorised callback request. This view allows
+staff users to modify details of a specific callback request, identified by its
+unique identifier.
+
+Inherits from Django's LoginRequiredMixin to ensure that only authenticated
+users, specifically staff, can access this view.
+
+"""
 
 class EditCallBackRequest(LoginRequiredMixin, View):
     template_name = 'edit-callback-request.html'
@@ -227,6 +296,13 @@ class EditCallBackRequest(LoginRequiredMixin, View):
                          'callback_request_id': callback_request_id
             })
 
+"""
+A view that handles the deletion of unauthorised quote requests. This view ensures
+that only authenticated users, specifically staff, can delete a quote request.
+
+Inherits from Django's LoginRequiredMixin to restrict access to authenticated users.
+
+"""
 
 class DeleteQuoteRequest(LoginRequiredMixin, View):
     def post(self, request, quote_id):
@@ -239,6 +315,10 @@ class DeleteQuoteRequest(LoginRequiredMixin, View):
             quote.delete()
             return redirect('staff-page')
 
+"""
+A view for handling the deletion of callback requests by authenticated users.
+Ensures that only users with the required permissions can delete callback requests.
+"""
 
 class DeleteCallBackRequest(LoginRequiredMixin, View):
     def post(self, request, callback_request_id):
@@ -253,6 +333,10 @@ class DeleteCallBackRequest(LoginRequiredMixin, View):
             callback_request.delete()
             return redirect('staff-page')
 
+"""
+A view for closing tickets from the client page, accessible only by authenticated users.
+
+"""
 
 class CloseTicketForClientPage(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -266,6 +350,10 @@ class CloseTicketForClientPage(LoginRequiredMixin, View):
         ticket_to_close.save()
         return redirect('staff-page')
 
+"""
+A view for deleting tickets, accessible only to authenticated users who are not part of the 'staff_group'.
+
+"""
 
 class DeleteTicketForClientPage(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -283,6 +371,11 @@ class DeleteTicketForClientPage(LoginRequiredMixin, View):
         ticket_to_delete.delete()
         return redirect('staff-page')
 
+"""
+Provides functionality for editing and deleting authorised ticket requests. 
+This view ensures that only authenticated users can perform these actions, specifically on tickets they have access to.
+
+"""
 
 class EditTicketForClientPage(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
@@ -323,6 +416,11 @@ class EditTicketForClientPage(LoginRequiredMixin, View):
         quote.delete()
         return redirect('staff-page')
 
+"""
+Provides functionality for viewing and replying to tickets for clients. This view allows
+clients and staff to interact with the ticket by posting replies. It ensures that only authenticated
+users can access the ticket viewing and replying features.
+"""
 
 class ViewTicketForClientPage(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
@@ -355,6 +453,14 @@ class ViewTicketForClientPage(LoginRequiredMixin, View):
 
         return self.render_ticket_page(request)
 
+"""
+Renders the ticket page with the ticket details, chat messages, and a form for submitting new messages.
+
+This method fetches all chat messages related to the ticket, orders them by timestamp, and paginates
+the result to display on the ticket page.
+
+"""
+
 def render_ticket_page(self, request):
     ticket_id = self.kwargs.get('ticket_id')
     user = request.user
@@ -375,6 +481,12 @@ def render_ticket_page(self, request):
         'form': form
     })
 
+"""
+A view for reopening a previously closed ticket. Only accessible by authenticated users.
+
+Inherits from Django's LoginRequiredMixin to ensure that only authenticated users can access this view.
+
+"""
 
 class ReopenTicket(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -385,6 +497,12 @@ class ReopenTicket(LoginRequiredMixin, View):
         messages.success(request, "Ticket has been reopened successfully.")
         return redirect('staff-page')
 
+"""
+A view for reopening a previously closed callback request. Accessible only to authenticated users.
+
+Inherits from Django's LoginRequiredMixin for authentication checks.
+
+"""
 
 class ReopenCallback(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
@@ -398,8 +516,14 @@ class ReopenCallback(LoginRequiredMixin, View):
         (request, "Callback Request has been reopened successfully.")
         return redirect('staff-page')
 
+"""
+Allows authenticated users to reopen a quote request by changing its status back to "Ongoing".
 
-class ReopenCallback(LoginRequiredMixin, View):
+Inherits from LoginRequiredMixin to restrict access to authenticated users.
+
+"""
+
+class ReopenQuote(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         quote_id = kwargs.get('quote_id')
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
