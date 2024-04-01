@@ -217,9 +217,9 @@ class CloseUnauthorisedQuote (LoginRequiredMixin, View):
         quote_id = kwargs.get('quote_id')
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
         quote.status = 'Completed'
-        callback_object.closed_by = request.user
+        quote.closed_by = request.user
         quote.save()
-        messages.success(request, f'Quote {quote.id} has been marked'
+        messages.success(request, f'Quote {quote.id} has been marked '
                                   'as completed!')
         return redirect(reverse('staff-page'))
 

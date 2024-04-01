@@ -46,6 +46,10 @@ class AuthorisedTicketRequestForm(forms.ModelForm):
         self.fields['full_nameORcompany_name'].label = 'Ticket Title'
         self.fields['request_description'].widget = forms.Textarea(attrs={'rows': 3, 'cols': 20})
 
+        if not (user and user.groups.filter(name='Staff').exists()):
+            self.fields.pop('client', None)
+            self.fields.pop('closed_by', None)
+
 
 class Meta:
     model = AuthorisedTicketRequests
