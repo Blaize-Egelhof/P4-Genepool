@@ -27,7 +27,7 @@ class UnauthorisedQuoteRequests(models.Model):
     time_requested = models.DateTimeField(default=timezone.now)
     closed_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
-        related_name='Closed_requestsQuote', verbose_name='Closedquote', blank=False)
+        related_name='Closed_requestsQuote', verbose_name='Closedquote', blank=True)
 
 
 
@@ -56,7 +56,7 @@ class UnauthorisedCallBackRequests(models.Model):
     time_requested = models.DateTimeField(default=timezone.now)
     closed_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
-        related_name='Closed_requests_Callback', verbose_name='Closed_Callback', blank=False)
+        related_name='Closed_requests_Callback', verbose_name='Closed_Callback', blank=True)
 
 
 class AuthorisedTicketRequests(models.Model):
