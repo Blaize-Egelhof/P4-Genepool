@@ -150,7 +150,6 @@
                                 <h5 class="card-title">{{ ticket.full_nameORcompany_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ ticket.time_requested }}</h6>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Closed By: {{ ticket.closed_by.username }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ ticket.closed_by.username}}</h6>
                                 <span class="badge bg-danger">Status: {{ ticket.status }}</span>
                             </div>
                             <div class="card-body">
@@ -201,7 +200,6 @@
                             <div class="card-header">
                                 <h5 class="card-title">{{ requests.full_nameORcompany_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted client-date-styling">Date Created: {{ requests.time_requested }}</h6>
-                                <h6 class="card-subtitle mb-2 text-muted client-date-styling">User Created: {{ requests.full_nameORcompany_name }}</h6>
                                 <span class="badge bg-success">Status: {{ requests.status }} </span>
                                 <form method="POST" action="{% url 'close-quote-object' requests.id %}">
                                     {% csrf_token %}
@@ -430,7 +428,7 @@
 
             // Update the modal's body text with the ticket's title
             document.querySelector('#deleteConfirmationModal .modal-body').innerHTML = 
-                `Are you sure you want to delete the ticket titled "${ticketTitle}"?`;
+                `Are you sure you want to delete this ticket?`;
 
             // Show the confirmation modal
             var deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
