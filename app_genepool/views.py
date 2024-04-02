@@ -141,7 +141,7 @@ class StaffPage(LoginRequiredMixin, View):
                 'staff_unauthorised_quote_requests_ongoing': staff_unauthorised_quote_requests_ongoing,
                 'staff_unauthorised_quote_requests_completed': staff_unauthorised_quote_requests_completed,
             }
-            return render(request, 'staff-page.html', context)
+            return render(request, 'staff-page.html', context,)
         else:
             context = {
                 'user': user,
@@ -202,6 +202,18 @@ class EditQuoteRequest(LoginRequiredMixin, View):
         messages.success(request, f'Now Editing Quote: {quote.id}')
         return render(request, "edit-quote-request.html",
                                {'quote_id': quote_id, 'form': form})
+    
+    def post(self, request, *args, **kwargs):
+        quote_id = kwargs.get('quote_id')
+        quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
+        form = QuoteRequestForm(request.POST, instance=quote)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Quote {quote.id} has been successfully updated.')
+            return redirect('staff-page') 
+        else:
+            messages.error(request, 'Error updating the quote. Please check the form for errors.')
+            return render(request, "edit-quote-request.html", {'quote_id': quote_id, 'form': form})
 
 """
 A view for marking an unauthorised quote request as completed. This view is
@@ -504,14 +516,13 @@ Inherits from Django's LoginRequiredMixin for authentication checks.
 
 class ReopenCallback(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
-        callback_id = kwargs.get('callback_id')
+        callback_id = kwargs.get('ticket_id')
         callback =(
             get_object_or_404(UnauthorisedCallBackRequests, pk=callback_id)
         )
         callback.status = "Ongoing"
         callback.save()
-        messages.success
-        (request, "Callback Request has been reopened successfully.")
+        messages.success(request, "Callback successfully opened.")
         return redirect('staff-page')
 
 """
@@ -523,10 +534,9 @@ Inherits from LoginRequiredMixin to restrict access to authenticated users.
 
 class ReopenQuote(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
-        quote_id = kwargs.get('quote_id')
+        quote_id = kwargs.get('ticket_id')
         quote = get_object_or_404(UnauthorisedQuoteRequests, pk=quote_id)
         quote.status = "Ongoing"
         quote.save()
-        messages.success
-        (request, "Quote Request has been reopened successfully.")
+        messages.success(request, "Quote Opened Succesfully.")
         return redirect('staff-page')

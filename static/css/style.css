@@ -20,6 +20,10 @@
   margin-right: 25vw;
  }
 
+ .width-of-100{
+  width:100%;
+ }
+
  .important{
   color:red;
   font-weight: bold;

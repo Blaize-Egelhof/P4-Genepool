@@ -84,8 +84,8 @@ urlpatterns = [
         name='re-open-callback'
     ),
     path(
-        're-open-quote-request/<int:quote_id>/',
-        views.ReopenCallback.as_view(),
+        're-open-quote-request/<int:ticket_id>/',
+        views.ReopenQuote.as_view(),
         name='re-open-quote-request'
     ),
 ]
