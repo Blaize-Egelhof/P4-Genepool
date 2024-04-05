@@ -12,7 +12,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
 localhost = os.environ.get('ALLOWED_LOCAL_HOST')
 publichost = os.environ.get('ALLOWED_PUBLIC_HOST')
