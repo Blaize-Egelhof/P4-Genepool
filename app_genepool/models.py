@@ -76,7 +76,7 @@ class AuthorisedTicketRequests(models.Model):
         related_name='client_requests', verbose_name='Client')
     closed_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
-        related_name='Closed_requests', verbose_name='Closed', blank=False)
+        related_name='Closed_requests', verbose_name='Closed', blank=False,null=True)
 
 
 class ChatDialogue(models.Model):

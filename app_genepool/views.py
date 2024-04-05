@@ -176,13 +176,13 @@ def submit_authorised_ticket_request(request):
             authorised_ticket_request = form.save(commit=False)
             authorised_ticket_request.client = user
             authorised_ticket_request.save()
-            messages.success(request, 'Your Ticket request has been submitted'
+            messages.success(request, 'Your Ticket request has been submitted '
                                       'successfully.')
-            return redirect('staff-page')
+            return redirect(reverse('staff-page'))
         else:
             print(form.errors)
-            messages.error(request, 'There was an error in your form.')
-            return render(request, 'client-page.html', {'form': form})
+            messages.error(request, 'There was an error in your form,please ensure fields marked * are filled in.')
+            return redirect(reverse('staff-page'))
 
 
 """
@@ -362,6 +362,7 @@ class CloseTicketForClientPage(LoginRequiredMixin, View):
         )
         ticket_to_close.status = 'Closed'
         ticket_to_close.save()
+        messages.success("Ticket Re-opened!")
         return redirect('staff-page')
 
 """
@@ -465,7 +466,6 @@ class ViewTicketForClientPage(LoginRequiredMixin, View):
 
             messages.success(request, 'Reply Sent Successfully!')
         else:
-            print(form.errors)
             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
 
         return self.render_ticket_page(request)
