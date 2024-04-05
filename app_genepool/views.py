@@ -465,6 +465,7 @@ class ViewTicketForClientPage(LoginRequiredMixin, View):
 
             messages.success(request, 'Reply Sent Successfully!')
         else:
+            print(form.errors)
             messages.error(request, 'Reply is invalid, please ensure the name and text field is filled in before submitting.')
 
         return self.render_ticket_page(request)

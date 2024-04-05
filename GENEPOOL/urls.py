@@ -79,7 +79,7 @@ urlpatterns = [
         name='re-open-ticket'
     ),
     path(
-        're-open-callback/<int:callback_id>/',
+        're-open-callback/<int:ticket_id>/',
         views.ReopenCallback.as_view(),
         name='re-open-callback'
     ),
